@@ -4,7 +4,7 @@
     <children xmi:type="notation:Node" xmi:id="_r8Ra8JaHEeSYiPsIRHr9Sg" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_r8Ra8ZaHEeSYiPsIRHr9Sg" type="5001">
       <children xmi:type="notation:Node" xmi:id="_tUPTcJaHEeSYiPsIRHr9Sg" type="2001">
-        <element xmi:type="ecore:EAttribute" href="activity.ecore#//ActivityPeriodic/name"/>
+        <element xmi:type="ecore:EAttribute" href="activity.ecore#//PeriodicActivity/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_tUPTcZaHEeSYiPsIRHr9Sg"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_r8Ra8paHEeSYiPsIRHr9Sg"/>
@@ -17,7 +17,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_r8Ra-JaHEeSYiPsIRHr9Sg"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_r8PlwZaHEeSYiPsIRHr9Sg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="activity.ecore#//ActivityPeriodic"/>
+    <element xmi:type="ecore:EClass" href="activity.ecore#//PeriodicActivity"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r8PlwpaHEeSYiPsIRHr9Sg" x="323" y="103"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_uPs2IJaHEeSYiPsIRHr9Sg" type="1005">
@@ -141,7 +141,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_zFaA0ZaHEeSYiPsIRHr9Sg" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_zFaA0paHEeSYiPsIRHr9Sg" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="activity.ecore#//ActivityPeriodic/start"/>
+    <element xmi:type="ecore:EReference" href="activity.ecore#//PeriodicActivity/start"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_zFaA05aHEeSYiPsIRHr9Sg" points="[9, 14, -102, -146]$[113, 151, 2, -9]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zFdrMJaHEeSYiPsIRHr9Sg" id="(0.7706422018348624,0.7254901960784313)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zFdrMZaHEeSYiPsIRHr9Sg" id="(0.8529411764705882,0.23255813953488372)"/>
@@ -155,7 +155,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_0ASUsZaHEeSYiPsIRHr9Sg" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_0ASUspaHEeSYiPsIRHr9Sg" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="activity.ecore#//ActivityPeriodic/end"/>
+    <element xmi:type="ecore:EReference" href="activity.ecore#//PeriodicActivity/end"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0ASUs5aHEeSYiPsIRHr9Sg" points="[13, 25, -77, -143]$[91, 162, 1, -6]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0AV_EJaHEeSYiPsIRHr9Sg" id="(0.35294117647058826,0.16279069767441862)"/>
   </edges>
@@ -180,7 +180,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_LEIDwZaIEeSYiPsIRHr9Sg" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_LEIDwpaIEeSYiPsIRHr9Sg" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="activity.ecore#//ActivityPeriodic/rule"/>
+    <element xmi:type="ecore:EReference" href="activity.ecore#//PeriodicActivity/rule"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LEIDw5aIEeSYiPsIRHr9Sg" points="[-5, 25, 33, -167]$[-36, 213, 2, 21]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LELuIJaIEeSYiPsIRHr9Sg" id="(0.8137254901960784,0.4883720930232558)"/>
   </edges>
@@ -193,7 +193,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_MlaQUZaIEeSYiPsIRHr9Sg" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_MlaQUpaIEeSYiPsIRHr9Sg" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="activity.ecore#//ActivityPeriodic/resAllocation"/>
+    <element xmi:type="ecore:EReference" href="activity.ecore#//PeriodicActivity/resAllocation"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MlaQU5aIEeSYiPsIRHr9Sg" points="[-27, 19, 74, -62]$[-169, 80, -68, -1]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MlcskJaIEeSYiPsIRHr9Sg" id="(0.24347826086956523,0.5294117647058824)"/>
   </edges>
