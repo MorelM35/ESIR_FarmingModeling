@@ -126,7 +126,7 @@ public abstract class AbstractActSemanticSequencer extends AbstractDelegatingSem
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDateAccess().getDayEIntParserRuleCall_2_0(), semanticObject.getDay());
+		feeder.accept(grammarAccess.getDateAccess().getDayEIntParserRuleCall_1_0(), semanticObject.getDay());
 		feeder.finish();
 	}
 	
@@ -147,6 +147,7 @@ public abstract class AbstractActSemanticSequencer extends AbstractDelegatingSem
 	 *         atelier=[Atelier|EString]? 
 	 *         start=Date 
 	 *         end=Date 
+	 *         (periodicityNumber=EInt? periodicityType=Periodicity)? 
 	 *         (resAllocation+=ResAllocation resAllocation+=ResAllocation*)? 
 	 *         (rule+=Rule rule+=Rule*)?
 	 *     )

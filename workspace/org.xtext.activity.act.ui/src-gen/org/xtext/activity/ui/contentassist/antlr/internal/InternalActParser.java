@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalActParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'hour'", "'day'", "'week'", "'month'", "'year'", "'PeriodicActivity'", "'{'", "'start'", "','", "'end'", "'}'", "'atelier'", "'every'", "'allocate'", "'} ,'", "'rules'", "'from'", "'reserve'", "'for'", "'pre'", "'Atelier'", "'activity'", "'-'", "'Elevage'", "'Culture'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'months'", "'days'", "'weeks'", "'years'", "'hours'", "'PeriodicActivity'", "'{'", "'start'", "'from'", "'to'", "'end'", "','", "'}'", "'atelier'", "'every'", "'allocate'", "'} ,'", "'rules'", "'reserve'", "'for'", "'pre'", "'Atelier'", "'activity'", "'-'", "'Elevage'", "'Culture'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -38,6 +38,7 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
     public static final int T__13=13;
     public static final int T__35=35;
     public static final int T__14=14;
+    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -855,126 +856,38 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleCulture"
 
 
-    // $ANTLR start "rule__PeriodicActivity__Alternatives_11_1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:346:1: rule__PeriodicActivity__Alternatives_11_1 : ( ( 'hour' ) | ( 'day' ) | ( 'week' ) | ( 'month' ) | ( 'year' ) );
-    public final void rule__PeriodicActivity__Alternatives_11_1() throws RecognitionException {
+    // $ANTLR start "rulePeriodicity"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:347:1: rulePeriodicity : ( ( rule__Periodicity__Alternatives ) ) ;
+    public final void rulePeriodicity() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:350:1: ( ( 'hour' ) | ( 'day' ) | ( 'week' ) | ( 'month' ) | ( 'year' ) )
-            int alt1=5;
-            switch ( input.LA(1) ) {
-            case 11:
-                {
-                alt1=1;
-                }
-                break;
-            case 12:
-                {
-                alt1=2;
-                }
-                break;
-            case 13:
-                {
-                alt1=3;
-                }
-                break;
-            case 14:
-                {
-                alt1=4;
-                }
-                break;
-            case 15:
-                {
-                alt1=5;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 1, 0, input);
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:351:1: ( ( ( rule__Periodicity__Alternatives ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:352:1: ( ( rule__Periodicity__Alternatives ) )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:352:1: ( ( rule__Periodicity__Alternatives ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:353:1: ( rule__Periodicity__Alternatives )
+            {
+             before(grammarAccess.getPeriodicityAccess().getAlternatives()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:354:1: ( rule__Periodicity__Alternatives )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:354:2: rule__Periodicity__Alternatives
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Periodicity__Alternatives_in_rulePeriodicity676);
+            rule__Periodicity__Alternatives();
 
-                throw nvae;
+            state._fsp--;
+
+
             }
 
-            switch (alt1) {
-                case 1 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:351:1: ( 'hour' )
-                    {
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:351:1: ( 'hour' )
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:352:1: 'hour'
-                    {
-                     before(grammarAccess.getPeriodicActivityAccess().getHourKeyword_11_1_0()); 
-                    match(input,11,FollowSets000.FOLLOW_11_in_rule__PeriodicActivity__Alternatives_11_1676); 
-                     after(grammarAccess.getPeriodicActivityAccess().getHourKeyword_11_1_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:359:6: ( 'day' )
-                    {
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:359:6: ( 'day' )
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:360:1: 'day'
-                    {
-                     before(grammarAccess.getPeriodicActivityAccess().getDayKeyword_11_1_1()); 
-                    match(input,12,FollowSets000.FOLLOW_12_in_rule__PeriodicActivity__Alternatives_11_1696); 
-                     after(grammarAccess.getPeriodicActivityAccess().getDayKeyword_11_1_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:367:6: ( 'week' )
-                    {
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:367:6: ( 'week' )
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:368:1: 'week'
-                    {
-                     before(grammarAccess.getPeriodicActivityAccess().getWeekKeyword_11_1_2()); 
-                    match(input,13,FollowSets000.FOLLOW_13_in_rule__PeriodicActivity__Alternatives_11_1716); 
-                     after(grammarAccess.getPeriodicActivityAccess().getWeekKeyword_11_1_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:375:6: ( 'month' )
-                    {
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:375:6: ( 'month' )
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:376:1: 'month'
-                    {
-                     before(grammarAccess.getPeriodicActivityAccess().getMonthKeyword_11_1_3()); 
-                    match(input,14,FollowSets000.FOLLOW_14_in_rule__PeriodicActivity__Alternatives_11_1736); 
-                     after(grammarAccess.getPeriodicActivityAccess().getMonthKeyword_11_1_3()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:383:6: ( 'year' )
-                    {
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:383:6: ( 'year' )
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:384:1: 'year'
-                    {
-                     before(grammarAccess.getPeriodicActivityAccess().getYearKeyword_11_1_4()); 
-                    match(input,15,FollowSets000.FOLLOW_15_in_rule__PeriodicActivity__Alternatives_11_1756); 
-                     after(grammarAccess.getPeriodicActivityAccess().getYearKeyword_11_1_4()); 
-
-                    }
-
-
-                    }
-                    break;
+             after(grammarAccess.getPeriodicityAccess().getAlternatives()); 
 
             }
+
+
+            }
+
         }
         catch (RecognitionException re) {
             reportError(re);
@@ -987,41 +900,41 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PeriodicActivity__Alternatives_11_1"
+    // $ANTLR end "rulePeriodicity"
 
 
     // $ANTLR start "rule__EString__Alternatives"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:397:1: rule__EString__Alternatives : ( ( RULE_STRING ) | ( RULE_ID ) );
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:366:1: rule__EString__Alternatives : ( ( RULE_STRING ) | ( RULE_ID ) );
     public final void rule__EString__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:401:1: ( ( RULE_STRING ) | ( RULE_ID ) )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:370:1: ( ( RULE_STRING ) | ( RULE_ID ) )
+            int alt1=2;
+            int LA1_0 = input.LA(1);
 
-            if ( (LA2_0==RULE_STRING) ) {
-                alt2=1;
+            if ( (LA1_0==RULE_STRING) ) {
+                alt1=1;
             }
-            else if ( (LA2_0==RULE_ID) ) {
-                alt2=2;
+            else if ( (LA1_0==RULE_ID) ) {
+                alt1=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+                    new NoViableAltException("", 1, 0, input);
 
                 throw nvae;
             }
-            switch (alt2) {
+            switch (alt1) {
                 case 1 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:402:1: ( RULE_STRING )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:371:1: ( RULE_STRING )
                     {
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:402:1: ( RULE_STRING )
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:403:1: RULE_STRING
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:371:1: ( RULE_STRING )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:372:1: RULE_STRING
                     {
                      before(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
-                    match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__EString__Alternatives791); 
+                    match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_rule__EString__Alternatives712); 
                      after(grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
 
                     }
@@ -1030,13 +943,13 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:408:6: ( RULE_ID )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:377:6: ( RULE_ID )
                     {
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:408:6: ( RULE_ID )
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:409:1: RULE_ID
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:377:6: ( RULE_ID )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:378:1: RULE_ID
                     {
                      before(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
-                    match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__EString__Alternatives808); 
+                    match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__EString__Alternatives729); 
                      after(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
 
                     }
@@ -1061,22 +974,187 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__EString__Alternatives"
 
 
+    // $ANTLR start "rule__Periodicity__Alternatives"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:388:1: rule__Periodicity__Alternatives : ( ( ( 'months' ) ) | ( ( 'days' ) ) | ( ( 'weeks' ) ) | ( ( 'years' ) ) | ( ( 'hours' ) ) );
+    public final void rule__Periodicity__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:392:1: ( ( ( 'months' ) ) | ( ( 'days' ) ) | ( ( 'weeks' ) ) | ( ( 'years' ) ) | ( ( 'hours' ) ) )
+            int alt2=5;
+            switch ( input.LA(1) ) {
+            case 11:
+                {
+                alt2=1;
+                }
+                break;
+            case 12:
+                {
+                alt2=2;
+                }
+                break;
+            case 13:
+                {
+                alt2=3;
+                }
+                break;
+            case 14:
+                {
+                alt2=4;
+                }
+                break;
+            case 15:
+                {
+                alt2=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt2) {
+                case 1 :
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:393:1: ( ( 'months' ) )
+                    {
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:393:1: ( ( 'months' ) )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:394:1: ( 'months' )
+                    {
+                     before(grammarAccess.getPeriodicityAccess().getMonthsEnumLiteralDeclaration_0()); 
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:395:1: ( 'months' )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:395:3: 'months'
+                    {
+                    match(input,11,FollowSets000.FOLLOW_11_in_rule__Periodicity__Alternatives762); 
+
+                    }
+
+                     after(grammarAccess.getPeriodicityAccess().getMonthsEnumLiteralDeclaration_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:400:6: ( ( 'days' ) )
+                    {
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:400:6: ( ( 'days' ) )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:401:1: ( 'days' )
+                    {
+                     before(grammarAccess.getPeriodicityAccess().getDaysEnumLiteralDeclaration_1()); 
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:402:1: ( 'days' )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:402:3: 'days'
+                    {
+                    match(input,12,FollowSets000.FOLLOW_12_in_rule__Periodicity__Alternatives783); 
+
+                    }
+
+                     after(grammarAccess.getPeriodicityAccess().getDaysEnumLiteralDeclaration_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:407:6: ( ( 'weeks' ) )
+                    {
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:407:6: ( ( 'weeks' ) )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:408:1: ( 'weeks' )
+                    {
+                     before(grammarAccess.getPeriodicityAccess().getWeeksEnumLiteralDeclaration_2()); 
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:409:1: ( 'weeks' )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:409:3: 'weeks'
+                    {
+                    match(input,13,FollowSets000.FOLLOW_13_in_rule__Periodicity__Alternatives804); 
+
+                    }
+
+                     after(grammarAccess.getPeriodicityAccess().getWeeksEnumLiteralDeclaration_2()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:414:6: ( ( 'years' ) )
+                    {
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:414:6: ( ( 'years' ) )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:415:1: ( 'years' )
+                    {
+                     before(grammarAccess.getPeriodicityAccess().getYearsEnumLiteralDeclaration_3()); 
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:416:1: ( 'years' )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:416:3: 'years'
+                    {
+                    match(input,14,FollowSets000.FOLLOW_14_in_rule__Periodicity__Alternatives825); 
+
+                    }
+
+                     after(grammarAccess.getPeriodicityAccess().getYearsEnumLiteralDeclaration_3()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:421:6: ( ( 'hours' ) )
+                    {
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:421:6: ( ( 'hours' ) )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:422:1: ( 'hours' )
+                    {
+                     before(grammarAccess.getPeriodicityAccess().getHoursEnumLiteralDeclaration_4()); 
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:423:1: ( 'hours' )
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:423:3: 'hours'
+                    {
+                    match(input,15,FollowSets000.FOLLOW_15_in_rule__Periodicity__Alternatives846); 
+
+                    }
+
+                     after(grammarAccess.getPeriodicityAccess().getHoursEnumLiteralDeclaration_4()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Periodicity__Alternatives"
+
+
     // $ANTLR start "rule__PeriodicActivity__Group__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:421:1: rule__PeriodicActivity__Group__0 : rule__PeriodicActivity__Group__0__Impl rule__PeriodicActivity__Group__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:435:1: rule__PeriodicActivity__Group__0 : rule__PeriodicActivity__Group__0__Impl rule__PeriodicActivity__Group__1 ;
     public final void rule__PeriodicActivity__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:425:1: ( rule__PeriodicActivity__Group__0__Impl rule__PeriodicActivity__Group__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:426:2: rule__PeriodicActivity__Group__0__Impl rule__PeriodicActivity__Group__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:439:1: ( rule__PeriodicActivity__Group__0__Impl rule__PeriodicActivity__Group__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:440:2: rule__PeriodicActivity__Group__0__Impl rule__PeriodicActivity__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__0__Impl_in_rule__PeriodicActivity__Group__0838);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__0__Impl_in_rule__PeriodicActivity__Group__0879);
             rule__PeriodicActivity__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__1_in_rule__PeriodicActivity__Group__0841);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__1_in_rule__PeriodicActivity__Group__0882);
             rule__PeriodicActivity__Group__1();
 
             state._fsp--;
@@ -1100,21 +1178,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:433:1: rule__PeriodicActivity__Group__0__Impl : ( () ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:447:1: rule__PeriodicActivity__Group__0__Impl : ( () ) ;
     public final void rule__PeriodicActivity__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:437:1: ( ( () ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:438:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:451:1: ( ( () ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:452:1: ( () )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:438:1: ( () )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:439:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:452:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:453:1: ()
             {
              before(grammarAccess.getPeriodicActivityAccess().getPeriodicActivityAction_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:440:1: ()
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:442:1: 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:454:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:456:1: 
             {
             }
 
@@ -1137,21 +1215,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:452:1: rule__PeriodicActivity__Group__1 : rule__PeriodicActivity__Group__1__Impl rule__PeriodicActivity__Group__2 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:466:1: rule__PeriodicActivity__Group__1 : rule__PeriodicActivity__Group__1__Impl rule__PeriodicActivity__Group__2 ;
     public final void rule__PeriodicActivity__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:456:1: ( rule__PeriodicActivity__Group__1__Impl rule__PeriodicActivity__Group__2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:457:2: rule__PeriodicActivity__Group__1__Impl rule__PeriodicActivity__Group__2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:470:1: ( rule__PeriodicActivity__Group__1__Impl rule__PeriodicActivity__Group__2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:471:2: rule__PeriodicActivity__Group__1__Impl rule__PeriodicActivity__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__1__Impl_in_rule__PeriodicActivity__Group__1899);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__1__Impl_in_rule__PeriodicActivity__Group__1940);
             rule__PeriodicActivity__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__2_in_rule__PeriodicActivity__Group__1902);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__2_in_rule__PeriodicActivity__Group__1943);
             rule__PeriodicActivity__Group__2();
 
             state._fsp--;
@@ -1175,20 +1253,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:464:1: rule__PeriodicActivity__Group__1__Impl : ( 'PeriodicActivity' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:478:1: rule__PeriodicActivity__Group__1__Impl : ( 'PeriodicActivity' ) ;
     public final void rule__PeriodicActivity__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:468:1: ( ( 'PeriodicActivity' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:469:1: ( 'PeriodicActivity' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:482:1: ( ( 'PeriodicActivity' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:483:1: ( 'PeriodicActivity' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:469:1: ( 'PeriodicActivity' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:470:1: 'PeriodicActivity'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:483:1: ( 'PeriodicActivity' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:484:1: 'PeriodicActivity'
             {
              before(grammarAccess.getPeriodicActivityAccess().getPeriodicActivityKeyword_1()); 
-            match(input,16,FollowSets000.FOLLOW_16_in_rule__PeriodicActivity__Group__1__Impl930); 
+            match(input,16,FollowSets000.FOLLOW_16_in_rule__PeriodicActivity__Group__1__Impl971); 
              after(grammarAccess.getPeriodicActivityAccess().getPeriodicActivityKeyword_1()); 
 
             }
@@ -1212,21 +1290,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:483:1: rule__PeriodicActivity__Group__2 : rule__PeriodicActivity__Group__2__Impl rule__PeriodicActivity__Group__3 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:497:1: rule__PeriodicActivity__Group__2 : rule__PeriodicActivity__Group__2__Impl rule__PeriodicActivity__Group__3 ;
     public final void rule__PeriodicActivity__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:487:1: ( rule__PeriodicActivity__Group__2__Impl rule__PeriodicActivity__Group__3 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:488:2: rule__PeriodicActivity__Group__2__Impl rule__PeriodicActivity__Group__3
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:501:1: ( rule__PeriodicActivity__Group__2__Impl rule__PeriodicActivity__Group__3 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:502:2: rule__PeriodicActivity__Group__2__Impl rule__PeriodicActivity__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__2__Impl_in_rule__PeriodicActivity__Group__2961);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__2__Impl_in_rule__PeriodicActivity__Group__21002);
             rule__PeriodicActivity__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__3_in_rule__PeriodicActivity__Group__2964);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__3_in_rule__PeriodicActivity__Group__21005);
             rule__PeriodicActivity__Group__3();
 
             state._fsp--;
@@ -1250,23 +1328,23 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__2__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:495:1: rule__PeriodicActivity__Group__2__Impl : ( ( rule__PeriodicActivity__NameAssignment_2 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:509:1: rule__PeriodicActivity__Group__2__Impl : ( ( rule__PeriodicActivity__NameAssignment_2 ) ) ;
     public final void rule__PeriodicActivity__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:499:1: ( ( ( rule__PeriodicActivity__NameAssignment_2 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:500:1: ( ( rule__PeriodicActivity__NameAssignment_2 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:513:1: ( ( ( rule__PeriodicActivity__NameAssignment_2 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:514:1: ( ( rule__PeriodicActivity__NameAssignment_2 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:500:1: ( ( rule__PeriodicActivity__NameAssignment_2 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:501:1: ( rule__PeriodicActivity__NameAssignment_2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:514:1: ( ( rule__PeriodicActivity__NameAssignment_2 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:515:1: ( rule__PeriodicActivity__NameAssignment_2 )
             {
              before(grammarAccess.getPeriodicActivityAccess().getNameAssignment_2()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:502:1: ( rule__PeriodicActivity__NameAssignment_2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:502:2: rule__PeriodicActivity__NameAssignment_2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:516:1: ( rule__PeriodicActivity__NameAssignment_2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:516:2: rule__PeriodicActivity__NameAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__NameAssignment_2_in_rule__PeriodicActivity__Group__2__Impl991);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__NameAssignment_2_in_rule__PeriodicActivity__Group__2__Impl1032);
             rule__PeriodicActivity__NameAssignment_2();
 
             state._fsp--;
@@ -1297,21 +1375,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__3"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:512:1: rule__PeriodicActivity__Group__3 : rule__PeriodicActivity__Group__3__Impl rule__PeriodicActivity__Group__4 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:526:1: rule__PeriodicActivity__Group__3 : rule__PeriodicActivity__Group__3__Impl rule__PeriodicActivity__Group__4 ;
     public final void rule__PeriodicActivity__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:516:1: ( rule__PeriodicActivity__Group__3__Impl rule__PeriodicActivity__Group__4 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:517:2: rule__PeriodicActivity__Group__3__Impl rule__PeriodicActivity__Group__4
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:530:1: ( rule__PeriodicActivity__Group__3__Impl rule__PeriodicActivity__Group__4 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:531:2: rule__PeriodicActivity__Group__3__Impl rule__PeriodicActivity__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__3__Impl_in_rule__PeriodicActivity__Group__31021);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__3__Impl_in_rule__PeriodicActivity__Group__31062);
             rule__PeriodicActivity__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__4_in_rule__PeriodicActivity__Group__31024);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__4_in_rule__PeriodicActivity__Group__31065);
             rule__PeriodicActivity__Group__4();
 
             state._fsp--;
@@ -1335,20 +1413,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__3__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:524:1: rule__PeriodicActivity__Group__3__Impl : ( '{' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:538:1: rule__PeriodicActivity__Group__3__Impl : ( '{' ) ;
     public final void rule__PeriodicActivity__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:528:1: ( ( '{' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:529:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:542:1: ( ( '{' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:543:1: ( '{' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:529:1: ( '{' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:530:1: '{'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:543:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:544:1: '{'
             {
              before(grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__PeriodicActivity__Group__3__Impl1052); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__PeriodicActivity__Group__3__Impl1093); 
              after(grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -1372,21 +1450,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__4"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:543:1: rule__PeriodicActivity__Group__4 : rule__PeriodicActivity__Group__4__Impl rule__PeriodicActivity__Group__5 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:557:1: rule__PeriodicActivity__Group__4 : rule__PeriodicActivity__Group__4__Impl rule__PeriodicActivity__Group__5 ;
     public final void rule__PeriodicActivity__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:547:1: ( rule__PeriodicActivity__Group__4__Impl rule__PeriodicActivity__Group__5 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:548:2: rule__PeriodicActivity__Group__4__Impl rule__PeriodicActivity__Group__5
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:561:1: ( rule__PeriodicActivity__Group__4__Impl rule__PeriodicActivity__Group__5 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:562:2: rule__PeriodicActivity__Group__4__Impl rule__PeriodicActivity__Group__5
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__4__Impl_in_rule__PeriodicActivity__Group__41083);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__4__Impl_in_rule__PeriodicActivity__Group__41124);
             rule__PeriodicActivity__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__5_in_rule__PeriodicActivity__Group__41086);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__5_in_rule__PeriodicActivity__Group__41127);
             rule__PeriodicActivity__Group__5();
 
             state._fsp--;
@@ -1410,31 +1488,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__4__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:555:1: rule__PeriodicActivity__Group__4__Impl : ( ( rule__PeriodicActivity__Group_4__0 )? ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:569:1: rule__PeriodicActivity__Group__4__Impl : ( ( rule__PeriodicActivity__Group_4__0 )? ) ;
     public final void rule__PeriodicActivity__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:559:1: ( ( ( rule__PeriodicActivity__Group_4__0 )? ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:560:1: ( ( rule__PeriodicActivity__Group_4__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:573:1: ( ( ( rule__PeriodicActivity__Group_4__0 )? ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:574:1: ( ( rule__PeriodicActivity__Group_4__0 )? )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:560:1: ( ( rule__PeriodicActivity__Group_4__0 )? )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:561:1: ( rule__PeriodicActivity__Group_4__0 )?
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:574:1: ( ( rule__PeriodicActivity__Group_4__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:575:1: ( rule__PeriodicActivity__Group_4__0 )?
             {
              before(grammarAccess.getPeriodicActivityAccess().getGroup_4()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:562:1: ( rule__PeriodicActivity__Group_4__0 )?
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:576:1: ( rule__PeriodicActivity__Group_4__0 )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==22) ) {
+            if ( (LA3_0==24) ) {
                 alt3=1;
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:562:2: rule__PeriodicActivity__Group_4__0
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:576:2: rule__PeriodicActivity__Group_4__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__0_in_rule__PeriodicActivity__Group__4__Impl1113);
+                    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__0_in_rule__PeriodicActivity__Group__4__Impl1154);
                     rule__PeriodicActivity__Group_4__0();
 
                     state._fsp--;
@@ -1468,21 +1546,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__5"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:572:1: rule__PeriodicActivity__Group__5 : rule__PeriodicActivity__Group__5__Impl rule__PeriodicActivity__Group__6 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:586:1: rule__PeriodicActivity__Group__5 : rule__PeriodicActivity__Group__5__Impl rule__PeriodicActivity__Group__6 ;
     public final void rule__PeriodicActivity__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:576:1: ( rule__PeriodicActivity__Group__5__Impl rule__PeriodicActivity__Group__6 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:577:2: rule__PeriodicActivity__Group__5__Impl rule__PeriodicActivity__Group__6
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:590:1: ( rule__PeriodicActivity__Group__5__Impl rule__PeriodicActivity__Group__6 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:591:2: rule__PeriodicActivity__Group__5__Impl rule__PeriodicActivity__Group__6
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__5__Impl_in_rule__PeriodicActivity__Group__51144);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__5__Impl_in_rule__PeriodicActivity__Group__51185);
             rule__PeriodicActivity__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__6_in_rule__PeriodicActivity__Group__51147);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__6_in_rule__PeriodicActivity__Group__51188);
             rule__PeriodicActivity__Group__6();
 
             state._fsp--;
@@ -1506,20 +1584,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__5__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:584:1: rule__PeriodicActivity__Group__5__Impl : ( 'start' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:598:1: rule__PeriodicActivity__Group__5__Impl : ( 'start' ) ;
     public final void rule__PeriodicActivity__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:588:1: ( ( 'start' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:589:1: ( 'start' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:602:1: ( ( 'start' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:603:1: ( 'start' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:589:1: ( 'start' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:590:1: 'start'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:603:1: ( 'start' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:604:1: 'start'
             {
              before(grammarAccess.getPeriodicActivityAccess().getStartKeyword_5()); 
-            match(input,18,FollowSets000.FOLLOW_18_in_rule__PeriodicActivity__Group__5__Impl1175); 
+            match(input,18,FollowSets000.FOLLOW_18_in_rule__PeriodicActivity__Group__5__Impl1216); 
              after(grammarAccess.getPeriodicActivityAccess().getStartKeyword_5()); 
 
             }
@@ -1543,21 +1621,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__6"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:603:1: rule__PeriodicActivity__Group__6 : rule__PeriodicActivity__Group__6__Impl rule__PeriodicActivity__Group__7 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:617:1: rule__PeriodicActivity__Group__6 : rule__PeriodicActivity__Group__6__Impl rule__PeriodicActivity__Group__7 ;
     public final void rule__PeriodicActivity__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:607:1: ( rule__PeriodicActivity__Group__6__Impl rule__PeriodicActivity__Group__7 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:608:2: rule__PeriodicActivity__Group__6__Impl rule__PeriodicActivity__Group__7
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:621:1: ( rule__PeriodicActivity__Group__6__Impl rule__PeriodicActivity__Group__7 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:622:2: rule__PeriodicActivity__Group__6__Impl rule__PeriodicActivity__Group__7
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__6__Impl_in_rule__PeriodicActivity__Group__61206);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__6__Impl_in_rule__PeriodicActivity__Group__61247);
             rule__PeriodicActivity__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__7_in_rule__PeriodicActivity__Group__61209);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__7_in_rule__PeriodicActivity__Group__61250);
             rule__PeriodicActivity__Group__7();
 
             state._fsp--;
@@ -1581,31 +1659,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__6__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:615:1: rule__PeriodicActivity__Group__6__Impl : ( ( rule__PeriodicActivity__StartAssignment_6 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:629:1: rule__PeriodicActivity__Group__6__Impl : ( 'from' ) ;
     public final void rule__PeriodicActivity__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:619:1: ( ( ( rule__PeriodicActivity__StartAssignment_6 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:620:1: ( ( rule__PeriodicActivity__StartAssignment_6 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:633:1: ( ( 'from' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:634:1: ( 'from' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:620:1: ( ( rule__PeriodicActivity__StartAssignment_6 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:621:1: ( rule__PeriodicActivity__StartAssignment_6 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:634:1: ( 'from' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:635:1: 'from'
             {
-             before(grammarAccess.getPeriodicActivityAccess().getStartAssignment_6()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:622:1: ( rule__PeriodicActivity__StartAssignment_6 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:622:2: rule__PeriodicActivity__StartAssignment_6
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__StartAssignment_6_in_rule__PeriodicActivity__Group__6__Impl1236);
-            rule__PeriodicActivity__StartAssignment_6();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPeriodicActivityAccess().getStartAssignment_6()); 
+             before(grammarAccess.getPeriodicActivityAccess().getFromKeyword_6()); 
+            match(input,19,FollowSets000.FOLLOW_19_in_rule__PeriodicActivity__Group__6__Impl1278); 
+             after(grammarAccess.getPeriodicActivityAccess().getFromKeyword_6()); 
 
             }
 
@@ -1628,21 +1696,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__7"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:632:1: rule__PeriodicActivity__Group__7 : rule__PeriodicActivity__Group__7__Impl rule__PeriodicActivity__Group__8 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:648:1: rule__PeriodicActivity__Group__7 : rule__PeriodicActivity__Group__7__Impl rule__PeriodicActivity__Group__8 ;
     public final void rule__PeriodicActivity__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:636:1: ( rule__PeriodicActivity__Group__7__Impl rule__PeriodicActivity__Group__8 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:637:2: rule__PeriodicActivity__Group__7__Impl rule__PeriodicActivity__Group__8
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:652:1: ( rule__PeriodicActivity__Group__7__Impl rule__PeriodicActivity__Group__8 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:653:2: rule__PeriodicActivity__Group__7__Impl rule__PeriodicActivity__Group__8
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__7__Impl_in_rule__PeriodicActivity__Group__71266);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__7__Impl_in_rule__PeriodicActivity__Group__71309);
             rule__PeriodicActivity__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__8_in_rule__PeriodicActivity__Group__71269);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__8_in_rule__PeriodicActivity__Group__71312);
             rule__PeriodicActivity__Group__8();
 
             state._fsp--;
@@ -1666,21 +1734,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__7__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:644:1: rule__PeriodicActivity__Group__7__Impl : ( ',' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:660:1: rule__PeriodicActivity__Group__7__Impl : ( ( rule__PeriodicActivity__StartAssignment_7 ) ) ;
     public final void rule__PeriodicActivity__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:648:1: ( ( ',' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:649:1: ( ',' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:664:1: ( ( ( rule__PeriodicActivity__StartAssignment_7 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:665:1: ( ( rule__PeriodicActivity__StartAssignment_7 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:649:1: ( ',' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:650:1: ','
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:665:1: ( ( rule__PeriodicActivity__StartAssignment_7 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:666:1: ( rule__PeriodicActivity__StartAssignment_7 )
             {
-             before(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_7()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__PeriodicActivity__Group__7__Impl1297); 
-             after(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_7()); 
+             before(grammarAccess.getPeriodicActivityAccess().getStartAssignment_7()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:667:1: ( rule__PeriodicActivity__StartAssignment_7 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:667:2: rule__PeriodicActivity__StartAssignment_7
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__StartAssignment_7_in_rule__PeriodicActivity__Group__7__Impl1339);
+            rule__PeriodicActivity__StartAssignment_7();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPeriodicActivityAccess().getStartAssignment_7()); 
 
             }
 
@@ -1703,21 +1781,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__8"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:663:1: rule__PeriodicActivity__Group__8 : rule__PeriodicActivity__Group__8__Impl rule__PeriodicActivity__Group__9 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:677:1: rule__PeriodicActivity__Group__8 : rule__PeriodicActivity__Group__8__Impl rule__PeriodicActivity__Group__9 ;
     public final void rule__PeriodicActivity__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:667:1: ( rule__PeriodicActivity__Group__8__Impl rule__PeriodicActivity__Group__9 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:668:2: rule__PeriodicActivity__Group__8__Impl rule__PeriodicActivity__Group__9
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:681:1: ( rule__PeriodicActivity__Group__8__Impl rule__PeriodicActivity__Group__9 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:682:2: rule__PeriodicActivity__Group__8__Impl rule__PeriodicActivity__Group__9
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__8__Impl_in_rule__PeriodicActivity__Group__81328);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__8__Impl_in_rule__PeriodicActivity__Group__81369);
             rule__PeriodicActivity__Group__8__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__9_in_rule__PeriodicActivity__Group__81331);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__9_in_rule__PeriodicActivity__Group__81372);
             rule__PeriodicActivity__Group__9();
 
             state._fsp--;
@@ -1741,21 +1819,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__8__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:675:1: rule__PeriodicActivity__Group__8__Impl : ( 'end' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:689:1: rule__PeriodicActivity__Group__8__Impl : ( 'to' ) ;
     public final void rule__PeriodicActivity__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:679:1: ( ( 'end' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:680:1: ( 'end' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:693:1: ( ( 'to' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:694:1: ( 'to' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:680:1: ( 'end' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:681:1: 'end'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:694:1: ( 'to' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:695:1: 'to'
             {
-             before(grammarAccess.getPeriodicActivityAccess().getEndKeyword_8()); 
-            match(input,20,FollowSets000.FOLLOW_20_in_rule__PeriodicActivity__Group__8__Impl1359); 
-             after(grammarAccess.getPeriodicActivityAccess().getEndKeyword_8()); 
+             before(grammarAccess.getPeriodicActivityAccess().getToKeyword_8()); 
+            match(input,20,FollowSets000.FOLLOW_20_in_rule__PeriodicActivity__Group__8__Impl1400); 
+             after(grammarAccess.getPeriodicActivityAccess().getToKeyword_8()); 
 
             }
 
@@ -1778,21 +1856,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__9"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:694:1: rule__PeriodicActivity__Group__9 : rule__PeriodicActivity__Group__9__Impl rule__PeriodicActivity__Group__10 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:708:1: rule__PeriodicActivity__Group__9 : rule__PeriodicActivity__Group__9__Impl rule__PeriodicActivity__Group__10 ;
     public final void rule__PeriodicActivity__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:698:1: ( rule__PeriodicActivity__Group__9__Impl rule__PeriodicActivity__Group__10 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:699:2: rule__PeriodicActivity__Group__9__Impl rule__PeriodicActivity__Group__10
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:712:1: ( rule__PeriodicActivity__Group__9__Impl rule__PeriodicActivity__Group__10 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:713:2: rule__PeriodicActivity__Group__9__Impl rule__PeriodicActivity__Group__10
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__9__Impl_in_rule__PeriodicActivity__Group__91390);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__9__Impl_in_rule__PeriodicActivity__Group__91431);
             rule__PeriodicActivity__Group__9__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__10_in_rule__PeriodicActivity__Group__91393);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__10_in_rule__PeriodicActivity__Group__91434);
             rule__PeriodicActivity__Group__10();
 
             state._fsp--;
@@ -1816,31 +1894,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__9__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:706:1: rule__PeriodicActivity__Group__9__Impl : ( ( rule__PeriodicActivity__EndAssignment_9 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:720:1: rule__PeriodicActivity__Group__9__Impl : ( 'end' ) ;
     public final void rule__PeriodicActivity__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:710:1: ( ( ( rule__PeriodicActivity__EndAssignment_9 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:711:1: ( ( rule__PeriodicActivity__EndAssignment_9 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:724:1: ( ( 'end' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:725:1: ( 'end' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:711:1: ( ( rule__PeriodicActivity__EndAssignment_9 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:712:1: ( rule__PeriodicActivity__EndAssignment_9 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:725:1: ( 'end' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:726:1: 'end'
             {
-             before(grammarAccess.getPeriodicActivityAccess().getEndAssignment_9()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:713:1: ( rule__PeriodicActivity__EndAssignment_9 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:713:2: rule__PeriodicActivity__EndAssignment_9
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__EndAssignment_9_in_rule__PeriodicActivity__Group__9__Impl1420);
-            rule__PeriodicActivity__EndAssignment_9();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPeriodicActivityAccess().getEndAssignment_9()); 
+             before(grammarAccess.getPeriodicActivityAccess().getEndKeyword_9()); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__PeriodicActivity__Group__9__Impl1462); 
+             after(grammarAccess.getPeriodicActivityAccess().getEndKeyword_9()); 
 
             }
 
@@ -1863,21 +1931,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__10"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:723:1: rule__PeriodicActivity__Group__10 : rule__PeriodicActivity__Group__10__Impl rule__PeriodicActivity__Group__11 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:739:1: rule__PeriodicActivity__Group__10 : rule__PeriodicActivity__Group__10__Impl rule__PeriodicActivity__Group__11 ;
     public final void rule__PeriodicActivity__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:727:1: ( rule__PeriodicActivity__Group__10__Impl rule__PeriodicActivity__Group__11 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:728:2: rule__PeriodicActivity__Group__10__Impl rule__PeriodicActivity__Group__11
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:743:1: ( rule__PeriodicActivity__Group__10__Impl rule__PeriodicActivity__Group__11 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:744:2: rule__PeriodicActivity__Group__10__Impl rule__PeriodicActivity__Group__11
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__10__Impl_in_rule__PeriodicActivity__Group__101450);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__10__Impl_in_rule__PeriodicActivity__Group__101493);
             rule__PeriodicActivity__Group__10__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__11_in_rule__PeriodicActivity__Group__101453);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__11_in_rule__PeriodicActivity__Group__101496);
             rule__PeriodicActivity__Group__11();
 
             state._fsp--;
@@ -1901,21 +1969,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__10__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:735:1: rule__PeriodicActivity__Group__10__Impl : ( ',' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:751:1: rule__PeriodicActivity__Group__10__Impl : ( ( rule__PeriodicActivity__EndAssignment_10 ) ) ;
     public final void rule__PeriodicActivity__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:739:1: ( ( ',' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:740:1: ( ',' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:755:1: ( ( ( rule__PeriodicActivity__EndAssignment_10 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:756:1: ( ( rule__PeriodicActivity__EndAssignment_10 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:740:1: ( ',' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:741:1: ','
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:756:1: ( ( rule__PeriodicActivity__EndAssignment_10 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:757:1: ( rule__PeriodicActivity__EndAssignment_10 )
             {
-             before(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_10()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__PeriodicActivity__Group__10__Impl1481); 
-             after(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_10()); 
+             before(grammarAccess.getPeriodicActivityAccess().getEndAssignment_10()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:758:1: ( rule__PeriodicActivity__EndAssignment_10 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:758:2: rule__PeriodicActivity__EndAssignment_10
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__EndAssignment_10_in_rule__PeriodicActivity__Group__10__Impl1523);
+            rule__PeriodicActivity__EndAssignment_10();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPeriodicActivityAccess().getEndAssignment_10()); 
 
             }
 
@@ -1938,21 +2016,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__11"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:754:1: rule__PeriodicActivity__Group__11 : rule__PeriodicActivity__Group__11__Impl rule__PeriodicActivity__Group__12 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:768:1: rule__PeriodicActivity__Group__11 : rule__PeriodicActivity__Group__11__Impl rule__PeriodicActivity__Group__12 ;
     public final void rule__PeriodicActivity__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:758:1: ( rule__PeriodicActivity__Group__11__Impl rule__PeriodicActivity__Group__12 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:759:2: rule__PeriodicActivity__Group__11__Impl rule__PeriodicActivity__Group__12
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:772:1: ( rule__PeriodicActivity__Group__11__Impl rule__PeriodicActivity__Group__12 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:773:2: rule__PeriodicActivity__Group__11__Impl rule__PeriodicActivity__Group__12
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__11__Impl_in_rule__PeriodicActivity__Group__111512);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__11__Impl_in_rule__PeriodicActivity__Group__111553);
             rule__PeriodicActivity__Group__11__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__12_in_rule__PeriodicActivity__Group__111515);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__12_in_rule__PeriodicActivity__Group__111556);
             rule__PeriodicActivity__Group__12();
 
             state._fsp--;
@@ -1976,42 +2054,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__11__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:766:1: rule__PeriodicActivity__Group__11__Impl : ( ( rule__PeriodicActivity__Group_11__0 )? ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:780:1: rule__PeriodicActivity__Group__11__Impl : ( ',' ) ;
     public final void rule__PeriodicActivity__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:770:1: ( ( ( rule__PeriodicActivity__Group_11__0 )? ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:771:1: ( ( rule__PeriodicActivity__Group_11__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:784:1: ( ( ',' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:785:1: ( ',' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:771:1: ( ( rule__PeriodicActivity__Group_11__0 )? )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:772:1: ( rule__PeriodicActivity__Group_11__0 )?
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:785:1: ( ',' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:786:1: ','
             {
-             before(grammarAccess.getPeriodicActivityAccess().getGroup_11()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:773:1: ( rule__PeriodicActivity__Group_11__0 )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==23) ) {
-                alt4=1;
-            }
-            switch (alt4) {
-                case 1 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:773:2: rule__PeriodicActivity__Group_11__0
-                    {
-                    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_11__0_in_rule__PeriodicActivity__Group__11__Impl1542);
-                    rule__PeriodicActivity__Group_11__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getPeriodicActivityAccess().getGroup_11()); 
+             before(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_11()); 
+            match(input,22,FollowSets000.FOLLOW_22_in_rule__PeriodicActivity__Group__11__Impl1584); 
+             after(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_11()); 
 
             }
 
@@ -2034,21 +2091,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__12"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:783:1: rule__PeriodicActivity__Group__12 : rule__PeriodicActivity__Group__12__Impl rule__PeriodicActivity__Group__13 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:799:1: rule__PeriodicActivity__Group__12 : rule__PeriodicActivity__Group__12__Impl rule__PeriodicActivity__Group__13 ;
     public final void rule__PeriodicActivity__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:787:1: ( rule__PeriodicActivity__Group__12__Impl rule__PeriodicActivity__Group__13 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:788:2: rule__PeriodicActivity__Group__12__Impl rule__PeriodicActivity__Group__13
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:803:1: ( rule__PeriodicActivity__Group__12__Impl rule__PeriodicActivity__Group__13 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:804:2: rule__PeriodicActivity__Group__12__Impl rule__PeriodicActivity__Group__13
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__12__Impl_in_rule__PeriodicActivity__Group__121573);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__12__Impl_in_rule__PeriodicActivity__Group__121615);
             rule__PeriodicActivity__Group__12__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__13_in_rule__PeriodicActivity__Group__121576);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__13_in_rule__PeriodicActivity__Group__121618);
             rule__PeriodicActivity__Group__13();
 
             state._fsp--;
@@ -2072,31 +2129,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__12__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:795:1: rule__PeriodicActivity__Group__12__Impl : ( ( rule__PeriodicActivity__Group_12__0 )? ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:811:1: rule__PeriodicActivity__Group__12__Impl : ( ( rule__PeriodicActivity__Group_12__0 )? ) ;
     public final void rule__PeriodicActivity__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:799:1: ( ( ( rule__PeriodicActivity__Group_12__0 )? ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:800:1: ( ( rule__PeriodicActivity__Group_12__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:815:1: ( ( ( rule__PeriodicActivity__Group_12__0 )? ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:816:1: ( ( rule__PeriodicActivity__Group_12__0 )? )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:800:1: ( ( rule__PeriodicActivity__Group_12__0 )? )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:801:1: ( rule__PeriodicActivity__Group_12__0 )?
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:816:1: ( ( rule__PeriodicActivity__Group_12__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:817:1: ( rule__PeriodicActivity__Group_12__0 )?
             {
              before(grammarAccess.getPeriodicActivityAccess().getGroup_12()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:802:1: ( rule__PeriodicActivity__Group_12__0 )?
-            int alt5=2;
-            int LA5_0 = input.LA(1);
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:818:1: ( rule__PeriodicActivity__Group_12__0 )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA5_0==24) ) {
-                alt5=1;
+            if ( (LA4_0==25) ) {
+                alt4=1;
             }
-            switch (alt5) {
+            switch (alt4) {
                 case 1 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:802:2: rule__PeriodicActivity__Group_12__0
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:818:2: rule__PeriodicActivity__Group_12__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__0_in_rule__PeriodicActivity__Group__12__Impl1603);
+                    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__0_in_rule__PeriodicActivity__Group__12__Impl1645);
                     rule__PeriodicActivity__Group_12__0();
 
                     state._fsp--;
@@ -2130,21 +2187,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__13"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:812:1: rule__PeriodicActivity__Group__13 : rule__PeriodicActivity__Group__13__Impl rule__PeriodicActivity__Group__14 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:828:1: rule__PeriodicActivity__Group__13 : rule__PeriodicActivity__Group__13__Impl rule__PeriodicActivity__Group__14 ;
     public final void rule__PeriodicActivity__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:816:1: ( rule__PeriodicActivity__Group__13__Impl rule__PeriodicActivity__Group__14 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:817:2: rule__PeriodicActivity__Group__13__Impl rule__PeriodicActivity__Group__14
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:832:1: ( rule__PeriodicActivity__Group__13__Impl rule__PeriodicActivity__Group__14 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:833:2: rule__PeriodicActivity__Group__13__Impl rule__PeriodicActivity__Group__14
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__13__Impl_in_rule__PeriodicActivity__Group__131634);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__13__Impl_in_rule__PeriodicActivity__Group__131676);
             rule__PeriodicActivity__Group__13__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__14_in_rule__PeriodicActivity__Group__131637);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__14_in_rule__PeriodicActivity__Group__131679);
             rule__PeriodicActivity__Group__14();
 
             state._fsp--;
@@ -2168,31 +2225,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__13__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:824:1: rule__PeriodicActivity__Group__13__Impl : ( ( rule__PeriodicActivity__Group_13__0 )? ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:840:1: rule__PeriodicActivity__Group__13__Impl : ( ( rule__PeriodicActivity__Group_13__0 )? ) ;
     public final void rule__PeriodicActivity__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:828:1: ( ( ( rule__PeriodicActivity__Group_13__0 )? ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:829:1: ( ( rule__PeriodicActivity__Group_13__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:844:1: ( ( ( rule__PeriodicActivity__Group_13__0 )? ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:845:1: ( ( rule__PeriodicActivity__Group_13__0 )? )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:829:1: ( ( rule__PeriodicActivity__Group_13__0 )? )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:830:1: ( rule__PeriodicActivity__Group_13__0 )?
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:845:1: ( ( rule__PeriodicActivity__Group_13__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:846:1: ( rule__PeriodicActivity__Group_13__0 )?
             {
              before(grammarAccess.getPeriodicActivityAccess().getGroup_13()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:831:1: ( rule__PeriodicActivity__Group_13__0 )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:847:1: ( rule__PeriodicActivity__Group_13__0 )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA6_0==26) ) {
-                alt6=1;
+            if ( (LA5_0==26) ) {
+                alt5=1;
             }
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:831:2: rule__PeriodicActivity__Group_13__0
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:847:2: rule__PeriodicActivity__Group_13__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__0_in_rule__PeriodicActivity__Group__13__Impl1664);
+                    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__0_in_rule__PeriodicActivity__Group__13__Impl1706);
                     rule__PeriodicActivity__Group_13__0();
 
                     state._fsp--;
@@ -2226,17 +2283,22 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__14"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:841:1: rule__PeriodicActivity__Group__14 : rule__PeriodicActivity__Group__14__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:857:1: rule__PeriodicActivity__Group__14 : rule__PeriodicActivity__Group__14__Impl rule__PeriodicActivity__Group__15 ;
     public final void rule__PeriodicActivity__Group__14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:845:1: ( rule__PeriodicActivity__Group__14__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:846:2: rule__PeriodicActivity__Group__14__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:861:1: ( rule__PeriodicActivity__Group__14__Impl rule__PeriodicActivity__Group__15 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:862:2: rule__PeriodicActivity__Group__14__Impl rule__PeriodicActivity__Group__15
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__14__Impl_in_rule__PeriodicActivity__Group__141695);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__14__Impl_in_rule__PeriodicActivity__Group__141737);
             rule__PeriodicActivity__Group__14__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__15_in_rule__PeriodicActivity__Group__141740);
+            rule__PeriodicActivity__Group__15();
 
             state._fsp--;
 
@@ -2259,21 +2321,42 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group__14__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:852:1: rule__PeriodicActivity__Group__14__Impl : ( '}' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:869:1: rule__PeriodicActivity__Group__14__Impl : ( ( rule__PeriodicActivity__Group_14__0 )? ) ;
     public final void rule__PeriodicActivity__Group__14__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:856:1: ( ( '}' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:857:1: ( '}' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:873:1: ( ( ( rule__PeriodicActivity__Group_14__0 )? ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:874:1: ( ( rule__PeriodicActivity__Group_14__0 )? )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:857:1: ( '}' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:858:1: '}'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:874:1: ( ( rule__PeriodicActivity__Group_14__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:875:1: ( rule__PeriodicActivity__Group_14__0 )?
             {
-             before(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_14()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__PeriodicActivity__Group__14__Impl1723); 
-             after(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_14()); 
+             before(grammarAccess.getPeriodicActivityAccess().getGroup_14()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:876:1: ( rule__PeriodicActivity__Group_14__0 )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==28) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:876:2: rule__PeriodicActivity__Group_14__0
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14__0_in_rule__PeriodicActivity__Group__14__Impl1767);
+                    rule__PeriodicActivity__Group_14__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getPeriodicActivityAccess().getGroup_14()); 
 
             }
 
@@ -2295,22 +2378,92 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__PeriodicActivity__Group__14__Impl"
 
 
+    // $ANTLR start "rule__PeriodicActivity__Group__15"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:886:1: rule__PeriodicActivity__Group__15 : rule__PeriodicActivity__Group__15__Impl ;
+    public final void rule__PeriodicActivity__Group__15() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:890:1: ( rule__PeriodicActivity__Group__15__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:891:2: rule__PeriodicActivity__Group__15__Impl
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group__15__Impl_in_rule__PeriodicActivity__Group__151798);
+            rule__PeriodicActivity__Group__15__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group__15"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group__15__Impl"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:897:1: rule__PeriodicActivity__Group__15__Impl : ( '}' ) ;
+    public final void rule__PeriodicActivity__Group__15__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:901:1: ( ( '}' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:902:1: ( '}' )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:902:1: ( '}' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:903:1: '}'
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_15()); 
+            match(input,23,FollowSets000.FOLLOW_23_in_rule__PeriodicActivity__Group__15__Impl1826); 
+             after(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_15()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group__15__Impl"
+
+
     // $ANTLR start "rule__PeriodicActivity__Group_4__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:901:1: rule__PeriodicActivity__Group_4__0 : rule__PeriodicActivity__Group_4__0__Impl rule__PeriodicActivity__Group_4__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:948:1: rule__PeriodicActivity__Group_4__0 : rule__PeriodicActivity__Group_4__0__Impl rule__PeriodicActivity__Group_4__1 ;
     public final void rule__PeriodicActivity__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:905:1: ( rule__PeriodicActivity__Group_4__0__Impl rule__PeriodicActivity__Group_4__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:906:2: rule__PeriodicActivity__Group_4__0__Impl rule__PeriodicActivity__Group_4__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:952:1: ( rule__PeriodicActivity__Group_4__0__Impl rule__PeriodicActivity__Group_4__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:953:2: rule__PeriodicActivity__Group_4__0__Impl rule__PeriodicActivity__Group_4__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__0__Impl_in_rule__PeriodicActivity__Group_4__01784);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__0__Impl_in_rule__PeriodicActivity__Group_4__01889);
             rule__PeriodicActivity__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__1_in_rule__PeriodicActivity__Group_4__01787);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__1_in_rule__PeriodicActivity__Group_4__01892);
             rule__PeriodicActivity__Group_4__1();
 
             state._fsp--;
@@ -2334,20 +2487,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_4__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:913:1: rule__PeriodicActivity__Group_4__0__Impl : ( 'atelier' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:960:1: rule__PeriodicActivity__Group_4__0__Impl : ( 'atelier' ) ;
     public final void rule__PeriodicActivity__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:917:1: ( ( 'atelier' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:918:1: ( 'atelier' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:964:1: ( ( 'atelier' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:965:1: ( 'atelier' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:918:1: ( 'atelier' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:919:1: 'atelier'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:965:1: ( 'atelier' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:966:1: 'atelier'
             {
              before(grammarAccess.getPeriodicActivityAccess().getAtelierKeyword_4_0()); 
-            match(input,22,FollowSets000.FOLLOW_22_in_rule__PeriodicActivity__Group_4__0__Impl1815); 
+            match(input,24,FollowSets000.FOLLOW_24_in_rule__PeriodicActivity__Group_4__0__Impl1920); 
              after(grammarAccess.getPeriodicActivityAccess().getAtelierKeyword_4_0()); 
 
             }
@@ -2371,21 +2524,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_4__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:932:1: rule__PeriodicActivity__Group_4__1 : rule__PeriodicActivity__Group_4__1__Impl rule__PeriodicActivity__Group_4__2 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:979:1: rule__PeriodicActivity__Group_4__1 : rule__PeriodicActivity__Group_4__1__Impl rule__PeriodicActivity__Group_4__2 ;
     public final void rule__PeriodicActivity__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:936:1: ( rule__PeriodicActivity__Group_4__1__Impl rule__PeriodicActivity__Group_4__2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:937:2: rule__PeriodicActivity__Group_4__1__Impl rule__PeriodicActivity__Group_4__2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:983:1: ( rule__PeriodicActivity__Group_4__1__Impl rule__PeriodicActivity__Group_4__2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:984:2: rule__PeriodicActivity__Group_4__1__Impl rule__PeriodicActivity__Group_4__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__1__Impl_in_rule__PeriodicActivity__Group_4__11846);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__1__Impl_in_rule__PeriodicActivity__Group_4__11951);
             rule__PeriodicActivity__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__2_in_rule__PeriodicActivity__Group_4__11849);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__2_in_rule__PeriodicActivity__Group_4__11954);
             rule__PeriodicActivity__Group_4__2();
 
             state._fsp--;
@@ -2409,23 +2562,23 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_4__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:944:1: rule__PeriodicActivity__Group_4__1__Impl : ( ( rule__PeriodicActivity__AtelierAssignment_4_1 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:991:1: rule__PeriodicActivity__Group_4__1__Impl : ( ( rule__PeriodicActivity__AtelierAssignment_4_1 ) ) ;
     public final void rule__PeriodicActivity__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:948:1: ( ( ( rule__PeriodicActivity__AtelierAssignment_4_1 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:949:1: ( ( rule__PeriodicActivity__AtelierAssignment_4_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:995:1: ( ( ( rule__PeriodicActivity__AtelierAssignment_4_1 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:996:1: ( ( rule__PeriodicActivity__AtelierAssignment_4_1 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:949:1: ( ( rule__PeriodicActivity__AtelierAssignment_4_1 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:950:1: ( rule__PeriodicActivity__AtelierAssignment_4_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:996:1: ( ( rule__PeriodicActivity__AtelierAssignment_4_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:997:1: ( rule__PeriodicActivity__AtelierAssignment_4_1 )
             {
              before(grammarAccess.getPeriodicActivityAccess().getAtelierAssignment_4_1()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:951:1: ( rule__PeriodicActivity__AtelierAssignment_4_1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:951:2: rule__PeriodicActivity__AtelierAssignment_4_1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:998:1: ( rule__PeriodicActivity__AtelierAssignment_4_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:998:2: rule__PeriodicActivity__AtelierAssignment_4_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__AtelierAssignment_4_1_in_rule__PeriodicActivity__Group_4__1__Impl1876);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__AtelierAssignment_4_1_in_rule__PeriodicActivity__Group_4__1__Impl1981);
             rule__PeriodicActivity__AtelierAssignment_4_1();
 
             state._fsp--;
@@ -2456,16 +2609,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_4__2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:961:1: rule__PeriodicActivity__Group_4__2 : rule__PeriodicActivity__Group_4__2__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1008:1: rule__PeriodicActivity__Group_4__2 : rule__PeriodicActivity__Group_4__2__Impl ;
     public final void rule__PeriodicActivity__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:965:1: ( rule__PeriodicActivity__Group_4__2__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:966:2: rule__PeriodicActivity__Group_4__2__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1012:1: ( rule__PeriodicActivity__Group_4__2__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1013:2: rule__PeriodicActivity__Group_4__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__2__Impl_in_rule__PeriodicActivity__Group_4__21906);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_4__2__Impl_in_rule__PeriodicActivity__Group_4__22011);
             rule__PeriodicActivity__Group_4__2__Impl();
 
             state._fsp--;
@@ -2489,20 +2642,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_4__2__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:972:1: rule__PeriodicActivity__Group_4__2__Impl : ( ',' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1019:1: rule__PeriodicActivity__Group_4__2__Impl : ( ',' ) ;
     public final void rule__PeriodicActivity__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:976:1: ( ( ',' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:977:1: ( ',' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1023:1: ( ( ',' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1024:1: ( ',' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:977:1: ( ',' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:978:1: ','
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1024:1: ( ',' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1025:1: ','
             {
              before(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_4_2()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__PeriodicActivity__Group_4__2__Impl1934); 
+            match(input,22,FollowSets000.FOLLOW_22_in_rule__PeriodicActivity__Group_4__2__Impl2039); 
              after(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_4_2()); 
 
             }
@@ -2525,177 +2678,22 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__PeriodicActivity__Group_4__2__Impl"
 
 
-    // $ANTLR start "rule__PeriodicActivity__Group_11__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:997:1: rule__PeriodicActivity__Group_11__0 : rule__PeriodicActivity__Group_11__0__Impl rule__PeriodicActivity__Group_11__1 ;
-    public final void rule__PeriodicActivity__Group_11__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1001:1: ( rule__PeriodicActivity__Group_11__0__Impl rule__PeriodicActivity__Group_11__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1002:2: rule__PeriodicActivity__Group_11__0__Impl rule__PeriodicActivity__Group_11__1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_11__0__Impl_in_rule__PeriodicActivity__Group_11__01971);
-            rule__PeriodicActivity__Group_11__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_11__1_in_rule__PeriodicActivity__Group_11__01974);
-            rule__PeriodicActivity__Group_11__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_11__0"
-
-
-    // $ANTLR start "rule__PeriodicActivity__Group_11__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1009:1: rule__PeriodicActivity__Group_11__0__Impl : ( 'every' ) ;
-    public final void rule__PeriodicActivity__Group_11__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1013:1: ( ( 'every' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1014:1: ( 'every' )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1014:1: ( 'every' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1015:1: 'every'
-            {
-             before(grammarAccess.getPeriodicActivityAccess().getEveryKeyword_11_0()); 
-            match(input,23,FollowSets000.FOLLOW_23_in_rule__PeriodicActivity__Group_11__0__Impl2002); 
-             after(grammarAccess.getPeriodicActivityAccess().getEveryKeyword_11_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_11__0__Impl"
-
-
-    // $ANTLR start "rule__PeriodicActivity__Group_11__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1028:1: rule__PeriodicActivity__Group_11__1 : rule__PeriodicActivity__Group_11__1__Impl ;
-    public final void rule__PeriodicActivity__Group_11__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1032:1: ( rule__PeriodicActivity__Group_11__1__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1033:2: rule__PeriodicActivity__Group_11__1__Impl
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_11__1__Impl_in_rule__PeriodicActivity__Group_11__12033);
-            rule__PeriodicActivity__Group_11__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_11__1"
-
-
-    // $ANTLR start "rule__PeriodicActivity__Group_11__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1039:1: rule__PeriodicActivity__Group_11__1__Impl : ( ( rule__PeriodicActivity__Alternatives_11_1 ) ) ;
-    public final void rule__PeriodicActivity__Group_11__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1043:1: ( ( ( rule__PeriodicActivity__Alternatives_11_1 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1044:1: ( ( rule__PeriodicActivity__Alternatives_11_1 ) )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1044:1: ( ( rule__PeriodicActivity__Alternatives_11_1 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1045:1: ( rule__PeriodicActivity__Alternatives_11_1 )
-            {
-             before(grammarAccess.getPeriodicActivityAccess().getAlternatives_11_1()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1046:1: ( rule__PeriodicActivity__Alternatives_11_1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1046:2: rule__PeriodicActivity__Alternatives_11_1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Alternatives_11_1_in_rule__PeriodicActivity__Group_11__1__Impl2060);
-            rule__PeriodicActivity__Alternatives_11_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPeriodicActivityAccess().getAlternatives_11_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_11__1__Impl"
-
-
     // $ANTLR start "rule__PeriodicActivity__Group_12__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1060:1: rule__PeriodicActivity__Group_12__0 : rule__PeriodicActivity__Group_12__0__Impl rule__PeriodicActivity__Group_12__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1044:1: rule__PeriodicActivity__Group_12__0 : rule__PeriodicActivity__Group_12__0__Impl rule__PeriodicActivity__Group_12__1 ;
     public final void rule__PeriodicActivity__Group_12__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1064:1: ( rule__PeriodicActivity__Group_12__0__Impl rule__PeriodicActivity__Group_12__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1065:2: rule__PeriodicActivity__Group_12__0__Impl rule__PeriodicActivity__Group_12__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1048:1: ( rule__PeriodicActivity__Group_12__0__Impl rule__PeriodicActivity__Group_12__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1049:2: rule__PeriodicActivity__Group_12__0__Impl rule__PeriodicActivity__Group_12__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__0__Impl_in_rule__PeriodicActivity__Group_12__02094);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__0__Impl_in_rule__PeriodicActivity__Group_12__02076);
             rule__PeriodicActivity__Group_12__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__1_in_rule__PeriodicActivity__Group_12__02097);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__1_in_rule__PeriodicActivity__Group_12__02079);
             rule__PeriodicActivity__Group_12__1();
 
             state._fsp--;
@@ -2719,21 +2717,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_12__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1072:1: rule__PeriodicActivity__Group_12__0__Impl : ( 'allocate' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1056:1: rule__PeriodicActivity__Group_12__0__Impl : ( 'every' ) ;
     public final void rule__PeriodicActivity__Group_12__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1076:1: ( ( 'allocate' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1077:1: ( 'allocate' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1060:1: ( ( 'every' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1061:1: ( 'every' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1077:1: ( 'allocate' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1078:1: 'allocate'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1061:1: ( 'every' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1062:1: 'every'
             {
-             before(grammarAccess.getPeriodicActivityAccess().getAllocateKeyword_12_0()); 
-            match(input,24,FollowSets000.FOLLOW_24_in_rule__PeriodicActivity__Group_12__0__Impl2125); 
-             after(grammarAccess.getPeriodicActivityAccess().getAllocateKeyword_12_0()); 
+             before(grammarAccess.getPeriodicActivityAccess().getEveryKeyword_12_0()); 
+            match(input,25,FollowSets000.FOLLOW_25_in_rule__PeriodicActivity__Group_12__0__Impl2107); 
+             after(grammarAccess.getPeriodicActivityAccess().getEveryKeyword_12_0()); 
 
             }
 
@@ -2756,21 +2754,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_12__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1091:1: rule__PeriodicActivity__Group_12__1 : rule__PeriodicActivity__Group_12__1__Impl rule__PeriodicActivity__Group_12__2 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1075:1: rule__PeriodicActivity__Group_12__1 : rule__PeriodicActivity__Group_12__1__Impl rule__PeriodicActivity__Group_12__2 ;
     public final void rule__PeriodicActivity__Group_12__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1095:1: ( rule__PeriodicActivity__Group_12__1__Impl rule__PeriodicActivity__Group_12__2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1096:2: rule__PeriodicActivity__Group_12__1__Impl rule__PeriodicActivity__Group_12__2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1079:1: ( rule__PeriodicActivity__Group_12__1__Impl rule__PeriodicActivity__Group_12__2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1080:2: rule__PeriodicActivity__Group_12__1__Impl rule__PeriodicActivity__Group_12__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__1__Impl_in_rule__PeriodicActivity__Group_12__12156);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__1__Impl_in_rule__PeriodicActivity__Group_12__12138);
             rule__PeriodicActivity__Group_12__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__2_in_rule__PeriodicActivity__Group_12__12159);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__2_in_rule__PeriodicActivity__Group_12__12141);
             rule__PeriodicActivity__Group_12__2();
 
             state._fsp--;
@@ -2794,21 +2792,42 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_12__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1103:1: rule__PeriodicActivity__Group_12__1__Impl : ( '{' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1087:1: rule__PeriodicActivity__Group_12__1__Impl : ( ( rule__PeriodicActivity__PeriodicityNumberAssignment_12_1 )? ) ;
     public final void rule__PeriodicActivity__Group_12__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1107:1: ( ( '{' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1108:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1091:1: ( ( ( rule__PeriodicActivity__PeriodicityNumberAssignment_12_1 )? ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1092:1: ( ( rule__PeriodicActivity__PeriodicityNumberAssignment_12_1 )? )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1108:1: ( '{' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1109:1: '{'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1092:1: ( ( rule__PeriodicActivity__PeriodicityNumberAssignment_12_1 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1093:1: ( rule__PeriodicActivity__PeriodicityNumberAssignment_12_1 )?
             {
-             before(grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_12_1()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__PeriodicActivity__Group_12__1__Impl2187); 
-             after(grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_12_1()); 
+             before(grammarAccess.getPeriodicActivityAccess().getPeriodicityNumberAssignment_12_1()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1094:1: ( rule__PeriodicActivity__PeriodicityNumberAssignment_12_1 )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==RULE_INT||LA7_0==34) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1094:2: rule__PeriodicActivity__PeriodicityNumberAssignment_12_1
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__PeriodicityNumberAssignment_12_1_in_rule__PeriodicActivity__Group_12__1__Impl2168);
+                    rule__PeriodicActivity__PeriodicityNumberAssignment_12_1();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getPeriodicActivityAccess().getPeriodicityNumberAssignment_12_1()); 
 
             }
 
@@ -2831,22 +2850,17 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_12__2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1122:1: rule__PeriodicActivity__Group_12__2 : rule__PeriodicActivity__Group_12__2__Impl rule__PeriodicActivity__Group_12__3 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1104:1: rule__PeriodicActivity__Group_12__2 : rule__PeriodicActivity__Group_12__2__Impl ;
     public final void rule__PeriodicActivity__Group_12__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1126:1: ( rule__PeriodicActivity__Group_12__2__Impl rule__PeriodicActivity__Group_12__3 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1127:2: rule__PeriodicActivity__Group_12__2__Impl rule__PeriodicActivity__Group_12__3
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1108:1: ( rule__PeriodicActivity__Group_12__2__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1109:2: rule__PeriodicActivity__Group_12__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__2__Impl_in_rule__PeriodicActivity__Group_12__22218);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__2__Impl_in_rule__PeriodicActivity__Group_12__22199);
             rule__PeriodicActivity__Group_12__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__3_in_rule__PeriodicActivity__Group_12__22221);
-            rule__PeriodicActivity__Group_12__3();
 
             state._fsp--;
 
@@ -2869,31 +2883,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_12__2__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1134:1: rule__PeriodicActivity__Group_12__2__Impl : ( ( rule__PeriodicActivity__ResAllocationAssignment_12_2 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1115:1: rule__PeriodicActivity__Group_12__2__Impl : ( ( rule__PeriodicActivity__PeriodicityTypeAssignment_12_2 ) ) ;
     public final void rule__PeriodicActivity__Group_12__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1138:1: ( ( ( rule__PeriodicActivity__ResAllocationAssignment_12_2 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1139:1: ( ( rule__PeriodicActivity__ResAllocationAssignment_12_2 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1119:1: ( ( ( rule__PeriodicActivity__PeriodicityTypeAssignment_12_2 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1120:1: ( ( rule__PeriodicActivity__PeriodicityTypeAssignment_12_2 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1139:1: ( ( rule__PeriodicActivity__ResAllocationAssignment_12_2 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1140:1: ( rule__PeriodicActivity__ResAllocationAssignment_12_2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1120:1: ( ( rule__PeriodicActivity__PeriodicityTypeAssignment_12_2 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1121:1: ( rule__PeriodicActivity__PeriodicityTypeAssignment_12_2 )
             {
-             before(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_12_2()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1141:1: ( rule__PeriodicActivity__ResAllocationAssignment_12_2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1141:2: rule__PeriodicActivity__ResAllocationAssignment_12_2
+             before(grammarAccess.getPeriodicActivityAccess().getPeriodicityTypeAssignment_12_2()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1122:1: ( rule__PeriodicActivity__PeriodicityTypeAssignment_12_2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1122:2: rule__PeriodicActivity__PeriodicityTypeAssignment_12_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__ResAllocationAssignment_12_2_in_rule__PeriodicActivity__Group_12__2__Impl2248);
-            rule__PeriodicActivity__ResAllocationAssignment_12_2();
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__PeriodicityTypeAssignment_12_2_in_rule__PeriodicActivity__Group_12__2__Impl2226);
+            rule__PeriodicActivity__PeriodicityTypeAssignment_12_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_12_2()); 
+             after(grammarAccess.getPeriodicActivityAccess().getPeriodicityTypeAssignment_12_2()); 
 
             }
 
@@ -2915,350 +2929,22 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__PeriodicActivity__Group_12__2__Impl"
 
 
-    // $ANTLR start "rule__PeriodicActivity__Group_12__3"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1151:1: rule__PeriodicActivity__Group_12__3 : rule__PeriodicActivity__Group_12__3__Impl rule__PeriodicActivity__Group_12__4 ;
-    public final void rule__PeriodicActivity__Group_12__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1155:1: ( rule__PeriodicActivity__Group_12__3__Impl rule__PeriodicActivity__Group_12__4 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1156:2: rule__PeriodicActivity__Group_12__3__Impl rule__PeriodicActivity__Group_12__4
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__3__Impl_in_rule__PeriodicActivity__Group_12__32278);
-            rule__PeriodicActivity__Group_12__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__4_in_rule__PeriodicActivity__Group_12__32281);
-            rule__PeriodicActivity__Group_12__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_12__3"
-
-
-    // $ANTLR start "rule__PeriodicActivity__Group_12__3__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1163:1: rule__PeriodicActivity__Group_12__3__Impl : ( ( rule__PeriodicActivity__Group_12_3__0 )* ) ;
-    public final void rule__PeriodicActivity__Group_12__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1167:1: ( ( ( rule__PeriodicActivity__Group_12_3__0 )* ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1168:1: ( ( rule__PeriodicActivity__Group_12_3__0 )* )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1168:1: ( ( rule__PeriodicActivity__Group_12_3__0 )* )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1169:1: ( rule__PeriodicActivity__Group_12_3__0 )*
-            {
-             before(grammarAccess.getPeriodicActivityAccess().getGroup_12_3()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1170:1: ( rule__PeriodicActivity__Group_12_3__0 )*
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
-
-                if ( (LA7_0==19) ) {
-                    alt7=1;
-                }
-
-
-                switch (alt7) {
-            	case 1 :
-            	    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1170:2: rule__PeriodicActivity__Group_12_3__0
-            	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12_3__0_in_rule__PeriodicActivity__Group_12__3__Impl2308);
-            	    rule__PeriodicActivity__Group_12_3__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop7;
-                }
-            } while (true);
-
-             after(grammarAccess.getPeriodicActivityAccess().getGroup_12_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_12__3__Impl"
-
-
-    // $ANTLR start "rule__PeriodicActivity__Group_12__4"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1180:1: rule__PeriodicActivity__Group_12__4 : rule__PeriodicActivity__Group_12__4__Impl ;
-    public final void rule__PeriodicActivity__Group_12__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1184:1: ( rule__PeriodicActivity__Group_12__4__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1185:2: rule__PeriodicActivity__Group_12__4__Impl
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12__4__Impl_in_rule__PeriodicActivity__Group_12__42339);
-            rule__PeriodicActivity__Group_12__4__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_12__4"
-
-
-    // $ANTLR start "rule__PeriodicActivity__Group_12__4__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1191:1: rule__PeriodicActivity__Group_12__4__Impl : ( '} ,' ) ;
-    public final void rule__PeriodicActivity__Group_12__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1195:1: ( ( '} ,' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1196:1: ( '} ,' )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1196:1: ( '} ,' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1197:1: '} ,'
-            {
-             before(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketSpaceCommaKeyword_12_4()); 
-            match(input,25,FollowSets000.FOLLOW_25_in_rule__PeriodicActivity__Group_12__4__Impl2367); 
-             after(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketSpaceCommaKeyword_12_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_12__4__Impl"
-
-
-    // $ANTLR start "rule__PeriodicActivity__Group_12_3__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1220:1: rule__PeriodicActivity__Group_12_3__0 : rule__PeriodicActivity__Group_12_3__0__Impl rule__PeriodicActivity__Group_12_3__1 ;
-    public final void rule__PeriodicActivity__Group_12_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1224:1: ( rule__PeriodicActivity__Group_12_3__0__Impl rule__PeriodicActivity__Group_12_3__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1225:2: rule__PeriodicActivity__Group_12_3__0__Impl rule__PeriodicActivity__Group_12_3__1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12_3__0__Impl_in_rule__PeriodicActivity__Group_12_3__02408);
-            rule__PeriodicActivity__Group_12_3__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12_3__1_in_rule__PeriodicActivity__Group_12_3__02411);
-            rule__PeriodicActivity__Group_12_3__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_12_3__0"
-
-
-    // $ANTLR start "rule__PeriodicActivity__Group_12_3__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1232:1: rule__PeriodicActivity__Group_12_3__0__Impl : ( ',' ) ;
-    public final void rule__PeriodicActivity__Group_12_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1236:1: ( ( ',' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1237:1: ( ',' )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1237:1: ( ',' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1238:1: ','
-            {
-             before(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_12_3_0()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__PeriodicActivity__Group_12_3__0__Impl2439); 
-             after(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_12_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_12_3__0__Impl"
-
-
-    // $ANTLR start "rule__PeriodicActivity__Group_12_3__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1251:1: rule__PeriodicActivity__Group_12_3__1 : rule__PeriodicActivity__Group_12_3__1__Impl ;
-    public final void rule__PeriodicActivity__Group_12_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1255:1: ( rule__PeriodicActivity__Group_12_3__1__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1256:2: rule__PeriodicActivity__Group_12_3__1__Impl
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_12_3__1__Impl_in_rule__PeriodicActivity__Group_12_3__12470);
-            rule__PeriodicActivity__Group_12_3__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_12_3__1"
-
-
-    // $ANTLR start "rule__PeriodicActivity__Group_12_3__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1262:1: rule__PeriodicActivity__Group_12_3__1__Impl : ( ( rule__PeriodicActivity__ResAllocationAssignment_12_3_1 ) ) ;
-    public final void rule__PeriodicActivity__Group_12_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1266:1: ( ( ( rule__PeriodicActivity__ResAllocationAssignment_12_3_1 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1267:1: ( ( rule__PeriodicActivity__ResAllocationAssignment_12_3_1 ) )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1267:1: ( ( rule__PeriodicActivity__ResAllocationAssignment_12_3_1 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1268:1: ( rule__PeriodicActivity__ResAllocationAssignment_12_3_1 )
-            {
-             before(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_12_3_1()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1269:1: ( rule__PeriodicActivity__ResAllocationAssignment_12_3_1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1269:2: rule__PeriodicActivity__ResAllocationAssignment_12_3_1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__ResAllocationAssignment_12_3_1_in_rule__PeriodicActivity__Group_12_3__1__Impl2497);
-            rule__PeriodicActivity__ResAllocationAssignment_12_3_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_12_3_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__Group_12_3__1__Impl"
-
-
     // $ANTLR start "rule__PeriodicActivity__Group_13__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1283:1: rule__PeriodicActivity__Group_13__0 : rule__PeriodicActivity__Group_13__0__Impl rule__PeriodicActivity__Group_13__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1138:1: rule__PeriodicActivity__Group_13__0 : rule__PeriodicActivity__Group_13__0__Impl rule__PeriodicActivity__Group_13__1 ;
     public final void rule__PeriodicActivity__Group_13__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1287:1: ( rule__PeriodicActivity__Group_13__0__Impl rule__PeriodicActivity__Group_13__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1288:2: rule__PeriodicActivity__Group_13__0__Impl rule__PeriodicActivity__Group_13__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1142:1: ( rule__PeriodicActivity__Group_13__0__Impl rule__PeriodicActivity__Group_13__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1143:2: rule__PeriodicActivity__Group_13__0__Impl rule__PeriodicActivity__Group_13__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__0__Impl_in_rule__PeriodicActivity__Group_13__02531);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__0__Impl_in_rule__PeriodicActivity__Group_13__02262);
             rule__PeriodicActivity__Group_13__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__1_in_rule__PeriodicActivity__Group_13__02534);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__1_in_rule__PeriodicActivity__Group_13__02265);
             rule__PeriodicActivity__Group_13__1();
 
             state._fsp--;
@@ -3282,21 +2968,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1295:1: rule__PeriodicActivity__Group_13__0__Impl : ( 'rules' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1150:1: rule__PeriodicActivity__Group_13__0__Impl : ( 'allocate' ) ;
     public final void rule__PeriodicActivity__Group_13__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1299:1: ( ( 'rules' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1300:1: ( 'rules' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1154:1: ( ( 'allocate' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1155:1: ( 'allocate' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1300:1: ( 'rules' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1301:1: 'rules'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1155:1: ( 'allocate' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1156:1: 'allocate'
             {
-             before(grammarAccess.getPeriodicActivityAccess().getRulesKeyword_13_0()); 
-            match(input,26,FollowSets000.FOLLOW_26_in_rule__PeriodicActivity__Group_13__0__Impl2562); 
-             after(grammarAccess.getPeriodicActivityAccess().getRulesKeyword_13_0()); 
+             before(grammarAccess.getPeriodicActivityAccess().getAllocateKeyword_13_0()); 
+            match(input,26,FollowSets000.FOLLOW_26_in_rule__PeriodicActivity__Group_13__0__Impl2293); 
+             after(grammarAccess.getPeriodicActivityAccess().getAllocateKeyword_13_0()); 
 
             }
 
@@ -3319,21 +3005,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1314:1: rule__PeriodicActivity__Group_13__1 : rule__PeriodicActivity__Group_13__1__Impl rule__PeriodicActivity__Group_13__2 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1169:1: rule__PeriodicActivity__Group_13__1 : rule__PeriodicActivity__Group_13__1__Impl rule__PeriodicActivity__Group_13__2 ;
     public final void rule__PeriodicActivity__Group_13__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1318:1: ( rule__PeriodicActivity__Group_13__1__Impl rule__PeriodicActivity__Group_13__2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1319:2: rule__PeriodicActivity__Group_13__1__Impl rule__PeriodicActivity__Group_13__2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1173:1: ( rule__PeriodicActivity__Group_13__1__Impl rule__PeriodicActivity__Group_13__2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1174:2: rule__PeriodicActivity__Group_13__1__Impl rule__PeriodicActivity__Group_13__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__1__Impl_in_rule__PeriodicActivity__Group_13__12593);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__1__Impl_in_rule__PeriodicActivity__Group_13__12324);
             rule__PeriodicActivity__Group_13__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__2_in_rule__PeriodicActivity__Group_13__12596);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__2_in_rule__PeriodicActivity__Group_13__12327);
             rule__PeriodicActivity__Group_13__2();
 
             state._fsp--;
@@ -3357,20 +3043,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1326:1: rule__PeriodicActivity__Group_13__1__Impl : ( '{' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1181:1: rule__PeriodicActivity__Group_13__1__Impl : ( '{' ) ;
     public final void rule__PeriodicActivity__Group_13__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1330:1: ( ( '{' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1331:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1185:1: ( ( '{' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1186:1: ( '{' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1331:1: ( '{' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1332:1: '{'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1186:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1187:1: '{'
             {
              before(grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_13_1()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__PeriodicActivity__Group_13__1__Impl2624); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__PeriodicActivity__Group_13__1__Impl2355); 
              after(grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_13_1()); 
 
             }
@@ -3394,21 +3080,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13__2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1345:1: rule__PeriodicActivity__Group_13__2 : rule__PeriodicActivity__Group_13__2__Impl rule__PeriodicActivity__Group_13__3 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1200:1: rule__PeriodicActivity__Group_13__2 : rule__PeriodicActivity__Group_13__2__Impl rule__PeriodicActivity__Group_13__3 ;
     public final void rule__PeriodicActivity__Group_13__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1349:1: ( rule__PeriodicActivity__Group_13__2__Impl rule__PeriodicActivity__Group_13__3 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1350:2: rule__PeriodicActivity__Group_13__2__Impl rule__PeriodicActivity__Group_13__3
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1204:1: ( rule__PeriodicActivity__Group_13__2__Impl rule__PeriodicActivity__Group_13__3 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1205:2: rule__PeriodicActivity__Group_13__2__Impl rule__PeriodicActivity__Group_13__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__2__Impl_in_rule__PeriodicActivity__Group_13__22655);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__2__Impl_in_rule__PeriodicActivity__Group_13__22386);
             rule__PeriodicActivity__Group_13__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__3_in_rule__PeriodicActivity__Group_13__22658);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__3_in_rule__PeriodicActivity__Group_13__22389);
             rule__PeriodicActivity__Group_13__3();
 
             state._fsp--;
@@ -3432,31 +3118,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13__2__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1357:1: rule__PeriodicActivity__Group_13__2__Impl : ( ( rule__PeriodicActivity__RuleAssignment_13_2 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1212:1: rule__PeriodicActivity__Group_13__2__Impl : ( ( rule__PeriodicActivity__ResAllocationAssignment_13_2 ) ) ;
     public final void rule__PeriodicActivity__Group_13__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1361:1: ( ( ( rule__PeriodicActivity__RuleAssignment_13_2 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1362:1: ( ( rule__PeriodicActivity__RuleAssignment_13_2 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1216:1: ( ( ( rule__PeriodicActivity__ResAllocationAssignment_13_2 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1217:1: ( ( rule__PeriodicActivity__ResAllocationAssignment_13_2 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1362:1: ( ( rule__PeriodicActivity__RuleAssignment_13_2 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1363:1: ( rule__PeriodicActivity__RuleAssignment_13_2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1217:1: ( ( rule__PeriodicActivity__ResAllocationAssignment_13_2 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1218:1: ( rule__PeriodicActivity__ResAllocationAssignment_13_2 )
             {
-             before(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_13_2()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1364:1: ( rule__PeriodicActivity__RuleAssignment_13_2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1364:2: rule__PeriodicActivity__RuleAssignment_13_2
+             before(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_13_2()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1219:1: ( rule__PeriodicActivity__ResAllocationAssignment_13_2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1219:2: rule__PeriodicActivity__ResAllocationAssignment_13_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__RuleAssignment_13_2_in_rule__PeriodicActivity__Group_13__2__Impl2685);
-            rule__PeriodicActivity__RuleAssignment_13_2();
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__ResAllocationAssignment_13_2_in_rule__PeriodicActivity__Group_13__2__Impl2416);
+            rule__PeriodicActivity__ResAllocationAssignment_13_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_13_2()); 
+             after(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_13_2()); 
 
             }
 
@@ -3479,21 +3165,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13__3"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1374:1: rule__PeriodicActivity__Group_13__3 : rule__PeriodicActivity__Group_13__3__Impl rule__PeriodicActivity__Group_13__4 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1229:1: rule__PeriodicActivity__Group_13__3 : rule__PeriodicActivity__Group_13__3__Impl rule__PeriodicActivity__Group_13__4 ;
     public final void rule__PeriodicActivity__Group_13__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1378:1: ( rule__PeriodicActivity__Group_13__3__Impl rule__PeriodicActivity__Group_13__4 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1379:2: rule__PeriodicActivity__Group_13__3__Impl rule__PeriodicActivity__Group_13__4
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1233:1: ( rule__PeriodicActivity__Group_13__3__Impl rule__PeriodicActivity__Group_13__4 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1234:2: rule__PeriodicActivity__Group_13__3__Impl rule__PeriodicActivity__Group_13__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__3__Impl_in_rule__PeriodicActivity__Group_13__32715);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__3__Impl_in_rule__PeriodicActivity__Group_13__32446);
             rule__PeriodicActivity__Group_13__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__4_in_rule__PeriodicActivity__Group_13__32718);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__4_in_rule__PeriodicActivity__Group_13__32449);
             rule__PeriodicActivity__Group_13__4();
 
             state._fsp--;
@@ -3517,35 +3203,35 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13__3__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1386:1: rule__PeriodicActivity__Group_13__3__Impl : ( ( rule__PeriodicActivity__Group_13_3__0 )* ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1241:1: rule__PeriodicActivity__Group_13__3__Impl : ( ( rule__PeriodicActivity__Group_13_3__0 )* ) ;
     public final void rule__PeriodicActivity__Group_13__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1390:1: ( ( ( rule__PeriodicActivity__Group_13_3__0 )* ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1391:1: ( ( rule__PeriodicActivity__Group_13_3__0 )* )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1245:1: ( ( ( rule__PeriodicActivity__Group_13_3__0 )* ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1246:1: ( ( rule__PeriodicActivity__Group_13_3__0 )* )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1391:1: ( ( rule__PeriodicActivity__Group_13_3__0 )* )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1392:1: ( rule__PeriodicActivity__Group_13_3__0 )*
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1246:1: ( ( rule__PeriodicActivity__Group_13_3__0 )* )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1247:1: ( rule__PeriodicActivity__Group_13_3__0 )*
             {
              before(grammarAccess.getPeriodicActivityAccess().getGroup_13_3()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1393:1: ( rule__PeriodicActivity__Group_13_3__0 )*
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1248:1: ( rule__PeriodicActivity__Group_13_3__0 )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==19) ) {
+                if ( (LA8_0==22) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1393:2: rule__PeriodicActivity__Group_13_3__0
+            	    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1248:2: rule__PeriodicActivity__Group_13_3__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13_3__0_in_rule__PeriodicActivity__Group_13__3__Impl2745);
+            	    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13_3__0_in_rule__PeriodicActivity__Group_13__3__Impl2476);
             	    rule__PeriodicActivity__Group_13_3__0();
 
             	    state._fsp--;
@@ -3582,16 +3268,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13__4"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1403:1: rule__PeriodicActivity__Group_13__4 : rule__PeriodicActivity__Group_13__4__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1258:1: rule__PeriodicActivity__Group_13__4 : rule__PeriodicActivity__Group_13__4__Impl ;
     public final void rule__PeriodicActivity__Group_13__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1407:1: ( rule__PeriodicActivity__Group_13__4__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1408:2: rule__PeriodicActivity__Group_13__4__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1262:1: ( rule__PeriodicActivity__Group_13__4__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1263:2: rule__PeriodicActivity__Group_13__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__4__Impl_in_rule__PeriodicActivity__Group_13__42776);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13__4__Impl_in_rule__PeriodicActivity__Group_13__42507);
             rule__PeriodicActivity__Group_13__4__Impl();
 
             state._fsp--;
@@ -3615,21 +3301,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13__4__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1414:1: rule__PeriodicActivity__Group_13__4__Impl : ( '}' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1269:1: rule__PeriodicActivity__Group_13__4__Impl : ( '} ,' ) ;
     public final void rule__PeriodicActivity__Group_13__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1418:1: ( ( '}' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1419:1: ( '}' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1273:1: ( ( '} ,' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1274:1: ( '} ,' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1419:1: ( '}' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1420:1: '}'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1274:1: ( '} ,' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1275:1: '} ,'
             {
-             before(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_13_4()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__PeriodicActivity__Group_13__4__Impl2804); 
-             after(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_13_4()); 
+             before(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketSpaceCommaKeyword_13_4()); 
+            match(input,27,FollowSets000.FOLLOW_27_in_rule__PeriodicActivity__Group_13__4__Impl2535); 
+             after(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketSpaceCommaKeyword_13_4()); 
 
             }
 
@@ -3652,21 +3338,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13_3__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1443:1: rule__PeriodicActivity__Group_13_3__0 : rule__PeriodicActivity__Group_13_3__0__Impl rule__PeriodicActivity__Group_13_3__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1298:1: rule__PeriodicActivity__Group_13_3__0 : rule__PeriodicActivity__Group_13_3__0__Impl rule__PeriodicActivity__Group_13_3__1 ;
     public final void rule__PeriodicActivity__Group_13_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1447:1: ( rule__PeriodicActivity__Group_13_3__0__Impl rule__PeriodicActivity__Group_13_3__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1448:2: rule__PeriodicActivity__Group_13_3__0__Impl rule__PeriodicActivity__Group_13_3__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1302:1: ( rule__PeriodicActivity__Group_13_3__0__Impl rule__PeriodicActivity__Group_13_3__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1303:2: rule__PeriodicActivity__Group_13_3__0__Impl rule__PeriodicActivity__Group_13_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13_3__0__Impl_in_rule__PeriodicActivity__Group_13_3__02845);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13_3__0__Impl_in_rule__PeriodicActivity__Group_13_3__02576);
             rule__PeriodicActivity__Group_13_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13_3__1_in_rule__PeriodicActivity__Group_13_3__02848);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13_3__1_in_rule__PeriodicActivity__Group_13_3__02579);
             rule__PeriodicActivity__Group_13_3__1();
 
             state._fsp--;
@@ -3690,20 +3376,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13_3__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1455:1: rule__PeriodicActivity__Group_13_3__0__Impl : ( ',' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1310:1: rule__PeriodicActivity__Group_13_3__0__Impl : ( ',' ) ;
     public final void rule__PeriodicActivity__Group_13_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1459:1: ( ( ',' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1460:1: ( ',' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1314:1: ( ( ',' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1315:1: ( ',' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1460:1: ( ',' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1461:1: ','
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1315:1: ( ',' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1316:1: ','
             {
              before(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_13_3_0()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__PeriodicActivity__Group_13_3__0__Impl2876); 
+            match(input,22,FollowSets000.FOLLOW_22_in_rule__PeriodicActivity__Group_13_3__0__Impl2607); 
              after(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_13_3_0()); 
 
             }
@@ -3727,16 +3413,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13_3__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1474:1: rule__PeriodicActivity__Group_13_3__1 : rule__PeriodicActivity__Group_13_3__1__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1329:1: rule__PeriodicActivity__Group_13_3__1 : rule__PeriodicActivity__Group_13_3__1__Impl ;
     public final void rule__PeriodicActivity__Group_13_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1478:1: ( rule__PeriodicActivity__Group_13_3__1__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1479:2: rule__PeriodicActivity__Group_13_3__1__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1333:1: ( rule__PeriodicActivity__Group_13_3__1__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1334:2: rule__PeriodicActivity__Group_13_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13_3__1__Impl_in_rule__PeriodicActivity__Group_13_3__12907);
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_13_3__1__Impl_in_rule__PeriodicActivity__Group_13_3__12638);
             rule__PeriodicActivity__Group_13_3__1__Impl();
 
             state._fsp--;
@@ -3760,31 +3446,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__Group_13_3__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1485:1: rule__PeriodicActivity__Group_13_3__1__Impl : ( ( rule__PeriodicActivity__RuleAssignment_13_3_1 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1340:1: rule__PeriodicActivity__Group_13_3__1__Impl : ( ( rule__PeriodicActivity__ResAllocationAssignment_13_3_1 ) ) ;
     public final void rule__PeriodicActivity__Group_13_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1489:1: ( ( ( rule__PeriodicActivity__RuleAssignment_13_3_1 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1490:1: ( ( rule__PeriodicActivity__RuleAssignment_13_3_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1344:1: ( ( ( rule__PeriodicActivity__ResAllocationAssignment_13_3_1 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1345:1: ( ( rule__PeriodicActivity__ResAllocationAssignment_13_3_1 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1490:1: ( ( rule__PeriodicActivity__RuleAssignment_13_3_1 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1491:1: ( rule__PeriodicActivity__RuleAssignment_13_3_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1345:1: ( ( rule__PeriodicActivity__ResAllocationAssignment_13_3_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1346:1: ( rule__PeriodicActivity__ResAllocationAssignment_13_3_1 )
             {
-             before(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_13_3_1()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1492:1: ( rule__PeriodicActivity__RuleAssignment_13_3_1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1492:2: rule__PeriodicActivity__RuleAssignment_13_3_1
+             before(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_13_3_1()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1347:1: ( rule__PeriodicActivity__ResAllocationAssignment_13_3_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1347:2: rule__PeriodicActivity__ResAllocationAssignment_13_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__RuleAssignment_13_3_1_in_rule__PeriodicActivity__Group_13_3__1__Impl2934);
-            rule__PeriodicActivity__RuleAssignment_13_3_1();
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__ResAllocationAssignment_13_3_1_in_rule__PeriodicActivity__Group_13_3__1__Impl2665);
+            rule__PeriodicActivity__ResAllocationAssignment_13_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_13_3_1()); 
+             after(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_13_3_1()); 
 
             }
 
@@ -3806,22 +3492,585 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__PeriodicActivity__Group_13_3__1__Impl"
 
 
+    // $ANTLR start "rule__PeriodicActivity__Group_14__0"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1361:1: rule__PeriodicActivity__Group_14__0 : rule__PeriodicActivity__Group_14__0__Impl rule__PeriodicActivity__Group_14__1 ;
+    public final void rule__PeriodicActivity__Group_14__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1365:1: ( rule__PeriodicActivity__Group_14__0__Impl rule__PeriodicActivity__Group_14__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1366:2: rule__PeriodicActivity__Group_14__0__Impl rule__PeriodicActivity__Group_14__1
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14__0__Impl_in_rule__PeriodicActivity__Group_14__02699);
+            rule__PeriodicActivity__Group_14__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14__1_in_rule__PeriodicActivity__Group_14__02702);
+            rule__PeriodicActivity__Group_14__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14__0"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14__0__Impl"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1373:1: rule__PeriodicActivity__Group_14__0__Impl : ( 'rules' ) ;
+    public final void rule__PeriodicActivity__Group_14__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1377:1: ( ( 'rules' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1378:1: ( 'rules' )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1378:1: ( 'rules' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1379:1: 'rules'
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getRulesKeyword_14_0()); 
+            match(input,28,FollowSets000.FOLLOW_28_in_rule__PeriodicActivity__Group_14__0__Impl2730); 
+             after(grammarAccess.getPeriodicActivityAccess().getRulesKeyword_14_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14__0__Impl"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14__1"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1392:1: rule__PeriodicActivity__Group_14__1 : rule__PeriodicActivity__Group_14__1__Impl rule__PeriodicActivity__Group_14__2 ;
+    public final void rule__PeriodicActivity__Group_14__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1396:1: ( rule__PeriodicActivity__Group_14__1__Impl rule__PeriodicActivity__Group_14__2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1397:2: rule__PeriodicActivity__Group_14__1__Impl rule__PeriodicActivity__Group_14__2
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14__1__Impl_in_rule__PeriodicActivity__Group_14__12761);
+            rule__PeriodicActivity__Group_14__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14__2_in_rule__PeriodicActivity__Group_14__12764);
+            rule__PeriodicActivity__Group_14__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14__1"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14__1__Impl"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1404:1: rule__PeriodicActivity__Group_14__1__Impl : ( '{' ) ;
+    public final void rule__PeriodicActivity__Group_14__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1408:1: ( ( '{' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1409:1: ( '{' )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1409:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1410:1: '{'
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_14_1()); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__PeriodicActivity__Group_14__1__Impl2792); 
+             after(grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_14_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14__1__Impl"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14__2"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1423:1: rule__PeriodicActivity__Group_14__2 : rule__PeriodicActivity__Group_14__2__Impl rule__PeriodicActivity__Group_14__3 ;
+    public final void rule__PeriodicActivity__Group_14__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1427:1: ( rule__PeriodicActivity__Group_14__2__Impl rule__PeriodicActivity__Group_14__3 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1428:2: rule__PeriodicActivity__Group_14__2__Impl rule__PeriodicActivity__Group_14__3
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14__2__Impl_in_rule__PeriodicActivity__Group_14__22823);
+            rule__PeriodicActivity__Group_14__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14__3_in_rule__PeriodicActivity__Group_14__22826);
+            rule__PeriodicActivity__Group_14__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14__2"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14__2__Impl"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1435:1: rule__PeriodicActivity__Group_14__2__Impl : ( ( rule__PeriodicActivity__RuleAssignment_14_2 ) ) ;
+    public final void rule__PeriodicActivity__Group_14__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1439:1: ( ( ( rule__PeriodicActivity__RuleAssignment_14_2 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1440:1: ( ( rule__PeriodicActivity__RuleAssignment_14_2 ) )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1440:1: ( ( rule__PeriodicActivity__RuleAssignment_14_2 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1441:1: ( rule__PeriodicActivity__RuleAssignment_14_2 )
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_14_2()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1442:1: ( rule__PeriodicActivity__RuleAssignment_14_2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1442:2: rule__PeriodicActivity__RuleAssignment_14_2
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__RuleAssignment_14_2_in_rule__PeriodicActivity__Group_14__2__Impl2853);
+            rule__PeriodicActivity__RuleAssignment_14_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_14_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14__2__Impl"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14__3"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1452:1: rule__PeriodicActivity__Group_14__3 : rule__PeriodicActivity__Group_14__3__Impl rule__PeriodicActivity__Group_14__4 ;
+    public final void rule__PeriodicActivity__Group_14__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1456:1: ( rule__PeriodicActivity__Group_14__3__Impl rule__PeriodicActivity__Group_14__4 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1457:2: rule__PeriodicActivity__Group_14__3__Impl rule__PeriodicActivity__Group_14__4
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14__3__Impl_in_rule__PeriodicActivity__Group_14__32883);
+            rule__PeriodicActivity__Group_14__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14__4_in_rule__PeriodicActivity__Group_14__32886);
+            rule__PeriodicActivity__Group_14__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14__3"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14__3__Impl"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1464:1: rule__PeriodicActivity__Group_14__3__Impl : ( ( rule__PeriodicActivity__Group_14_3__0 )* ) ;
+    public final void rule__PeriodicActivity__Group_14__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1468:1: ( ( ( rule__PeriodicActivity__Group_14_3__0 )* ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1469:1: ( ( rule__PeriodicActivity__Group_14_3__0 )* )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1469:1: ( ( rule__PeriodicActivity__Group_14_3__0 )* )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1470:1: ( rule__PeriodicActivity__Group_14_3__0 )*
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getGroup_14_3()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1471:1: ( rule__PeriodicActivity__Group_14_3__0 )*
+            loop9:
+            do {
+                int alt9=2;
+                int LA9_0 = input.LA(1);
+
+                if ( (LA9_0==22) ) {
+                    alt9=1;
+                }
+
+
+                switch (alt9) {
+            	case 1 :
+            	    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1471:2: rule__PeriodicActivity__Group_14_3__0
+            	    {
+            	    pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14_3__0_in_rule__PeriodicActivity__Group_14__3__Impl2913);
+            	    rule__PeriodicActivity__Group_14_3__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop9;
+                }
+            } while (true);
+
+             after(grammarAccess.getPeriodicActivityAccess().getGroup_14_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14__3__Impl"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14__4"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1481:1: rule__PeriodicActivity__Group_14__4 : rule__PeriodicActivity__Group_14__4__Impl ;
+    public final void rule__PeriodicActivity__Group_14__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1485:1: ( rule__PeriodicActivity__Group_14__4__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1486:2: rule__PeriodicActivity__Group_14__4__Impl
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14__4__Impl_in_rule__PeriodicActivity__Group_14__42944);
+            rule__PeriodicActivity__Group_14__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14__4"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14__4__Impl"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1492:1: rule__PeriodicActivity__Group_14__4__Impl : ( '}' ) ;
+    public final void rule__PeriodicActivity__Group_14__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1496:1: ( ( '}' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1497:1: ( '}' )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1497:1: ( '}' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1498:1: '}'
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_14_4()); 
+            match(input,23,FollowSets000.FOLLOW_23_in_rule__PeriodicActivity__Group_14__4__Impl2972); 
+             after(grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_14_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14__4__Impl"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14_3__0"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1521:1: rule__PeriodicActivity__Group_14_3__0 : rule__PeriodicActivity__Group_14_3__0__Impl rule__PeriodicActivity__Group_14_3__1 ;
+    public final void rule__PeriodicActivity__Group_14_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1525:1: ( rule__PeriodicActivity__Group_14_3__0__Impl rule__PeriodicActivity__Group_14_3__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1526:2: rule__PeriodicActivity__Group_14_3__0__Impl rule__PeriodicActivity__Group_14_3__1
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14_3__0__Impl_in_rule__PeriodicActivity__Group_14_3__03013);
+            rule__PeriodicActivity__Group_14_3__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14_3__1_in_rule__PeriodicActivity__Group_14_3__03016);
+            rule__PeriodicActivity__Group_14_3__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14_3__0"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14_3__0__Impl"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1533:1: rule__PeriodicActivity__Group_14_3__0__Impl : ( ',' ) ;
+    public final void rule__PeriodicActivity__Group_14_3__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1537:1: ( ( ',' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1538:1: ( ',' )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1538:1: ( ',' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1539:1: ','
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_14_3_0()); 
+            match(input,22,FollowSets000.FOLLOW_22_in_rule__PeriodicActivity__Group_14_3__0__Impl3044); 
+             after(grammarAccess.getPeriodicActivityAccess().getCommaKeyword_14_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14_3__0__Impl"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14_3__1"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1552:1: rule__PeriodicActivity__Group_14_3__1 : rule__PeriodicActivity__Group_14_3__1__Impl ;
+    public final void rule__PeriodicActivity__Group_14_3__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1556:1: ( rule__PeriodicActivity__Group_14_3__1__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1557:2: rule__PeriodicActivity__Group_14_3__1__Impl
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__Group_14_3__1__Impl_in_rule__PeriodicActivity__Group_14_3__13075);
+            rule__PeriodicActivity__Group_14_3__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14_3__1"
+
+
+    // $ANTLR start "rule__PeriodicActivity__Group_14_3__1__Impl"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1563:1: rule__PeriodicActivity__Group_14_3__1__Impl : ( ( rule__PeriodicActivity__RuleAssignment_14_3_1 ) ) ;
+    public final void rule__PeriodicActivity__Group_14_3__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1567:1: ( ( ( rule__PeriodicActivity__RuleAssignment_14_3_1 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1568:1: ( ( rule__PeriodicActivity__RuleAssignment_14_3_1 ) )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1568:1: ( ( rule__PeriodicActivity__RuleAssignment_14_3_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1569:1: ( rule__PeriodicActivity__RuleAssignment_14_3_1 )
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_14_3_1()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1570:1: ( rule__PeriodicActivity__RuleAssignment_14_3_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1570:2: rule__PeriodicActivity__RuleAssignment_14_3_1
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__PeriodicActivity__RuleAssignment_14_3_1_in_rule__PeriodicActivity__Group_14_3__1__Impl3102);
+            rule__PeriodicActivity__RuleAssignment_14_3_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_14_3_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__Group_14_3__1__Impl"
+
+
     // $ANTLR start "rule__Date__Group__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1506:1: rule__Date__Group__0 : rule__Date__Group__0__Impl rule__Date__Group__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1584:1: rule__Date__Group__0 : rule__Date__Group__0__Impl rule__Date__Group__1 ;
     public final void rule__Date__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1510:1: ( rule__Date__Group__0__Impl rule__Date__Group__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1511:2: rule__Date__Group__0__Impl rule__Date__Group__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1588:1: ( rule__Date__Group__0__Impl rule__Date__Group__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1589:2: rule__Date__Group__0__Impl rule__Date__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__0__Impl_in_rule__Date__Group__02968);
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__0__Impl_in_rule__Date__Group__03136);
             rule__Date__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__1_in_rule__Date__Group__02971);
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__1_in_rule__Date__Group__03139);
             rule__Date__Group__1();
 
             state._fsp--;
@@ -3845,21 +4094,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Date__Group__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1518:1: rule__Date__Group__0__Impl : ( () ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1596:1: rule__Date__Group__0__Impl : ( () ) ;
     public final void rule__Date__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1522:1: ( ( () ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1523:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1600:1: ( ( () ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1601:1: ( () )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1523:1: ( () )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1524:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1601:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1602:1: ()
             {
              before(grammarAccess.getDateAccess().getDateAction_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1525:1: ()
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1527:1: 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1603:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1605:1: 
             {
             }
 
@@ -3882,22 +4131,17 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Date__Group__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1537:1: rule__Date__Group__1 : rule__Date__Group__1__Impl rule__Date__Group__2 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1615:1: rule__Date__Group__1 : rule__Date__Group__1__Impl ;
     public final void rule__Date__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1541:1: ( rule__Date__Group__1__Impl rule__Date__Group__2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1542:2: rule__Date__Group__1__Impl rule__Date__Group__2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1619:1: ( rule__Date__Group__1__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1620:2: rule__Date__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__1__Impl_in_rule__Date__Group__13029);
+            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__1__Impl_in_rule__Date__Group__13197);
             rule__Date__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__2_in_rule__Date__Group__13032);
-            rule__Date__Group__2();
 
             state._fsp--;
 
@@ -3920,21 +4164,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Date__Group__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1549:1: rule__Date__Group__1__Impl : ( 'from' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1626:1: rule__Date__Group__1__Impl : ( ( rule__Date__DayAssignment_1 ) ) ;
     public final void rule__Date__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1553:1: ( ( 'from' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1554:1: ( 'from' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1630:1: ( ( ( rule__Date__DayAssignment_1 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1631:1: ( ( rule__Date__DayAssignment_1 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1554:1: ( 'from' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1555:1: 'from'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1631:1: ( ( rule__Date__DayAssignment_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1632:1: ( rule__Date__DayAssignment_1 )
             {
-             before(grammarAccess.getDateAccess().getFromKeyword_1()); 
-            match(input,27,FollowSets000.FOLLOW_27_in_rule__Date__Group__1__Impl3060); 
-             after(grammarAccess.getDateAccess().getFromKeyword_1()); 
+             before(grammarAccess.getDateAccess().getDayAssignment_1()); 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1633:1: ( rule__Date__DayAssignment_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1633:2: rule__Date__DayAssignment_1
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Date__DayAssignment_1_in_rule__Date__Group__1__Impl3224);
+            rule__Date__DayAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDateAccess().getDayAssignment_1()); 
 
             }
 
@@ -3956,102 +4210,22 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Date__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Date__Group__2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1568:1: rule__Date__Group__2 : rule__Date__Group__2__Impl ;
-    public final void rule__Date__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1572:1: ( rule__Date__Group__2__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1573:2: rule__Date__Group__2__Impl
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Date__Group__2__Impl_in_rule__Date__Group__23091);
-            rule__Date__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Date__Group__2"
-
-
-    // $ANTLR start "rule__Date__Group__2__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1579:1: rule__Date__Group__2__Impl : ( ( rule__Date__DayAssignment_2 ) ) ;
-    public final void rule__Date__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1583:1: ( ( ( rule__Date__DayAssignment_2 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1584:1: ( ( rule__Date__DayAssignment_2 ) )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1584:1: ( ( rule__Date__DayAssignment_2 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1585:1: ( rule__Date__DayAssignment_2 )
-            {
-             before(grammarAccess.getDateAccess().getDayAssignment_2()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1586:1: ( rule__Date__DayAssignment_2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1586:2: rule__Date__DayAssignment_2
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Date__DayAssignment_2_in_rule__Date__Group__2__Impl3118);
-            rule__Date__DayAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getDateAccess().getDayAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Date__Group__2__Impl"
-
-
     // $ANTLR start "rule__ResAllocation__Group__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1602:1: rule__ResAllocation__Group__0 : rule__ResAllocation__Group__0__Impl rule__ResAllocation__Group__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1647:1: rule__ResAllocation__Group__0 : rule__ResAllocation__Group__0__Impl rule__ResAllocation__Group__1 ;
     public final void rule__ResAllocation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1606:1: ( rule__ResAllocation__Group__0__Impl rule__ResAllocation__Group__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1607:2: rule__ResAllocation__Group__0__Impl rule__ResAllocation__Group__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1651:1: ( rule__ResAllocation__Group__0__Impl rule__ResAllocation__Group__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1652:2: rule__ResAllocation__Group__0__Impl rule__ResAllocation__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__0__Impl_in_rule__ResAllocation__Group__03154);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__0__Impl_in_rule__ResAllocation__Group__03258);
             rule__ResAllocation__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__1_in_rule__ResAllocation__Group__03157);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__1_in_rule__ResAllocation__Group__03261);
             rule__ResAllocation__Group__1();
 
             state._fsp--;
@@ -4075,21 +4249,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResAllocation__Group__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1614:1: rule__ResAllocation__Group__0__Impl : ( () ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1659:1: rule__ResAllocation__Group__0__Impl : ( () ) ;
     public final void rule__ResAllocation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1618:1: ( ( () ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1619:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1663:1: ( ( () ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1664:1: ( () )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1619:1: ( () )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1620:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1664:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1665:1: ()
             {
              before(grammarAccess.getResAllocationAccess().getRessourceAllocationAction_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1621:1: ()
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1623:1: 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1666:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1668:1: 
             {
             }
 
@@ -4112,21 +4286,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResAllocation__Group__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1633:1: rule__ResAllocation__Group__1 : rule__ResAllocation__Group__1__Impl rule__ResAllocation__Group__2 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1678:1: rule__ResAllocation__Group__1 : rule__ResAllocation__Group__1__Impl rule__ResAllocation__Group__2 ;
     public final void rule__ResAllocation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1637:1: ( rule__ResAllocation__Group__1__Impl rule__ResAllocation__Group__2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1638:2: rule__ResAllocation__Group__1__Impl rule__ResAllocation__Group__2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1682:1: ( rule__ResAllocation__Group__1__Impl rule__ResAllocation__Group__2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1683:2: rule__ResAllocation__Group__1__Impl rule__ResAllocation__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__1__Impl_in_rule__ResAllocation__Group__13215);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__1__Impl_in_rule__ResAllocation__Group__13319);
             rule__ResAllocation__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__2_in_rule__ResAllocation__Group__13218);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__2_in_rule__ResAllocation__Group__13322);
             rule__ResAllocation__Group__2();
 
             state._fsp--;
@@ -4150,20 +4324,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResAllocation__Group__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1645:1: rule__ResAllocation__Group__1__Impl : ( 'reserve' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1690:1: rule__ResAllocation__Group__1__Impl : ( 'reserve' ) ;
     public final void rule__ResAllocation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1649:1: ( ( 'reserve' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1650:1: ( 'reserve' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1694:1: ( ( 'reserve' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1695:1: ( 'reserve' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1650:1: ( 'reserve' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1651:1: 'reserve'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1695:1: ( 'reserve' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1696:1: 'reserve'
             {
              before(grammarAccess.getResAllocationAccess().getReserveKeyword_1()); 
-            match(input,28,FollowSets000.FOLLOW_28_in_rule__ResAllocation__Group__1__Impl3246); 
+            match(input,29,FollowSets000.FOLLOW_29_in_rule__ResAllocation__Group__1__Impl3350); 
              after(grammarAccess.getResAllocationAccess().getReserveKeyword_1()); 
 
             }
@@ -4187,21 +4361,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResAllocation__Group__2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1664:1: rule__ResAllocation__Group__2 : rule__ResAllocation__Group__2__Impl rule__ResAllocation__Group__3 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1709:1: rule__ResAllocation__Group__2 : rule__ResAllocation__Group__2__Impl rule__ResAllocation__Group__3 ;
     public final void rule__ResAllocation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1668:1: ( rule__ResAllocation__Group__2__Impl rule__ResAllocation__Group__3 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1669:2: rule__ResAllocation__Group__2__Impl rule__ResAllocation__Group__3
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1713:1: ( rule__ResAllocation__Group__2__Impl rule__ResAllocation__Group__3 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1714:2: rule__ResAllocation__Group__2__Impl rule__ResAllocation__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__2__Impl_in_rule__ResAllocation__Group__23277);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__2__Impl_in_rule__ResAllocation__Group__23381);
             rule__ResAllocation__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__3_in_rule__ResAllocation__Group__23280);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__3_in_rule__ResAllocation__Group__23384);
             rule__ResAllocation__Group__3();
 
             state._fsp--;
@@ -4225,23 +4399,23 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResAllocation__Group__2__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1676:1: rule__ResAllocation__Group__2__Impl : ( ( rule__ResAllocation__RessourceAssignment_2 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1721:1: rule__ResAllocation__Group__2__Impl : ( ( rule__ResAllocation__RessourceAssignment_2 ) ) ;
     public final void rule__ResAllocation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1680:1: ( ( ( rule__ResAllocation__RessourceAssignment_2 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1681:1: ( ( rule__ResAllocation__RessourceAssignment_2 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1725:1: ( ( ( rule__ResAllocation__RessourceAssignment_2 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1726:1: ( ( rule__ResAllocation__RessourceAssignment_2 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1681:1: ( ( rule__ResAllocation__RessourceAssignment_2 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1682:1: ( rule__ResAllocation__RessourceAssignment_2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1726:1: ( ( rule__ResAllocation__RessourceAssignment_2 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1727:1: ( rule__ResAllocation__RessourceAssignment_2 )
             {
              before(grammarAccess.getResAllocationAccess().getRessourceAssignment_2()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1683:1: ( rule__ResAllocation__RessourceAssignment_2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1683:2: rule__ResAllocation__RessourceAssignment_2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1728:1: ( rule__ResAllocation__RessourceAssignment_2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1728:2: rule__ResAllocation__RessourceAssignment_2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__RessourceAssignment_2_in_rule__ResAllocation__Group__2__Impl3307);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__RessourceAssignment_2_in_rule__ResAllocation__Group__2__Impl3411);
             rule__ResAllocation__RessourceAssignment_2();
 
             state._fsp--;
@@ -4272,21 +4446,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResAllocation__Group__3"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1693:1: rule__ResAllocation__Group__3 : rule__ResAllocation__Group__3__Impl rule__ResAllocation__Group__4 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1738:1: rule__ResAllocation__Group__3 : rule__ResAllocation__Group__3__Impl rule__ResAllocation__Group__4 ;
     public final void rule__ResAllocation__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1697:1: ( rule__ResAllocation__Group__3__Impl rule__ResAllocation__Group__4 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1698:2: rule__ResAllocation__Group__3__Impl rule__ResAllocation__Group__4
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1742:1: ( rule__ResAllocation__Group__3__Impl rule__ResAllocation__Group__4 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1743:2: rule__ResAllocation__Group__3__Impl rule__ResAllocation__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__3__Impl_in_rule__ResAllocation__Group__33337);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__3__Impl_in_rule__ResAllocation__Group__33441);
             rule__ResAllocation__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__4_in_rule__ResAllocation__Group__33340);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__4_in_rule__ResAllocation__Group__33444);
             rule__ResAllocation__Group__4();
 
             state._fsp--;
@@ -4310,20 +4484,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResAllocation__Group__3__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1705:1: rule__ResAllocation__Group__3__Impl : ( 'for' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1750:1: rule__ResAllocation__Group__3__Impl : ( 'for' ) ;
     public final void rule__ResAllocation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1709:1: ( ( 'for' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1710:1: ( 'for' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1754:1: ( ( 'for' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1755:1: ( 'for' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1710:1: ( 'for' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1711:1: 'for'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1755:1: ( 'for' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1756:1: 'for'
             {
              before(grammarAccess.getResAllocationAccess().getForKeyword_3()); 
-            match(input,29,FollowSets000.FOLLOW_29_in_rule__ResAllocation__Group__3__Impl3368); 
+            match(input,30,FollowSets000.FOLLOW_30_in_rule__ResAllocation__Group__3__Impl3472); 
              after(grammarAccess.getResAllocationAccess().getForKeyword_3()); 
 
             }
@@ -4347,16 +4521,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResAllocation__Group__4"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1724:1: rule__ResAllocation__Group__4 : rule__ResAllocation__Group__4__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1769:1: rule__ResAllocation__Group__4 : rule__ResAllocation__Group__4__Impl ;
     public final void rule__ResAllocation__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1728:1: ( rule__ResAllocation__Group__4__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1729:2: rule__ResAllocation__Group__4__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1773:1: ( rule__ResAllocation__Group__4__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1774:2: rule__ResAllocation__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__4__Impl_in_rule__ResAllocation__Group__43399);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__Group__4__Impl_in_rule__ResAllocation__Group__43503);
             rule__ResAllocation__Group__4__Impl();
 
             state._fsp--;
@@ -4380,23 +4554,23 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResAllocation__Group__4__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1735:1: rule__ResAllocation__Group__4__Impl : ( ( rule__ResAllocation__DureeAssignment_4 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1780:1: rule__ResAllocation__Group__4__Impl : ( ( rule__ResAllocation__DureeAssignment_4 ) ) ;
     public final void rule__ResAllocation__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1739:1: ( ( ( rule__ResAllocation__DureeAssignment_4 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1740:1: ( ( rule__ResAllocation__DureeAssignment_4 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1784:1: ( ( ( rule__ResAllocation__DureeAssignment_4 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1785:1: ( ( rule__ResAllocation__DureeAssignment_4 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1740:1: ( ( rule__ResAllocation__DureeAssignment_4 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1741:1: ( rule__ResAllocation__DureeAssignment_4 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1785:1: ( ( rule__ResAllocation__DureeAssignment_4 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1786:1: ( rule__ResAllocation__DureeAssignment_4 )
             {
              before(grammarAccess.getResAllocationAccess().getDureeAssignment_4()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1742:1: ( rule__ResAllocation__DureeAssignment_4 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1742:2: rule__ResAllocation__DureeAssignment_4
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1787:1: ( rule__ResAllocation__DureeAssignment_4 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1787:2: rule__ResAllocation__DureeAssignment_4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__DureeAssignment_4_in_rule__ResAllocation__Group__4__Impl3426);
+            pushFollow(FollowSets000.FOLLOW_rule__ResAllocation__DureeAssignment_4_in_rule__ResAllocation__Group__4__Impl3530);
             rule__ResAllocation__DureeAssignment_4();
 
             state._fsp--;
@@ -4427,21 +4601,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1762:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1807:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
     public final void rule__Rule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1766:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1767:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1811:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1812:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__03466);
+            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__03570);
             rule__Rule__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__03469);
+            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__03573);
             rule__Rule__Group__1();
 
             state._fsp--;
@@ -4465,21 +4639,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1774:1: rule__Rule__Group__0__Impl : ( () ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1819:1: rule__Rule__Group__0__Impl : ( () ) ;
     public final void rule__Rule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1778:1: ( ( () ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1779:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1823:1: ( ( () ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1824:1: ( () )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1779:1: ( () )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1780:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1824:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1825:1: ()
             {
              before(grammarAccess.getRuleAccess().getRuleAction_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1781:1: ()
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1783:1: 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1826:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1828:1: 
             {
             }
 
@@ -4502,16 +4676,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1793:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1838:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl ;
     public final void rule__Rule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1797:1: ( rule__Rule__Group__1__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1798:2: rule__Rule__Group__1__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1842:1: ( rule__Rule__Group__1__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1843:2: rule__Rule__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__13527);
+            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__13631);
             rule__Rule__Group__1__Impl();
 
             state._fsp--;
@@ -4535,35 +4709,35 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1804:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__Group_1__0 )* ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1849:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__Group_1__0 )* ) ;
     public final void rule__Rule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1808:1: ( ( ( rule__Rule__Group_1__0 )* ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1809:1: ( ( rule__Rule__Group_1__0 )* )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1853:1: ( ( ( rule__Rule__Group_1__0 )* ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1854:1: ( ( rule__Rule__Group_1__0 )* )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1809:1: ( ( rule__Rule__Group_1__0 )* )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1810:1: ( rule__Rule__Group_1__0 )*
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1854:1: ( ( rule__Rule__Group_1__0 )* )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1855:1: ( rule__Rule__Group_1__0 )*
             {
              before(grammarAccess.getRuleAccess().getGroup_1()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1811:1: ( rule__Rule__Group_1__0 )*
-            loop9:
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1856:1: ( rule__Rule__Group_1__0 )*
+            loop10:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA9_0==30) ) {
-                    alt9=1;
+                if ( (LA10_0==31) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt10) {
             	case 1 :
-            	    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1811:2: rule__Rule__Group_1__0
+            	    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1856:2: rule__Rule__Group_1__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__Rule__Group_1__0_in_rule__Rule__Group__1__Impl3554);
+            	    pushFollow(FollowSets000.FOLLOW_rule__Rule__Group_1__0_in_rule__Rule__Group__1__Impl3658);
             	    rule__Rule__Group_1__0();
 
             	    state._fsp--;
@@ -4573,7 +4747,7 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop10;
                 }
             } while (true);
 
@@ -4600,21 +4774,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group_1__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1825:1: rule__Rule__Group_1__0 : rule__Rule__Group_1__0__Impl rule__Rule__Group_1__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1870:1: rule__Rule__Group_1__0 : rule__Rule__Group_1__0__Impl rule__Rule__Group_1__1 ;
     public final void rule__Rule__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1829:1: ( rule__Rule__Group_1__0__Impl rule__Rule__Group_1__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1830:2: rule__Rule__Group_1__0__Impl rule__Rule__Group_1__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1874:1: ( rule__Rule__Group_1__0__Impl rule__Rule__Group_1__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1875:2: rule__Rule__Group_1__0__Impl rule__Rule__Group_1__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group_1__0__Impl_in_rule__Rule__Group_1__03589);
+            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group_1__0__Impl_in_rule__Rule__Group_1__03693);
             rule__Rule__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group_1__1_in_rule__Rule__Group_1__03592);
+            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group_1__1_in_rule__Rule__Group_1__03696);
             rule__Rule__Group_1__1();
 
             state._fsp--;
@@ -4638,20 +4812,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group_1__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1837:1: rule__Rule__Group_1__0__Impl : ( 'pre' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1882:1: rule__Rule__Group_1__0__Impl : ( 'pre' ) ;
     public final void rule__Rule__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1841:1: ( ( 'pre' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1842:1: ( 'pre' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1886:1: ( ( 'pre' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1887:1: ( 'pre' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1842:1: ( 'pre' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1843:1: 'pre'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1887:1: ( 'pre' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1888:1: 'pre'
             {
              before(grammarAccess.getRuleAccess().getPreKeyword_1_0()); 
-            match(input,30,FollowSets000.FOLLOW_30_in_rule__Rule__Group_1__0__Impl3620); 
+            match(input,31,FollowSets000.FOLLOW_31_in_rule__Rule__Group_1__0__Impl3724); 
              after(grammarAccess.getRuleAccess().getPreKeyword_1_0()); 
 
             }
@@ -4675,16 +4849,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group_1__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1856:1: rule__Rule__Group_1__1 : rule__Rule__Group_1__1__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1901:1: rule__Rule__Group_1__1 : rule__Rule__Group_1__1__Impl ;
     public final void rule__Rule__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1860:1: ( rule__Rule__Group_1__1__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1861:2: rule__Rule__Group_1__1__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1905:1: ( rule__Rule__Group_1__1__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1906:2: rule__Rule__Group_1__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group_1__1__Impl_in_rule__Rule__Group_1__13651);
+            pushFollow(FollowSets000.FOLLOW_rule__Rule__Group_1__1__Impl_in_rule__Rule__Group_1__13755);
             rule__Rule__Group_1__1__Impl();
 
             state._fsp--;
@@ -4708,23 +4882,23 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group_1__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1867:1: rule__Rule__Group_1__1__Impl : ( ( rule__Rule__PreAssignment_1_1 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1912:1: rule__Rule__Group_1__1__Impl : ( ( rule__Rule__PreAssignment_1_1 ) ) ;
     public final void rule__Rule__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1871:1: ( ( ( rule__Rule__PreAssignment_1_1 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1872:1: ( ( rule__Rule__PreAssignment_1_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1916:1: ( ( ( rule__Rule__PreAssignment_1_1 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1917:1: ( ( rule__Rule__PreAssignment_1_1 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1872:1: ( ( rule__Rule__PreAssignment_1_1 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1873:1: ( rule__Rule__PreAssignment_1_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1917:1: ( ( rule__Rule__PreAssignment_1_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1918:1: ( rule__Rule__PreAssignment_1_1 )
             {
              before(grammarAccess.getRuleAccess().getPreAssignment_1_1()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1874:1: ( rule__Rule__PreAssignment_1_1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1874:2: rule__Rule__PreAssignment_1_1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1919:1: ( rule__Rule__PreAssignment_1_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1919:2: rule__Rule__PreAssignment_1_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Rule__PreAssignment_1_1_in_rule__Rule__Group_1__1__Impl3678);
+            pushFollow(FollowSets000.FOLLOW_rule__Rule__PreAssignment_1_1_in_rule__Rule__Group_1__1__Impl3782);
             rule__Rule__PreAssignment_1_1();
 
             state._fsp--;
@@ -4755,21 +4929,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1888:1: rule__Atelier_Impl__Group__0 : rule__Atelier_Impl__Group__0__Impl rule__Atelier_Impl__Group__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1933:1: rule__Atelier_Impl__Group__0 : rule__Atelier_Impl__Group__0__Impl rule__Atelier_Impl__Group__1 ;
     public final void rule__Atelier_Impl__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1892:1: ( rule__Atelier_Impl__Group__0__Impl rule__Atelier_Impl__Group__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1893:2: rule__Atelier_Impl__Group__0__Impl rule__Atelier_Impl__Group__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1937:1: ( rule__Atelier_Impl__Group__0__Impl rule__Atelier_Impl__Group__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1938:2: rule__Atelier_Impl__Group__0__Impl rule__Atelier_Impl__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__0__Impl_in_rule__Atelier_Impl__Group__03712);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__0__Impl_in_rule__Atelier_Impl__Group__03816);
             rule__Atelier_Impl__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__1_in_rule__Atelier_Impl__Group__03715);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__1_in_rule__Atelier_Impl__Group__03819);
             rule__Atelier_Impl__Group__1();
 
             state._fsp--;
@@ -4793,21 +4967,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1900:1: rule__Atelier_Impl__Group__0__Impl : ( () ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1945:1: rule__Atelier_Impl__Group__0__Impl : ( () ) ;
     public final void rule__Atelier_Impl__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1904:1: ( ( () ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1905:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1949:1: ( ( () ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1950:1: ( () )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1905:1: ( () )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1906:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1950:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1951:1: ()
             {
              before(grammarAccess.getAtelier_ImplAccess().getAtelierAction_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1907:1: ()
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1909:1: 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1952:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1954:1: 
             {
             }
 
@@ -4830,21 +5004,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1919:1: rule__Atelier_Impl__Group__1 : rule__Atelier_Impl__Group__1__Impl rule__Atelier_Impl__Group__2 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1964:1: rule__Atelier_Impl__Group__1 : rule__Atelier_Impl__Group__1__Impl rule__Atelier_Impl__Group__2 ;
     public final void rule__Atelier_Impl__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1923:1: ( rule__Atelier_Impl__Group__1__Impl rule__Atelier_Impl__Group__2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1924:2: rule__Atelier_Impl__Group__1__Impl rule__Atelier_Impl__Group__2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1968:1: ( rule__Atelier_Impl__Group__1__Impl rule__Atelier_Impl__Group__2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1969:2: rule__Atelier_Impl__Group__1__Impl rule__Atelier_Impl__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__1__Impl_in_rule__Atelier_Impl__Group__13773);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__1__Impl_in_rule__Atelier_Impl__Group__13877);
             rule__Atelier_Impl__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__2_in_rule__Atelier_Impl__Group__13776);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__2_in_rule__Atelier_Impl__Group__13880);
             rule__Atelier_Impl__Group__2();
 
             state._fsp--;
@@ -4868,20 +5042,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1931:1: rule__Atelier_Impl__Group__1__Impl : ( 'Atelier' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1976:1: rule__Atelier_Impl__Group__1__Impl : ( 'Atelier' ) ;
     public final void rule__Atelier_Impl__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1935:1: ( ( 'Atelier' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1936:1: ( 'Atelier' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1980:1: ( ( 'Atelier' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1981:1: ( 'Atelier' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1936:1: ( 'Atelier' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1937:1: 'Atelier'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1981:1: ( 'Atelier' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1982:1: 'Atelier'
             {
              before(grammarAccess.getAtelier_ImplAccess().getAtelierKeyword_1()); 
-            match(input,31,FollowSets000.FOLLOW_31_in_rule__Atelier_Impl__Group__1__Impl3804); 
+            match(input,32,FollowSets000.FOLLOW_32_in_rule__Atelier_Impl__Group__1__Impl3908); 
              after(grammarAccess.getAtelier_ImplAccess().getAtelierKeyword_1()); 
 
             }
@@ -4905,21 +5079,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group__2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1950:1: rule__Atelier_Impl__Group__2 : rule__Atelier_Impl__Group__2__Impl rule__Atelier_Impl__Group__3 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1995:1: rule__Atelier_Impl__Group__2 : rule__Atelier_Impl__Group__2__Impl rule__Atelier_Impl__Group__3 ;
     public final void rule__Atelier_Impl__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1954:1: ( rule__Atelier_Impl__Group__2__Impl rule__Atelier_Impl__Group__3 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1955:2: rule__Atelier_Impl__Group__2__Impl rule__Atelier_Impl__Group__3
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1999:1: ( rule__Atelier_Impl__Group__2__Impl rule__Atelier_Impl__Group__3 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2000:2: rule__Atelier_Impl__Group__2__Impl rule__Atelier_Impl__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__2__Impl_in_rule__Atelier_Impl__Group__23835);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__2__Impl_in_rule__Atelier_Impl__Group__23939);
             rule__Atelier_Impl__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__3_in_rule__Atelier_Impl__Group__23838);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__3_in_rule__Atelier_Impl__Group__23942);
             rule__Atelier_Impl__Group__3();
 
             state._fsp--;
@@ -4943,20 +5117,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group__2__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1962:1: rule__Atelier_Impl__Group__2__Impl : ( '{' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2007:1: rule__Atelier_Impl__Group__2__Impl : ( '{' ) ;
     public final void rule__Atelier_Impl__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1966:1: ( ( '{' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1967:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2011:1: ( ( '{' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2012:1: ( '{' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1967:1: ( '{' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1968:1: '{'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2012:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2013:1: '{'
             {
              before(grammarAccess.getAtelier_ImplAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__Atelier_Impl__Group__2__Impl3866); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__Atelier_Impl__Group__2__Impl3970); 
              after(grammarAccess.getAtelier_ImplAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -4980,21 +5154,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group__3"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1981:1: rule__Atelier_Impl__Group__3 : rule__Atelier_Impl__Group__3__Impl rule__Atelier_Impl__Group__4 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2026:1: rule__Atelier_Impl__Group__3 : rule__Atelier_Impl__Group__3__Impl rule__Atelier_Impl__Group__4 ;
     public final void rule__Atelier_Impl__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1985:1: ( rule__Atelier_Impl__Group__3__Impl rule__Atelier_Impl__Group__4 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1986:2: rule__Atelier_Impl__Group__3__Impl rule__Atelier_Impl__Group__4
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2030:1: ( rule__Atelier_Impl__Group__3__Impl rule__Atelier_Impl__Group__4 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2031:2: rule__Atelier_Impl__Group__3__Impl rule__Atelier_Impl__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__3__Impl_in_rule__Atelier_Impl__Group__33897);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__3__Impl_in_rule__Atelier_Impl__Group__34001);
             rule__Atelier_Impl__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__4_in_rule__Atelier_Impl__Group__33900);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__4_in_rule__Atelier_Impl__Group__34004);
             rule__Atelier_Impl__Group__4();
 
             state._fsp--;
@@ -5018,31 +5192,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group__3__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1993:1: rule__Atelier_Impl__Group__3__Impl : ( ( rule__Atelier_Impl__Group_3__0 )? ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2038:1: rule__Atelier_Impl__Group__3__Impl : ( ( rule__Atelier_Impl__Group_3__0 )? ) ;
     public final void rule__Atelier_Impl__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1997:1: ( ( ( rule__Atelier_Impl__Group_3__0 )? ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1998:1: ( ( rule__Atelier_Impl__Group_3__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2042:1: ( ( ( rule__Atelier_Impl__Group_3__0 )? ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2043:1: ( ( rule__Atelier_Impl__Group_3__0 )? )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1998:1: ( ( rule__Atelier_Impl__Group_3__0 )? )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:1999:1: ( rule__Atelier_Impl__Group_3__0 )?
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2043:1: ( ( rule__Atelier_Impl__Group_3__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2044:1: ( rule__Atelier_Impl__Group_3__0 )?
             {
              before(grammarAccess.getAtelier_ImplAccess().getGroup_3()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2000:1: ( rule__Atelier_Impl__Group_3__0 )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2045:1: ( rule__Atelier_Impl__Group_3__0 )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0==32) ) {
-                alt10=1;
+            if ( (LA11_0==33) ) {
+                alt11=1;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2000:2: rule__Atelier_Impl__Group_3__0
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2045:2: rule__Atelier_Impl__Group_3__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group_3__0_in_rule__Atelier_Impl__Group__3__Impl3927);
+                    pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group_3__0_in_rule__Atelier_Impl__Group__3__Impl4031);
                     rule__Atelier_Impl__Group_3__0();
 
                     state._fsp--;
@@ -5076,16 +5250,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group__4"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2010:1: rule__Atelier_Impl__Group__4 : rule__Atelier_Impl__Group__4__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2055:1: rule__Atelier_Impl__Group__4 : rule__Atelier_Impl__Group__4__Impl ;
     public final void rule__Atelier_Impl__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2014:1: ( rule__Atelier_Impl__Group__4__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2015:2: rule__Atelier_Impl__Group__4__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2059:1: ( rule__Atelier_Impl__Group__4__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2060:2: rule__Atelier_Impl__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__4__Impl_in_rule__Atelier_Impl__Group__43958);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group__4__Impl_in_rule__Atelier_Impl__Group__44062);
             rule__Atelier_Impl__Group__4__Impl();
 
             state._fsp--;
@@ -5109,20 +5283,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group__4__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2021:1: rule__Atelier_Impl__Group__4__Impl : ( '}' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2066:1: rule__Atelier_Impl__Group__4__Impl : ( '}' ) ;
     public final void rule__Atelier_Impl__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2025:1: ( ( '}' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2026:1: ( '}' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2070:1: ( ( '}' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2071:1: ( '}' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2026:1: ( '}' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2027:1: '}'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2071:1: ( '}' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2072:1: '}'
             {
              before(grammarAccess.getAtelier_ImplAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Atelier_Impl__Group__4__Impl3986); 
+            match(input,23,FollowSets000.FOLLOW_23_in_rule__Atelier_Impl__Group__4__Impl4090); 
              after(grammarAccess.getAtelier_ImplAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -5146,21 +5320,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group_3__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2050:1: rule__Atelier_Impl__Group_3__0 : rule__Atelier_Impl__Group_3__0__Impl rule__Atelier_Impl__Group_3__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2095:1: rule__Atelier_Impl__Group_3__0 : rule__Atelier_Impl__Group_3__0__Impl rule__Atelier_Impl__Group_3__1 ;
     public final void rule__Atelier_Impl__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2054:1: ( rule__Atelier_Impl__Group_3__0__Impl rule__Atelier_Impl__Group_3__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2055:2: rule__Atelier_Impl__Group_3__0__Impl rule__Atelier_Impl__Group_3__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2099:1: ( rule__Atelier_Impl__Group_3__0__Impl rule__Atelier_Impl__Group_3__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2100:2: rule__Atelier_Impl__Group_3__0__Impl rule__Atelier_Impl__Group_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group_3__0__Impl_in_rule__Atelier_Impl__Group_3__04027);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group_3__0__Impl_in_rule__Atelier_Impl__Group_3__04131);
             rule__Atelier_Impl__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group_3__1_in_rule__Atelier_Impl__Group_3__04030);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group_3__1_in_rule__Atelier_Impl__Group_3__04134);
             rule__Atelier_Impl__Group_3__1();
 
             state._fsp--;
@@ -5184,20 +5358,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group_3__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2062:1: rule__Atelier_Impl__Group_3__0__Impl : ( 'activity' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2107:1: rule__Atelier_Impl__Group_3__0__Impl : ( 'activity' ) ;
     public final void rule__Atelier_Impl__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2066:1: ( ( 'activity' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2067:1: ( 'activity' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2111:1: ( ( 'activity' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2112:1: ( 'activity' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2067:1: ( 'activity' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2068:1: 'activity'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2112:1: ( 'activity' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2113:1: 'activity'
             {
              before(grammarAccess.getAtelier_ImplAccess().getActivityKeyword_3_0()); 
-            match(input,32,FollowSets000.FOLLOW_32_in_rule__Atelier_Impl__Group_3__0__Impl4058); 
+            match(input,33,FollowSets000.FOLLOW_33_in_rule__Atelier_Impl__Group_3__0__Impl4162); 
              after(grammarAccess.getAtelier_ImplAccess().getActivityKeyword_3_0()); 
 
             }
@@ -5221,16 +5395,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group_3__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2081:1: rule__Atelier_Impl__Group_3__1 : rule__Atelier_Impl__Group_3__1__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2126:1: rule__Atelier_Impl__Group_3__1 : rule__Atelier_Impl__Group_3__1__Impl ;
     public final void rule__Atelier_Impl__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2085:1: ( rule__Atelier_Impl__Group_3__1__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2086:2: rule__Atelier_Impl__Group_3__1__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2130:1: ( rule__Atelier_Impl__Group_3__1__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2131:2: rule__Atelier_Impl__Group_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group_3__1__Impl_in_rule__Atelier_Impl__Group_3__14089);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__Group_3__1__Impl_in_rule__Atelier_Impl__Group_3__14193);
             rule__Atelier_Impl__Group_3__1__Impl();
 
             state._fsp--;
@@ -5254,23 +5428,23 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__Group_3__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2092:1: rule__Atelier_Impl__Group_3__1__Impl : ( ( rule__Atelier_Impl__ActivityAssignment_3_1 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2137:1: rule__Atelier_Impl__Group_3__1__Impl : ( ( rule__Atelier_Impl__ActivityAssignment_3_1 ) ) ;
     public final void rule__Atelier_Impl__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2096:1: ( ( ( rule__Atelier_Impl__ActivityAssignment_3_1 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2097:1: ( ( rule__Atelier_Impl__ActivityAssignment_3_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2141:1: ( ( ( rule__Atelier_Impl__ActivityAssignment_3_1 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2142:1: ( ( rule__Atelier_Impl__ActivityAssignment_3_1 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2097:1: ( ( rule__Atelier_Impl__ActivityAssignment_3_1 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2098:1: ( rule__Atelier_Impl__ActivityAssignment_3_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2142:1: ( ( rule__Atelier_Impl__ActivityAssignment_3_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2143:1: ( rule__Atelier_Impl__ActivityAssignment_3_1 )
             {
              before(grammarAccess.getAtelier_ImplAccess().getActivityAssignment_3_1()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2099:1: ( rule__Atelier_Impl__ActivityAssignment_3_1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2099:2: rule__Atelier_Impl__ActivityAssignment_3_1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2144:1: ( rule__Atelier_Impl__ActivityAssignment_3_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2144:2: rule__Atelier_Impl__ActivityAssignment_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__ActivityAssignment_3_1_in_rule__Atelier_Impl__Group_3__1__Impl4116);
+            pushFollow(FollowSets000.FOLLOW_rule__Atelier_Impl__ActivityAssignment_3_1_in_rule__Atelier_Impl__Group_3__1__Impl4220);
             rule__Atelier_Impl__ActivityAssignment_3_1();
 
             state._fsp--;
@@ -5301,21 +5475,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2113:1: rule__EInt__Group__0 : rule__EInt__Group__0__Impl rule__EInt__Group__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2158:1: rule__EInt__Group__0 : rule__EInt__Group__0__Impl rule__EInt__Group__1 ;
     public final void rule__EInt__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2117:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2118:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2162:1: ( rule__EInt__Group__0__Impl rule__EInt__Group__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2163:2: rule__EInt__Group__0__Impl rule__EInt__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__0__Impl_in_rule__EInt__Group__04150);
+            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__0__Impl_in_rule__EInt__Group__04254);
             rule__EInt__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__1_in_rule__EInt__Group__04153);
+            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__1_in_rule__EInt__Group__04257);
             rule__EInt__Group__1();
 
             state._fsp--;
@@ -5339,31 +5513,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2125:1: rule__EInt__Group__0__Impl : ( ( '-' )? ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2170:1: rule__EInt__Group__0__Impl : ( ( '-' )? ) ;
     public final void rule__EInt__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2129:1: ( ( ( '-' )? ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2130:1: ( ( '-' )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2174:1: ( ( ( '-' )? ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2175:1: ( ( '-' )? )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2130:1: ( ( '-' )? )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2131:1: ( '-' )?
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2175:1: ( ( '-' )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2176:1: ( '-' )?
             {
              before(grammarAccess.getEIntAccess().getHyphenMinusKeyword_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2132:1: ( '-' )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2177:1: ( '-' )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==33) ) {
-                alt11=1;
+            if ( (LA12_0==34) ) {
+                alt12=1;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2133:2: '-'
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2178:2: '-'
                     {
-                    match(input,33,FollowSets000.FOLLOW_33_in_rule__EInt__Group__0__Impl4182); 
+                    match(input,34,FollowSets000.FOLLOW_34_in_rule__EInt__Group__0__Impl4286); 
 
                     }
                     break;
@@ -5393,16 +5567,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2144:1: rule__EInt__Group__1 : rule__EInt__Group__1__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2189:1: rule__EInt__Group__1 : rule__EInt__Group__1__Impl ;
     public final void rule__EInt__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2148:1: ( rule__EInt__Group__1__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2149:2: rule__EInt__Group__1__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2193:1: ( rule__EInt__Group__1__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2194:2: rule__EInt__Group__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__1__Impl_in_rule__EInt__Group__14215);
+            pushFollow(FollowSets000.FOLLOW_rule__EInt__Group__1__Impl_in_rule__EInt__Group__14319);
             rule__EInt__Group__1__Impl();
 
             state._fsp--;
@@ -5426,20 +5600,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__EInt__Group__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2155:1: rule__EInt__Group__1__Impl : ( RULE_INT ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2200:1: rule__EInt__Group__1__Impl : ( RULE_INT ) ;
     public final void rule__EInt__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2159:1: ( ( RULE_INT ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2160:1: ( RULE_INT )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2204:1: ( ( RULE_INT ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2205:1: ( RULE_INT )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2160:1: ( RULE_INT )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2161:1: RULE_INT
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2205:1: ( RULE_INT )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2206:1: RULE_INT
             {
              before(grammarAccess.getEIntAccess().getINTTerminalRuleCall_1()); 
-            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__EInt__Group__1__Impl4242); 
+            match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_rule__EInt__Group__1__Impl4346); 
              after(grammarAccess.getEIntAccess().getINTTerminalRuleCall_1()); 
 
             }
@@ -5463,21 +5637,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2177:1: rule__Elevage__Group__0 : rule__Elevage__Group__0__Impl rule__Elevage__Group__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2222:1: rule__Elevage__Group__0 : rule__Elevage__Group__0__Impl rule__Elevage__Group__1 ;
     public final void rule__Elevage__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2181:1: ( rule__Elevage__Group__0__Impl rule__Elevage__Group__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2182:2: rule__Elevage__Group__0__Impl rule__Elevage__Group__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2226:1: ( rule__Elevage__Group__0__Impl rule__Elevage__Group__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2227:2: rule__Elevage__Group__0__Impl rule__Elevage__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__0__Impl_in_rule__Elevage__Group__04276);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__0__Impl_in_rule__Elevage__Group__04380);
             rule__Elevage__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__1_in_rule__Elevage__Group__04279);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__1_in_rule__Elevage__Group__04383);
             rule__Elevage__Group__1();
 
             state._fsp--;
@@ -5501,21 +5675,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2189:1: rule__Elevage__Group__0__Impl : ( () ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2234:1: rule__Elevage__Group__0__Impl : ( () ) ;
     public final void rule__Elevage__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2193:1: ( ( () ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2194:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2238:1: ( ( () ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2239:1: ( () )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2194:1: ( () )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2195:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2239:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2240:1: ()
             {
              before(grammarAccess.getElevageAccess().getElevageAction_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2196:1: ()
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2198:1: 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2241:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2243:1: 
             {
             }
 
@@ -5538,21 +5712,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2208:1: rule__Elevage__Group__1 : rule__Elevage__Group__1__Impl rule__Elevage__Group__2 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2253:1: rule__Elevage__Group__1 : rule__Elevage__Group__1__Impl rule__Elevage__Group__2 ;
     public final void rule__Elevage__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2212:1: ( rule__Elevage__Group__1__Impl rule__Elevage__Group__2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2213:2: rule__Elevage__Group__1__Impl rule__Elevage__Group__2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2257:1: ( rule__Elevage__Group__1__Impl rule__Elevage__Group__2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2258:2: rule__Elevage__Group__1__Impl rule__Elevage__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__1__Impl_in_rule__Elevage__Group__14337);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__1__Impl_in_rule__Elevage__Group__14441);
             rule__Elevage__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__2_in_rule__Elevage__Group__14340);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__2_in_rule__Elevage__Group__14444);
             rule__Elevage__Group__2();
 
             state._fsp--;
@@ -5576,20 +5750,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2220:1: rule__Elevage__Group__1__Impl : ( 'Elevage' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2265:1: rule__Elevage__Group__1__Impl : ( 'Elevage' ) ;
     public final void rule__Elevage__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2224:1: ( ( 'Elevage' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2225:1: ( 'Elevage' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2269:1: ( ( 'Elevage' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2270:1: ( 'Elevage' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2225:1: ( 'Elevage' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2226:1: 'Elevage'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2270:1: ( 'Elevage' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2271:1: 'Elevage'
             {
              before(grammarAccess.getElevageAccess().getElevageKeyword_1()); 
-            match(input,34,FollowSets000.FOLLOW_34_in_rule__Elevage__Group__1__Impl4368); 
+            match(input,35,FollowSets000.FOLLOW_35_in_rule__Elevage__Group__1__Impl4472); 
              after(grammarAccess.getElevageAccess().getElevageKeyword_1()); 
 
             }
@@ -5613,21 +5787,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group__2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2239:1: rule__Elevage__Group__2 : rule__Elevage__Group__2__Impl rule__Elevage__Group__3 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2284:1: rule__Elevage__Group__2 : rule__Elevage__Group__2__Impl rule__Elevage__Group__3 ;
     public final void rule__Elevage__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2243:1: ( rule__Elevage__Group__2__Impl rule__Elevage__Group__3 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2244:2: rule__Elevage__Group__2__Impl rule__Elevage__Group__3
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2288:1: ( rule__Elevage__Group__2__Impl rule__Elevage__Group__3 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2289:2: rule__Elevage__Group__2__Impl rule__Elevage__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__2__Impl_in_rule__Elevage__Group__24399);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__2__Impl_in_rule__Elevage__Group__24503);
             rule__Elevage__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__3_in_rule__Elevage__Group__24402);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__3_in_rule__Elevage__Group__24506);
             rule__Elevage__Group__3();
 
             state._fsp--;
@@ -5651,20 +5825,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group__2__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2251:1: rule__Elevage__Group__2__Impl : ( '{' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2296:1: rule__Elevage__Group__2__Impl : ( '{' ) ;
     public final void rule__Elevage__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2255:1: ( ( '{' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2256:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2300:1: ( ( '{' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2301:1: ( '{' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2256:1: ( '{' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2257:1: '{'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2301:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2302:1: '{'
             {
              before(grammarAccess.getElevageAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__Elevage__Group__2__Impl4430); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__Elevage__Group__2__Impl4534); 
              after(grammarAccess.getElevageAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -5688,21 +5862,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group__3"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2270:1: rule__Elevage__Group__3 : rule__Elevage__Group__3__Impl rule__Elevage__Group__4 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2315:1: rule__Elevage__Group__3 : rule__Elevage__Group__3__Impl rule__Elevage__Group__4 ;
     public final void rule__Elevage__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2274:1: ( rule__Elevage__Group__3__Impl rule__Elevage__Group__4 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2275:2: rule__Elevage__Group__3__Impl rule__Elevage__Group__4
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2319:1: ( rule__Elevage__Group__3__Impl rule__Elevage__Group__4 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2320:2: rule__Elevage__Group__3__Impl rule__Elevage__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__3__Impl_in_rule__Elevage__Group__34461);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__3__Impl_in_rule__Elevage__Group__34565);
             rule__Elevage__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__4_in_rule__Elevage__Group__34464);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__4_in_rule__Elevage__Group__34568);
             rule__Elevage__Group__4();
 
             state._fsp--;
@@ -5726,31 +5900,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group__3__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2282:1: rule__Elevage__Group__3__Impl : ( ( rule__Elevage__Group_3__0 )? ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2327:1: rule__Elevage__Group__3__Impl : ( ( rule__Elevage__Group_3__0 )? ) ;
     public final void rule__Elevage__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2286:1: ( ( ( rule__Elevage__Group_3__0 )? ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2287:1: ( ( rule__Elevage__Group_3__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2331:1: ( ( ( rule__Elevage__Group_3__0 )? ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2332:1: ( ( rule__Elevage__Group_3__0 )? )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2287:1: ( ( rule__Elevage__Group_3__0 )? )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2288:1: ( rule__Elevage__Group_3__0 )?
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2332:1: ( ( rule__Elevage__Group_3__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2333:1: ( rule__Elevage__Group_3__0 )?
             {
              before(grammarAccess.getElevageAccess().getGroup_3()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2289:1: ( rule__Elevage__Group_3__0 )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2334:1: ( rule__Elevage__Group_3__0 )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA12_0==32) ) {
-                alt12=1;
+            if ( (LA13_0==33) ) {
+                alt13=1;
             }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2289:2: rule__Elevage__Group_3__0
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2334:2: rule__Elevage__Group_3__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group_3__0_in_rule__Elevage__Group__3__Impl4491);
+                    pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group_3__0_in_rule__Elevage__Group__3__Impl4595);
                     rule__Elevage__Group_3__0();
 
                     state._fsp--;
@@ -5784,16 +5958,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group__4"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2299:1: rule__Elevage__Group__4 : rule__Elevage__Group__4__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2344:1: rule__Elevage__Group__4 : rule__Elevage__Group__4__Impl ;
     public final void rule__Elevage__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2303:1: ( rule__Elevage__Group__4__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2304:2: rule__Elevage__Group__4__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2348:1: ( rule__Elevage__Group__4__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2349:2: rule__Elevage__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__4__Impl_in_rule__Elevage__Group__44522);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group__4__Impl_in_rule__Elevage__Group__44626);
             rule__Elevage__Group__4__Impl();
 
             state._fsp--;
@@ -5817,20 +5991,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group__4__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2310:1: rule__Elevage__Group__4__Impl : ( '}' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2355:1: rule__Elevage__Group__4__Impl : ( '}' ) ;
     public final void rule__Elevage__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2314:1: ( ( '}' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2315:1: ( '}' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2359:1: ( ( '}' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2360:1: ( '}' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2315:1: ( '}' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2316:1: '}'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2360:1: ( '}' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2361:1: '}'
             {
              before(grammarAccess.getElevageAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Elevage__Group__4__Impl4550); 
+            match(input,23,FollowSets000.FOLLOW_23_in_rule__Elevage__Group__4__Impl4654); 
              after(grammarAccess.getElevageAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -5854,21 +6028,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group_3__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2339:1: rule__Elevage__Group_3__0 : rule__Elevage__Group_3__0__Impl rule__Elevage__Group_3__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2384:1: rule__Elevage__Group_3__0 : rule__Elevage__Group_3__0__Impl rule__Elevage__Group_3__1 ;
     public final void rule__Elevage__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2343:1: ( rule__Elevage__Group_3__0__Impl rule__Elevage__Group_3__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2344:2: rule__Elevage__Group_3__0__Impl rule__Elevage__Group_3__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2388:1: ( rule__Elevage__Group_3__0__Impl rule__Elevage__Group_3__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2389:2: rule__Elevage__Group_3__0__Impl rule__Elevage__Group_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group_3__0__Impl_in_rule__Elevage__Group_3__04591);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group_3__0__Impl_in_rule__Elevage__Group_3__04695);
             rule__Elevage__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group_3__1_in_rule__Elevage__Group_3__04594);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group_3__1_in_rule__Elevage__Group_3__04698);
             rule__Elevage__Group_3__1();
 
             state._fsp--;
@@ -5892,20 +6066,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group_3__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2351:1: rule__Elevage__Group_3__0__Impl : ( 'activity' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2396:1: rule__Elevage__Group_3__0__Impl : ( 'activity' ) ;
     public final void rule__Elevage__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2355:1: ( ( 'activity' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2356:1: ( 'activity' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2400:1: ( ( 'activity' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2401:1: ( 'activity' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2356:1: ( 'activity' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2357:1: 'activity'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2401:1: ( 'activity' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2402:1: 'activity'
             {
              before(grammarAccess.getElevageAccess().getActivityKeyword_3_0()); 
-            match(input,32,FollowSets000.FOLLOW_32_in_rule__Elevage__Group_3__0__Impl4622); 
+            match(input,33,FollowSets000.FOLLOW_33_in_rule__Elevage__Group_3__0__Impl4726); 
              after(grammarAccess.getElevageAccess().getActivityKeyword_3_0()); 
 
             }
@@ -5929,16 +6103,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group_3__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2370:1: rule__Elevage__Group_3__1 : rule__Elevage__Group_3__1__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2415:1: rule__Elevage__Group_3__1 : rule__Elevage__Group_3__1__Impl ;
     public final void rule__Elevage__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2374:1: ( rule__Elevage__Group_3__1__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2375:2: rule__Elevage__Group_3__1__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2419:1: ( rule__Elevage__Group_3__1__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2420:2: rule__Elevage__Group_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group_3__1__Impl_in_rule__Elevage__Group_3__14653);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__Group_3__1__Impl_in_rule__Elevage__Group_3__14757);
             rule__Elevage__Group_3__1__Impl();
 
             state._fsp--;
@@ -5962,23 +6136,23 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__Group_3__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2381:1: rule__Elevage__Group_3__1__Impl : ( ( rule__Elevage__ActivityAssignment_3_1 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2426:1: rule__Elevage__Group_3__1__Impl : ( ( rule__Elevage__ActivityAssignment_3_1 ) ) ;
     public final void rule__Elevage__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2385:1: ( ( ( rule__Elevage__ActivityAssignment_3_1 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2386:1: ( ( rule__Elevage__ActivityAssignment_3_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2430:1: ( ( ( rule__Elevage__ActivityAssignment_3_1 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2431:1: ( ( rule__Elevage__ActivityAssignment_3_1 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2386:1: ( ( rule__Elevage__ActivityAssignment_3_1 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2387:1: ( rule__Elevage__ActivityAssignment_3_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2431:1: ( ( rule__Elevage__ActivityAssignment_3_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2432:1: ( rule__Elevage__ActivityAssignment_3_1 )
             {
              before(grammarAccess.getElevageAccess().getActivityAssignment_3_1()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2388:1: ( rule__Elevage__ActivityAssignment_3_1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2388:2: rule__Elevage__ActivityAssignment_3_1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2433:1: ( rule__Elevage__ActivityAssignment_3_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2433:2: rule__Elevage__ActivityAssignment_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Elevage__ActivityAssignment_3_1_in_rule__Elevage__Group_3__1__Impl4680);
+            pushFollow(FollowSets000.FOLLOW_rule__Elevage__ActivityAssignment_3_1_in_rule__Elevage__Group_3__1__Impl4784);
             rule__Elevage__ActivityAssignment_3_1();
 
             state._fsp--;
@@ -6009,21 +6183,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2402:1: rule__Culture__Group__0 : rule__Culture__Group__0__Impl rule__Culture__Group__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2447:1: rule__Culture__Group__0 : rule__Culture__Group__0__Impl rule__Culture__Group__1 ;
     public final void rule__Culture__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2406:1: ( rule__Culture__Group__0__Impl rule__Culture__Group__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2407:2: rule__Culture__Group__0__Impl rule__Culture__Group__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2451:1: ( rule__Culture__Group__0__Impl rule__Culture__Group__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2452:2: rule__Culture__Group__0__Impl rule__Culture__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__0__Impl_in_rule__Culture__Group__04714);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__0__Impl_in_rule__Culture__Group__04818);
             rule__Culture__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__1_in_rule__Culture__Group__04717);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__1_in_rule__Culture__Group__04821);
             rule__Culture__Group__1();
 
             state._fsp--;
@@ -6047,21 +6221,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2414:1: rule__Culture__Group__0__Impl : ( () ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2459:1: rule__Culture__Group__0__Impl : ( () ) ;
     public final void rule__Culture__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2418:1: ( ( () ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2419:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2463:1: ( ( () ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2464:1: ( () )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2419:1: ( () )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2420:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2464:1: ( () )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2465:1: ()
             {
              before(grammarAccess.getCultureAccess().getCultureAction_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2421:1: ()
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2423:1: 
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2466:1: ()
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2468:1: 
             {
             }
 
@@ -6084,21 +6258,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2433:1: rule__Culture__Group__1 : rule__Culture__Group__1__Impl rule__Culture__Group__2 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2478:1: rule__Culture__Group__1 : rule__Culture__Group__1__Impl rule__Culture__Group__2 ;
     public final void rule__Culture__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2437:1: ( rule__Culture__Group__1__Impl rule__Culture__Group__2 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2438:2: rule__Culture__Group__1__Impl rule__Culture__Group__2
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2482:1: ( rule__Culture__Group__1__Impl rule__Culture__Group__2 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2483:2: rule__Culture__Group__1__Impl rule__Culture__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__1__Impl_in_rule__Culture__Group__14775);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__1__Impl_in_rule__Culture__Group__14879);
             rule__Culture__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__2_in_rule__Culture__Group__14778);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__2_in_rule__Culture__Group__14882);
             rule__Culture__Group__2();
 
             state._fsp--;
@@ -6122,20 +6296,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2445:1: rule__Culture__Group__1__Impl : ( 'Culture' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2490:1: rule__Culture__Group__1__Impl : ( 'Culture' ) ;
     public final void rule__Culture__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2449:1: ( ( 'Culture' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2450:1: ( 'Culture' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2494:1: ( ( 'Culture' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2495:1: ( 'Culture' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2450:1: ( 'Culture' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2451:1: 'Culture'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2495:1: ( 'Culture' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2496:1: 'Culture'
             {
              before(grammarAccess.getCultureAccess().getCultureKeyword_1()); 
-            match(input,35,FollowSets000.FOLLOW_35_in_rule__Culture__Group__1__Impl4806); 
+            match(input,36,FollowSets000.FOLLOW_36_in_rule__Culture__Group__1__Impl4910); 
              after(grammarAccess.getCultureAccess().getCultureKeyword_1()); 
 
             }
@@ -6159,21 +6333,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group__2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2464:1: rule__Culture__Group__2 : rule__Culture__Group__2__Impl rule__Culture__Group__3 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2509:1: rule__Culture__Group__2 : rule__Culture__Group__2__Impl rule__Culture__Group__3 ;
     public final void rule__Culture__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2468:1: ( rule__Culture__Group__2__Impl rule__Culture__Group__3 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2469:2: rule__Culture__Group__2__Impl rule__Culture__Group__3
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2513:1: ( rule__Culture__Group__2__Impl rule__Culture__Group__3 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2514:2: rule__Culture__Group__2__Impl rule__Culture__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__2__Impl_in_rule__Culture__Group__24837);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__2__Impl_in_rule__Culture__Group__24941);
             rule__Culture__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__3_in_rule__Culture__Group__24840);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__3_in_rule__Culture__Group__24944);
             rule__Culture__Group__3();
 
             state._fsp--;
@@ -6197,20 +6371,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group__2__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2476:1: rule__Culture__Group__2__Impl : ( '{' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2521:1: rule__Culture__Group__2__Impl : ( '{' ) ;
     public final void rule__Culture__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2480:1: ( ( '{' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2481:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2525:1: ( ( '{' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2526:1: ( '{' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2481:1: ( '{' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2482:1: '{'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2526:1: ( '{' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2527:1: '{'
             {
              before(grammarAccess.getCultureAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FollowSets000.FOLLOW_17_in_rule__Culture__Group__2__Impl4868); 
+            match(input,17,FollowSets000.FOLLOW_17_in_rule__Culture__Group__2__Impl4972); 
              after(grammarAccess.getCultureAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -6234,21 +6408,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group__3"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2495:1: rule__Culture__Group__3 : rule__Culture__Group__3__Impl rule__Culture__Group__4 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2540:1: rule__Culture__Group__3 : rule__Culture__Group__3__Impl rule__Culture__Group__4 ;
     public final void rule__Culture__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2499:1: ( rule__Culture__Group__3__Impl rule__Culture__Group__4 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2500:2: rule__Culture__Group__3__Impl rule__Culture__Group__4
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2544:1: ( rule__Culture__Group__3__Impl rule__Culture__Group__4 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2545:2: rule__Culture__Group__3__Impl rule__Culture__Group__4
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__3__Impl_in_rule__Culture__Group__34899);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__3__Impl_in_rule__Culture__Group__35003);
             rule__Culture__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__4_in_rule__Culture__Group__34902);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__4_in_rule__Culture__Group__35006);
             rule__Culture__Group__4();
 
             state._fsp--;
@@ -6272,31 +6446,31 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group__3__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2507:1: rule__Culture__Group__3__Impl : ( ( rule__Culture__Group_3__0 )? ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2552:1: rule__Culture__Group__3__Impl : ( ( rule__Culture__Group_3__0 )? ) ;
     public final void rule__Culture__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2511:1: ( ( ( rule__Culture__Group_3__0 )? ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2512:1: ( ( rule__Culture__Group_3__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2556:1: ( ( ( rule__Culture__Group_3__0 )? ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2557:1: ( ( rule__Culture__Group_3__0 )? )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2512:1: ( ( rule__Culture__Group_3__0 )? )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2513:1: ( rule__Culture__Group_3__0 )?
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2557:1: ( ( rule__Culture__Group_3__0 )? )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2558:1: ( rule__Culture__Group_3__0 )?
             {
              before(grammarAccess.getCultureAccess().getGroup_3()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2514:1: ( rule__Culture__Group_3__0 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2559:1: ( rule__Culture__Group_3__0 )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( (LA13_0==32) ) {
-                alt13=1;
+            if ( (LA14_0==33) ) {
+                alt14=1;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2514:2: rule__Culture__Group_3__0
+                    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2559:2: rule__Culture__Group_3__0
                     {
-                    pushFollow(FollowSets000.FOLLOW_rule__Culture__Group_3__0_in_rule__Culture__Group__3__Impl4929);
+                    pushFollow(FollowSets000.FOLLOW_rule__Culture__Group_3__0_in_rule__Culture__Group__3__Impl5033);
                     rule__Culture__Group_3__0();
 
                     state._fsp--;
@@ -6330,16 +6504,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group__4"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2524:1: rule__Culture__Group__4 : rule__Culture__Group__4__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2569:1: rule__Culture__Group__4 : rule__Culture__Group__4__Impl ;
     public final void rule__Culture__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2528:1: ( rule__Culture__Group__4__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2529:2: rule__Culture__Group__4__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2573:1: ( rule__Culture__Group__4__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2574:2: rule__Culture__Group__4__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__4__Impl_in_rule__Culture__Group__44960);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group__4__Impl_in_rule__Culture__Group__45064);
             rule__Culture__Group__4__Impl();
 
             state._fsp--;
@@ -6363,20 +6537,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group__4__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2535:1: rule__Culture__Group__4__Impl : ( '}' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2580:1: rule__Culture__Group__4__Impl : ( '}' ) ;
     public final void rule__Culture__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2539:1: ( ( '}' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2540:1: ( '}' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2584:1: ( ( '}' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2585:1: ( '}' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2540:1: ( '}' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2541:1: '}'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2585:1: ( '}' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2586:1: '}'
             {
              before(grammarAccess.getCultureAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Culture__Group__4__Impl4988); 
+            match(input,23,FollowSets000.FOLLOW_23_in_rule__Culture__Group__4__Impl5092); 
              after(grammarAccess.getCultureAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -6400,21 +6574,21 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group_3__0"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2564:1: rule__Culture__Group_3__0 : rule__Culture__Group_3__0__Impl rule__Culture__Group_3__1 ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2609:1: rule__Culture__Group_3__0 : rule__Culture__Group_3__0__Impl rule__Culture__Group_3__1 ;
     public final void rule__Culture__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2568:1: ( rule__Culture__Group_3__0__Impl rule__Culture__Group_3__1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2569:2: rule__Culture__Group_3__0__Impl rule__Culture__Group_3__1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2613:1: ( rule__Culture__Group_3__0__Impl rule__Culture__Group_3__1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2614:2: rule__Culture__Group_3__0__Impl rule__Culture__Group_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group_3__0__Impl_in_rule__Culture__Group_3__05029);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group_3__0__Impl_in_rule__Culture__Group_3__05133);
             rule__Culture__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group_3__1_in_rule__Culture__Group_3__05032);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group_3__1_in_rule__Culture__Group_3__05136);
             rule__Culture__Group_3__1();
 
             state._fsp--;
@@ -6438,20 +6612,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group_3__0__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2576:1: rule__Culture__Group_3__0__Impl : ( 'activity' ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2621:1: rule__Culture__Group_3__0__Impl : ( 'activity' ) ;
     public final void rule__Culture__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2580:1: ( ( 'activity' ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2581:1: ( 'activity' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2625:1: ( ( 'activity' ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2626:1: ( 'activity' )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2581:1: ( 'activity' )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2582:1: 'activity'
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2626:1: ( 'activity' )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2627:1: 'activity'
             {
              before(grammarAccess.getCultureAccess().getActivityKeyword_3_0()); 
-            match(input,32,FollowSets000.FOLLOW_32_in_rule__Culture__Group_3__0__Impl5060); 
+            match(input,33,FollowSets000.FOLLOW_33_in_rule__Culture__Group_3__0__Impl5164); 
              after(grammarAccess.getCultureAccess().getActivityKeyword_3_0()); 
 
             }
@@ -6475,16 +6649,16 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group_3__1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2595:1: rule__Culture__Group_3__1 : rule__Culture__Group_3__1__Impl ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2640:1: rule__Culture__Group_3__1 : rule__Culture__Group_3__1__Impl ;
     public final void rule__Culture__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2599:1: ( rule__Culture__Group_3__1__Impl )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2600:2: rule__Culture__Group_3__1__Impl
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2644:1: ( rule__Culture__Group_3__1__Impl )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2645:2: rule__Culture__Group_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group_3__1__Impl_in_rule__Culture__Group_3__15091);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__Group_3__1__Impl_in_rule__Culture__Group_3__15195);
             rule__Culture__Group_3__1__Impl();
 
             state._fsp--;
@@ -6508,23 +6682,23 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__Group_3__1__Impl"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2606:1: rule__Culture__Group_3__1__Impl : ( ( rule__Culture__ActivityAssignment_3_1 ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2651:1: rule__Culture__Group_3__1__Impl : ( ( rule__Culture__ActivityAssignment_3_1 ) ) ;
     public final void rule__Culture__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2610:1: ( ( ( rule__Culture__ActivityAssignment_3_1 ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2611:1: ( ( rule__Culture__ActivityAssignment_3_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2655:1: ( ( ( rule__Culture__ActivityAssignment_3_1 ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2656:1: ( ( rule__Culture__ActivityAssignment_3_1 ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2611:1: ( ( rule__Culture__ActivityAssignment_3_1 ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2612:1: ( rule__Culture__ActivityAssignment_3_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2656:1: ( ( rule__Culture__ActivityAssignment_3_1 ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2657:1: ( rule__Culture__ActivityAssignment_3_1 )
             {
              before(grammarAccess.getCultureAccess().getActivityAssignment_3_1()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2613:1: ( rule__Culture__ActivityAssignment_3_1 )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2613:2: rule__Culture__ActivityAssignment_3_1
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2658:1: ( rule__Culture__ActivityAssignment_3_1 )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2658:2: rule__Culture__ActivityAssignment_3_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Culture__ActivityAssignment_3_1_in_rule__Culture__Group_3__1__Impl5118);
+            pushFollow(FollowSets000.FOLLOW_rule__Culture__ActivityAssignment_3_1_in_rule__Culture__Group_3__1__Impl5222);
             rule__Culture__ActivityAssignment_3_1();
 
             state._fsp--;
@@ -6555,20 +6729,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__NameAssignment_2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2628:1: rule__PeriodicActivity__NameAssignment_2 : ( ruleEString ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2673:1: rule__PeriodicActivity__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__PeriodicActivity__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2632:1: ( ( ruleEString ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2633:1: ( ruleEString )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2677:1: ( ( ruleEString ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2678:1: ( ruleEString )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2633:1: ( ruleEString )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2634:1: ruleEString
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2678:1: ( ruleEString )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2679:1: ruleEString
             {
              before(grammarAccess.getPeriodicActivityAccess().getNameEStringParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__PeriodicActivity__NameAssignment_25157);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__PeriodicActivity__NameAssignment_25261);
             ruleEString();
 
             state._fsp--;
@@ -6596,24 +6770,24 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PeriodicActivity__AtelierAssignment_4_1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2643:1: rule__PeriodicActivity__AtelierAssignment_4_1 : ( ( ruleEString ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2688:1: rule__PeriodicActivity__AtelierAssignment_4_1 : ( ( ruleEString ) ) ;
     public final void rule__PeriodicActivity__AtelierAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2647:1: ( ( ( ruleEString ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2648:1: ( ( ruleEString ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2692:1: ( ( ( ruleEString ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2693:1: ( ( ruleEString ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2648:1: ( ( ruleEString ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2649:1: ( ruleEString )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2693:1: ( ( ruleEString ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2694:1: ( ruleEString )
             {
              before(grammarAccess.getPeriodicActivityAccess().getAtelierAtelierCrossReference_4_1_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2650:1: ( ruleEString )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2651:1: ruleEString
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2695:1: ( ruleEString )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2696:1: ruleEString
             {
              before(grammarAccess.getPeriodicActivityAccess().getAtelierAtelierEStringParserRuleCall_4_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__PeriodicActivity__AtelierAssignment_4_15192);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__PeriodicActivity__AtelierAssignment_4_15296);
             ruleEString();
 
             state._fsp--;
@@ -6644,26 +6818,26 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__PeriodicActivity__AtelierAssignment_4_1"
 
 
-    // $ANTLR start "rule__PeriodicActivity__StartAssignment_6"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2662:1: rule__PeriodicActivity__StartAssignment_6 : ( ruleDate ) ;
-    public final void rule__PeriodicActivity__StartAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__PeriodicActivity__StartAssignment_7"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2707:1: rule__PeriodicActivity__StartAssignment_7 : ( ruleDate ) ;
+    public final void rule__PeriodicActivity__StartAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2666:1: ( ( ruleDate ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2667:1: ( ruleDate )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2711:1: ( ( ruleDate ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2712:1: ( ruleDate )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2667:1: ( ruleDate )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2668:1: ruleDate
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2712:1: ( ruleDate )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2713:1: ruleDate
             {
-             before(grammarAccess.getPeriodicActivityAccess().getStartDateParserRuleCall_6_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleDate_in_rule__PeriodicActivity__StartAssignment_65227);
+             before(grammarAccess.getPeriodicActivityAccess().getStartDateParserRuleCall_7_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_rule__PeriodicActivity__StartAssignment_75331);
             ruleDate();
 
             state._fsp--;
 
-             after(grammarAccess.getPeriodicActivityAccess().getStartDateParserRuleCall_6_0()); 
+             after(grammarAccess.getPeriodicActivityAccess().getStartDateParserRuleCall_7_0()); 
 
             }
 
@@ -6682,29 +6856,29 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PeriodicActivity__StartAssignment_6"
+    // $ANTLR end "rule__PeriodicActivity__StartAssignment_7"
 
 
-    // $ANTLR start "rule__PeriodicActivity__EndAssignment_9"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2677:1: rule__PeriodicActivity__EndAssignment_9 : ( ruleDate ) ;
-    public final void rule__PeriodicActivity__EndAssignment_9() throws RecognitionException {
+    // $ANTLR start "rule__PeriodicActivity__EndAssignment_10"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2722:1: rule__PeriodicActivity__EndAssignment_10 : ( ruleDate ) ;
+    public final void rule__PeriodicActivity__EndAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2681:1: ( ( ruleDate ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2682:1: ( ruleDate )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2726:1: ( ( ruleDate ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2727:1: ( ruleDate )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2682:1: ( ruleDate )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2683:1: ruleDate
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2727:1: ( ruleDate )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2728:1: ruleDate
             {
-             before(grammarAccess.getPeriodicActivityAccess().getEndDateParserRuleCall_9_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleDate_in_rule__PeriodicActivity__EndAssignment_95258);
+             before(grammarAccess.getPeriodicActivityAccess().getEndDateParserRuleCall_10_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_rule__PeriodicActivity__EndAssignment_105362);
             ruleDate();
 
             state._fsp--;
 
-             after(grammarAccess.getPeriodicActivityAccess().getEndDateParserRuleCall_9_0()); 
+             after(grammarAccess.getPeriodicActivityAccess().getEndDateParserRuleCall_10_0()); 
 
             }
 
@@ -6723,193 +6897,29 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__PeriodicActivity__EndAssignment_9"
+    // $ANTLR end "rule__PeriodicActivity__EndAssignment_10"
 
 
-    // $ANTLR start "rule__PeriodicActivity__ResAllocationAssignment_12_2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2692:1: rule__PeriodicActivity__ResAllocationAssignment_12_2 : ( ruleResAllocation ) ;
-    public final void rule__PeriodicActivity__ResAllocationAssignment_12_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2696:1: ( ( ruleResAllocation ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2697:1: ( ruleResAllocation )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2697:1: ( ruleResAllocation )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2698:1: ruleResAllocation
-            {
-             before(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_12_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleResAllocation_in_rule__PeriodicActivity__ResAllocationAssignment_12_25289);
-            ruleResAllocation();
-
-            state._fsp--;
-
-             after(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_12_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__ResAllocationAssignment_12_2"
-
-
-    // $ANTLR start "rule__PeriodicActivity__ResAllocationAssignment_12_3_1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2707:1: rule__PeriodicActivity__ResAllocationAssignment_12_3_1 : ( ruleResAllocation ) ;
-    public final void rule__PeriodicActivity__ResAllocationAssignment_12_3_1() throws RecognitionException {
+    // $ANTLR start "rule__PeriodicActivity__PeriodicityNumberAssignment_12_1"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2737:1: rule__PeriodicActivity__PeriodicityNumberAssignment_12_1 : ( ruleEInt ) ;
+    public final void rule__PeriodicActivity__PeriodicityNumberAssignment_12_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2711:1: ( ( ruleResAllocation ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2712:1: ( ruleResAllocation )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2741:1: ( ( ruleEInt ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2742:1: ( ruleEInt )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2712:1: ( ruleResAllocation )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2713:1: ruleResAllocation
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2742:1: ( ruleEInt )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2743:1: ruleEInt
             {
-             before(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_12_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleResAllocation_in_rule__PeriodicActivity__ResAllocationAssignment_12_3_15320);
-            ruleResAllocation();
-
-            state._fsp--;
-
-             after(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_12_3_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__ResAllocationAssignment_12_3_1"
-
-
-    // $ANTLR start "rule__PeriodicActivity__RuleAssignment_13_2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2722:1: rule__PeriodicActivity__RuleAssignment_13_2 : ( ruleRule ) ;
-    public final void rule__PeriodicActivity__RuleAssignment_13_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2726:1: ( ( ruleRule ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2727:1: ( ruleRule )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2727:1: ( ruleRule )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2728:1: ruleRule
-            {
-             before(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_13_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRule_in_rule__PeriodicActivity__RuleAssignment_13_25351);
-            ruleRule();
-
-            state._fsp--;
-
-             after(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_13_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__RuleAssignment_13_2"
-
-
-    // $ANTLR start "rule__PeriodicActivity__RuleAssignment_13_3_1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2737:1: rule__PeriodicActivity__RuleAssignment_13_3_1 : ( ruleRule ) ;
-    public final void rule__PeriodicActivity__RuleAssignment_13_3_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2741:1: ( ( ruleRule ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2742:1: ( ruleRule )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2742:1: ( ruleRule )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2743:1: ruleRule
-            {
-             before(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_13_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRule_in_rule__PeriodicActivity__RuleAssignment_13_3_15382);
-            ruleRule();
-
-            state._fsp--;
-
-             after(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_13_3_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__PeriodicActivity__RuleAssignment_13_3_1"
-
-
-    // $ANTLR start "rule__Date__DayAssignment_2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2752:1: rule__Date__DayAssignment_2 : ( ruleEInt ) ;
-    public final void rule__Date__DayAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2756:1: ( ( ruleEInt ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2757:1: ( ruleEInt )
-            {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2757:1: ( ruleEInt )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2758:1: ruleEInt
-            {
-             before(grammarAccess.getDateAccess().getDayEIntParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_rule__Date__DayAssignment_25413);
+             before(grammarAccess.getPeriodicActivityAccess().getPeriodicityNumberEIntParserRuleCall_12_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_rule__PeriodicActivity__PeriodicityNumberAssignment_12_15393);
             ruleEInt();
 
             state._fsp--;
 
-             after(grammarAccess.getDateAccess().getDayEIntParserRuleCall_2_0()); 
+             after(grammarAccess.getPeriodicActivityAccess().getPeriodicityNumberEIntParserRuleCall_12_1_0()); 
 
             }
 
@@ -6928,28 +6938,274 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Date__DayAssignment_2"
+    // $ANTLR end "rule__PeriodicActivity__PeriodicityNumberAssignment_12_1"
+
+
+    // $ANTLR start "rule__PeriodicActivity__PeriodicityTypeAssignment_12_2"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2752:1: rule__PeriodicActivity__PeriodicityTypeAssignment_12_2 : ( rulePeriodicity ) ;
+    public final void rule__PeriodicActivity__PeriodicityTypeAssignment_12_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2756:1: ( ( rulePeriodicity ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2757:1: ( rulePeriodicity )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2757:1: ( rulePeriodicity )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2758:1: rulePeriodicity
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getPeriodicityTypePeriodicityEnumRuleCall_12_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_rulePeriodicity_in_rule__PeriodicActivity__PeriodicityTypeAssignment_12_25424);
+            rulePeriodicity();
+
+            state._fsp--;
+
+             after(grammarAccess.getPeriodicActivityAccess().getPeriodicityTypePeriodicityEnumRuleCall_12_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__PeriodicityTypeAssignment_12_2"
+
+
+    // $ANTLR start "rule__PeriodicActivity__ResAllocationAssignment_13_2"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2767:1: rule__PeriodicActivity__ResAllocationAssignment_13_2 : ( ruleResAllocation ) ;
+    public final void rule__PeriodicActivity__ResAllocationAssignment_13_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2771:1: ( ( ruleResAllocation ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2772:1: ( ruleResAllocation )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2772:1: ( ruleResAllocation )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2773:1: ruleResAllocation
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_13_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleResAllocation_in_rule__PeriodicActivity__ResAllocationAssignment_13_25455);
+            ruleResAllocation();
+
+            state._fsp--;
+
+             after(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_13_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__ResAllocationAssignment_13_2"
+
+
+    // $ANTLR start "rule__PeriodicActivity__ResAllocationAssignment_13_3_1"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2782:1: rule__PeriodicActivity__ResAllocationAssignment_13_3_1 : ( ruleResAllocation ) ;
+    public final void rule__PeriodicActivity__ResAllocationAssignment_13_3_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2786:1: ( ( ruleResAllocation ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2787:1: ( ruleResAllocation )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2787:1: ( ruleResAllocation )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2788:1: ruleResAllocation
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_13_3_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleResAllocation_in_rule__PeriodicActivity__ResAllocationAssignment_13_3_15486);
+            ruleResAllocation();
+
+            state._fsp--;
+
+             after(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_13_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__ResAllocationAssignment_13_3_1"
+
+
+    // $ANTLR start "rule__PeriodicActivity__RuleAssignment_14_2"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2797:1: rule__PeriodicActivity__RuleAssignment_14_2 : ( ruleRule ) ;
+    public final void rule__PeriodicActivity__RuleAssignment_14_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2801:1: ( ( ruleRule ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2802:1: ( ruleRule )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2802:1: ( ruleRule )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2803:1: ruleRule
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_14_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleRule_in_rule__PeriodicActivity__RuleAssignment_14_25517);
+            ruleRule();
+
+            state._fsp--;
+
+             after(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_14_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__RuleAssignment_14_2"
+
+
+    // $ANTLR start "rule__PeriodicActivity__RuleAssignment_14_3_1"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2812:1: rule__PeriodicActivity__RuleAssignment_14_3_1 : ( ruleRule ) ;
+    public final void rule__PeriodicActivity__RuleAssignment_14_3_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2816:1: ( ( ruleRule ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2817:1: ( ruleRule )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2817:1: ( ruleRule )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2818:1: ruleRule
+            {
+             before(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_14_3_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleRule_in_rule__PeriodicActivity__RuleAssignment_14_3_15548);
+            ruleRule();
+
+            state._fsp--;
+
+             after(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_14_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PeriodicActivity__RuleAssignment_14_3_1"
+
+
+    // $ANTLR start "rule__Date__DayAssignment_1"
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2827:1: rule__Date__DayAssignment_1 : ( ruleEInt ) ;
+    public final void rule__Date__DayAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2831:1: ( ( ruleEInt ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2832:1: ( ruleEInt )
+            {
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2832:1: ( ruleEInt )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2833:1: ruleEInt
+            {
+             before(grammarAccess.getDateAccess().getDayEIntParserRuleCall_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_rule__Date__DayAssignment_15579);
+            ruleEInt();
+
+            state._fsp--;
+
+             after(grammarAccess.getDateAccess().getDayEIntParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Date__DayAssignment_1"
 
 
     // $ANTLR start "rule__ResAllocation__RessourceAssignment_2"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2767:1: rule__ResAllocation__RessourceAssignment_2 : ( ( RULE_ID ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2842:1: rule__ResAllocation__RessourceAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ResAllocation__RessourceAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2771:1: ( ( ( RULE_ID ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2772:1: ( ( RULE_ID ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2846:1: ( ( ( RULE_ID ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2847:1: ( ( RULE_ID ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2772:1: ( ( RULE_ID ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2773:1: ( RULE_ID )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2847:1: ( ( RULE_ID ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2848:1: ( RULE_ID )
             {
              before(grammarAccess.getResAllocationAccess().getRessourceRessourceCrossReference_2_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2774:1: ( RULE_ID )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2775:1: RULE_ID
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2849:1: ( RULE_ID )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2850:1: RULE_ID
             {
              before(grammarAccess.getResAllocationAccess().getRessourceRessourceIDTerminalRuleCall_2_0_1()); 
-            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__ResAllocation__RessourceAssignment_25448); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__ResAllocation__RessourceAssignment_25614); 
              after(grammarAccess.getResAllocationAccess().getRessourceRessourceIDTerminalRuleCall_2_0_1()); 
 
             }
@@ -6977,20 +7233,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResAllocation__DureeAssignment_4"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2786:1: rule__ResAllocation__DureeAssignment_4 : ( ruleEInt ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2861:1: rule__ResAllocation__DureeAssignment_4 : ( ruleEInt ) ;
     public final void rule__ResAllocation__DureeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2790:1: ( ( ruleEInt ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2791:1: ( ruleEInt )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2865:1: ( ( ruleEInt ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2866:1: ( ruleEInt )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2791:1: ( ruleEInt )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2792:1: ruleEInt
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2866:1: ( ruleEInt )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2867:1: ruleEInt
             {
              before(grammarAccess.getResAllocationAccess().getDureeEIntParserRuleCall_4_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_rule__ResAllocation__DureeAssignment_45483);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_rule__ResAllocation__DureeAssignment_45649);
             ruleEInt();
 
             state._fsp--;
@@ -7018,20 +7274,20 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__PreAssignment_1_1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2801:1: rule__Rule__PreAssignment_1_1 : ( rulePredicate ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2876:1: rule__Rule__PreAssignment_1_1 : ( rulePredicate ) ;
     public final void rule__Rule__PreAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2805:1: ( ( rulePredicate ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2806:1: ( rulePredicate )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2880:1: ( ( rulePredicate ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2881:1: ( rulePredicate )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2806:1: ( rulePredicate )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2807:1: rulePredicate
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2881:1: ( rulePredicate )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2882:1: rulePredicate
             {
              before(grammarAccess.getRuleAccess().getPrePredicateParserRuleCall_1_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_rulePredicate_in_rule__Rule__PreAssignment_1_15514);
+            pushFollow(FollowSets000.FOLLOW_rulePredicate_in_rule__Rule__PreAssignment_1_15680);
             rulePredicate();
 
             state._fsp--;
@@ -7059,24 +7315,24 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Atelier_Impl__ActivityAssignment_3_1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2816:1: rule__Atelier_Impl__ActivityAssignment_3_1 : ( ( ruleEString ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2891:1: rule__Atelier_Impl__ActivityAssignment_3_1 : ( ( ruleEString ) ) ;
     public final void rule__Atelier_Impl__ActivityAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2820:1: ( ( ( ruleEString ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2821:1: ( ( ruleEString ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2895:1: ( ( ( ruleEString ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2896:1: ( ( ruleEString ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2821:1: ( ( ruleEString ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2822:1: ( ruleEString )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2896:1: ( ( ruleEString ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2897:1: ( ruleEString )
             {
              before(grammarAccess.getAtelier_ImplAccess().getActivityPeriodicActivityCrossReference_3_1_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2823:1: ( ruleEString )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2824:1: ruleEString
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2898:1: ( ruleEString )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2899:1: ruleEString
             {
              before(grammarAccess.getAtelier_ImplAccess().getActivityPeriodicActivityEStringParserRuleCall_3_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Atelier_Impl__ActivityAssignment_3_15549);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Atelier_Impl__ActivityAssignment_3_15715);
             ruleEString();
 
             state._fsp--;
@@ -7108,24 +7364,24 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Elevage__ActivityAssignment_3_1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2836:1: rule__Elevage__ActivityAssignment_3_1 : ( ( ruleEString ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2911:1: rule__Elevage__ActivityAssignment_3_1 : ( ( ruleEString ) ) ;
     public final void rule__Elevage__ActivityAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2840:1: ( ( ( ruleEString ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2841:1: ( ( ruleEString ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2915:1: ( ( ( ruleEString ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2916:1: ( ( ruleEString ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2841:1: ( ( ruleEString ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2842:1: ( ruleEString )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2916:1: ( ( ruleEString ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2917:1: ( ruleEString )
             {
              before(grammarAccess.getElevageAccess().getActivityPeriodicActivityCrossReference_3_1_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2843:1: ( ruleEString )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2844:1: ruleEString
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2918:1: ( ruleEString )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2919:1: ruleEString
             {
              before(grammarAccess.getElevageAccess().getActivityPeriodicActivityEStringParserRuleCall_3_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Elevage__ActivityAssignment_3_15589);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Elevage__ActivityAssignment_3_15755);
             ruleEString();
 
             state._fsp--;
@@ -7157,24 +7413,24 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Culture__ActivityAssignment_3_1"
-    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2855:1: rule__Culture__ActivityAssignment_3_1 : ( ( ruleEString ) ) ;
+    // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2930:1: rule__Culture__ActivityAssignment_3_1 : ( ( ruleEString ) ) ;
     public final void rule__Culture__ActivityAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2859:1: ( ( ( ruleEString ) ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2860:1: ( ( ruleEString ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2934:1: ( ( ( ruleEString ) ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2935:1: ( ( ruleEString ) )
             {
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2860:1: ( ( ruleEString ) )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2861:1: ( ruleEString )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2935:1: ( ( ruleEString ) )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2936:1: ( ruleEString )
             {
              before(grammarAccess.getCultureAccess().getActivityPeriodicActivityCrossReference_3_1_0()); 
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2862:1: ( ruleEString )
-            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2863:1: ruleEString
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2937:1: ( ruleEString )
+            // ../org.xtext.activity.act.ui/src-gen/org/xtext/activity/ui/contentassist/antlr/internal/InternalAct.g:2938:1: ruleEString
             {
              before(grammarAccess.getCultureAccess().getActivityPeriodicActivityEStringParserRuleCall_3_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Culture__ActivityAssignment_3_15628);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Culture__ActivityAssignment_3_15794);
             ruleEString();
 
             state._fsp--;
@@ -7240,210 +7496,216 @@ public class InternalActParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_ruleCulture_in_entryRuleCulture606 = new BitSet(new long[]{0x0000000000000000L});
         public static final BitSet FOLLOW_EOF_in_entryRuleCulture613 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__Culture__Group__0_in_ruleCulture639 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_11_in_rule__PeriodicActivity__Alternatives_11_1676 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_12_in_rule__PeriodicActivity__Alternatives_11_1696 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_13_in_rule__PeriodicActivity__Alternatives_11_1716 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_14_in_rule__PeriodicActivity__Alternatives_11_1736 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_15_in_rule__PeriodicActivity__Alternatives_11_1756 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_rule__EString__Alternatives791 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__EString__Alternatives808 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__0__Impl_in_rule__PeriodicActivity__Group__0838 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__1_in_rule__PeriodicActivity__Group__0841 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__1__Impl_in_rule__PeriodicActivity__Group__1899 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__2_in_rule__PeriodicActivity__Group__1902 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_rule__PeriodicActivity__Group__1__Impl930 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__2__Impl_in_rule__PeriodicActivity__Group__2961 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__3_in_rule__PeriodicActivity__Group__2964 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__NameAssignment_2_in_rule__PeriodicActivity__Group__2__Impl991 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__3__Impl_in_rule__PeriodicActivity__Group__31021 = new BitSet(new long[]{0x0000000000440000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__4_in_rule__PeriodicActivity__Group__31024 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__PeriodicActivity__Group__3__Impl1052 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__4__Impl_in_rule__PeriodicActivity__Group__41083 = new BitSet(new long[]{0x0000000000440000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__5_in_rule__PeriodicActivity__Group__41086 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__0_in_rule__PeriodicActivity__Group__4__Impl1113 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__5__Impl_in_rule__PeriodicActivity__Group__51144 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__6_in_rule__PeriodicActivity__Group__51147 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_18_in_rule__PeriodicActivity__Group__5__Impl1175 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__6__Impl_in_rule__PeriodicActivity__Group__61206 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__7_in_rule__PeriodicActivity__Group__61209 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__StartAssignment_6_in_rule__PeriodicActivity__Group__6__Impl1236 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__7__Impl_in_rule__PeriodicActivity__Group__71266 = new BitSet(new long[]{0x0000000000100000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__8_in_rule__PeriodicActivity__Group__71269 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__PeriodicActivity__Group__7__Impl1297 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__8__Impl_in_rule__PeriodicActivity__Group__81328 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__9_in_rule__PeriodicActivity__Group__81331 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_20_in_rule__PeriodicActivity__Group__8__Impl1359 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__9__Impl_in_rule__PeriodicActivity__Group__91390 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__10_in_rule__PeriodicActivity__Group__91393 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__EndAssignment_9_in_rule__PeriodicActivity__Group__9__Impl1420 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__10__Impl_in_rule__PeriodicActivity__Group__101450 = new BitSet(new long[]{0x0000000005A00000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__11_in_rule__PeriodicActivity__Group__101453 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__PeriodicActivity__Group__10__Impl1481 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__11__Impl_in_rule__PeriodicActivity__Group__111512 = new BitSet(new long[]{0x0000000005A00000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__12_in_rule__PeriodicActivity__Group__111515 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_11__0_in_rule__PeriodicActivity__Group__11__Impl1542 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__12__Impl_in_rule__PeriodicActivity__Group__121573 = new BitSet(new long[]{0x0000000005A00000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__13_in_rule__PeriodicActivity__Group__121576 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__0_in_rule__PeriodicActivity__Group__12__Impl1603 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__13__Impl_in_rule__PeriodicActivity__Group__131634 = new BitSet(new long[]{0x0000000005A00000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__14_in_rule__PeriodicActivity__Group__131637 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__0_in_rule__PeriodicActivity__Group__13__Impl1664 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__14__Impl_in_rule__PeriodicActivity__Group__141695 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__PeriodicActivity__Group__14__Impl1723 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__0__Impl_in_rule__PeriodicActivity__Group_4__01784 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__1_in_rule__PeriodicActivity__Group_4__01787 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_22_in_rule__PeriodicActivity__Group_4__0__Impl1815 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__1__Impl_in_rule__PeriodicActivity__Group_4__11846 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__2_in_rule__PeriodicActivity__Group_4__11849 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__AtelierAssignment_4_1_in_rule__PeriodicActivity__Group_4__1__Impl1876 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__2__Impl_in_rule__PeriodicActivity__Group_4__21906 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__PeriodicActivity__Group_4__2__Impl1934 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_11__0__Impl_in_rule__PeriodicActivity__Group_11__01971 = new BitSet(new long[]{0x000000000000F800L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_11__1_in_rule__PeriodicActivity__Group_11__01974 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_23_in_rule__PeriodicActivity__Group_11__0__Impl2002 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_11__1__Impl_in_rule__PeriodicActivity__Group_11__12033 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Alternatives_11_1_in_rule__PeriodicActivity__Group_11__1__Impl2060 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__0__Impl_in_rule__PeriodicActivity__Group_12__02094 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__1_in_rule__PeriodicActivity__Group_12__02097 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_24_in_rule__PeriodicActivity__Group_12__0__Impl2125 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__1__Impl_in_rule__PeriodicActivity__Group_12__12156 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__2_in_rule__PeriodicActivity__Group_12__12159 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__PeriodicActivity__Group_12__1__Impl2187 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__2__Impl_in_rule__PeriodicActivity__Group_12__22218 = new BitSet(new long[]{0x0000000002080000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__3_in_rule__PeriodicActivity__Group_12__22221 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__ResAllocationAssignment_12_2_in_rule__PeriodicActivity__Group_12__2__Impl2248 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__3__Impl_in_rule__PeriodicActivity__Group_12__32278 = new BitSet(new long[]{0x0000000002080000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__4_in_rule__PeriodicActivity__Group_12__32281 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12_3__0_in_rule__PeriodicActivity__Group_12__3__Impl2308 = new BitSet(new long[]{0x0000000000080002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__4__Impl_in_rule__PeriodicActivity__Group_12__42339 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_25_in_rule__PeriodicActivity__Group_12__4__Impl2367 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12_3__0__Impl_in_rule__PeriodicActivity__Group_12_3__02408 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12_3__1_in_rule__PeriodicActivity__Group_12_3__02411 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__PeriodicActivity__Group_12_3__0__Impl2439 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12_3__1__Impl_in_rule__PeriodicActivity__Group_12_3__12470 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__ResAllocationAssignment_12_3_1_in_rule__PeriodicActivity__Group_12_3__1__Impl2497 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__0__Impl_in_rule__PeriodicActivity__Group_13__02531 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__1_in_rule__PeriodicActivity__Group_13__02534 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_26_in_rule__PeriodicActivity__Group_13__0__Impl2562 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__1__Impl_in_rule__PeriodicActivity__Group_13__12593 = new BitSet(new long[]{0x0000000040000000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__2_in_rule__PeriodicActivity__Group_13__12596 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__PeriodicActivity__Group_13__1__Impl2624 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__2__Impl_in_rule__PeriodicActivity__Group_13__22655 = new BitSet(new long[]{0x0000000000280000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__3_in_rule__PeriodicActivity__Group_13__22658 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__RuleAssignment_13_2_in_rule__PeriodicActivity__Group_13__2__Impl2685 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__3__Impl_in_rule__PeriodicActivity__Group_13__32715 = new BitSet(new long[]{0x0000000000280000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__4_in_rule__PeriodicActivity__Group_13__32718 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13_3__0_in_rule__PeriodicActivity__Group_13__3__Impl2745 = new BitSet(new long[]{0x0000000000080002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__4__Impl_in_rule__PeriodicActivity__Group_13__42776 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__PeriodicActivity__Group_13__4__Impl2804 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13_3__0__Impl_in_rule__PeriodicActivity__Group_13_3__02845 = new BitSet(new long[]{0x0000000040000000L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13_3__1_in_rule__PeriodicActivity__Group_13_3__02848 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__PeriodicActivity__Group_13_3__0__Impl2876 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13_3__1__Impl_in_rule__PeriodicActivity__Group_13_3__12907 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__PeriodicActivity__RuleAssignment_13_3_1_in_rule__PeriodicActivity__Group_13_3__1__Impl2934 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Date__Group__0__Impl_in_rule__Date__Group__02968 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_rule__Date__Group__1_in_rule__Date__Group__02971 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Date__Group__1__Impl_in_rule__Date__Group__13029 = new BitSet(new long[]{0x0000000200000040L});
-        public static final BitSet FOLLOW_rule__Date__Group__2_in_rule__Date__Group__13032 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_27_in_rule__Date__Group__1__Impl3060 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Date__Group__2__Impl_in_rule__Date__Group__23091 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Date__DayAssignment_2_in_rule__Date__Group__2__Impl3118 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ResAllocation__Group__0__Impl_in_rule__ResAllocation__Group__03154 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_rule__ResAllocation__Group__1_in_rule__ResAllocation__Group__03157 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ResAllocation__Group__1__Impl_in_rule__ResAllocation__Group__13215 = new BitSet(new long[]{0x0000000000000020L});
-        public static final BitSet FOLLOW_rule__ResAllocation__Group__2_in_rule__ResAllocation__Group__13218 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_rule__ResAllocation__Group__1__Impl3246 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ResAllocation__Group__2__Impl_in_rule__ResAllocation__Group__23277 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_rule__ResAllocation__Group__3_in_rule__ResAllocation__Group__23280 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ResAllocation__RessourceAssignment_2_in_rule__ResAllocation__Group__2__Impl3307 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ResAllocation__Group__3__Impl_in_rule__ResAllocation__Group__33337 = new BitSet(new long[]{0x0000000200000040L});
-        public static final BitSet FOLLOW_rule__ResAllocation__Group__4_in_rule__ResAllocation__Group__33340 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_29_in_rule__ResAllocation__Group__3__Impl3368 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ResAllocation__Group__4__Impl_in_rule__ResAllocation__Group__43399 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ResAllocation__DureeAssignment_4_in_rule__ResAllocation__Group__4__Impl3426 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__03466 = new BitSet(new long[]{0x0000000040000000L});
-        public static final BitSet FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__03469 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__13527 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Rule__Group_1__0_in_rule__Rule__Group__1__Impl3554 = new BitSet(new long[]{0x0000000040000002L});
-        public static final BitSet FOLLOW_rule__Rule__Group_1__0__Impl_in_rule__Rule__Group_1__03589 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_rule__Rule__Group_1__1_in_rule__Rule__Group_1__03592 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_30_in_rule__Rule__Group_1__0__Impl3620 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Rule__Group_1__1__Impl_in_rule__Rule__Group_1__13651 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Rule__PreAssignment_1_1_in_rule__Rule__Group_1__1__Impl3678 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__0__Impl_in_rule__Atelier_Impl__Group__03712 = new BitSet(new long[]{0x0000000080000000L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__1_in_rule__Atelier_Impl__Group__03715 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__1__Impl_in_rule__Atelier_Impl__Group__13773 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__2_in_rule__Atelier_Impl__Group__13776 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_rule__Atelier_Impl__Group__1__Impl3804 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__2__Impl_in_rule__Atelier_Impl__Group__23835 = new BitSet(new long[]{0x0000000100200000L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__3_in_rule__Atelier_Impl__Group__23838 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__Atelier_Impl__Group__2__Impl3866 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__3__Impl_in_rule__Atelier_Impl__Group__33897 = new BitSet(new long[]{0x0000000100200000L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__4_in_rule__Atelier_Impl__Group__33900 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group_3__0_in_rule__Atelier_Impl__Group__3__Impl3927 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__4__Impl_in_rule__Atelier_Impl__Group__43958 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Atelier_Impl__Group__4__Impl3986 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group_3__0__Impl_in_rule__Atelier_Impl__Group_3__04027 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group_3__1_in_rule__Atelier_Impl__Group_3__04030 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_rule__Atelier_Impl__Group_3__0__Impl4058 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__Group_3__1__Impl_in_rule__Atelier_Impl__Group_3__14089 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Atelier_Impl__ActivityAssignment_3_1_in_rule__Atelier_Impl__Group_3__1__Impl4116 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EInt__Group__0__Impl_in_rule__EInt__Group__04150 = new BitSet(new long[]{0x0000000200000040L});
-        public static final BitSet FOLLOW_rule__EInt__Group__1_in_rule__EInt__Group__04153 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_33_in_rule__EInt__Group__0__Impl4182 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__EInt__Group__1__Impl_in_rule__EInt__Group__14215 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_INT_in_rule__EInt__Group__1__Impl4242 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Elevage__Group__0__Impl_in_rule__Elevage__Group__04276 = new BitSet(new long[]{0x0000000400000000L});
-        public static final BitSet FOLLOW_rule__Elevage__Group__1_in_rule__Elevage__Group__04279 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Elevage__Group__1__Impl_in_rule__Elevage__Group__14337 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__Elevage__Group__2_in_rule__Elevage__Group__14340 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_34_in_rule__Elevage__Group__1__Impl4368 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Elevage__Group__2__Impl_in_rule__Elevage__Group__24399 = new BitSet(new long[]{0x0000000100200000L});
-        public static final BitSet FOLLOW_rule__Elevage__Group__3_in_rule__Elevage__Group__24402 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__Elevage__Group__2__Impl4430 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Elevage__Group__3__Impl_in_rule__Elevage__Group__34461 = new BitSet(new long[]{0x0000000100200000L});
-        public static final BitSet FOLLOW_rule__Elevage__Group__4_in_rule__Elevage__Group__34464 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Elevage__Group_3__0_in_rule__Elevage__Group__3__Impl4491 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Elevage__Group__4__Impl_in_rule__Elevage__Group__44522 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Elevage__Group__4__Impl4550 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Elevage__Group_3__0__Impl_in_rule__Elevage__Group_3__04591 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__Elevage__Group_3__1_in_rule__Elevage__Group_3__04594 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_rule__Elevage__Group_3__0__Impl4622 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Elevage__Group_3__1__Impl_in_rule__Elevage__Group_3__14653 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Elevage__ActivityAssignment_3_1_in_rule__Elevage__Group_3__1__Impl4680 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Culture__Group__0__Impl_in_rule__Culture__Group__04714 = new BitSet(new long[]{0x0000000800000000L});
-        public static final BitSet FOLLOW_rule__Culture__Group__1_in_rule__Culture__Group__04717 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Culture__Group__1__Impl_in_rule__Culture__Group__14775 = new BitSet(new long[]{0x0000000000020000L});
-        public static final BitSet FOLLOW_rule__Culture__Group__2_in_rule__Culture__Group__14778 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_35_in_rule__Culture__Group__1__Impl4806 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Culture__Group__2__Impl_in_rule__Culture__Group__24837 = new BitSet(new long[]{0x0000000100200000L});
-        public static final BitSet FOLLOW_rule__Culture__Group__3_in_rule__Culture__Group__24840 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_17_in_rule__Culture__Group__2__Impl4868 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Culture__Group__3__Impl_in_rule__Culture__Group__34899 = new BitSet(new long[]{0x0000000100200000L});
-        public static final BitSet FOLLOW_rule__Culture__Group__4_in_rule__Culture__Group__34902 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Culture__Group_3__0_in_rule__Culture__Group__3__Impl4929 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Culture__Group__4__Impl_in_rule__Culture__Group__44960 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Culture__Group__4__Impl4988 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Culture__Group_3__0__Impl_in_rule__Culture__Group_3__05029 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__Culture__Group_3__1_in_rule__Culture__Group_3__05032 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_rule__Culture__Group_3__0__Impl5060 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Culture__Group_3__1__Impl_in_rule__Culture__Group_3__15091 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Culture__ActivityAssignment_3_1_in_rule__Culture__Group_3__1__Impl5118 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__PeriodicActivity__NameAssignment_25157 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__PeriodicActivity__AtelierAssignment_4_15192 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDate_in_rule__PeriodicActivity__StartAssignment_65227 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDate_in_rule__PeriodicActivity__EndAssignment_95258 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleResAllocation_in_rule__PeriodicActivity__ResAllocationAssignment_12_25289 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleResAllocation_in_rule__PeriodicActivity__ResAllocationAssignment_12_3_15320 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRule_in_rule__PeriodicActivity__RuleAssignment_13_25351 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRule_in_rule__PeriodicActivity__RuleAssignment_13_3_15382 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_rule__Date__DayAssignment_25413 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_rule__ResAllocation__RessourceAssignment_25448 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_rule__ResAllocation__DureeAssignment_45483 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePredicate_in_rule__Rule__PreAssignment_1_15514 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__Atelier_Impl__ActivityAssignment_3_15549 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__Elevage__ActivityAssignment_3_15589 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__Culture__ActivityAssignment_3_15628 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Periodicity__Alternatives_in_rulePeriodicity676 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_rule__EString__Alternatives712 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__EString__Alternatives729 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_11_in_rule__Periodicity__Alternatives762 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_12_in_rule__Periodicity__Alternatives783 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_13_in_rule__Periodicity__Alternatives804 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_14_in_rule__Periodicity__Alternatives825 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rule__Periodicity__Alternatives846 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__0__Impl_in_rule__PeriodicActivity__Group__0879 = new BitSet(new long[]{0x0000000000010000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__1_in_rule__PeriodicActivity__Group__0882 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__1__Impl_in_rule__PeriodicActivity__Group__1940 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__2_in_rule__PeriodicActivity__Group__1943 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_16_in_rule__PeriodicActivity__Group__1__Impl971 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__2__Impl_in_rule__PeriodicActivity__Group__21002 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__3_in_rule__PeriodicActivity__Group__21005 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__NameAssignment_2_in_rule__PeriodicActivity__Group__2__Impl1032 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__3__Impl_in_rule__PeriodicActivity__Group__31062 = new BitSet(new long[]{0x0000000001040000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__4_in_rule__PeriodicActivity__Group__31065 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__PeriodicActivity__Group__3__Impl1093 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__4__Impl_in_rule__PeriodicActivity__Group__41124 = new BitSet(new long[]{0x0000000001040000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__5_in_rule__PeriodicActivity__Group__41127 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__0_in_rule__PeriodicActivity__Group__4__Impl1154 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__5__Impl_in_rule__PeriodicActivity__Group__51185 = new BitSet(new long[]{0x0000000000080000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__6_in_rule__PeriodicActivity__Group__51188 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_18_in_rule__PeriodicActivity__Group__5__Impl1216 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__6__Impl_in_rule__PeriodicActivity__Group__61247 = new BitSet(new long[]{0x0000000400000040L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__7_in_rule__PeriodicActivity__Group__61250 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_rule__PeriodicActivity__Group__6__Impl1278 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__7__Impl_in_rule__PeriodicActivity__Group__71309 = new BitSet(new long[]{0x0000000000100000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__8_in_rule__PeriodicActivity__Group__71312 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__StartAssignment_7_in_rule__PeriodicActivity__Group__7__Impl1339 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__8__Impl_in_rule__PeriodicActivity__Group__81369 = new BitSet(new long[]{0x0000000000200000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__9_in_rule__PeriodicActivity__Group__81372 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_20_in_rule__PeriodicActivity__Group__8__Impl1400 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__9__Impl_in_rule__PeriodicActivity__Group__91431 = new BitSet(new long[]{0x0000000400000040L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__10_in_rule__PeriodicActivity__Group__91434 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__PeriodicActivity__Group__9__Impl1462 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__10__Impl_in_rule__PeriodicActivity__Group__101493 = new BitSet(new long[]{0x0000000000400000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__11_in_rule__PeriodicActivity__Group__101496 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__EndAssignment_10_in_rule__PeriodicActivity__Group__10__Impl1523 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__11__Impl_in_rule__PeriodicActivity__Group__111553 = new BitSet(new long[]{0x0000000016800000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__12_in_rule__PeriodicActivity__Group__111556 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_rule__PeriodicActivity__Group__11__Impl1584 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__12__Impl_in_rule__PeriodicActivity__Group__121615 = new BitSet(new long[]{0x0000000016800000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__13_in_rule__PeriodicActivity__Group__121618 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__0_in_rule__PeriodicActivity__Group__12__Impl1645 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__13__Impl_in_rule__PeriodicActivity__Group__131676 = new BitSet(new long[]{0x0000000016800000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__14_in_rule__PeriodicActivity__Group__131679 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__0_in_rule__PeriodicActivity__Group__13__Impl1706 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__14__Impl_in_rule__PeriodicActivity__Group__141737 = new BitSet(new long[]{0x0000000016800000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__15_in_rule__PeriodicActivity__Group__141740 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14__0_in_rule__PeriodicActivity__Group__14__Impl1767 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group__15__Impl_in_rule__PeriodicActivity__Group__151798 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_23_in_rule__PeriodicActivity__Group__15__Impl1826 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__0__Impl_in_rule__PeriodicActivity__Group_4__01889 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__1_in_rule__PeriodicActivity__Group_4__01892 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_rule__PeriodicActivity__Group_4__0__Impl1920 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__1__Impl_in_rule__PeriodicActivity__Group_4__11951 = new BitSet(new long[]{0x0000000000400000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__2_in_rule__PeriodicActivity__Group_4__11954 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__AtelierAssignment_4_1_in_rule__PeriodicActivity__Group_4__1__Impl1981 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_4__2__Impl_in_rule__PeriodicActivity__Group_4__22011 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_rule__PeriodicActivity__Group_4__2__Impl2039 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__0__Impl_in_rule__PeriodicActivity__Group_12__02076 = new BitSet(new long[]{0x000000040000F840L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__1_in_rule__PeriodicActivity__Group_12__02079 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_25_in_rule__PeriodicActivity__Group_12__0__Impl2107 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__1__Impl_in_rule__PeriodicActivity__Group_12__12138 = new BitSet(new long[]{0x000000040000F840L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__2_in_rule__PeriodicActivity__Group_12__12141 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__PeriodicityNumberAssignment_12_1_in_rule__PeriodicActivity__Group_12__1__Impl2168 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_12__2__Impl_in_rule__PeriodicActivity__Group_12__22199 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__PeriodicityTypeAssignment_12_2_in_rule__PeriodicActivity__Group_12__2__Impl2226 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__0__Impl_in_rule__PeriodicActivity__Group_13__02262 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__1_in_rule__PeriodicActivity__Group_13__02265 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_rule__PeriodicActivity__Group_13__0__Impl2293 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__1__Impl_in_rule__PeriodicActivity__Group_13__12324 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__2_in_rule__PeriodicActivity__Group_13__12327 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__PeriodicActivity__Group_13__1__Impl2355 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__2__Impl_in_rule__PeriodicActivity__Group_13__22386 = new BitSet(new long[]{0x0000000008400000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__3_in_rule__PeriodicActivity__Group_13__22389 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__ResAllocationAssignment_13_2_in_rule__PeriodicActivity__Group_13__2__Impl2416 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__3__Impl_in_rule__PeriodicActivity__Group_13__32446 = new BitSet(new long[]{0x0000000008400000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__4_in_rule__PeriodicActivity__Group_13__32449 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13_3__0_in_rule__PeriodicActivity__Group_13__3__Impl2476 = new BitSet(new long[]{0x0000000000400002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13__4__Impl_in_rule__PeriodicActivity__Group_13__42507 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_27_in_rule__PeriodicActivity__Group_13__4__Impl2535 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13_3__0__Impl_in_rule__PeriodicActivity__Group_13_3__02576 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13_3__1_in_rule__PeriodicActivity__Group_13_3__02579 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_rule__PeriodicActivity__Group_13_3__0__Impl2607 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_13_3__1__Impl_in_rule__PeriodicActivity__Group_13_3__12638 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__ResAllocationAssignment_13_3_1_in_rule__PeriodicActivity__Group_13_3__1__Impl2665 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14__0__Impl_in_rule__PeriodicActivity__Group_14__02699 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14__1_in_rule__PeriodicActivity__Group_14__02702 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_28_in_rule__PeriodicActivity__Group_14__0__Impl2730 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14__1__Impl_in_rule__PeriodicActivity__Group_14__12761 = new BitSet(new long[]{0x0000000080000000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14__2_in_rule__PeriodicActivity__Group_14__12764 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__PeriodicActivity__Group_14__1__Impl2792 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14__2__Impl_in_rule__PeriodicActivity__Group_14__22823 = new BitSet(new long[]{0x0000000000C00000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14__3_in_rule__PeriodicActivity__Group_14__22826 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__RuleAssignment_14_2_in_rule__PeriodicActivity__Group_14__2__Impl2853 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14__3__Impl_in_rule__PeriodicActivity__Group_14__32883 = new BitSet(new long[]{0x0000000000C00000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14__4_in_rule__PeriodicActivity__Group_14__32886 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14_3__0_in_rule__PeriodicActivity__Group_14__3__Impl2913 = new BitSet(new long[]{0x0000000000400002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14__4__Impl_in_rule__PeriodicActivity__Group_14__42944 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_23_in_rule__PeriodicActivity__Group_14__4__Impl2972 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14_3__0__Impl_in_rule__PeriodicActivity__Group_14_3__03013 = new BitSet(new long[]{0x0000000080000000L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14_3__1_in_rule__PeriodicActivity__Group_14_3__03016 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_22_in_rule__PeriodicActivity__Group_14_3__0__Impl3044 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__Group_14_3__1__Impl_in_rule__PeriodicActivity__Group_14_3__13075 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__PeriodicActivity__RuleAssignment_14_3_1_in_rule__PeriodicActivity__Group_14_3__1__Impl3102 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Date__Group__0__Impl_in_rule__Date__Group__03136 = new BitSet(new long[]{0x0000000400000040L});
+        public static final BitSet FOLLOW_rule__Date__Group__1_in_rule__Date__Group__03139 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Date__Group__1__Impl_in_rule__Date__Group__13197 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Date__DayAssignment_1_in_rule__Date__Group__1__Impl3224 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ResAllocation__Group__0__Impl_in_rule__ResAllocation__Group__03258 = new BitSet(new long[]{0x0000000020000000L});
+        public static final BitSet FOLLOW_rule__ResAllocation__Group__1_in_rule__ResAllocation__Group__03261 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ResAllocation__Group__1__Impl_in_rule__ResAllocation__Group__13319 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__ResAllocation__Group__2_in_rule__ResAllocation__Group__13322 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_29_in_rule__ResAllocation__Group__1__Impl3350 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ResAllocation__Group__2__Impl_in_rule__ResAllocation__Group__23381 = new BitSet(new long[]{0x0000000040000000L});
+        public static final BitSet FOLLOW_rule__ResAllocation__Group__3_in_rule__ResAllocation__Group__23384 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ResAllocation__RessourceAssignment_2_in_rule__ResAllocation__Group__2__Impl3411 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ResAllocation__Group__3__Impl_in_rule__ResAllocation__Group__33441 = new BitSet(new long[]{0x0000000400000040L});
+        public static final BitSet FOLLOW_rule__ResAllocation__Group__4_in_rule__ResAllocation__Group__33444 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_30_in_rule__ResAllocation__Group__3__Impl3472 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ResAllocation__Group__4__Impl_in_rule__ResAllocation__Group__43503 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__ResAllocation__DureeAssignment_4_in_rule__ResAllocation__Group__4__Impl3530 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Rule__Group__0__Impl_in_rule__Rule__Group__03570 = new BitSet(new long[]{0x0000000080000000L});
+        public static final BitSet FOLLOW_rule__Rule__Group__1_in_rule__Rule__Group__03573 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Rule__Group__1__Impl_in_rule__Rule__Group__13631 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Rule__Group_1__0_in_rule__Rule__Group__1__Impl3658 = new BitSet(new long[]{0x0000000080000002L});
+        public static final BitSet FOLLOW_rule__Rule__Group_1__0__Impl_in_rule__Rule__Group_1__03693 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_rule__Rule__Group_1__1_in_rule__Rule__Group_1__03696 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_rule__Rule__Group_1__0__Impl3724 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Rule__Group_1__1__Impl_in_rule__Rule__Group_1__13755 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Rule__PreAssignment_1_1_in_rule__Rule__Group_1__1__Impl3782 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__0__Impl_in_rule__Atelier_Impl__Group__03816 = new BitSet(new long[]{0x0000000100000000L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__1_in_rule__Atelier_Impl__Group__03819 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__1__Impl_in_rule__Atelier_Impl__Group__13877 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__2_in_rule__Atelier_Impl__Group__13880 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_32_in_rule__Atelier_Impl__Group__1__Impl3908 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__2__Impl_in_rule__Atelier_Impl__Group__23939 = new BitSet(new long[]{0x0000000200800000L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__3_in_rule__Atelier_Impl__Group__23942 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__Atelier_Impl__Group__2__Impl3970 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__3__Impl_in_rule__Atelier_Impl__Group__34001 = new BitSet(new long[]{0x0000000200800000L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__4_in_rule__Atelier_Impl__Group__34004 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group_3__0_in_rule__Atelier_Impl__Group__3__Impl4031 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group__4__Impl_in_rule__Atelier_Impl__Group__44062 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_23_in_rule__Atelier_Impl__Group__4__Impl4090 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group_3__0__Impl_in_rule__Atelier_Impl__Group_3__04131 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group_3__1_in_rule__Atelier_Impl__Group_3__04134 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_33_in_rule__Atelier_Impl__Group_3__0__Impl4162 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__Group_3__1__Impl_in_rule__Atelier_Impl__Group_3__14193 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Atelier_Impl__ActivityAssignment_3_1_in_rule__Atelier_Impl__Group_3__1__Impl4220 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EInt__Group__0__Impl_in_rule__EInt__Group__04254 = new BitSet(new long[]{0x0000000400000040L});
+        public static final BitSet FOLLOW_rule__EInt__Group__1_in_rule__EInt__Group__04257 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_34_in_rule__EInt__Group__0__Impl4286 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__EInt__Group__1__Impl_in_rule__EInt__Group__14319 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_INT_in_rule__EInt__Group__1__Impl4346 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Elevage__Group__0__Impl_in_rule__Elevage__Group__04380 = new BitSet(new long[]{0x0000000800000000L});
+        public static final BitSet FOLLOW_rule__Elevage__Group__1_in_rule__Elevage__Group__04383 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Elevage__Group__1__Impl_in_rule__Elevage__Group__14441 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_rule__Elevage__Group__2_in_rule__Elevage__Group__14444 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_35_in_rule__Elevage__Group__1__Impl4472 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Elevage__Group__2__Impl_in_rule__Elevage__Group__24503 = new BitSet(new long[]{0x0000000200800000L});
+        public static final BitSet FOLLOW_rule__Elevage__Group__3_in_rule__Elevage__Group__24506 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__Elevage__Group__2__Impl4534 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Elevage__Group__3__Impl_in_rule__Elevage__Group__34565 = new BitSet(new long[]{0x0000000200800000L});
+        public static final BitSet FOLLOW_rule__Elevage__Group__4_in_rule__Elevage__Group__34568 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Elevage__Group_3__0_in_rule__Elevage__Group__3__Impl4595 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Elevage__Group__4__Impl_in_rule__Elevage__Group__44626 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_23_in_rule__Elevage__Group__4__Impl4654 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Elevage__Group_3__0__Impl_in_rule__Elevage__Group_3__04695 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__Elevage__Group_3__1_in_rule__Elevage__Group_3__04698 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_33_in_rule__Elevage__Group_3__0__Impl4726 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Elevage__Group_3__1__Impl_in_rule__Elevage__Group_3__14757 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Elevage__ActivityAssignment_3_1_in_rule__Elevage__Group_3__1__Impl4784 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Culture__Group__0__Impl_in_rule__Culture__Group__04818 = new BitSet(new long[]{0x0000001000000000L});
+        public static final BitSet FOLLOW_rule__Culture__Group__1_in_rule__Culture__Group__04821 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Culture__Group__1__Impl_in_rule__Culture__Group__14879 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_rule__Culture__Group__2_in_rule__Culture__Group__14882 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rule__Culture__Group__1__Impl4910 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Culture__Group__2__Impl_in_rule__Culture__Group__24941 = new BitSet(new long[]{0x0000000200800000L});
+        public static final BitSet FOLLOW_rule__Culture__Group__3_in_rule__Culture__Group__24944 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_17_in_rule__Culture__Group__2__Impl4972 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Culture__Group__3__Impl_in_rule__Culture__Group__35003 = new BitSet(new long[]{0x0000000200800000L});
+        public static final BitSet FOLLOW_rule__Culture__Group__4_in_rule__Culture__Group__35006 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Culture__Group_3__0_in_rule__Culture__Group__3__Impl5033 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Culture__Group__4__Impl_in_rule__Culture__Group__45064 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_23_in_rule__Culture__Group__4__Impl5092 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Culture__Group_3__0__Impl_in_rule__Culture__Group_3__05133 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__Culture__Group_3__1_in_rule__Culture__Group_3__05136 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_33_in_rule__Culture__Group_3__0__Impl5164 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Culture__Group_3__1__Impl_in_rule__Culture__Group_3__15195 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Culture__ActivityAssignment_3_1_in_rule__Culture__Group_3__1__Impl5222 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__PeriodicActivity__NameAssignment_25261 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__PeriodicActivity__AtelierAssignment_4_15296 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDate_in_rule__PeriodicActivity__StartAssignment_75331 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDate_in_rule__PeriodicActivity__EndAssignment_105362 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_rule__PeriodicActivity__PeriodicityNumberAssignment_12_15393 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePeriodicity_in_rule__PeriodicActivity__PeriodicityTypeAssignment_12_25424 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleResAllocation_in_rule__PeriodicActivity__ResAllocationAssignment_13_25455 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleResAllocation_in_rule__PeriodicActivity__ResAllocationAssignment_13_3_15486 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRule_in_rule__PeriodicActivity__RuleAssignment_14_25517 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRule_in_rule__PeriodicActivity__RuleAssignment_14_3_15548 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_rule__Date__DayAssignment_15579 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__ResAllocation__RessourceAssignment_25614 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_rule__ResAllocation__DureeAssignment_45649 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePredicate_in_rule__Rule__PreAssignment_1_15680 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__Atelier_Impl__ActivityAssignment_3_15715 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__Elevage__ActivityAssignment_3_15755 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__Culture__ActivityAssignment_3_15794 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

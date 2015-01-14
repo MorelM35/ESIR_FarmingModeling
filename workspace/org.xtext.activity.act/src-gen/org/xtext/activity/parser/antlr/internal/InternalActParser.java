@@ -5,6 +5,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalActParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'PeriodicActivity'", "'{'", "'atelier'", "','", "'start'", "'end'", "'every'", "'hour'", "'day'", "'week'", "'month'", "'year'", "'allocate'", "'} ,'", "'rules'", "'}'", "'from'", "'reserve'", "'for'", "'pre'", "'Atelier'", "'activity'", "'-'", "'Elevage'", "'Culture'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'PeriodicActivity'", "'{'", "'atelier'", "','", "'start'", "'from'", "'to'", "'end'", "'every'", "'allocate'", "'} ,'", "'rules'", "'}'", "'reserve'", "'for'", "'pre'", "'Atelier'", "'activity'", "'-'", "'Elevage'", "'Culture'", "'months'", "'days'", "'weeks'", "'years'", "'hours'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -37,6 +38,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__35=35;
     public static final int T__14=14;
+    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -96,7 +98,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePeriodicActivity"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:67:1: entryRulePeriodicActivity returns [EObject current=null] : iv_rulePeriodicActivity= rulePeriodicActivity EOF ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:68:1: entryRulePeriodicActivity returns [EObject current=null] : iv_rulePeriodicActivity= rulePeriodicActivity EOF ;
     public final EObject entryRulePeriodicActivity() throws RecognitionException {
         EObject current = null;
 
@@ -104,8 +106,8 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:68:2: (iv_rulePeriodicActivity= rulePeriodicActivity EOF )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:69:2: iv_rulePeriodicActivity= rulePeriodicActivity EOF
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:69:2: (iv_rulePeriodicActivity= rulePeriodicActivity EOF )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:70:2: iv_rulePeriodicActivity= rulePeriodicActivity EOF
             {
              newCompositeNode(grammarAccess.getPeriodicActivityRule()); 
             pushFollow(FollowSets000.FOLLOW_rulePeriodicActivity_in_entryRulePeriodicActivity75);
@@ -132,7 +134,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePeriodicActivity"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:76:1: rulePeriodicActivity returns [EObject current=null] : ( () otherlv_1= 'PeriodicActivity' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )? otherlv_7= 'start' ( (lv_start_8_0= ruleDate ) ) otherlv_9= ',' otherlv_10= 'end' ( (lv_end_11_0= ruleDate ) ) otherlv_12= ',' (otherlv_13= 'every' (otherlv_14= 'hour' | otherlv_15= 'day' | otherlv_16= 'week' | otherlv_17= 'month' | otherlv_18= 'year' ) )? (otherlv_19= 'allocate' otherlv_20= '{' ( (lv_resAllocation_21_0= ruleResAllocation ) ) (otherlv_22= ',' ( (lv_resAllocation_23_0= ruleResAllocation ) ) )* otherlv_24= '} ,' )? (otherlv_25= 'rules' otherlv_26= '{' ( (lv_rule_27_0= ruleRule ) ) (otherlv_28= ',' ( (lv_rule_29_0= ruleRule ) ) )* otherlv_30= '}' )? otherlv_31= '}' ) ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:77:1: rulePeriodicActivity returns [EObject current=null] : ( () otherlv_1= 'PeriodicActivity' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )? otherlv_7= 'start' otherlv_8= 'from' ( (lv_start_9_0= ruleDate ) ) otherlv_10= 'to' otherlv_11= 'end' ( (lv_end_12_0= ruleDate ) ) otherlv_13= ',' (otherlv_14= 'every' ( (lv_periodicityNumber_15_0= ruleEInt ) )? ( (lv_periodicityType_16_0= rulePeriodicity ) ) )? (otherlv_17= 'allocate' otherlv_18= '{' ( (lv_resAllocation_19_0= ruleResAllocation ) ) (otherlv_20= ',' ( (lv_resAllocation_21_0= ruleResAllocation ) ) )* otherlv_22= '} ,' )? (otherlv_23= 'rules' otherlv_24= '{' ( (lv_rule_25_0= ruleRule ) ) (otherlv_26= ',' ( (lv_rule_27_0= ruleRule ) ) )* otherlv_28= '}' )? otherlv_29= '}' ) ;
     public final EObject rulePeriodicActivity() throws RecognitionException {
         EObject current = null;
 
@@ -141,50 +143,50 @@ public class InternalActParser extends AbstractInternalAntlrParser {
         Token otherlv_4=null;
         Token otherlv_6=null;
         Token otherlv_7=null;
-        Token otherlv_9=null;
+        Token otherlv_8=null;
         Token otherlv_10=null;
-        Token otherlv_12=null;
+        Token otherlv_11=null;
         Token otherlv_13=null;
         Token otherlv_14=null;
-        Token otherlv_15=null;
-        Token otherlv_16=null;
         Token otherlv_17=null;
         Token otherlv_18=null;
-        Token otherlv_19=null;
         Token otherlv_20=null;
         Token otherlv_22=null;
+        Token otherlv_23=null;
         Token otherlv_24=null;
-        Token otherlv_25=null;
         Token otherlv_26=null;
         Token otherlv_28=null;
-        Token otherlv_30=null;
-        Token otherlv_31=null;
+        Token otherlv_29=null;
         AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        EObject lv_start_8_0 = null;
+        EObject lv_start_9_0 = null;
 
-        EObject lv_end_11_0 = null;
+        EObject lv_end_12_0 = null;
+
+        AntlrDatatypeRuleToken lv_periodicityNumber_15_0 = null;
+
+        Enumerator lv_periodicityType_16_0 = null;
+
+        EObject lv_resAllocation_19_0 = null;
 
         EObject lv_resAllocation_21_0 = null;
 
-        EObject lv_resAllocation_23_0 = null;
+        EObject lv_rule_25_0 = null;
 
         EObject lv_rule_27_0 = null;
-
-        EObject lv_rule_29_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:79:28: ( ( () otherlv_1= 'PeriodicActivity' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )? otherlv_7= 'start' ( (lv_start_8_0= ruleDate ) ) otherlv_9= ',' otherlv_10= 'end' ( (lv_end_11_0= ruleDate ) ) otherlv_12= ',' (otherlv_13= 'every' (otherlv_14= 'hour' | otherlv_15= 'day' | otherlv_16= 'week' | otherlv_17= 'month' | otherlv_18= 'year' ) )? (otherlv_19= 'allocate' otherlv_20= '{' ( (lv_resAllocation_21_0= ruleResAllocation ) ) (otherlv_22= ',' ( (lv_resAllocation_23_0= ruleResAllocation ) ) )* otherlv_24= '} ,' )? (otherlv_25= 'rules' otherlv_26= '{' ( (lv_rule_27_0= ruleRule ) ) (otherlv_28= ',' ( (lv_rule_29_0= ruleRule ) ) )* otherlv_30= '}' )? otherlv_31= '}' ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:80:1: ( () otherlv_1= 'PeriodicActivity' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )? otherlv_7= 'start' ( (lv_start_8_0= ruleDate ) ) otherlv_9= ',' otherlv_10= 'end' ( (lv_end_11_0= ruleDate ) ) otherlv_12= ',' (otherlv_13= 'every' (otherlv_14= 'hour' | otherlv_15= 'day' | otherlv_16= 'week' | otherlv_17= 'month' | otherlv_18= 'year' ) )? (otherlv_19= 'allocate' otherlv_20= '{' ( (lv_resAllocation_21_0= ruleResAllocation ) ) (otherlv_22= ',' ( (lv_resAllocation_23_0= ruleResAllocation ) ) )* otherlv_24= '} ,' )? (otherlv_25= 'rules' otherlv_26= '{' ( (lv_rule_27_0= ruleRule ) ) (otherlv_28= ',' ( (lv_rule_29_0= ruleRule ) ) )* otherlv_30= '}' )? otherlv_31= '}' )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:80:28: ( ( () otherlv_1= 'PeriodicActivity' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )? otherlv_7= 'start' otherlv_8= 'from' ( (lv_start_9_0= ruleDate ) ) otherlv_10= 'to' otherlv_11= 'end' ( (lv_end_12_0= ruleDate ) ) otherlv_13= ',' (otherlv_14= 'every' ( (lv_periodicityNumber_15_0= ruleEInt ) )? ( (lv_periodicityType_16_0= rulePeriodicity ) ) )? (otherlv_17= 'allocate' otherlv_18= '{' ( (lv_resAllocation_19_0= ruleResAllocation ) ) (otherlv_20= ',' ( (lv_resAllocation_21_0= ruleResAllocation ) ) )* otherlv_22= '} ,' )? (otherlv_23= 'rules' otherlv_24= '{' ( (lv_rule_25_0= ruleRule ) ) (otherlv_26= ',' ( (lv_rule_27_0= ruleRule ) ) )* otherlv_28= '}' )? otherlv_29= '}' ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:81:1: ( () otherlv_1= 'PeriodicActivity' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )? otherlv_7= 'start' otherlv_8= 'from' ( (lv_start_9_0= ruleDate ) ) otherlv_10= 'to' otherlv_11= 'end' ( (lv_end_12_0= ruleDate ) ) otherlv_13= ',' (otherlv_14= 'every' ( (lv_periodicityNumber_15_0= ruleEInt ) )? ( (lv_periodicityType_16_0= rulePeriodicity ) ) )? (otherlv_17= 'allocate' otherlv_18= '{' ( (lv_resAllocation_19_0= ruleResAllocation ) ) (otherlv_20= ',' ( (lv_resAllocation_21_0= ruleResAllocation ) ) )* otherlv_22= '} ,' )? (otherlv_23= 'rules' otherlv_24= '{' ( (lv_rule_25_0= ruleRule ) ) (otherlv_26= ',' ( (lv_rule_27_0= ruleRule ) ) )* otherlv_28= '}' )? otherlv_29= '}' )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:80:1: ( () otherlv_1= 'PeriodicActivity' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )? otherlv_7= 'start' ( (lv_start_8_0= ruleDate ) ) otherlv_9= ',' otherlv_10= 'end' ( (lv_end_11_0= ruleDate ) ) otherlv_12= ',' (otherlv_13= 'every' (otherlv_14= 'hour' | otherlv_15= 'day' | otherlv_16= 'week' | otherlv_17= 'month' | otherlv_18= 'year' ) )? (otherlv_19= 'allocate' otherlv_20= '{' ( (lv_resAllocation_21_0= ruleResAllocation ) ) (otherlv_22= ',' ( (lv_resAllocation_23_0= ruleResAllocation ) ) )* otherlv_24= '} ,' )? (otherlv_25= 'rules' otherlv_26= '{' ( (lv_rule_27_0= ruleRule ) ) (otherlv_28= ',' ( (lv_rule_29_0= ruleRule ) ) )* otherlv_30= '}' )? otherlv_31= '}' )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:80:2: () otherlv_1= 'PeriodicActivity' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )? otherlv_7= 'start' ( (lv_start_8_0= ruleDate ) ) otherlv_9= ',' otherlv_10= 'end' ( (lv_end_11_0= ruleDate ) ) otherlv_12= ',' (otherlv_13= 'every' (otherlv_14= 'hour' | otherlv_15= 'day' | otherlv_16= 'week' | otherlv_17= 'month' | otherlv_18= 'year' ) )? (otherlv_19= 'allocate' otherlv_20= '{' ( (lv_resAllocation_21_0= ruleResAllocation ) ) (otherlv_22= ',' ( (lv_resAllocation_23_0= ruleResAllocation ) ) )* otherlv_24= '} ,' )? (otherlv_25= 'rules' otherlv_26= '{' ( (lv_rule_27_0= ruleRule ) ) (otherlv_28= ',' ( (lv_rule_29_0= ruleRule ) ) )* otherlv_30= '}' )? otherlv_31= '}'
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:81:1: ( () otherlv_1= 'PeriodicActivity' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )? otherlv_7= 'start' otherlv_8= 'from' ( (lv_start_9_0= ruleDate ) ) otherlv_10= 'to' otherlv_11= 'end' ( (lv_end_12_0= ruleDate ) ) otherlv_13= ',' (otherlv_14= 'every' ( (lv_periodicityNumber_15_0= ruleEInt ) )? ( (lv_periodicityType_16_0= rulePeriodicity ) ) )? (otherlv_17= 'allocate' otherlv_18= '{' ( (lv_resAllocation_19_0= ruleResAllocation ) ) (otherlv_20= ',' ( (lv_resAllocation_21_0= ruleResAllocation ) ) )* otherlv_22= '} ,' )? (otherlv_23= 'rules' otherlv_24= '{' ( (lv_rule_25_0= ruleRule ) ) (otherlv_26= ',' ( (lv_rule_27_0= ruleRule ) ) )* otherlv_28= '}' )? otherlv_29= '}' )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:81:2: () otherlv_1= 'PeriodicActivity' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )? otherlv_7= 'start' otherlv_8= 'from' ( (lv_start_9_0= ruleDate ) ) otherlv_10= 'to' otherlv_11= 'end' ( (lv_end_12_0= ruleDate ) ) otherlv_13= ',' (otherlv_14= 'every' ( (lv_periodicityNumber_15_0= ruleEInt ) )? ( (lv_periodicityType_16_0= rulePeriodicity ) ) )? (otherlv_17= 'allocate' otherlv_18= '{' ( (lv_resAllocation_19_0= ruleResAllocation ) ) (otherlv_20= ',' ( (lv_resAllocation_21_0= ruleResAllocation ) ) )* otherlv_22= '} ,' )? (otherlv_23= 'rules' otherlv_24= '{' ( (lv_rule_25_0= ruleRule ) ) (otherlv_26= ',' ( (lv_rule_27_0= ruleRule ) ) )* otherlv_28= '}' )? otherlv_29= '}'
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:80:2: ()
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:81:5: 
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:81:2: ()
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:82:5: 
             {
 
                     current = forceCreateModelElement(
@@ -198,11 +200,11 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_1, grammarAccess.getPeriodicActivityAccess().getPeriodicActivityKeyword_1());
                 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:90:1: ( (lv_name_2_0= ruleEString ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:91:1: (lv_name_2_0= ruleEString )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:91:1: ( (lv_name_2_0= ruleEString ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:92:1: (lv_name_2_0= ruleEString )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:91:1: (lv_name_2_0= ruleEString )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:92:3: lv_name_2_0= ruleEString
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:92:1: (lv_name_2_0= ruleEString )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:93:3: lv_name_2_0= ruleEString
             {
              
             	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getNameEStringParserRuleCall_2_0()); 
@@ -233,7 +235,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_3, grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:112:1: (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )?
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:113:1: (otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ',' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -242,17 +244,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:112:3: otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ','
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:113:3: otherlv_4= 'atelier' ( ( ruleEString ) ) otherlv_6= ','
                     {
                     otherlv_4=(Token)match(input,13,FollowSets000.FOLLOW_13_in_rulePeriodicActivity177); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getPeriodicActivityAccess().getAtelierKeyword_4_0());
                         
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:116:1: ( ( ruleEString ) )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:117:1: ( ruleEString )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:117:1: ( ( ruleEString ) )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:118:1: ( ruleEString )
                     {
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:117:1: ( ruleEString )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:118:3: ruleEString
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:118:1: ( ruleEString )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:119:3: ruleEString
                     {
 
                     			if (current==null) {
@@ -290,17 +292,21 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_7, grammarAccess.getPeriodicActivityAccess().getStartKeyword_5());
                 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:139:1: ( (lv_start_8_0= ruleDate ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:140:1: (lv_start_8_0= ruleDate )
+            otherlv_8=(Token)match(input,16,FollowSets000.FOLLOW_16_in_rulePeriodicActivity238); 
+
+                	newLeafNode(otherlv_8, grammarAccess.getPeriodicActivityAccess().getFromKeyword_6());
+                
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:144:1: ( (lv_start_9_0= ruleDate ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:145:1: (lv_start_9_0= ruleDate )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:140:1: (lv_start_8_0= ruleDate )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:141:3: lv_start_8_0= ruleDate
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:145:1: (lv_start_9_0= ruleDate )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:146:3: lv_start_9_0= ruleDate
             {
              
-            	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getStartDateParserRuleCall_6_0()); 
+            	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getStartDateParserRuleCall_7_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleDate_in_rulePeriodicActivity247);
-            lv_start_8_0=ruleDate();
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_rulePeriodicActivity259);
+            lv_start_9_0=ruleDate();
 
             state._fsp--;
 
@@ -311,7 +317,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"start",
-                    		lv_start_8_0, 
+                    		lv_start_9_0, 
                     		"Date");
             	        afterParserOrEnumRuleCall();
             	    
@@ -321,25 +327,25 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,14,FollowSets000.FOLLOW_14_in_rulePeriodicActivity259); 
+            otherlv_10=(Token)match(input,17,FollowSets000.FOLLOW_17_in_rulePeriodicActivity271); 
 
-                	newLeafNode(otherlv_9, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_7());
+                	newLeafNode(otherlv_10, grammarAccess.getPeriodicActivityAccess().getToKeyword_8());
                 
-            otherlv_10=(Token)match(input,16,FollowSets000.FOLLOW_16_in_rulePeriodicActivity271); 
+            otherlv_11=(Token)match(input,18,FollowSets000.FOLLOW_18_in_rulePeriodicActivity283); 
 
-                	newLeafNode(otherlv_10, grammarAccess.getPeriodicActivityAccess().getEndKeyword_8());
+                	newLeafNode(otherlv_11, grammarAccess.getPeriodicActivityAccess().getEndKeyword_9());
                 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:165:1: ( (lv_end_11_0= ruleDate ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:166:1: (lv_end_11_0= ruleDate )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:170:1: ( (lv_end_12_0= ruleDate ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:171:1: (lv_end_12_0= ruleDate )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:166:1: (lv_end_11_0= ruleDate )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:167:3: lv_end_11_0= ruleDate
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:171:1: (lv_end_12_0= ruleDate )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:172:3: lv_end_12_0= ruleDate
             {
              
-            	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getEndDateParserRuleCall_9_0()); 
+            	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getEndDateParserRuleCall_10_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleDate_in_rulePeriodicActivity292);
-            lv_end_11_0=ruleDate();
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_rulePeriodicActivity304);
+            lv_end_12_0=ruleDate();
 
             state._fsp--;
 
@@ -350,7 +356,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"end",
-                    		lv_end_11_0, 
+                    		lv_end_12_0, 
                     		"Date");
             	        afterParserOrEnumRuleCall();
             	    
@@ -360,111 +366,95 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,14,FollowSets000.FOLLOW_14_in_rulePeriodicActivity304); 
+            otherlv_13=(Token)match(input,14,FollowSets000.FOLLOW_14_in_rulePeriodicActivity316); 
 
-                	newLeafNode(otherlv_12, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_10());
+                	newLeafNode(otherlv_13, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_11());
                 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:187:1: (otherlv_13= 'every' (otherlv_14= 'hour' | otherlv_15= 'day' | otherlv_16= 'week' | otherlv_17= 'month' | otherlv_18= 'year' ) )?
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:192:1: (otherlv_14= 'every' ( (lv_periodicityNumber_15_0= ruleEInt ) )? ( (lv_periodicityType_16_0= rulePeriodicity ) ) )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==17) ) {
+            if ( (LA3_0==19) ) {
                 alt3=1;
             }
             switch (alt3) {
                 case 1 :
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:187:3: otherlv_13= 'every' (otherlv_14= 'hour' | otherlv_15= 'day' | otherlv_16= 'week' | otherlv_17= 'month' | otherlv_18= 'year' )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:192:3: otherlv_14= 'every' ( (lv_periodicityNumber_15_0= ruleEInt ) )? ( (lv_periodicityType_16_0= rulePeriodicity ) )
                     {
-                    otherlv_13=(Token)match(input,17,FollowSets000.FOLLOW_17_in_rulePeriodicActivity317); 
+                    otherlv_14=(Token)match(input,19,FollowSets000.FOLLOW_19_in_rulePeriodicActivity329); 
 
-                        	newLeafNode(otherlv_13, grammarAccess.getPeriodicActivityAccess().getEveryKeyword_11_0());
+                        	newLeafNode(otherlv_14, grammarAccess.getPeriodicActivityAccess().getEveryKeyword_12_0());
                         
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:191:1: (otherlv_14= 'hour' | otherlv_15= 'day' | otherlv_16= 'week' | otherlv_17= 'month' | otherlv_18= 'year' )
-                    int alt2=5;
-                    switch ( input.LA(1) ) {
-                    case 18:
-                        {
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:196:1: ( (lv_periodicityNumber_15_0= ruleEInt ) )?
+                    int alt2=2;
+                    int LA2_0 = input.LA(1);
+
+                    if ( (LA2_0==RULE_INT||LA2_0==29) ) {
                         alt2=1;
-                        }
-                        break;
-                    case 19:
-                        {
-                        alt2=2;
-                        }
-                        break;
-                    case 20:
-                        {
-                        alt2=3;
-                        }
-                        break;
-                    case 21:
-                        {
-                        alt2=4;
-                        }
-                        break;
-                    case 22:
-                        {
-                        alt2=5;
-                        }
-                        break;
-                    default:
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 2, 0, input);
-
-                        throw nvae;
                     }
-
                     switch (alt2) {
                         case 1 :
-                            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:191:3: otherlv_14= 'hour'
+                            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:197:1: (lv_periodicityNumber_15_0= ruleEInt )
                             {
-                            otherlv_14=(Token)match(input,18,FollowSets000.FOLLOW_18_in_rulePeriodicActivity330); 
+                            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:197:1: (lv_periodicityNumber_15_0= ruleEInt )
+                            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:198:3: lv_periodicityNumber_15_0= ruleEInt
+                            {
+                             
+                            	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getPeriodicityNumberEIntParserRuleCall_12_1_0()); 
+                            	    
+                            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_rulePeriodicActivity350);
+                            lv_periodicityNumber_15_0=ruleEInt();
 
-                                	newLeafNode(otherlv_14, grammarAccess.getPeriodicActivityAccess().getHourKeyword_11_1_0());
-                                
+                            state._fsp--;
+
+
+                            	        if (current==null) {
+                            	            current = createModelElementForParent(grammarAccess.getPeriodicActivityRule());
+                            	        }
+                                   		set(
+                                   			current, 
+                                   			"periodicityNumber",
+                                    		lv_periodicityNumber_15_0, 
+                                    		"EInt");
+                            	        afterParserOrEnumRuleCall();
+                            	    
+
+                            }
+
 
                             }
                             break;
-                        case 2 :
-                            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:196:7: otherlv_15= 'day'
-                            {
-                            otherlv_15=(Token)match(input,19,FollowSets000.FOLLOW_19_in_rulePeriodicActivity348); 
 
-                                	newLeafNode(otherlv_15, grammarAccess.getPeriodicActivityAccess().getDayKeyword_11_1_1());
-                                
+                    }
 
-                            }
-                            break;
-                        case 3 :
-                            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:201:7: otherlv_16= 'week'
-                            {
-                            otherlv_16=(Token)match(input,20,FollowSets000.FOLLOW_20_in_rulePeriodicActivity366); 
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:214:3: ( (lv_periodicityType_16_0= rulePeriodicity ) )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:215:1: (lv_periodicityType_16_0= rulePeriodicity )
+                    {
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:215:1: (lv_periodicityType_16_0= rulePeriodicity )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:216:3: lv_periodicityType_16_0= rulePeriodicity
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getPeriodicityTypePeriodicityEnumRuleCall_12_2_0()); 
+                    	    
+                    pushFollow(FollowSets000.FOLLOW_rulePeriodicity_in_rulePeriodicActivity372);
+                    lv_periodicityType_16_0=rulePeriodicity();
 
-                                	newLeafNode(otherlv_16, grammarAccess.getPeriodicActivityAccess().getWeekKeyword_11_1_2());
-                                
+                    state._fsp--;
 
-                            }
-                            break;
-                        case 4 :
-                            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:206:7: otherlv_17= 'month'
-                            {
-                            otherlv_17=(Token)match(input,21,FollowSets000.FOLLOW_21_in_rulePeriodicActivity384); 
 
-                                	newLeafNode(otherlv_17, grammarAccess.getPeriodicActivityAccess().getMonthKeyword_11_1_3());
-                                
+                    	        if (current==null) {
+                    	            current = createModelElementForParent(grammarAccess.getPeriodicActivityRule());
+                    	        }
+                           		set(
+                           			current, 
+                           			"periodicityType",
+                            		lv_periodicityType_16_0, 
+                            		"Periodicity");
+                    	        afterParserOrEnumRuleCall();
+                    	    
 
-                            }
-                            break;
-                        case 5 :
-                            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:211:7: otherlv_18= 'year'
-                            {
-                            otherlv_18=(Token)match(input,22,FollowSets000.FOLLOW_22_in_rulePeriodicActivity402); 
+                    }
 
-                                	newLeafNode(otherlv_18, grammarAccess.getPeriodicActivityAccess().getYearKeyword_11_1_4());
-                                
-
-                            }
-                            break;
 
                     }
 
@@ -474,36 +464,36 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:215:4: (otherlv_19= 'allocate' otherlv_20= '{' ( (lv_resAllocation_21_0= ruleResAllocation ) ) (otherlv_22= ',' ( (lv_resAllocation_23_0= ruleResAllocation ) ) )* otherlv_24= '} ,' )?
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:232:4: (otherlv_17= 'allocate' otherlv_18= '{' ( (lv_resAllocation_19_0= ruleResAllocation ) ) (otherlv_20= ',' ( (lv_resAllocation_21_0= ruleResAllocation ) ) )* otherlv_22= '} ,' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==23) ) {
+            if ( (LA5_0==20) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:215:6: otherlv_19= 'allocate' otherlv_20= '{' ( (lv_resAllocation_21_0= ruleResAllocation ) ) (otherlv_22= ',' ( (lv_resAllocation_23_0= ruleResAllocation ) ) )* otherlv_24= '} ,'
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:232:6: otherlv_17= 'allocate' otherlv_18= '{' ( (lv_resAllocation_19_0= ruleResAllocation ) ) (otherlv_20= ',' ( (lv_resAllocation_21_0= ruleResAllocation ) ) )* otherlv_22= '} ,'
                     {
-                    otherlv_19=(Token)match(input,23,FollowSets000.FOLLOW_23_in_rulePeriodicActivity418); 
+                    otherlv_17=(Token)match(input,20,FollowSets000.FOLLOW_20_in_rulePeriodicActivity387); 
 
-                        	newLeafNode(otherlv_19, grammarAccess.getPeriodicActivityAccess().getAllocateKeyword_12_0());
+                        	newLeafNode(otherlv_17, grammarAccess.getPeriodicActivityAccess().getAllocateKeyword_13_0());
                         
-                    otherlv_20=(Token)match(input,12,FollowSets000.FOLLOW_12_in_rulePeriodicActivity430); 
+                    otherlv_18=(Token)match(input,12,FollowSets000.FOLLOW_12_in_rulePeriodicActivity399); 
 
-                        	newLeafNode(otherlv_20, grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_12_1());
+                        	newLeafNode(otherlv_18, grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_13_1());
                         
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:223:1: ( (lv_resAllocation_21_0= ruleResAllocation ) )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:224:1: (lv_resAllocation_21_0= ruleResAllocation )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:240:1: ( (lv_resAllocation_19_0= ruleResAllocation ) )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:241:1: (lv_resAllocation_19_0= ruleResAllocation )
                     {
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:224:1: (lv_resAllocation_21_0= ruleResAllocation )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:225:3: lv_resAllocation_21_0= ruleResAllocation
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:241:1: (lv_resAllocation_19_0= ruleResAllocation )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:242:3: lv_resAllocation_19_0= ruleResAllocation
                     {
                      
-                    	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_12_2_0()); 
+                    	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_13_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleResAllocation_in_rulePeriodicActivity451);
-                    lv_resAllocation_21_0=ruleResAllocation();
+                    pushFollow(FollowSets000.FOLLOW_ruleResAllocation_in_rulePeriodicActivity420);
+                    lv_resAllocation_19_0=ruleResAllocation();
 
                     state._fsp--;
 
@@ -514,7 +504,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                            		add(
                            			current, 
                            			"resAllocation",
-                            		lv_resAllocation_21_0, 
+                            		lv_resAllocation_19_0, 
                             		"ResAllocation");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -524,7 +514,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:241:2: (otherlv_22= ',' ( (lv_resAllocation_23_0= ruleResAllocation ) ) )*
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:258:2: (otherlv_20= ',' ( (lv_resAllocation_21_0= ruleResAllocation ) ) )*
                     loop4:
                     do {
                         int alt4=2;
@@ -537,23 +527,23 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:241:4: otherlv_22= ',' ( (lv_resAllocation_23_0= ruleResAllocation ) )
+                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:258:4: otherlv_20= ',' ( (lv_resAllocation_21_0= ruleResAllocation ) )
                     	    {
-                    	    otherlv_22=(Token)match(input,14,FollowSets000.FOLLOW_14_in_rulePeriodicActivity464); 
+                    	    otherlv_20=(Token)match(input,14,FollowSets000.FOLLOW_14_in_rulePeriodicActivity433); 
 
-                    	        	newLeafNode(otherlv_22, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_12_3_0());
+                    	        	newLeafNode(otherlv_20, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_13_3_0());
                     	        
-                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:245:1: ( (lv_resAllocation_23_0= ruleResAllocation ) )
-                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:246:1: (lv_resAllocation_23_0= ruleResAllocation )
+                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:262:1: ( (lv_resAllocation_21_0= ruleResAllocation ) )
+                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:263:1: (lv_resAllocation_21_0= ruleResAllocation )
                     	    {
-                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:246:1: (lv_resAllocation_23_0= ruleResAllocation )
-                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:247:3: lv_resAllocation_23_0= ruleResAllocation
+                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:263:1: (lv_resAllocation_21_0= ruleResAllocation )
+                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:264:3: lv_resAllocation_21_0= ruleResAllocation
                     	    {
                     	     
-                    	    	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_12_3_1_0()); 
+                    	    	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_13_3_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleResAllocation_in_rulePeriodicActivity485);
-                    	    lv_resAllocation_23_0=ruleResAllocation();
+                    	    pushFollow(FollowSets000.FOLLOW_ruleResAllocation_in_rulePeriodicActivity454);
+                    	    lv_resAllocation_21_0=ruleResAllocation();
 
                     	    state._fsp--;
 
@@ -564,7 +554,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                     	           		add(
                     	           			current, 
                     	           			"resAllocation",
-                    	            		lv_resAllocation_23_0, 
+                    	            		lv_resAllocation_21_0, 
                     	            		"ResAllocation");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
@@ -583,9 +573,9 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_24=(Token)match(input,24,FollowSets000.FOLLOW_24_in_rulePeriodicActivity499); 
+                    otherlv_22=(Token)match(input,21,FollowSets000.FOLLOW_21_in_rulePeriodicActivity468); 
 
-                        	newLeafNode(otherlv_24, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketSpaceCommaKeyword_12_4());
+                        	newLeafNode(otherlv_22, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketSpaceCommaKeyword_13_4());
                         
 
                     }
@@ -593,36 +583,36 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:267:3: (otherlv_25= 'rules' otherlv_26= '{' ( (lv_rule_27_0= ruleRule ) ) (otherlv_28= ',' ( (lv_rule_29_0= ruleRule ) ) )* otherlv_30= '}' )?
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:284:3: (otherlv_23= 'rules' otherlv_24= '{' ( (lv_rule_25_0= ruleRule ) ) (otherlv_26= ',' ( (lv_rule_27_0= ruleRule ) ) )* otherlv_28= '}' )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==25) ) {
+            if ( (LA7_0==22) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:267:5: otherlv_25= 'rules' otherlv_26= '{' ( (lv_rule_27_0= ruleRule ) ) (otherlv_28= ',' ( (lv_rule_29_0= ruleRule ) ) )* otherlv_30= '}'
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:284:5: otherlv_23= 'rules' otherlv_24= '{' ( (lv_rule_25_0= ruleRule ) ) (otherlv_26= ',' ( (lv_rule_27_0= ruleRule ) ) )* otherlv_28= '}'
                     {
-                    otherlv_25=(Token)match(input,25,FollowSets000.FOLLOW_25_in_rulePeriodicActivity514); 
+                    otherlv_23=(Token)match(input,22,FollowSets000.FOLLOW_22_in_rulePeriodicActivity483); 
 
-                        	newLeafNode(otherlv_25, grammarAccess.getPeriodicActivityAccess().getRulesKeyword_13_0());
+                        	newLeafNode(otherlv_23, grammarAccess.getPeriodicActivityAccess().getRulesKeyword_14_0());
                         
-                    otherlv_26=(Token)match(input,12,FollowSets000.FOLLOW_12_in_rulePeriodicActivity526); 
+                    otherlv_24=(Token)match(input,12,FollowSets000.FOLLOW_12_in_rulePeriodicActivity495); 
 
-                        	newLeafNode(otherlv_26, grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_13_1());
+                        	newLeafNode(otherlv_24, grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_14_1());
                         
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:275:1: ( (lv_rule_27_0= ruleRule ) )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:276:1: (lv_rule_27_0= ruleRule )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:292:1: ( (lv_rule_25_0= ruleRule ) )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:293:1: (lv_rule_25_0= ruleRule )
                     {
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:276:1: (lv_rule_27_0= ruleRule )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:277:3: lv_rule_27_0= ruleRule
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:293:1: (lv_rule_25_0= ruleRule )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:294:3: lv_rule_25_0= ruleRule
                     {
                      
-                    	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_13_2_0()); 
+                    	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_14_2_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleRule_in_rulePeriodicActivity547);
-                    lv_rule_27_0=ruleRule();
+                    pushFollow(FollowSets000.FOLLOW_ruleRule_in_rulePeriodicActivity516);
+                    lv_rule_25_0=ruleRule();
 
                     state._fsp--;
 
@@ -633,7 +623,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                            		add(
                            			current, 
                            			"rule",
-                            		lv_rule_27_0, 
+                            		lv_rule_25_0, 
                             		"Rule");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -643,7 +633,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:293:2: (otherlv_28= ',' ( (lv_rule_29_0= ruleRule ) ) )*
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:310:2: (otherlv_26= ',' ( (lv_rule_27_0= ruleRule ) ) )*
                     loop6:
                     do {
                         int alt6=2;
@@ -656,23 +646,23 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:293:4: otherlv_28= ',' ( (lv_rule_29_0= ruleRule ) )
+                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:310:4: otherlv_26= ',' ( (lv_rule_27_0= ruleRule ) )
                     	    {
-                    	    otherlv_28=(Token)match(input,14,FollowSets000.FOLLOW_14_in_rulePeriodicActivity560); 
+                    	    otherlv_26=(Token)match(input,14,FollowSets000.FOLLOW_14_in_rulePeriodicActivity529); 
 
-                    	        	newLeafNode(otherlv_28, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_13_3_0());
+                    	        	newLeafNode(otherlv_26, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_14_3_0());
                     	        
-                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:297:1: ( (lv_rule_29_0= ruleRule ) )
-                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:298:1: (lv_rule_29_0= ruleRule )
+                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:314:1: ( (lv_rule_27_0= ruleRule ) )
+                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:315:1: (lv_rule_27_0= ruleRule )
                     	    {
-                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:298:1: (lv_rule_29_0= ruleRule )
-                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:299:3: lv_rule_29_0= ruleRule
+                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:315:1: (lv_rule_27_0= ruleRule )
+                    	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:316:3: lv_rule_27_0= ruleRule
                     	    {
                     	     
-                    	    	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_13_3_1_0()); 
+                    	    	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_14_3_1_0()); 
                     	    	    
-                    	    pushFollow(FollowSets000.FOLLOW_ruleRule_in_rulePeriodicActivity581);
-                    	    lv_rule_29_0=ruleRule();
+                    	    pushFollow(FollowSets000.FOLLOW_ruleRule_in_rulePeriodicActivity550);
+                    	    lv_rule_27_0=ruleRule();
 
                     	    state._fsp--;
 
@@ -683,7 +673,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                     	           		add(
                     	           			current, 
                     	           			"rule",
-                    	            		lv_rule_29_0, 
+                    	            		lv_rule_27_0, 
                     	            		"Rule");
                     	    	        afterParserOrEnumRuleCall();
                     	    	    
@@ -702,9 +692,9 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_30=(Token)match(input,26,FollowSets000.FOLLOW_26_in_rulePeriodicActivity595); 
+                    otherlv_28=(Token)match(input,23,FollowSets000.FOLLOW_23_in_rulePeriodicActivity564); 
 
-                        	newLeafNode(otherlv_30, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_13_4());
+                        	newLeafNode(otherlv_28, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_14_4());
                         
 
                     }
@@ -712,9 +702,9 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_31=(Token)match(input,26,FollowSets000.FOLLOW_26_in_rulePeriodicActivity609); 
+            otherlv_29=(Token)match(input,23,FollowSets000.FOLLOW_23_in_rulePeriodicActivity578); 
 
-                	newLeafNode(otherlv_31, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_14());
+                	newLeafNode(otherlv_29, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_15());
                 
 
             }
@@ -737,7 +727,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDate"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:333:1: entryRuleDate returns [EObject current=null] : iv_ruleDate= ruleDate EOF ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:350:1: entryRuleDate returns [EObject current=null] : iv_ruleDate= ruleDate EOF ;
     public final EObject entryRuleDate() throws RecognitionException {
         EObject current = null;
 
@@ -745,17 +735,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:334:2: (iv_ruleDate= ruleDate EOF )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:335:2: iv_ruleDate= ruleDate EOF
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:351:2: (iv_ruleDate= ruleDate EOF )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:352:2: iv_ruleDate= ruleDate EOF
             {
              newCompositeNode(grammarAccess.getDateRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleDate_in_entryRuleDate647);
+            pushFollow(FollowSets000.FOLLOW_ruleDate_in_entryRuleDate616);
             iv_ruleDate=ruleDate();
 
             state._fsp--;
 
              current =iv_ruleDate; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDate657); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleDate626); 
 
             }
 
@@ -773,25 +763,24 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDate"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:342:1: ruleDate returns [EObject current=null] : ( () otherlv_1= 'from' ( (lv_day_2_0= ruleEInt ) ) ) ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:359:1: ruleDate returns [EObject current=null] : ( () ( (lv_day_1_0= ruleEInt ) ) ) ;
     public final EObject ruleDate() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_1=null;
-        AntlrDatatypeRuleToken lv_day_2_0 = null;
+        AntlrDatatypeRuleToken lv_day_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:345:28: ( ( () otherlv_1= 'from' ( (lv_day_2_0= ruleEInt ) ) ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:346:1: ( () otherlv_1= 'from' ( (lv_day_2_0= ruleEInt ) ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:362:28: ( ( () ( (lv_day_1_0= ruleEInt ) ) ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:363:1: ( () ( (lv_day_1_0= ruleEInt ) ) )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:346:1: ( () otherlv_1= 'from' ( (lv_day_2_0= ruleEInt ) ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:346:2: () otherlv_1= 'from' ( (lv_day_2_0= ruleEInt ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:363:1: ( () ( (lv_day_1_0= ruleEInt ) ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:363:2: () ( (lv_day_1_0= ruleEInt ) )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:346:2: ()
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:347:5: 
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:363:2: ()
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:364:5: 
             {
 
                     current = forceCreateModelElement(
@@ -801,21 +790,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleDate703); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getDateAccess().getFromKeyword_1());
-                
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:356:1: ( (lv_day_2_0= ruleEInt ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:357:1: (lv_day_2_0= ruleEInt )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:369:2: ( (lv_day_1_0= ruleEInt ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:370:1: (lv_day_1_0= ruleEInt )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:357:1: (lv_day_2_0= ruleEInt )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:358:3: lv_day_2_0= ruleEInt
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:370:1: (lv_day_1_0= ruleEInt )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:371:3: lv_day_1_0= ruleEInt
             {
              
-            	        newCompositeNode(grammarAccess.getDateAccess().getDayEIntParserRuleCall_2_0()); 
+            	        newCompositeNode(grammarAccess.getDateAccess().getDayEIntParserRuleCall_1_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleDate724);
-            lv_day_2_0=ruleEInt();
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleDate681);
+            lv_day_1_0=ruleEInt();
 
             state._fsp--;
 
@@ -826,7 +811,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"day",
-                    		lv_day_2_0, 
+                    		lv_day_1_0, 
                     		"EInt");
             	        afterParserOrEnumRuleCall();
             	    
@@ -857,7 +842,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleResAllocation"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:382:1: entryRuleResAllocation returns [EObject current=null] : iv_ruleResAllocation= ruleResAllocation EOF ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:395:1: entryRuleResAllocation returns [EObject current=null] : iv_ruleResAllocation= ruleResAllocation EOF ;
     public final EObject entryRuleResAllocation() throws RecognitionException {
         EObject current = null;
 
@@ -865,17 +850,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:383:2: (iv_ruleResAllocation= ruleResAllocation EOF )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:384:2: iv_ruleResAllocation= ruleResAllocation EOF
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:396:2: (iv_ruleResAllocation= ruleResAllocation EOF )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:397:2: iv_ruleResAllocation= ruleResAllocation EOF
             {
              newCompositeNode(grammarAccess.getResAllocationRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleResAllocation_in_entryRuleResAllocation760);
+            pushFollow(FollowSets000.FOLLOW_ruleResAllocation_in_entryRuleResAllocation717);
             iv_ruleResAllocation=ruleResAllocation();
 
             state._fsp--;
 
              current =iv_ruleResAllocation; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleResAllocation770); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleResAllocation727); 
 
             }
 
@@ -893,7 +878,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResAllocation"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:391:1: ruleResAllocation returns [EObject current=null] : ( () otherlv_1= 'reserve' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_duree_4_0= ruleEInt ) ) ) ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:404:1: ruleResAllocation returns [EObject current=null] : ( () otherlv_1= 'reserve' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_duree_4_0= ruleEInt ) ) ) ;
     public final EObject ruleResAllocation() throws RecognitionException {
         EObject current = null;
 
@@ -906,14 +891,14 @@ public class InternalActParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:394:28: ( ( () otherlv_1= 'reserve' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_duree_4_0= ruleEInt ) ) ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:395:1: ( () otherlv_1= 'reserve' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_duree_4_0= ruleEInt ) ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:407:28: ( ( () otherlv_1= 'reserve' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_duree_4_0= ruleEInt ) ) ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:408:1: ( () otherlv_1= 'reserve' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_duree_4_0= ruleEInt ) ) )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:395:1: ( () otherlv_1= 'reserve' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_duree_4_0= ruleEInt ) ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:395:2: () otherlv_1= 'reserve' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_duree_4_0= ruleEInt ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:408:1: ( () otherlv_1= 'reserve' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_duree_4_0= ruleEInt ) ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:408:2: () otherlv_1= 'reserve' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'for' ( (lv_duree_4_0= ruleEInt ) )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:395:2: ()
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:396:5: 
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:408:2: ()
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:409:5: 
             {
 
                     current = forceCreateModelElement(
@@ -923,22 +908,22 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleResAllocation816); 
+            otherlv_1=(Token)match(input,24,FollowSets000.FOLLOW_24_in_ruleResAllocation773); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getResAllocationAccess().getReserveKeyword_1());
                 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:405:1: ( (otherlv_2= RULE_ID ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:406:1: (otherlv_2= RULE_ID )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:418:1: ( (otherlv_2= RULE_ID ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:419:1: (otherlv_2= RULE_ID )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:406:1: (otherlv_2= RULE_ID )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:407:3: otherlv_2= RULE_ID
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:419:1: (otherlv_2= RULE_ID )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:420:3: otherlv_2= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getResAllocationRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleResAllocation836); 
+            otherlv_2=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleResAllocation793); 
 
             		newLeafNode(otherlv_2, grammarAccess.getResAllocationAccess().getRessourceRessourceCrossReference_2_0()); 
             	
@@ -948,20 +933,20 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleResAllocation848); 
+            otherlv_3=(Token)match(input,25,FollowSets000.FOLLOW_25_in_ruleResAllocation805); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getResAllocationAccess().getForKeyword_3());
                 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:422:1: ( (lv_duree_4_0= ruleEInt ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:423:1: (lv_duree_4_0= ruleEInt )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:435:1: ( (lv_duree_4_0= ruleEInt ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:436:1: (lv_duree_4_0= ruleEInt )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:423:1: (lv_duree_4_0= ruleEInt )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:424:3: lv_duree_4_0= ruleEInt
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:436:1: (lv_duree_4_0= ruleEInt )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:437:3: lv_duree_4_0= ruleEInt
             {
              
             	        newCompositeNode(grammarAccess.getResAllocationAccess().getDureeEIntParserRuleCall_4_0()); 
             	    
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleResAllocation869);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_ruleResAllocation826);
             lv_duree_4_0=ruleEInt();
 
             state._fsp--;
@@ -1004,7 +989,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:448:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:461:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -1012,17 +997,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:449:2: (iv_ruleEString= ruleEString EOF )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:450:2: iv_ruleEString= ruleEString EOF
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:462:2: (iv_ruleEString= ruleEString EOF )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:463:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_entryRuleEString906);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_entryRuleEString863);
             iv_ruleEString=ruleEString();
 
             state._fsp--;
 
              current =iv_ruleEString.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEString917); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEString874); 
 
             }
 
@@ -1040,7 +1025,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:457:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:470:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1050,10 +1035,10 @@ public class InternalActParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:460:28: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:461:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:473:28: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:474:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:461:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:474:1: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1071,9 +1056,9 @@ public class InternalActParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:461:6: this_STRING_0= RULE_STRING
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:474:6: this_STRING_0= RULE_STRING
                     {
-                    this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleEString957); 
+                    this_STRING_0=(Token)match(input,RULE_STRING,FollowSets000.FOLLOW_RULE_STRING_in_ruleEString914); 
 
                     		current.merge(this_STRING_0);
                         
@@ -1084,9 +1069,9 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:469:10: this_ID_1= RULE_ID
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:482:10: this_ID_1= RULE_ID
                     {
-                    this_ID_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEString983); 
+                    this_ID_1=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleEString940); 
 
                     		current.merge(this_ID_1);
                         
@@ -1117,7 +1102,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRule"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:484:1: entryRuleRule returns [EObject current=null] : iv_ruleRule= ruleRule EOF ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:497:1: entryRuleRule returns [EObject current=null] : iv_ruleRule= ruleRule EOF ;
     public final EObject entryRuleRule() throws RecognitionException {
         EObject current = null;
 
@@ -1125,17 +1110,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:485:2: (iv_ruleRule= ruleRule EOF )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:486:2: iv_ruleRule= ruleRule EOF
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:498:2: (iv_ruleRule= ruleRule EOF )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:499:2: iv_ruleRule= ruleRule EOF
             {
              newCompositeNode(grammarAccess.getRuleRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRule_in_entryRuleRule1028);
+            pushFollow(FollowSets000.FOLLOW_ruleRule_in_entryRuleRule985);
             iv_ruleRule=ruleRule();
 
             state._fsp--;
 
              current =iv_ruleRule; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRule1038); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleRule995); 
 
             }
 
@@ -1153,7 +1138,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRule"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:493:1: ruleRule returns [EObject current=null] : ( () (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )* ) ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:506:1: ruleRule returns [EObject current=null] : ( () (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )* ) ;
     public final EObject ruleRule() throws RecognitionException {
         EObject current = null;
 
@@ -1164,14 +1149,14 @@ public class InternalActParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:496:28: ( ( () (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )* ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:497:1: ( () (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )* )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:509:28: ( ( () (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )* ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:510:1: ( () (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )* )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:497:1: ( () (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )* )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:497:2: () (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )*
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:510:1: ( () (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )* )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:510:2: () (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )*
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:497:2: ()
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:498:5: 
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:510:2: ()
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:511:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1181,35 +1166,35 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:503:2: (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )*
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:516:2: (otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) ) )*
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==30) ) {
+                if ( (LA9_0==26) ) {
                     alt9=1;
                 }
 
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:503:4: otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) )
+            	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:516:4: otherlv_1= 'pre' ( (lv_pre_2_0= rulePredicate ) )
             	    {
-            	    otherlv_1=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleRule1085); 
+            	    otherlv_1=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleRule1042); 
 
             	        	newLeafNode(otherlv_1, grammarAccess.getRuleAccess().getPreKeyword_1_0());
             	        
-            	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:507:1: ( (lv_pre_2_0= rulePredicate ) )
-            	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:508:1: (lv_pre_2_0= rulePredicate )
+            	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:520:1: ( (lv_pre_2_0= rulePredicate ) )
+            	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:521:1: (lv_pre_2_0= rulePredicate )
             	    {
-            	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:508:1: (lv_pre_2_0= rulePredicate )
-            	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:509:3: lv_pre_2_0= rulePredicate
+            	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:521:1: (lv_pre_2_0= rulePredicate )
+            	    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:522:3: lv_pre_2_0= rulePredicate
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getRuleAccess().getPrePredicateParserRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FollowSets000.FOLLOW_rulePredicate_in_ruleRule1106);
+            	    pushFollow(FollowSets000.FOLLOW_rulePredicate_in_ruleRule1063);
             	    lv_pre_2_0=rulePredicate();
 
             	    state._fsp--;
@@ -1261,7 +1246,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtelier_Impl"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:533:1: entryRuleAtelier_Impl returns [EObject current=null] : iv_ruleAtelier_Impl= ruleAtelier_Impl EOF ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:546:1: entryRuleAtelier_Impl returns [EObject current=null] : iv_ruleAtelier_Impl= ruleAtelier_Impl EOF ;
     public final EObject entryRuleAtelier_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -1269,17 +1254,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:534:2: (iv_ruleAtelier_Impl= ruleAtelier_Impl EOF )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:535:2: iv_ruleAtelier_Impl= ruleAtelier_Impl EOF
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:547:2: (iv_ruleAtelier_Impl= ruleAtelier_Impl EOF )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:548:2: iv_ruleAtelier_Impl= ruleAtelier_Impl EOF
             {
              newCompositeNode(grammarAccess.getAtelier_ImplRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleAtelier_Impl_in_entryRuleAtelier_Impl1144);
+            pushFollow(FollowSets000.FOLLOW_ruleAtelier_Impl_in_entryRuleAtelier_Impl1101);
             iv_ruleAtelier_Impl=ruleAtelier_Impl();
 
             state._fsp--;
 
              current =iv_ruleAtelier_Impl; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAtelier_Impl1154); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleAtelier_Impl1111); 
 
             }
 
@@ -1297,7 +1282,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtelier_Impl"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:542:1: ruleAtelier_Impl returns [EObject current=null] : ( () otherlv_1= 'Atelier' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:555:1: ruleAtelier_Impl returns [EObject current=null] : ( () otherlv_1= 'Atelier' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleAtelier_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -1309,14 +1294,14 @@ public class InternalActParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:545:28: ( ( () otherlv_1= 'Atelier' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:546:1: ( () otherlv_1= 'Atelier' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:558:28: ( ( () otherlv_1= 'Atelier' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:559:1: ( () otherlv_1= 'Atelier' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:546:1: ( () otherlv_1= 'Atelier' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:546:2: () otherlv_1= 'Atelier' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}'
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:559:1: ( () otherlv_1= 'Atelier' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:559:2: () otherlv_1= 'Atelier' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}'
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:546:2: ()
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:547:5: 
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:559:2: ()
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:560:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1326,34 +1311,34 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleAtelier_Impl1200); 
+            otherlv_1=(Token)match(input,27,FollowSets000.FOLLOW_27_in_ruleAtelier_Impl1157); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAtelier_ImplAccess().getAtelierKeyword_1());
                 
-            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleAtelier_Impl1212); 
+            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleAtelier_Impl1169); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getAtelier_ImplAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:560:1: (otherlv_3= 'activity' ( ( ruleEString ) ) )?
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:573:1: (otherlv_3= 'activity' ( ( ruleEString ) ) )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==32) ) {
+            if ( (LA10_0==28) ) {
                 alt10=1;
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:560:3: otherlv_3= 'activity' ( ( ruleEString ) )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:573:3: otherlv_3= 'activity' ( ( ruleEString ) )
                     {
-                    otherlv_3=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleAtelier_Impl1225); 
+                    otherlv_3=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleAtelier_Impl1182); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getAtelier_ImplAccess().getActivityKeyword_3_0());
                         
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:564:1: ( ( ruleEString ) )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:565:1: ( ruleEString )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:577:1: ( ( ruleEString ) )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:578:1: ( ruleEString )
                     {
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:565:1: ( ruleEString )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:566:3: ruleEString
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:578:1: ( ruleEString )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:579:3: ruleEString
                     {
 
                     			if (current==null) {
@@ -1363,7 +1348,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getAtelier_ImplAccess().getActivityPeriodicActivityCrossReference_3_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleAtelier_Impl1248);
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleAtelier_Impl1205);
                     ruleEString();
 
                     state._fsp--;
@@ -1383,7 +1368,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleAtelier_Impl1262); 
+            otherlv_5=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleAtelier_Impl1219); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getAtelier_ImplAccess().getRightCurlyBracketKeyword_4());
                 
@@ -1408,7 +1393,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:591:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:604:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -1416,17 +1401,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:592:2: (iv_ruleEInt= ruleEInt EOF )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:593:2: iv_ruleEInt= ruleEInt EOF
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:605:2: (iv_ruleEInt= ruleEInt EOF )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:606:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt1299);
+            pushFollow(FollowSets000.FOLLOW_ruleEInt_in_entryRuleEInt1256);
             iv_ruleEInt=ruleEInt();
 
             state._fsp--;
 
              current =iv_ruleEInt.getText(); 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt1310); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleEInt1267); 
 
             }
 
@@ -1444,7 +1429,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:600:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:613:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1454,24 +1439,24 @@ public class InternalActParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:603:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:604:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:616:28: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:617:1: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:604:1: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:604:2: (kw= '-' )? this_INT_1= RULE_INT
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:617:1: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:617:2: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:604:2: (kw= '-' )?
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:617:2: (kw= '-' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==33) ) {
+            if ( (LA11_0==29) ) {
                 alt11=1;
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:605:2: kw= '-'
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:618:2: kw= '-'
                     {
-                    kw=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleEInt1349); 
+                    kw=(Token)match(input,29,FollowSets000.FOLLOW_29_in_ruleEInt1306); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0()); 
@@ -1482,7 +1467,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt1366); 
+            this_INT_1=(Token)match(input,RULE_INT,FollowSets000.FOLLOW_RULE_INT_in_ruleEInt1323); 
 
             		current.merge(this_INT_1);
                 
@@ -1510,7 +1495,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePredicate"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:627:1: entryRulePredicate returns [EObject current=null] : iv_rulePredicate= rulePredicate EOF ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:640:1: entryRulePredicate returns [EObject current=null] : iv_rulePredicate= rulePredicate EOF ;
     public final EObject entryRulePredicate() throws RecognitionException {
         EObject current = null;
 
@@ -1518,17 +1503,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:628:2: (iv_rulePredicate= rulePredicate EOF )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:629:2: iv_rulePredicate= rulePredicate EOF
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:641:2: (iv_rulePredicate= rulePredicate EOF )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:642:2: iv_rulePredicate= rulePredicate EOF
             {
              newCompositeNode(grammarAccess.getPredicateRule()); 
-            pushFollow(FollowSets000.FOLLOW_rulePredicate_in_entryRulePredicate1413);
+            pushFollow(FollowSets000.FOLLOW_rulePredicate_in_entryRulePredicate1370);
             iv_rulePredicate=rulePredicate();
 
             state._fsp--;
 
              current =iv_rulePredicate; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePredicate1423); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRulePredicate1380); 
 
             }
 
@@ -1546,18 +1531,18 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePredicate"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:636:1: rulePredicate returns [EObject current=null] : () ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:649:1: rulePredicate returns [EObject current=null] : () ;
     public final EObject rulePredicate() throws RecognitionException {
         EObject current = null;
 
          enterRule(); 
             
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:639:28: ( () )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:640:1: ()
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:652:28: ( () )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:653:1: ()
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:640:1: ()
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:641:5: 
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:653:1: ()
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:654:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1580,7 +1565,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElevage"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:654:1: entryRuleElevage returns [EObject current=null] : iv_ruleElevage= ruleElevage EOF ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:667:1: entryRuleElevage returns [EObject current=null] : iv_ruleElevage= ruleElevage EOF ;
     public final EObject entryRuleElevage() throws RecognitionException {
         EObject current = null;
 
@@ -1588,17 +1573,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:655:2: (iv_ruleElevage= ruleElevage EOF )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:656:2: iv_ruleElevage= ruleElevage EOF
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:668:2: (iv_ruleElevage= ruleElevage EOF )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:669:2: iv_ruleElevage= ruleElevage EOF
             {
              newCompositeNode(grammarAccess.getElevageRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleElevage_in_entryRuleElevage1491);
+            pushFollow(FollowSets000.FOLLOW_ruleElevage_in_entryRuleElevage1448);
             iv_ruleElevage=ruleElevage();
 
             state._fsp--;
 
              current =iv_ruleElevage; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleElevage1501); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleElevage1458); 
 
             }
 
@@ -1616,7 +1601,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElevage"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:663:1: ruleElevage returns [EObject current=null] : ( () otherlv_1= 'Elevage' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:676:1: ruleElevage returns [EObject current=null] : ( () otherlv_1= 'Elevage' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleElevage() throws RecognitionException {
         EObject current = null;
 
@@ -1628,14 +1613,14 @@ public class InternalActParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:666:28: ( ( () otherlv_1= 'Elevage' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:667:1: ( () otherlv_1= 'Elevage' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:679:28: ( ( () otherlv_1= 'Elevage' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:680:1: ( () otherlv_1= 'Elevage' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:667:1: ( () otherlv_1= 'Elevage' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:667:2: () otherlv_1= 'Elevage' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}'
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:680:1: ( () otherlv_1= 'Elevage' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:680:2: () otherlv_1= 'Elevage' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}'
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:667:2: ()
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:668:5: 
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:680:2: ()
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:681:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1645,34 +1630,34 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FollowSets000.FOLLOW_34_in_ruleElevage1547); 
+            otherlv_1=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleElevage1504); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getElevageAccess().getElevageKeyword_1());
                 
-            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleElevage1559); 
+            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleElevage1516); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getElevageAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:681:1: (otherlv_3= 'activity' ( ( ruleEString ) ) )?
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:694:1: (otherlv_3= 'activity' ( ( ruleEString ) ) )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==32) ) {
+            if ( (LA12_0==28) ) {
                 alt12=1;
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:681:3: otherlv_3= 'activity' ( ( ruleEString ) )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:694:3: otherlv_3= 'activity' ( ( ruleEString ) )
                     {
-                    otherlv_3=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleElevage1572); 
+                    otherlv_3=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleElevage1529); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getElevageAccess().getActivityKeyword_3_0());
                         
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:685:1: ( ( ruleEString ) )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:686:1: ( ruleEString )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:698:1: ( ( ruleEString ) )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:699:1: ( ruleEString )
                     {
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:686:1: ( ruleEString )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:687:3: ruleEString
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:699:1: ( ruleEString )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:700:3: ruleEString
                     {
 
                     			if (current==null) {
@@ -1682,7 +1667,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getElevageAccess().getActivityPeriodicActivityCrossReference_3_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleElevage1595);
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleElevage1552);
                     ruleEString();
 
                     state._fsp--;
@@ -1702,7 +1687,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleElevage1609); 
+            otherlv_5=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleElevage1566); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getElevageAccess().getRightCurlyBracketKeyword_4());
                 
@@ -1727,7 +1712,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCulture"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:712:1: entryRuleCulture returns [EObject current=null] : iv_ruleCulture= ruleCulture EOF ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:725:1: entryRuleCulture returns [EObject current=null] : iv_ruleCulture= ruleCulture EOF ;
     public final EObject entryRuleCulture() throws RecognitionException {
         EObject current = null;
 
@@ -1735,17 +1720,17 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:713:2: (iv_ruleCulture= ruleCulture EOF )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:714:2: iv_ruleCulture= ruleCulture EOF
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:726:2: (iv_ruleCulture= ruleCulture EOF )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:727:2: iv_ruleCulture= ruleCulture EOF
             {
              newCompositeNode(grammarAccess.getCultureRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleCulture_in_entryRuleCulture1645);
+            pushFollow(FollowSets000.FOLLOW_ruleCulture_in_entryRuleCulture1602);
             iv_ruleCulture=ruleCulture();
 
             state._fsp--;
 
              current =iv_ruleCulture; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCulture1655); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleCulture1612); 
 
             }
 
@@ -1763,7 +1748,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCulture"
-    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:721:1: ruleCulture returns [EObject current=null] : ( () otherlv_1= 'Culture' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) ;
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:734:1: ruleCulture returns [EObject current=null] : ( () otherlv_1= 'Culture' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) ;
     public final EObject ruleCulture() throws RecognitionException {
         EObject current = null;
 
@@ -1775,14 +1760,14 @@ public class InternalActParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:724:28: ( ( () otherlv_1= 'Culture' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:725:1: ( () otherlv_1= 'Culture' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:737:28: ( ( () otherlv_1= 'Culture' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:738:1: ( () otherlv_1= 'Culture' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:725:1: ( () otherlv_1= 'Culture' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:725:2: () otherlv_1= 'Culture' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}'
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:738:1: ( () otherlv_1= 'Culture' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}' )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:738:2: () otherlv_1= 'Culture' otherlv_2= '{' (otherlv_3= 'activity' ( ( ruleEString ) ) )? otherlv_5= '}'
             {
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:725:2: ()
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:726:5: 
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:738:2: ()
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:739:5: 
             {
 
                     current = forceCreateModelElement(
@@ -1792,34 +1777,34 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,35,FollowSets000.FOLLOW_35_in_ruleCulture1701); 
+            otherlv_1=(Token)match(input,31,FollowSets000.FOLLOW_31_in_ruleCulture1658); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getCultureAccess().getCultureKeyword_1());
                 
-            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleCulture1713); 
+            otherlv_2=(Token)match(input,12,FollowSets000.FOLLOW_12_in_ruleCulture1670); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getCultureAccess().getLeftCurlyBracketKeyword_2());
                 
-            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:739:1: (otherlv_3= 'activity' ( ( ruleEString ) ) )?
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:752:1: (otherlv_3= 'activity' ( ( ruleEString ) ) )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
-            if ( (LA13_0==32) ) {
+            if ( (LA13_0==28) ) {
                 alt13=1;
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:739:3: otherlv_3= 'activity' ( ( ruleEString ) )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:752:3: otherlv_3= 'activity' ( ( ruleEString ) )
                     {
-                    otherlv_3=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleCulture1726); 
+                    otherlv_3=(Token)match(input,28,FollowSets000.FOLLOW_28_in_ruleCulture1683); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getCultureAccess().getActivityKeyword_3_0());
                         
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:743:1: ( ( ruleEString ) )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:744:1: ( ruleEString )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:756:1: ( ( ruleEString ) )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:757:1: ( ruleEString )
                     {
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:744:1: ( ruleEString )
-                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:745:3: ruleEString
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:757:1: ( ruleEString )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:758:3: ruleEString
                     {
 
                     			if (current==null) {
@@ -1829,7 +1814,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getCultureAccess().getActivityPeriodicActivityCrossReference_3_1_0()); 
                     	    
-                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleCulture1749);
+                    pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleCulture1706);
                     ruleEString();
 
                     state._fsp--;
@@ -1849,7 +1834,7 @@ public class InternalActParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,26,FollowSets000.FOLLOW_26_in_ruleCulture1763); 
+            otherlv_5=(Token)match(input,23,FollowSets000.FOLLOW_23_in_ruleCulture1720); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getCultureAccess().getRightCurlyBracketKeyword_4());
                 
@@ -1872,6 +1857,163 @@ public class InternalActParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleCulture"
 
+
+    // $ANTLR start "rulePeriodicity"
+    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:783:1: rulePeriodicity returns [Enumerator current=null] : ( (enumLiteral_0= 'months' ) | (enumLiteral_1= 'days' ) | (enumLiteral_2= 'weeks' ) | (enumLiteral_3= 'years' ) | (enumLiteral_4= 'hours' ) ) ;
+    public final Enumerator rulePeriodicity() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+        Token enumLiteral_3=null;
+        Token enumLiteral_4=null;
+
+         enterRule(); 
+        try {
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:785:28: ( ( (enumLiteral_0= 'months' ) | (enumLiteral_1= 'days' ) | (enumLiteral_2= 'weeks' ) | (enumLiteral_3= 'years' ) | (enumLiteral_4= 'hours' ) ) )
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:786:1: ( (enumLiteral_0= 'months' ) | (enumLiteral_1= 'days' ) | (enumLiteral_2= 'weeks' ) | (enumLiteral_3= 'years' ) | (enumLiteral_4= 'hours' ) )
+            {
+            // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:786:1: ( (enumLiteral_0= 'months' ) | (enumLiteral_1= 'days' ) | (enumLiteral_2= 'weeks' ) | (enumLiteral_3= 'years' ) | (enumLiteral_4= 'hours' ) )
+            int alt14=5;
+            switch ( input.LA(1) ) {
+            case 32:
+                {
+                alt14=1;
+                }
+                break;
+            case 33:
+                {
+                alt14=2;
+                }
+                break;
+            case 34:
+                {
+                alt14=3;
+                }
+                break;
+            case 35:
+                {
+                alt14=4;
+                }
+                break;
+            case 36:
+                {
+                alt14=5;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 14, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt14) {
+                case 1 :
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:786:2: (enumLiteral_0= 'months' )
+                    {
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:786:2: (enumLiteral_0= 'months' )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:786:4: enumLiteral_0= 'months'
+                    {
+                    enumLiteral_0=(Token)match(input,32,FollowSets000.FOLLOW_32_in_rulePeriodicity1770); 
+
+                            current = grammarAccess.getPeriodicityAccess().getMonthsEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_0, grammarAccess.getPeriodicityAccess().getMonthsEnumLiteralDeclaration_0()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:792:6: (enumLiteral_1= 'days' )
+                    {
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:792:6: (enumLiteral_1= 'days' )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:792:8: enumLiteral_1= 'days'
+                    {
+                    enumLiteral_1=(Token)match(input,33,FollowSets000.FOLLOW_33_in_rulePeriodicity1787); 
+
+                            current = grammarAccess.getPeriodicityAccess().getDaysEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_1, grammarAccess.getPeriodicityAccess().getDaysEnumLiteralDeclaration_1()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:798:6: (enumLiteral_2= 'weeks' )
+                    {
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:798:6: (enumLiteral_2= 'weeks' )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:798:8: enumLiteral_2= 'weeks'
+                    {
+                    enumLiteral_2=(Token)match(input,34,FollowSets000.FOLLOW_34_in_rulePeriodicity1804); 
+
+                            current = grammarAccess.getPeriodicityAccess().getWeeksEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_2, grammarAccess.getPeriodicityAccess().getWeeksEnumLiteralDeclaration_2()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:804:6: (enumLiteral_3= 'years' )
+                    {
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:804:6: (enumLiteral_3= 'years' )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:804:8: enumLiteral_3= 'years'
+                    {
+                    enumLiteral_3=(Token)match(input,35,FollowSets000.FOLLOW_35_in_rulePeriodicity1821); 
+
+                            current = grammarAccess.getPeriodicityAccess().getYearsEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_3, grammarAccess.getPeriodicityAccess().getYearsEnumLiteralDeclaration_3()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:810:6: (enumLiteral_4= 'hours' )
+                    {
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:810:6: (enumLiteral_4= 'hours' )
+                    // ../org.xtext.activity.act/src-gen/org/xtext/activity/parser/antlr/internal/InternalAct.g:810:8: enumLiteral_4= 'hours'
+                    {
+                    enumLiteral_4=(Token)match(input,36,FollowSets000.FOLLOW_36_in_rulePeriodicity1838); 
+
+                            current = grammarAccess.getPeriodicityAccess().getHoursEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_4, grammarAccess.getPeriodicityAccess().getHoursEnumLiteralDeclaration_4()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePeriodicity"
+
     // Delegated rules
 
 
@@ -1887,76 +2029,78 @@ public class InternalActParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_13_in_rulePeriodicActivity177 = new BitSet(new long[]{0x0000000000000030L});
         public static final BitSet FOLLOW_ruleEString_in_rulePeriodicActivity200 = new BitSet(new long[]{0x0000000000004000L});
         public static final BitSet FOLLOW_14_in_rulePeriodicActivity212 = new BitSet(new long[]{0x0000000000008000L});
-        public static final BitSet FOLLOW_15_in_rulePeriodicActivity226 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_ruleDate_in_rulePeriodicActivity247 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_rulePeriodicActivity259 = new BitSet(new long[]{0x0000000000010000L});
-        public static final BitSet FOLLOW_16_in_rulePeriodicActivity271 = new BitSet(new long[]{0x0000000008000000L});
-        public static final BitSet FOLLOW_ruleDate_in_rulePeriodicActivity292 = new BitSet(new long[]{0x0000000000004000L});
-        public static final BitSet FOLLOW_14_in_rulePeriodicActivity304 = new BitSet(new long[]{0x0000000006820000L});
-        public static final BitSet FOLLOW_17_in_rulePeriodicActivity317 = new BitSet(new long[]{0x00000000007C0000L});
-        public static final BitSet FOLLOW_18_in_rulePeriodicActivity330 = new BitSet(new long[]{0x0000000006800000L});
-        public static final BitSet FOLLOW_19_in_rulePeriodicActivity348 = new BitSet(new long[]{0x0000000006800000L});
-        public static final BitSet FOLLOW_20_in_rulePeriodicActivity366 = new BitSet(new long[]{0x0000000006800000L});
-        public static final BitSet FOLLOW_21_in_rulePeriodicActivity384 = new BitSet(new long[]{0x0000000006800000L});
-        public static final BitSet FOLLOW_22_in_rulePeriodicActivity402 = new BitSet(new long[]{0x0000000006800000L});
-        public static final BitSet FOLLOW_23_in_rulePeriodicActivity418 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_rulePeriodicActivity430 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_ruleResAllocation_in_rulePeriodicActivity451 = new BitSet(new long[]{0x0000000001004000L});
-        public static final BitSet FOLLOW_14_in_rulePeriodicActivity464 = new BitSet(new long[]{0x0000000010000000L});
-        public static final BitSet FOLLOW_ruleResAllocation_in_rulePeriodicActivity485 = new BitSet(new long[]{0x0000000001004000L});
-        public static final BitSet FOLLOW_24_in_rulePeriodicActivity499 = new BitSet(new long[]{0x0000000006000000L});
-        public static final BitSet FOLLOW_25_in_rulePeriodicActivity514 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_rulePeriodicActivity526 = new BitSet(new long[]{0x0000000044004000L});
-        public static final BitSet FOLLOW_ruleRule_in_rulePeriodicActivity547 = new BitSet(new long[]{0x0000000004004000L});
-        public static final BitSet FOLLOW_14_in_rulePeriodicActivity560 = new BitSet(new long[]{0x0000000044004000L});
-        public static final BitSet FOLLOW_ruleRule_in_rulePeriodicActivity581 = new BitSet(new long[]{0x0000000004004000L});
-        public static final BitSet FOLLOW_26_in_rulePeriodicActivity595 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_26_in_rulePeriodicActivity609 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleDate_in_entryRuleDate647 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleDate657 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_27_in_ruleDate703 = new BitSet(new long[]{0x0000000200000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleDate724 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleResAllocation_in_entryRuleResAllocation760 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleResAllocation770 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_28_in_ruleResAllocation816 = new BitSet(new long[]{0x0000000000000010L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleResAllocation836 = new BitSet(new long[]{0x0000000020000000L});
-        public static final BitSet FOLLOW_29_in_ruleResAllocation848 = new BitSet(new long[]{0x0000000200000040L});
-        public static final BitSet FOLLOW_ruleEInt_in_ruleResAllocation869 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_entryRuleEString906 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEString917 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_STRING_in_ruleEString957 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_RULE_ID_in_ruleEString983 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRule_in_entryRuleRule1028 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleRule1038 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_30_in_ruleRule1085 = new BitSet(new long[]{0x0000000040000000L});
-        public static final BitSet FOLLOW_rulePredicate_in_ruleRule1106 = new BitSet(new long[]{0x0000000040000002L});
-        public static final BitSet FOLLOW_ruleAtelier_Impl_in_entryRuleAtelier_Impl1144 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleAtelier_Impl1154 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_ruleAtelier_Impl1200 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleAtelier_Impl1212 = new BitSet(new long[]{0x0000000104000000L});
-        public static final BitSet FOLLOW_32_in_ruleAtelier_Impl1225 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleAtelier_Impl1248 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_26_in_ruleAtelier_Impl1262 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt1299 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleEInt1310 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_33_in_ruleEInt1349 = new BitSet(new long[]{0x0000000000000040L});
-        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt1366 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rulePredicate_in_entryRulePredicate1413 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRulePredicate1423 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleElevage_in_entryRuleElevage1491 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleElevage1501 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_34_in_ruleElevage1547 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleElevage1559 = new BitSet(new long[]{0x0000000104000000L});
-        public static final BitSet FOLLOW_32_in_ruleElevage1572 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleElevage1595 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_26_in_ruleElevage1609 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleCulture_in_entryRuleCulture1645 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleCulture1655 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_35_in_ruleCulture1701 = new BitSet(new long[]{0x0000000000001000L});
-        public static final BitSet FOLLOW_12_in_ruleCulture1713 = new BitSet(new long[]{0x0000000104000000L});
-        public static final BitSet FOLLOW_32_in_ruleCulture1726 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_ruleEString_in_ruleCulture1749 = new BitSet(new long[]{0x0000000004000000L});
-        public static final BitSet FOLLOW_26_in_ruleCulture1763 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_15_in_rulePeriodicActivity226 = new BitSet(new long[]{0x0000000000010000L});
+        public static final BitSet FOLLOW_16_in_rulePeriodicActivity238 = new BitSet(new long[]{0x0000000020000040L});
+        public static final BitSet FOLLOW_ruleDate_in_rulePeriodicActivity259 = new BitSet(new long[]{0x0000000000020000L});
+        public static final BitSet FOLLOW_17_in_rulePeriodicActivity271 = new BitSet(new long[]{0x0000000000040000L});
+        public static final BitSet FOLLOW_18_in_rulePeriodicActivity283 = new BitSet(new long[]{0x0000000020000040L});
+        public static final BitSet FOLLOW_ruleDate_in_rulePeriodicActivity304 = new BitSet(new long[]{0x0000000000004000L});
+        public static final BitSet FOLLOW_14_in_rulePeriodicActivity316 = new BitSet(new long[]{0x0000000000D80000L});
+        public static final BitSet FOLLOW_19_in_rulePeriodicActivity329 = new BitSet(new long[]{0x0000001F20000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_rulePeriodicActivity350 = new BitSet(new long[]{0x0000001F20000040L});
+        public static final BitSet FOLLOW_rulePeriodicity_in_rulePeriodicActivity372 = new BitSet(new long[]{0x0000000000D00000L});
+        public static final BitSet FOLLOW_20_in_rulePeriodicActivity387 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_rulePeriodicActivity399 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_ruleResAllocation_in_rulePeriodicActivity420 = new BitSet(new long[]{0x0000000000204000L});
+        public static final BitSet FOLLOW_14_in_rulePeriodicActivity433 = new BitSet(new long[]{0x0000000001000000L});
+        public static final BitSet FOLLOW_ruleResAllocation_in_rulePeriodicActivity454 = new BitSet(new long[]{0x0000000000204000L});
+        public static final BitSet FOLLOW_21_in_rulePeriodicActivity468 = new BitSet(new long[]{0x0000000000C00000L});
+        public static final BitSet FOLLOW_22_in_rulePeriodicActivity483 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_rulePeriodicActivity495 = new BitSet(new long[]{0x0000000004804000L});
+        public static final BitSet FOLLOW_ruleRule_in_rulePeriodicActivity516 = new BitSet(new long[]{0x0000000000804000L});
+        public static final BitSet FOLLOW_14_in_rulePeriodicActivity529 = new BitSet(new long[]{0x0000000004804000L});
+        public static final BitSet FOLLOW_ruleRule_in_rulePeriodicActivity550 = new BitSet(new long[]{0x0000000000804000L});
+        public static final BitSet FOLLOW_23_in_rulePeriodicActivity564 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_rulePeriodicActivity578 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleDate_in_entryRuleDate616 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleDate626 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleDate681 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleResAllocation_in_entryRuleResAllocation717 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleResAllocation727 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_24_in_ruleResAllocation773 = new BitSet(new long[]{0x0000000000000010L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleResAllocation793 = new BitSet(new long[]{0x0000000002000000L});
+        public static final BitSet FOLLOW_25_in_ruleResAllocation805 = new BitSet(new long[]{0x0000000020000040L});
+        public static final BitSet FOLLOW_ruleEInt_in_ruleResAllocation826 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_entryRuleEString863 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEString874 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_STRING_in_ruleEString914 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleEString940 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRule_in_entryRuleRule985 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleRule995 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_26_in_ruleRule1042 = new BitSet(new long[]{0x0000000004000000L});
+        public static final BitSet FOLLOW_rulePredicate_in_ruleRule1063 = new BitSet(new long[]{0x0000000004000002L});
+        public static final BitSet FOLLOW_ruleAtelier_Impl_in_entryRuleAtelier_Impl1101 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleAtelier_Impl1111 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_27_in_ruleAtelier_Impl1157 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleAtelier_Impl1169 = new BitSet(new long[]{0x0000000010800000L});
+        public static final BitSet FOLLOW_28_in_ruleAtelier_Impl1182 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleAtelier_Impl1205 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_ruleAtelier_Impl1219 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEInt_in_entryRuleEInt1256 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleEInt1267 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_29_in_ruleEInt1306 = new BitSet(new long[]{0x0000000000000040L});
+        public static final BitSet FOLLOW_RULE_INT_in_ruleEInt1323 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rulePredicate_in_entryRulePredicate1370 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRulePredicate1380 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleElevage_in_entryRuleElevage1448 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleElevage1458 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_30_in_ruleElevage1504 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleElevage1516 = new BitSet(new long[]{0x0000000010800000L});
+        public static final BitSet FOLLOW_28_in_ruleElevage1529 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleElevage1552 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_ruleElevage1566 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleCulture_in_entryRuleCulture1602 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleCulture1612 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_ruleCulture1658 = new BitSet(new long[]{0x0000000000001000L});
+        public static final BitSet FOLLOW_12_in_ruleCulture1670 = new BitSet(new long[]{0x0000000010800000L});
+        public static final BitSet FOLLOW_28_in_ruleCulture1683 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_ruleEString_in_ruleCulture1706 = new BitSet(new long[]{0x0000000000800000L});
+        public static final BitSet FOLLOW_23_in_ruleCulture1720 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_32_in_rulePeriodicity1770 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_33_in_rulePeriodicity1787 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_34_in_rulePeriodicity1804 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_35_in_rulePeriodicity1821 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_36_in_rulePeriodicity1838 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

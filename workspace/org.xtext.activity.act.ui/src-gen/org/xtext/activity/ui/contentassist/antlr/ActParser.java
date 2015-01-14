@@ -37,16 +37,16 @@ public class ActParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getPeriodicActivityAccess().getAlternatives_11_1(), "rule__PeriodicActivity__Alternatives_11_1");
 					put(grammarAccess.getAtelierAccess().getAlternatives(), "rule__Atelier__Alternatives");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+					put(grammarAccess.getPeriodicityAccess().getAlternatives(), "rule__Periodicity__Alternatives");
 					put(grammarAccess.getPeriodicActivityAccess().getGroup(), "rule__PeriodicActivity__Group__0");
 					put(grammarAccess.getPeriodicActivityAccess().getGroup_4(), "rule__PeriodicActivity__Group_4__0");
-					put(grammarAccess.getPeriodicActivityAccess().getGroup_11(), "rule__PeriodicActivity__Group_11__0");
 					put(grammarAccess.getPeriodicActivityAccess().getGroup_12(), "rule__PeriodicActivity__Group_12__0");
-					put(grammarAccess.getPeriodicActivityAccess().getGroup_12_3(), "rule__PeriodicActivity__Group_12_3__0");
 					put(grammarAccess.getPeriodicActivityAccess().getGroup_13(), "rule__PeriodicActivity__Group_13__0");
 					put(grammarAccess.getPeriodicActivityAccess().getGroup_13_3(), "rule__PeriodicActivity__Group_13_3__0");
+					put(grammarAccess.getPeriodicActivityAccess().getGroup_14(), "rule__PeriodicActivity__Group_14__0");
+					put(grammarAccess.getPeriodicActivityAccess().getGroup_14_3(), "rule__PeriodicActivity__Group_14_3__0");
 					put(grammarAccess.getDateAccess().getGroup(), "rule__Date__Group__0");
 					put(grammarAccess.getResAllocationAccess().getGroup(), "rule__ResAllocation__Group__0");
 					put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
@@ -61,13 +61,15 @@ public class ActParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCultureAccess().getGroup_3(), "rule__Culture__Group_3__0");
 					put(grammarAccess.getPeriodicActivityAccess().getNameAssignment_2(), "rule__PeriodicActivity__NameAssignment_2");
 					put(grammarAccess.getPeriodicActivityAccess().getAtelierAssignment_4_1(), "rule__PeriodicActivity__AtelierAssignment_4_1");
-					put(grammarAccess.getPeriodicActivityAccess().getStartAssignment_6(), "rule__PeriodicActivity__StartAssignment_6");
-					put(grammarAccess.getPeriodicActivityAccess().getEndAssignment_9(), "rule__PeriodicActivity__EndAssignment_9");
-					put(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_12_2(), "rule__PeriodicActivity__ResAllocationAssignment_12_2");
-					put(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_12_3_1(), "rule__PeriodicActivity__ResAllocationAssignment_12_3_1");
-					put(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_13_2(), "rule__PeriodicActivity__RuleAssignment_13_2");
-					put(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_13_3_1(), "rule__PeriodicActivity__RuleAssignment_13_3_1");
-					put(grammarAccess.getDateAccess().getDayAssignment_2(), "rule__Date__DayAssignment_2");
+					put(grammarAccess.getPeriodicActivityAccess().getStartAssignment_7(), "rule__PeriodicActivity__StartAssignment_7");
+					put(grammarAccess.getPeriodicActivityAccess().getEndAssignment_10(), "rule__PeriodicActivity__EndAssignment_10");
+					put(grammarAccess.getPeriodicActivityAccess().getPeriodicityNumberAssignment_12_1(), "rule__PeriodicActivity__PeriodicityNumberAssignment_12_1");
+					put(grammarAccess.getPeriodicActivityAccess().getPeriodicityTypeAssignment_12_2(), "rule__PeriodicActivity__PeriodicityTypeAssignment_12_2");
+					put(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_13_2(), "rule__PeriodicActivity__ResAllocationAssignment_13_2");
+					put(grammarAccess.getPeriodicActivityAccess().getResAllocationAssignment_13_3_1(), "rule__PeriodicActivity__ResAllocationAssignment_13_3_1");
+					put(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_14_2(), "rule__PeriodicActivity__RuleAssignment_14_2");
+					put(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_14_3_1(), "rule__PeriodicActivity__RuleAssignment_14_3_1");
+					put(grammarAccess.getDateAccess().getDayAssignment_1(), "rule__Date__DayAssignment_1");
 					put(grammarAccess.getResAllocationAccess().getRessourceAssignment_2(), "rule__ResAllocation__RessourceAssignment_2");
 					put(grammarAccess.getResAllocationAccess().getDureeAssignment_4(), "rule__ResAllocation__DureeAssignment_4");
 					put(grammarAccess.getRuleAccess().getPreAssignment_1_1(), "rule__Rule__PreAssignment_1_1");

@@ -13,9 +13,8 @@ PeriodicActivity returns PeriodicActivity:
 	name=EString
 	'{'
 		('atelier' atelier=[exploitation::Atelier|EString] ',')?
-		'start' start=Date ','
-		'end' end=Date ','
-		('every' (periodicityNumber=EInt)? periodicityType=Periodicity )?
+		'start' 'from' start=Date 'to' end=Date ','
+		('every' (periodicityNumber=EInt)? periodicityType=Periodicity ',')?
 		('allocate' '{' resAllocation+=ResAllocation ( "," resAllocation+=ResAllocation)* '} ,' )?
 		('rules' '{' rule+=Rule ( "," rule+=Rule)* '}' )?
 	'}';
@@ -29,7 +28,7 @@ Atelier returns exploitation::Atelier:
 
 Date returns Date:
 	{Date}
-	'from' day=EInt 
+	day=EInt 
 	;
 
 ResAllocation returns RessourceAllocation:
@@ -43,7 +42,7 @@ EString returns ecore::EString:
 
 Rule returns Rule:
 	{Rule}
-		('pre' pre+=Predicate )*
+	('pre' pre+=Predicate ( ","'pre' pre+=Predicate)*)?
 	;
 
 Atelier_Impl returns exploitation::Atelier:
