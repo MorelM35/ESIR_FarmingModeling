@@ -15,7 +15,7 @@ PeriodicActivity returns PeriodicActivity:
 		('atelier' atelier=[exploitation::Atelier|EString] ',')?
 		'start' start=Date ','
 		'end' end=Date ','
-		('every' (periodicityNumber=EInt)? periodicityType=Periodicity )?
+		('every' (frequency=EInt)? periodicityType=Periodicity )?
 		('allocate' '{' resAllocation+=ResAllocation ( "," resAllocation+=ResAllocation)* '} ,' )?
 		('rules' '{' rule+=Rule ( "," rule+=Rule)* '}' )?
 	'}';
