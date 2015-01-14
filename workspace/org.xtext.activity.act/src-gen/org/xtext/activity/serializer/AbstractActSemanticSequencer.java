@@ -2,6 +2,7 @@ package org.xtext.activity.serializer;
 
 import activity.ActivityPackage;
 import activity.Date;
+import activity.Model;
 import activity.PeriodicActivity;
 import activity.Predicat;
 import activity.RessourceAllocation;
@@ -37,6 +38,12 @@ public abstract class AbstractActSemanticSequencer extends AbstractDelegatingSem
 			case ActivityPackage.DATE:
 				if(context == grammarAccess.getDateRule()) {
 					sequence_Date(context, (Date) semanticObject); 
+					return; 
+				}
+				else break;
+			case ActivityPackage.MODEL:
+				if(context == grammarAccess.getModelRule()) {
+					sequence_Model(context, (Model) semanticObject); 
 					return; 
 				}
 				else break;
@@ -117,16 +124,19 @@ public abstract class AbstractActSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Constraint:
-	 *     day=EInt
+	 *     (day=EInt month=Month)
 	 */
 	protected void sequence_Date(EObject context, Date semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, ActivityPackage.Literals.DATE__DAY) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ActivityPackage.Literals.DATE__DAY));
+			if(transientValues.isValueTransient(semanticObject, ActivityPackage.Literals.DATE__MONTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ActivityPackage.Literals.DATE__MONTH));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getDateAccess().getDayEIntParserRuleCall_1_0(), semanticObject.getDay());
+		feeder.accept(grammarAccess.getDateAccess().getMonthMonthEnumRuleCall_2_0(), semanticObject.getMonth());
 		feeder.finish();
 	}
 	
@@ -142,12 +152,21 @@ public abstract class AbstractActSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Constraint:
+	 *     (name=EString activity+=PeriodicActivity*)
+	 */
+	protected void sequence_Model(EObject context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         name=EString 
 	 *         atelier=[Atelier|EString]? 
 	 *         start=Date 
 	 *         end=Date 
-	 *         (periodicityNumber=EInt? periodicityType=Periodicity)? 
+	 *         (frequency=EInt? periodicityType=Periodicity)? 
 	 *         (resAllocation+=ResAllocation resAllocation+=ResAllocation*)? 
 	 *         (rule+=Rule rule+=Rule*)?
 	 *     )
@@ -168,19 +187,22 @@ public abstract class AbstractActSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Constraint:
-	 *     (ressource=[Ressource|ID] duree=EInt)
+	 *     (ressource=[Ressource|EString] duration=EInt periodicityType=Periodicity)
 	 */
 	protected void sequence_ResAllocation(EObject context, RessourceAllocation semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, ActivityPackage.Literals.RESSOURCE_ALLOCATION__DUREE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ActivityPackage.Literals.RESSOURCE_ALLOCATION__DUREE));
+			if(transientValues.isValueTransient(semanticObject, ActivityPackage.Literals.RESSOURCE_ALLOCATION__DURATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ActivityPackage.Literals.RESSOURCE_ALLOCATION__DURATION));
 			if(transientValues.isValueTransient(semanticObject, ActivityPackage.Literals.RESSOURCE_ALLOCATION__RESSOURCE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ActivityPackage.Literals.RESSOURCE_ALLOCATION__RESSOURCE));
+			if(transientValues.isValueTransient(semanticObject, ActivityPackage.Literals.RESSOURCE_ALLOCATION__PERIODICITY_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ActivityPackage.Literals.RESSOURCE_ALLOCATION__PERIODICITY_TYPE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getResAllocationAccess().getRessourceRessourceIDTerminalRuleCall_2_0_1(), semanticObject.getRessource());
-		feeder.accept(grammarAccess.getResAllocationAccess().getDureeEIntParserRuleCall_4_0(), semanticObject.getDuree());
+		feeder.accept(grammarAccess.getResAllocationAccess().getRessourceRessourceEStringParserRuleCall_2_0_1(), semanticObject.getRessource());
+		feeder.accept(grammarAccess.getResAllocationAccess().getDurationEIntParserRuleCall_4_0(), semanticObject.getDuration());
+		feeder.accept(grammarAccess.getResAllocationAccess().getPeriodicityTypePeriodicityEnumRuleCall_5_0(), semanticObject.getPeriodicityType());
 		feeder.finish();
 	}
 	
@@ -203,7 +225,7 @@ public abstract class AbstractActSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Constraint:
-	 *     (pre+=Predicate*)
+	 *     ((pre+=Predicate pre+=Predicate*)?)
 	 */
 	protected void sequence_Rule(EObject context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

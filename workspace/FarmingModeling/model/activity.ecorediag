@@ -11,10 +11,6 @@
         <element xmi:type="ecore:EAttribute" href="activity.ecore#//PeriodicActivity/periodicityType"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_WUT-UZwJEeSZq5DOTjw8zA"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_ibdg4JwKEeSZq5DOTjw8zA" type="2001">
-        <element xmi:type="ecore:EAttribute" href="activity.ecore#//PeriodicActivity/periodicityNumber"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_ibdg4ZwKEeSZq5DOTjw8zA"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_r8Ra8paHEeSYiPsIRHr9Sg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_r8Ra85aHEeSYiPsIRHr9Sg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_r8Ra9JaHEeSYiPsIRHr9Sg"/>
@@ -62,6 +58,10 @@
   <children xmi:type="notation:Node" xmi:id="_5r07MJaHEeSYiPsIRHr9Sg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_5r1iQJaHEeSYiPsIRHr9Sg" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_5r1iQZaHEeSYiPsIRHr9Sg" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_90kwoJwWEeSZq5DOTjw8zA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="activity.ecore#//Model/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_90kwoZwWEeSZq5DOTjw8zA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_5r1iQpaHEeSYiPsIRHr9Sg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_5r1iQ5aHEeSYiPsIRHr9Sg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_5r1iRJaHEeSYiPsIRHr9Sg"/>
@@ -79,8 +79,12 @@
     <children xmi:type="notation:Node" xmi:id="_-QPhk5aHEeSYiPsIRHr9Sg" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_-QPhlJaHEeSYiPsIRHr9Sg" type="5001">
       <children xmi:type="notation:Node" xmi:id="__hVWAJaHEeSYiPsIRHr9Sg" type="2001">
-        <element xmi:type="ecore:EAttribute" href="activity.ecore#//RessourceAllocation/duree"/>
+        <element xmi:type="ecore:EAttribute" href="activity.ecore#//RessourceAllocation/duration"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="__hVWAZaHEeSYiPsIRHr9Sg"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_W2Ur8JwZEeSZq5DOTjw8zA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="activity.ecore#//RessourceAllocation/periodicityType"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_W2Ur8ZwZEeSZq5DOTjw8zA"/>
       </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_-QPhlZaHEeSYiPsIRHr9Sg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_-QPhlpaHEeSYiPsIRHr9Sg"/>
@@ -93,7 +97,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_-QPhkZaHEeSYiPsIRHr9Sg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="activity.ecore#//RessourceAllocation"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-QPhkpaHEeSYiPsIRHr9Sg" x="181" y="185"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-QPhkpaHEeSYiPsIRHr9Sg" x="85" y="185"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_HQ5CsJaIEeSYiPsIRHr9Sg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_HQ5pwJaIEeSYiPsIRHr9Sg" type="4001"/>

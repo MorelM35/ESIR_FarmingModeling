@@ -7,20 +7,34 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "platform:/resource/FarmingModeling/model/exploitation.ecore" as exploitation
 
 
+Model returns Model: 
+	{Model}
+	'Categorie'
+	name=EString
+	'{'
+		(activity+=PeriodicActivity)*
+	'}'
+;
+
+
 PeriodicActivity returns PeriodicActivity:
 	{PeriodicActivity}
 	'PeriodicActivity'
 	name=EString
 	'{'
-		('atelier' atelier=[exploitation::Atelier|EString] ',')?
-		'start' 'from' start=Date 'to' end=Date ','
-		('every' (periodicityNumber=EInt)? periodicityType=Periodicity ',')?
-		('allocate' '{' resAllocation+=ResAllocation ( "," resAllocation+=ResAllocation)* '} ,' )?
+		('workshop' atelier=[exploitation::Atelier|EString] ',')?
+		'from' start=Date 'to' end=Date ','		
+		('every' (frequency=EInt)? periodicityType=Periodicity ',')?
+		('allocate' '{' resAllocation+=ResAllocation ( "," resAllocation+=ResAllocation)* '}' ',' )?
 		('rules' '{' rule+=Rule ( "," rule+=Rule)* '}' )?
 	'}';
 
 enum Periodicity returns periodicity:
-	months|days|weeks|years|hours
+	month|days|weeks|years|hours
+;
+
+enum Month returns Month:
+	january|february|march|april|may|june|july|august|september|october|november|december
 ;
 
 Atelier returns exploitation::Atelier:
@@ -29,12 +43,14 @@ Atelier returns exploitation::Atelier:
 Date returns Date:
 	{Date}
 	day=EInt 
+	month=Month
 	;
 
 ResAllocation returns RessourceAllocation:
 	{RessourceAllocation}
-	'reserve' ressource=[exploitation::Ressource] 
-	'for' duree=EInt
+	'reserve' ressource=[exploitation::Ressource|EString]
+	'for' duration=EInt 
+	periodicityType=Periodicity
 	;
 
 EString returns ecore::EString:
@@ -63,7 +79,7 @@ RessourceType returns exploitation::RessourceType:
 
 Predicate returns Predicat:
 	{Predicat}
-	
+	EString
 	;
 
 Elevage returns exploitation::Elevage:

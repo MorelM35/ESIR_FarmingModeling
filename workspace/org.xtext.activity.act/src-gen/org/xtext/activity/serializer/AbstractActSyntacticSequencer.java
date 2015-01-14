@@ -23,9 +23,20 @@ public abstract class AbstractActSyntacticSequencer extends AbstractSyntacticSeq
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getEStringRule())
+			return getEStringToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * EString returns ecore::EString:
+	 * 	STRING | ID;
+	 */
+	protected String getEStringToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\"";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

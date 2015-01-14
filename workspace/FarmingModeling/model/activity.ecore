@@ -14,30 +14,46 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="atelier" eType="ecore:EClass exploitation.ecore#//Atelier"
         eOpposite="exploitation.ecore#//Atelier/activity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityType" eType="#//periodicity"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="periodicity" instanceTypeName="Periodicity">
     <eLiterals name="years"/>
-    <eLiterals name="months" value="1" literal="months"/>
+    <eLiterals name="month" value="1" literal="months"/>
     <eLiterals name="weeks" value="2"/>
     <eLiterals name="days" value="3"/>
     <eLiterals name="hours" value="4"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Month"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Month">
+    <eLiterals name="january" value="1"/>
+    <eLiterals name="february" value="2"/>
+    <eLiterals name="march" value="3"/>
+    <eLiterals name="april" value="4"/>
+    <eLiterals name="may" value="5"/>
+    <eLiterals name="june" value="6"/>
+    <eLiterals name="july" value="7"/>
+    <eLiterals name="august" value="8"/>
+    <eLiterals name="september" value="9"/>
+    <eLiterals name="october" value="10"/>
+    <eLiterals name="november" value="11"/>
+    <eLiterals name="december" value="12"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Date">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="#//Month"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="activity" upperBound="-1"
         eType="#//PeriodicActivity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ressourceType" upperBound="-1"
         eType="ecore:EClass exploitation.ecore#//RessourceType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RessourceAllocation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duree" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ressource" lowerBound="1"
         eType="ecore:EClass exploitation.ecore#//Ressource" eOpposite="exploitation.ecore#//Ressource/resAllocation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityType" eType="#//periodicity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pre" upperBound="-1" eType="#//Predicat"

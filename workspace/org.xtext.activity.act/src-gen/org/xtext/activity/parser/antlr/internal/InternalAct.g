@@ -45,7 +45,7 @@ import org.xtext.activity.services.ActGrammarAccess;
     
     @Override
     protected String getFirstRuleName() {
-    	return "PeriodicActivity";	
+    	return "Model";	
    	}
    	
    	@Override
@@ -60,6 +60,81 @@ import org.xtext.activity.services.ActGrammarAccess;
         appendSkippedTokens();
     } 
 }
+
+
+
+
+// Entry rule entryRuleModel
+entryRuleModel returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getModelRule()); }
+	 iv_ruleModel=ruleModel 
+	 { $current=$iv_ruleModel.current; } 
+	 EOF 
+;
+
+// Rule Model
+ruleModel returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getModelAccess().getModelAction_0(),
+            $current);
+    }
+)	otherlv_1='Categorie' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getModelAccess().getCategorieKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getModelAccess().getNameEStringParserRuleCall_2_0()); 
+	    }
+		lv_name_2_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getModelAccess().getLeftCurlyBracketKeyword_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getModelAccess().getActivityPeriodicActivityParserRuleCall_4_0()); 
+	    }
+		lv_activity_4_0=rulePeriodicActivity		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getModelRule());
+	        }
+       		add(
+       			$current, 
+       			"activity",
+        		lv_activity_4_0, 
+        		"PeriodicActivity");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_5='}' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_5());
+    }
+)
+;
+
 
 
 
@@ -110,9 +185,9 @@ rulePeriodicActivity returns [EObject current=null]
     {
     	newLeafNode(otherlv_3, grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_3());
     }
-(	otherlv_4='atelier' 
+(	otherlv_4='workshop' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getPeriodicActivityAccess().getAtelierKeyword_4_0());
+    	newLeafNode(otherlv_4, grammarAccess.getPeriodicActivityAccess().getWorkshopKeyword_4_0());
     }
 (
 (
@@ -133,79 +208,71 @@ rulePeriodicActivity returns [EObject current=null]
     {
     	newLeafNode(otherlv_6, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_4_2());
     }
-)?	otherlv_7='start' 
+)?	otherlv_7='from' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getPeriodicActivityAccess().getStartKeyword_5());
-    }
-	otherlv_8='from' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getPeriodicActivityAccess().getFromKeyword_6());
+    	newLeafNode(otherlv_7, grammarAccess.getPeriodicActivityAccess().getFromKeyword_5());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getStartDateParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getStartDateParserRuleCall_6_0()); 
 	    }
-		lv_start_9_0=ruleDate		{
+		lv_start_8_0=ruleDate		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPeriodicActivityRule());
 	        }
        		set(
        			$current, 
        			"start",
-        		lv_start_9_0, 
+        		lv_start_8_0, 
         		"Date");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_10='to' 
+)	otherlv_9='to' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getPeriodicActivityAccess().getToKeyword_8());
-    }
-	otherlv_11='end' 
-    {
-    	newLeafNode(otherlv_11, grammarAccess.getPeriodicActivityAccess().getEndKeyword_9());
+    	newLeafNode(otherlv_9, grammarAccess.getPeriodicActivityAccess().getToKeyword_7());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getEndDateParserRuleCall_10_0()); 
+	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getEndDateParserRuleCall_8_0()); 
 	    }
-		lv_end_12_0=ruleDate		{
+		lv_end_10_0=ruleDate		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPeriodicActivityRule());
 	        }
        		set(
        			$current, 
        			"end",
-        		lv_end_12_0, 
+        		lv_end_10_0, 
         		"Date");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_13=',' 
+)	otherlv_11=',' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_11());
+    	newLeafNode(otherlv_11, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_9());
     }
-(	otherlv_14='every' 
+(	otherlv_12='every' 
     {
-    	newLeafNode(otherlv_14, grammarAccess.getPeriodicActivityAccess().getEveryKeyword_12_0());
+    	newLeafNode(otherlv_12, grammarAccess.getPeriodicActivityAccess().getEveryKeyword_10_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getPeriodicityNumberEIntParserRuleCall_12_1_0()); 
+	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getFrequencyEIntParserRuleCall_10_1_0()); 
 	    }
-		lv_periodicityNumber_15_0=ruleEInt		{
+		lv_frequency_13_0=ruleEInt		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPeriodicActivityRule());
 	        }
        		set(
        			$current, 
-       			"periodicityNumber",
-        		lv_periodicityNumber_15_0, 
+       			"frequency",
+        		lv_frequency_13_0, 
         		"EInt");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -214,85 +281,93 @@ rulePeriodicActivity returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getPeriodicityTypePeriodicityEnumRuleCall_12_2_0()); 
+	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getPeriodicityTypePeriodicityEnumRuleCall_10_2_0()); 
 	    }
-		lv_periodicityType_16_0=rulePeriodicity		{
+		lv_periodicityType_14_0=rulePeriodicity		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPeriodicActivityRule());
 	        }
        		set(
        			$current, 
        			"periodicityType",
-        		lv_periodicityType_16_0, 
+        		lv_periodicityType_14_0, 
         		"Periodicity");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_17='allocate' 
+)	otherlv_15=',' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getPeriodicActivityAccess().getAllocateKeyword_13_0());
+    	newLeafNode(otherlv_15, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_10_3());
     }
-	otherlv_18='{' 
+)?(	otherlv_16='allocate' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_13_1());
+    	newLeafNode(otherlv_16, grammarAccess.getPeriodicActivityAccess().getAllocateKeyword_11_0());
+    }
+	otherlv_17='{' 
+    {
+    	newLeafNode(otherlv_17, grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_11_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_13_2_0()); 
+	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_11_2_0()); 
 	    }
-		lv_resAllocation_19_0=ruleResAllocation		{
+		lv_resAllocation_18_0=ruleResAllocation		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPeriodicActivityRule());
 	        }
        		add(
        			$current, 
        			"resAllocation",
-        		lv_resAllocation_19_0, 
+        		lv_resAllocation_18_0, 
         		"ResAllocation");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_20=',' 
+)(	otherlv_19=',' 
     {
-    	newLeafNode(otherlv_20, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_13_3_0());
+    	newLeafNode(otherlv_19, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_11_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_13_3_1_0()); 
+	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getResAllocationResAllocationParserRuleCall_11_3_1_0()); 
 	    }
-		lv_resAllocation_21_0=ruleResAllocation		{
+		lv_resAllocation_20_0=ruleResAllocation		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPeriodicActivityRule());
 	        }
        		add(
        			$current, 
        			"resAllocation",
-        		lv_resAllocation_21_0, 
+        		lv_resAllocation_20_0, 
         		"ResAllocation");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))*	otherlv_22='} ,' 
+))*	otherlv_21='}' 
     {
-    	newLeafNode(otherlv_22, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketSpaceCommaKeyword_13_4());
+    	newLeafNode(otherlv_21, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_11_4());
+    }
+	otherlv_22=',' 
+    {
+    	newLeafNode(otherlv_22, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_11_5());
     }
 )?(	otherlv_23='rules' 
     {
-    	newLeafNode(otherlv_23, grammarAccess.getPeriodicActivityAccess().getRulesKeyword_14_0());
+    	newLeafNode(otherlv_23, grammarAccess.getPeriodicActivityAccess().getRulesKeyword_12_0());
     }
 	otherlv_24='{' 
     {
-    	newLeafNode(otherlv_24, grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_14_1());
+    	newLeafNode(otherlv_24, grammarAccess.getPeriodicActivityAccess().getLeftCurlyBracketKeyword_12_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_14_2_0()); 
+	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_12_2_0()); 
 	    }
 		lv_rule_25_0=ruleRule		{
 	        if ($current==null) {
@@ -309,12 +384,12 @@ rulePeriodicActivity returns [EObject current=null]
 )
 )(	otherlv_26=',' 
     {
-    	newLeafNode(otherlv_26, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_14_3_0());
+    	newLeafNode(otherlv_26, grammarAccess.getPeriodicActivityAccess().getCommaKeyword_12_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_14_3_1_0()); 
+	        newCompositeNode(grammarAccess.getPeriodicActivityAccess().getRuleRuleParserRuleCall_12_3_1_0()); 
 	    }
 		lv_rule_27_0=ruleRule		{
 	        if ($current==null) {
@@ -331,11 +406,11 @@ rulePeriodicActivity returns [EObject current=null]
 )
 ))*	otherlv_28='}' 
     {
-    	newLeafNode(otherlv_28, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_14_4());
+    	newLeafNode(otherlv_28, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_12_4());
     }
 )?	otherlv_29='}' 
     {
-    	newLeafNode(otherlv_29, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_15());
+    	newLeafNode(otherlv_29, grammarAccess.getPeriodicActivityAccess().getRightCurlyBracketKeyword_13());
     }
 )
 ;
@@ -384,6 +459,24 @@ ruleDate returns [EObject current=null]
 	    }
 
 )
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDateAccess().getMonthMonthEnumRuleCall_2_0()); 
+	    }
+		lv_month_2_0=ruleMonth		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDateRule());
+	        }
+       		set(
+       			$current, 
+       			"month",
+        		lv_month_2_0, 
+        		"Month");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))
 ;
 
@@ -422,10 +515,12 @@ ruleResAllocation returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getResAllocationRule());
 	        }
         }
-	otherlv_2=RULE_ID
-	{
-		newLeafNode(otherlv_2, grammarAccess.getResAllocationAccess().getRessourceRessourceCrossReference_2_0()); 
-	}
+		{ 
+	        newCompositeNode(grammarAccess.getResAllocationAccess().getRessourceRessourceCrossReference_2_0()); 
+	    }
+		ruleEString		{ 
+	        afterParserOrEnumRuleCall();
+	    }
 
 )
 )	otherlv_3='for' 
@@ -435,17 +530,35 @@ ruleResAllocation returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getResAllocationAccess().getDureeEIntParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getResAllocationAccess().getDurationEIntParserRuleCall_4_0()); 
 	    }
-		lv_duree_4_0=ruleEInt		{
+		lv_duration_4_0=ruleEInt		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getResAllocationRule());
 	        }
        		set(
        			$current, 
-       			"duree",
-        		lv_duree_4_0, 
+       			"duration",
+        		lv_duration_4_0, 
         		"EInt");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getResAllocationAccess().getPeriodicityTypePeriodicityEnumRuleCall_5_0()); 
+	    }
+		lv_periodicityType_5_0=rulePeriodicity		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getResAllocationRule());
+	        }
+       		set(
+       			$current, 
+       			"periodicityType",
+        		lv_periodicityType_5_0, 
+        		"Periodicity");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -535,7 +648,33 @@ ruleRule returns [EObject current=null]
 	    }
 
 )
-))*)
+)(	otherlv_3=',' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getRuleAccess().getCommaKeyword_1_2_0());
+    }
+	otherlv_4='pre' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getRuleAccess().getPreKeyword_1_2_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRuleAccess().getPrePredicateParserRuleCall_1_2_2_0()); 
+	    }
+		lv_pre_5_0=rulePredicate		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRuleRule());
+	        }
+       		add(
+       			$current, 
+       			"pre",
+        		lv_pre_5_0, 
+        		"Predicate");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)?)
 ;
 
 
@@ -650,11 +789,19 @@ rulePredicate returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getPredicateAccess().getPredicatAction(),
+            grammarAccess.getPredicateAccess().getPredicatAction_0(),
             $current);
+    }
+)
+    { 
+        newCompositeNode(grammarAccess.getPredicateAccess().getEStringParserRuleCall_1()); 
+    }
+ruleEString
+    { 
+        afterParserOrEnumRuleCall();
     }
 )
 ;
@@ -785,8 +932,8 @@ rulePeriodicity returns [Enumerator current=null]
     @after { leaveRule(); }:
 ((	enumLiteral_0='months' 
 	{
-        $current = grammarAccess.getPeriodicityAccess().getMonthsEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-        newLeafNode(enumLiteral_0, grammarAccess.getPeriodicityAccess().getMonthsEnumLiteralDeclaration_0()); 
+        $current = grammarAccess.getPeriodicityAccess().getMonthEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getPeriodicityAccess().getMonthEnumLiteralDeclaration_0()); 
     }
 )
     |(	enumLiteral_1='days' 
@@ -811,6 +958,85 @@ rulePeriodicity returns [Enumerator current=null]
 	{
         $current = grammarAccess.getPeriodicityAccess().getHoursEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_4, grammarAccess.getPeriodicityAccess().getHoursEnumLiteralDeclaration_4()); 
+    }
+));
+
+
+
+// Rule Month
+ruleMonth returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='january' 
+	{
+        $current = grammarAccess.getMonthAccess().getJanuaryEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getMonthAccess().getJanuaryEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='february' 
+	{
+        $current = grammarAccess.getMonthAccess().getFebruaryEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getMonthAccess().getFebruaryEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='march' 
+	{
+        $current = grammarAccess.getMonthAccess().getMarchEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getMonthAccess().getMarchEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='april' 
+	{
+        $current = grammarAccess.getMonthAccess().getAprilEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getMonthAccess().getAprilEnumLiteralDeclaration_3()); 
+    }
+)
+    |(	enumLiteral_4='may' 
+	{
+        $current = grammarAccess.getMonthAccess().getMayEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_4, grammarAccess.getMonthAccess().getMayEnumLiteralDeclaration_4()); 
+    }
+)
+    |(	enumLiteral_5='june' 
+	{
+        $current = grammarAccess.getMonthAccess().getJuneEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_5, grammarAccess.getMonthAccess().getJuneEnumLiteralDeclaration_5()); 
+    }
+)
+    |(	enumLiteral_6='july' 
+	{
+        $current = grammarAccess.getMonthAccess().getJulyEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_6, grammarAccess.getMonthAccess().getJulyEnumLiteralDeclaration_6()); 
+    }
+)
+    |(	enumLiteral_7='august' 
+	{
+        $current = grammarAccess.getMonthAccess().getAugustEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_7, grammarAccess.getMonthAccess().getAugustEnumLiteralDeclaration_7()); 
+    }
+)
+    |(	enumLiteral_8='september' 
+	{
+        $current = grammarAccess.getMonthAccess().getSeptemberEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_8, grammarAccess.getMonthAccess().getSeptemberEnumLiteralDeclaration_8()); 
+    }
+)
+    |(	enumLiteral_9='october' 
+	{
+        $current = grammarAccess.getMonthAccess().getOctoberEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_9, grammarAccess.getMonthAccess().getOctoberEnumLiteralDeclaration_9()); 
+    }
+)
+    |(	enumLiteral_10='november' 
+	{
+        $current = grammarAccess.getMonthAccess().getNovemberEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_10, grammarAccess.getMonthAccess().getNovemberEnumLiteralDeclaration_10()); 
+    }
+)
+    |(	enumLiteral_11='december' 
+	{
+        $current = grammarAccess.getMonthAccess().getDecemberEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_11, grammarAccess.getMonthAccess().getDecemberEnumLiteralDeclaration_11()); 
     }
 ));
 

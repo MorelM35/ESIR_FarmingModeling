@@ -18,6 +18,50 @@ import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
 public class ActGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
+	public class ModelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Model");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cModelAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cCategorieKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cActivityAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cActivityPeriodicActivityParserRuleCall_4_0 = (RuleCall)cActivityAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Model:
+		//	{Model} "Categorie" name=EString "{" activity+=PeriodicActivity* "}";
+		public ParserRule getRule() { return rule; }
+
+		//{Model} "Categorie" name=EString "{" activity+=PeriodicActivity* "}"
+		public Group getGroup() { return cGroup; }
+
+		//{Model}
+		public Action getModelAction_0() { return cModelAction_0; }
+
+		//"Categorie"
+		public Keyword getCategorieKeyword_1() { return cCategorieKeyword_1; }
+
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+
+		//activity+=PeriodicActivity*
+		public Assignment getActivityAssignment_4() { return cActivityAssignment_4; }
+
+		//PeriodicActivity
+		public RuleCall getActivityPeriodicActivityParserRuleCall_4_0() { return cActivityPeriodicActivityParserRuleCall_4_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+
 	public class PeriodicActivityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PeriodicActivity");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -27,58 +71,58 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cAtelierKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cWorkshopKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cAtelierAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final CrossReference cAtelierAtelierCrossReference_4_1_0 = (CrossReference)cAtelierAssignment_4_1.eContents().get(0);
 		private final RuleCall cAtelierAtelierEStringParserRuleCall_4_1_0_1 = (RuleCall)cAtelierAtelierCrossReference_4_1_0.eContents().get(1);
 		private final Keyword cCommaKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
-		private final Keyword cStartKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cFromKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cStartAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cStartDateParserRuleCall_7_0 = (RuleCall)cStartAssignment_7.eContents().get(0);
-		private final Keyword cToKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cEndKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cEndAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cEndDateParserRuleCall_10_0 = (RuleCall)cEndAssignment_10.eContents().get(0);
-		private final Keyword cCommaKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cFromKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cStartAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cStartDateParserRuleCall_6_0 = (RuleCall)cStartAssignment_6.eContents().get(0);
+		private final Keyword cToKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cEndAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cEndDateParserRuleCall_8_0 = (RuleCall)cEndAssignment_8.eContents().get(0);
+		private final Keyword cCommaKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Keyword cEveryKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
+		private final Assignment cFrequencyAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final RuleCall cFrequencyEIntParserRuleCall_10_1_0 = (RuleCall)cFrequencyAssignment_10_1.eContents().get(0);
+		private final Assignment cPeriodicityTypeAssignment_10_2 = (Assignment)cGroup_10.eContents().get(2);
+		private final RuleCall cPeriodicityTypePeriodicityEnumRuleCall_10_2_0 = (RuleCall)cPeriodicityTypeAssignment_10_2.eContents().get(0);
+		private final Keyword cCommaKeyword_10_3 = (Keyword)cGroup_10.eContents().get(3);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Keyword cAllocateKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
+		private final Assignment cResAllocationAssignment_11_2 = (Assignment)cGroup_11.eContents().get(2);
+		private final RuleCall cResAllocationResAllocationParserRuleCall_11_2_0 = (RuleCall)cResAllocationAssignment_11_2.eContents().get(0);
+		private final Group cGroup_11_3 = (Group)cGroup_11.eContents().get(3);
+		private final Keyword cCommaKeyword_11_3_0 = (Keyword)cGroup_11_3.eContents().get(0);
+		private final Assignment cResAllocationAssignment_11_3_1 = (Assignment)cGroup_11_3.eContents().get(1);
+		private final RuleCall cResAllocationResAllocationParserRuleCall_11_3_1_0 = (RuleCall)cResAllocationAssignment_11_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11_4 = (Keyword)cGroup_11.eContents().get(4);
+		private final Keyword cCommaKeyword_11_5 = (Keyword)cGroup_11.eContents().get(5);
 		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
-		private final Keyword cEveryKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
-		private final Assignment cPeriodicityNumberAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
-		private final RuleCall cPeriodicityNumberEIntParserRuleCall_12_1_0 = (RuleCall)cPeriodicityNumberAssignment_12_1.eContents().get(0);
-		private final Assignment cPeriodicityTypeAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
-		private final RuleCall cPeriodicityTypePeriodicityEnumRuleCall_12_2_0 = (RuleCall)cPeriodicityTypeAssignment_12_2.eContents().get(0);
-		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Keyword cAllocateKeyword_13_0 = (Keyword)cGroup_13.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
-		private final Assignment cResAllocationAssignment_13_2 = (Assignment)cGroup_13.eContents().get(2);
-		private final RuleCall cResAllocationResAllocationParserRuleCall_13_2_0 = (RuleCall)cResAllocationAssignment_13_2.eContents().get(0);
-		private final Group cGroup_13_3 = (Group)cGroup_13.eContents().get(3);
-		private final Keyword cCommaKeyword_13_3_0 = (Keyword)cGroup_13_3.eContents().get(0);
-		private final Assignment cResAllocationAssignment_13_3_1 = (Assignment)cGroup_13_3.eContents().get(1);
-		private final RuleCall cResAllocationResAllocationParserRuleCall_13_3_1_0 = (RuleCall)cResAllocationAssignment_13_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketSpaceCommaKeyword_13_4 = (Keyword)cGroup_13.eContents().get(4);
-		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
-		private final Keyword cRulesKeyword_14_0 = (Keyword)cGroup_14.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Assignment cRuleAssignment_14_2 = (Assignment)cGroup_14.eContents().get(2);
-		private final RuleCall cRuleRuleParserRuleCall_14_2_0 = (RuleCall)cRuleAssignment_14_2.eContents().get(0);
-		private final Group cGroup_14_3 = (Group)cGroup_14.eContents().get(3);
-		private final Keyword cCommaKeyword_14_3_0 = (Keyword)cGroup_14_3.eContents().get(0);
-		private final Assignment cRuleAssignment_14_3_1 = (Assignment)cGroup_14_3.eContents().get(1);
-		private final RuleCall cRuleRuleParserRuleCall_14_3_1_0 = (RuleCall)cRuleAssignment_14_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_14_4 = (Keyword)cGroup_14.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cRulesKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
+		private final Assignment cRuleAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
+		private final RuleCall cRuleRuleParserRuleCall_12_2_0 = (RuleCall)cRuleAssignment_12_2.eContents().get(0);
+		private final Group cGroup_12_3 = (Group)cGroup_12.eContents().get(3);
+		private final Keyword cCommaKeyword_12_3_0 = (Keyword)cGroup_12_3.eContents().get(0);
+		private final Assignment cRuleAssignment_12_3_1 = (Assignment)cGroup_12_3.eContents().get(1);
+		private final RuleCall cRuleRuleParserRuleCall_12_3_1_0 = (RuleCall)cRuleAssignment_12_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12_4 = (Keyword)cGroup_12.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//PeriodicActivity:
-		//	{PeriodicActivity} "PeriodicActivity" name=EString "{" ("atelier" atelier=[exploitation::Atelier|EString] ",")?
-		//	"start" "from" start=Date "to" "end" end=Date "," ("every" periodicityNumber=EInt? periodicityType=Periodicity)?
-		//	("allocate" "{" resAllocation+=ResAllocation ("," resAllocation+=ResAllocation)* "} ,")? ("rules" "{" rule+=Rule (","
-		//	rule+=Rule)* "}")? "}";
+		//	{PeriodicActivity} "PeriodicActivity" name=EString "{" ("workshop" atelier=[exploitation::Atelier|EString] ",")?
+		//	"from" start=Date "to" end=Date "," ("every" frequency=EInt? periodicityType=Periodicity ",")? ("allocate" "{"
+		//	resAllocation+=ResAllocation ("," resAllocation+=ResAllocation)* "}" ",")? ("rules" "{" rule+=Rule ("," rule+=Rule)*
+		//	"}")? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{PeriodicActivity} "PeriodicActivity" name=EString "{" ("atelier" atelier=[exploitation::Atelier|EString] ",")? "start"
-		//"from" start=Date "to" "end" end=Date "," ("every" periodicityNumber=EInt? periodicityType=Periodicity)? ("allocate"
-		//"{" resAllocation+=ResAllocation ("," resAllocation+=ResAllocation)* "} ,")? ("rules" "{" rule+=Rule ("," rule+=Rule)*
+		//{PeriodicActivity} "PeriodicActivity" name=EString "{" ("workshop" atelier=[exploitation::Atelier|EString] ",")? "from"
+		//start=Date "to" end=Date "," ("every" frequency=EInt? periodicityType=Periodicity ",")? ("allocate" "{"
+		//resAllocation+=ResAllocation ("," resAllocation+=ResAllocation)* "}" ",")? ("rules" "{" rule+=Rule ("," rule+=Rule)*
 		//"}")? "}"
 		public Group getGroup() { return cGroup; }
 
@@ -97,11 +141,11 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//("atelier" atelier=[exploitation::Atelier|EString] ",")?
+		//("workshop" atelier=[exploitation::Atelier|EString] ",")?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"atelier"
-		public Keyword getAtelierKeyword_4_0() { return cAtelierKeyword_4_0; }
+		//"workshop"
+		public Keyword getWorkshopKeyword_4_0() { return cWorkshopKeyword_4_0; }
 
 		//atelier=[exploitation::Atelier|EString]
 		public Assignment getAtelierAssignment_4_1() { return cAtelierAssignment_4_1; }
@@ -115,113 +159,113 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_4_2() { return cCommaKeyword_4_2; }
 
-		//"start"
-		public Keyword getStartKeyword_5() { return cStartKeyword_5; }
-
 		//"from"
-		public Keyword getFromKeyword_6() { return cFromKeyword_6; }
+		public Keyword getFromKeyword_5() { return cFromKeyword_5; }
 
 		//start=Date
-		public Assignment getStartAssignment_7() { return cStartAssignment_7; }
+		public Assignment getStartAssignment_6() { return cStartAssignment_6; }
 
 		//Date
-		public RuleCall getStartDateParserRuleCall_7_0() { return cStartDateParserRuleCall_7_0; }
+		public RuleCall getStartDateParserRuleCall_6_0() { return cStartDateParserRuleCall_6_0; }
 
 		//"to"
-		public Keyword getToKeyword_8() { return cToKeyword_8; }
-
-		//"end"
-		public Keyword getEndKeyword_9() { return cEndKeyword_9; }
+		public Keyword getToKeyword_7() { return cToKeyword_7; }
 
 		//end=Date
-		public Assignment getEndAssignment_10() { return cEndAssignment_10; }
+		public Assignment getEndAssignment_8() { return cEndAssignment_8; }
 
 		//Date
-		public RuleCall getEndDateParserRuleCall_10_0() { return cEndDateParserRuleCall_10_0; }
+		public RuleCall getEndDateParserRuleCall_8_0() { return cEndDateParserRuleCall_8_0; }
 
 		//","
-		public Keyword getCommaKeyword_11() { return cCommaKeyword_11; }
+		public Keyword getCommaKeyword_9() { return cCommaKeyword_9; }
 
-		//("every" periodicityNumber=EInt? periodicityType=Periodicity)?
-		public Group getGroup_12() { return cGroup_12; }
+		//("every" frequency=EInt? periodicityType=Periodicity ",")?
+		public Group getGroup_10() { return cGroup_10; }
 
 		//"every"
-		public Keyword getEveryKeyword_12_0() { return cEveryKeyword_12_0; }
+		public Keyword getEveryKeyword_10_0() { return cEveryKeyword_10_0; }
 
-		//periodicityNumber=EInt?
-		public Assignment getPeriodicityNumberAssignment_12_1() { return cPeriodicityNumberAssignment_12_1; }
+		//frequency=EInt?
+		public Assignment getFrequencyAssignment_10_1() { return cFrequencyAssignment_10_1; }
 
 		//EInt
-		public RuleCall getPeriodicityNumberEIntParserRuleCall_12_1_0() { return cPeriodicityNumberEIntParserRuleCall_12_1_0; }
+		public RuleCall getFrequencyEIntParserRuleCall_10_1_0() { return cFrequencyEIntParserRuleCall_10_1_0; }
 
 		//periodicityType=Periodicity
-		public Assignment getPeriodicityTypeAssignment_12_2() { return cPeriodicityTypeAssignment_12_2; }
+		public Assignment getPeriodicityTypeAssignment_10_2() { return cPeriodicityTypeAssignment_10_2; }
 
 		//Periodicity
-		public RuleCall getPeriodicityTypePeriodicityEnumRuleCall_12_2_0() { return cPeriodicityTypePeriodicityEnumRuleCall_12_2_0; }
+		public RuleCall getPeriodicityTypePeriodicityEnumRuleCall_10_2_0() { return cPeriodicityTypePeriodicityEnumRuleCall_10_2_0; }
 
-		//("allocate" "{" resAllocation+=ResAllocation ("," resAllocation+=ResAllocation)* "} ,")?
-		public Group getGroup_13() { return cGroup_13; }
+		//","
+		public Keyword getCommaKeyword_10_3() { return cCommaKeyword_10_3; }
+
+		//("allocate" "{" resAllocation+=ResAllocation ("," resAllocation+=ResAllocation)* "}" ",")?
+		public Group getGroup_11() { return cGroup_11; }
 
 		//"allocate"
-		public Keyword getAllocateKeyword_13_0() { return cAllocateKeyword_13_0; }
+		public Keyword getAllocateKeyword_11_0() { return cAllocateKeyword_11_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_13_1() { return cLeftCurlyBracketKeyword_13_1; }
+		public Keyword getLeftCurlyBracketKeyword_11_1() { return cLeftCurlyBracketKeyword_11_1; }
 
 		//resAllocation+=ResAllocation
-		public Assignment getResAllocationAssignment_13_2() { return cResAllocationAssignment_13_2; }
+		public Assignment getResAllocationAssignment_11_2() { return cResAllocationAssignment_11_2; }
 
 		//ResAllocation
-		public RuleCall getResAllocationResAllocationParserRuleCall_13_2_0() { return cResAllocationResAllocationParserRuleCall_13_2_0; }
+		public RuleCall getResAllocationResAllocationParserRuleCall_11_2_0() { return cResAllocationResAllocationParserRuleCall_11_2_0; }
 
 		//("," resAllocation+=ResAllocation)*
-		public Group getGroup_13_3() { return cGroup_13_3; }
+		public Group getGroup_11_3() { return cGroup_11_3; }
 
 		//","
-		public Keyword getCommaKeyword_13_3_0() { return cCommaKeyword_13_3_0; }
+		public Keyword getCommaKeyword_11_3_0() { return cCommaKeyword_11_3_0; }
 
 		//resAllocation+=ResAllocation
-		public Assignment getResAllocationAssignment_13_3_1() { return cResAllocationAssignment_13_3_1; }
+		public Assignment getResAllocationAssignment_11_3_1() { return cResAllocationAssignment_11_3_1; }
 
 		//ResAllocation
-		public RuleCall getResAllocationResAllocationParserRuleCall_13_3_1_0() { return cResAllocationResAllocationParserRuleCall_13_3_1_0; }
+		public RuleCall getResAllocationResAllocationParserRuleCall_11_3_1_0() { return cResAllocationResAllocationParserRuleCall_11_3_1_0; }
 
-		//"} ,"
-		public Keyword getRightCurlyBracketSpaceCommaKeyword_13_4() { return cRightCurlyBracketSpaceCommaKeyword_13_4; }
-
-		//("rules" "{" rule+=Rule ("," rule+=Rule)* "}")?
-		public Group getGroup_14() { return cGroup_14; }
-
-		//"rules"
-		public Keyword getRulesKeyword_14_0() { return cRulesKeyword_14_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_14_1() { return cLeftCurlyBracketKeyword_14_1; }
-
-		//rule+=Rule
-		public Assignment getRuleAssignment_14_2() { return cRuleAssignment_14_2; }
-
-		//Rule
-		public RuleCall getRuleRuleParserRuleCall_14_2_0() { return cRuleRuleParserRuleCall_14_2_0; }
-
-		//("," rule+=Rule)*
-		public Group getGroup_14_3() { return cGroup_14_3; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_11_4() { return cRightCurlyBracketKeyword_11_4; }
 
 		//","
-		public Keyword getCommaKeyword_14_3_0() { return cCommaKeyword_14_3_0; }
+		public Keyword getCommaKeyword_11_5() { return cCommaKeyword_11_5; }
+
+		//("rules" "{" rule+=Rule ("," rule+=Rule)* "}")?
+		public Group getGroup_12() { return cGroup_12; }
+
+		//"rules"
+		public Keyword getRulesKeyword_12_0() { return cRulesKeyword_12_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_12_1() { return cLeftCurlyBracketKeyword_12_1; }
 
 		//rule+=Rule
-		public Assignment getRuleAssignment_14_3_1() { return cRuleAssignment_14_3_1; }
+		public Assignment getRuleAssignment_12_2() { return cRuleAssignment_12_2; }
 
 		//Rule
-		public RuleCall getRuleRuleParserRuleCall_14_3_1_0() { return cRuleRuleParserRuleCall_14_3_1_0; }
+		public RuleCall getRuleRuleParserRuleCall_12_2_0() { return cRuleRuleParserRuleCall_12_2_0; }
+
+		//("," rule+=Rule)*
+		public Group getGroup_12_3() { return cGroup_12_3; }
+
+		//","
+		public Keyword getCommaKeyword_12_3_0() { return cCommaKeyword_12_3_0; }
+
+		//rule+=Rule
+		public Assignment getRuleAssignment_12_3_1() { return cRuleAssignment_12_3_1; }
+
+		//Rule
+		public RuleCall getRuleRuleParserRuleCall_12_3_1_0() { return cRuleRuleParserRuleCall_12_3_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_14_4() { return cRightCurlyBracketKeyword_14_4; }
+		public Keyword getRightCurlyBracketKeyword_12_4() { return cRightCurlyBracketKeyword_12_4; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
 	}
 
 	public class AtelierElements extends AbstractParserRuleElementFinder {
@@ -254,12 +298,14 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cDateAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cDayAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cDayEIntParserRuleCall_1_0 = (RuleCall)cDayAssignment_1.eContents().get(0);
+		private final Assignment cMonthAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cMonthMonthEnumRuleCall_2_0 = (RuleCall)cMonthAssignment_2.eContents().get(0);
 		
 		//Date:
-		//	{Date} day=EInt;
+		//	{Date} day=EInt month=Month;
 		public ParserRule getRule() { return rule; }
 
-		//{Date} day=EInt
+		//{Date} day=EInt month=Month
 		public Group getGroup() { return cGroup; }
 
 		//{Date}
@@ -270,6 +316,12 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 
 		//EInt
 		public RuleCall getDayEIntParserRuleCall_1_0() { return cDayEIntParserRuleCall_1_0; }
+
+		//month=Month
+		public Assignment getMonthAssignment_2() { return cMonthAssignment_2; }
+
+		//Month
+		public RuleCall getMonthMonthEnumRuleCall_2_0() { return cMonthMonthEnumRuleCall_2_0; }
 	}
 
 	public class ResAllocationElements extends AbstractParserRuleElementFinder {
@@ -279,16 +331,20 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cReserveKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cRessourceAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cRessourceRessourceCrossReference_2_0 = (CrossReference)cRessourceAssignment_2.eContents().get(0);
-		private final RuleCall cRessourceRessourceIDTerminalRuleCall_2_0_1 = (RuleCall)cRessourceRessourceCrossReference_2_0.eContents().get(1);
+		private final RuleCall cRessourceRessourceEStringParserRuleCall_2_0_1 = (RuleCall)cRessourceRessourceCrossReference_2_0.eContents().get(1);
 		private final Keyword cForKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cDureeAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cDureeEIntParserRuleCall_4_0 = (RuleCall)cDureeAssignment_4.eContents().get(0);
+		private final Assignment cDurationAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDurationEIntParserRuleCall_4_0 = (RuleCall)cDurationAssignment_4.eContents().get(0);
+		private final Assignment cPeriodicityTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPeriodicityTypePeriodicityEnumRuleCall_5_0 = (RuleCall)cPeriodicityTypeAssignment_5.eContents().get(0);
 		
 		//ResAllocation returns RessourceAllocation:
-		//	{RessourceAllocation} "reserve" ressource=[exploitation::Ressource] "for" duree=EInt;
+		//	{RessourceAllocation} "reserve" ressource=[exploitation::Ressource|EString] "for" duration=EInt
+		//	periodicityType=Periodicity;
 		public ParserRule getRule() { return rule; }
 
-		//{RessourceAllocation} "reserve" ressource=[exploitation::Ressource] "for" duree=EInt
+		//{RessourceAllocation} "reserve" ressource=[exploitation::Ressource|EString] "for" duration=EInt
+		//periodicityType=Periodicity
 		public Group getGroup() { return cGroup; }
 
 		//{RessourceAllocation}
@@ -297,23 +353,29 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 		//"reserve"
 		public Keyword getReserveKeyword_1() { return cReserveKeyword_1; }
 
-		//ressource=[exploitation::Ressource]
+		//ressource=[exploitation::Ressource|EString]
 		public Assignment getRessourceAssignment_2() { return cRessourceAssignment_2; }
 
-		//[exploitation::Ressource]
+		//[exploitation::Ressource|EString]
 		public CrossReference getRessourceRessourceCrossReference_2_0() { return cRessourceRessourceCrossReference_2_0; }
 
-		//ID
-		public RuleCall getRessourceRessourceIDTerminalRuleCall_2_0_1() { return cRessourceRessourceIDTerminalRuleCall_2_0_1; }
+		//EString
+		public RuleCall getRessourceRessourceEStringParserRuleCall_2_0_1() { return cRessourceRessourceEStringParserRuleCall_2_0_1; }
 
 		//"for"
 		public Keyword getForKeyword_3() { return cForKeyword_3; }
 
-		//duree=EInt
-		public Assignment getDureeAssignment_4() { return cDureeAssignment_4; }
+		//duration=EInt
+		public Assignment getDurationAssignment_4() { return cDurationAssignment_4; }
 
 		//EInt
-		public RuleCall getDureeEIntParserRuleCall_4_0() { return cDureeEIntParserRuleCall_4_0; }
+		public RuleCall getDurationEIntParserRuleCall_4_0() { return cDurationEIntParserRuleCall_4_0; }
+
+		//periodicityType=Periodicity
+		public Assignment getPeriodicityTypeAssignment_5() { return cPeriodicityTypeAssignment_5; }
+
+		//Periodicity
+		public RuleCall getPeriodicityTypePeriodicityEnumRuleCall_5_0() { return cPeriodicityTypePeriodicityEnumRuleCall_5_0; }
 	}
 
 	public class EStringElements extends AbstractParserRuleElementFinder {
@@ -344,18 +406,23 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPreKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cPreAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cPrePredicateParserRuleCall_1_1_0 = (RuleCall)cPreAssignment_1_1.eContents().get(0);
+		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
+		private final Keyword cCommaKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Keyword cPreKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
+		private final Assignment cPreAssignment_1_2_2 = (Assignment)cGroup_1_2.eContents().get(2);
+		private final RuleCall cPrePredicateParserRuleCall_1_2_2_0 = (RuleCall)cPreAssignment_1_2_2.eContents().get(0);
 		
 		//Rule:
-		//	{Rule} ("pre" pre+=Predicate)*;
+		//	{Rule} ("pre" pre+=Predicate ("," "pre" pre+=Predicate)*)?;
 		public ParserRule getRule() { return rule; }
 
-		//{Rule} ("pre" pre+=Predicate)*
+		//{Rule} ("pre" pre+=Predicate ("," "pre" pre+=Predicate)*)?
 		public Group getGroup() { return cGroup; }
 
 		//{Rule}
 		public Action getRuleAction_0() { return cRuleAction_0; }
 
-		//("pre" pre+=Predicate)*
+		//("pre" pre+=Predicate ("," "pre" pre+=Predicate)*)?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"pre"
@@ -366,6 +433,21 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Predicate
 		public RuleCall getPrePredicateParserRuleCall_1_1_0() { return cPrePredicateParserRuleCall_1_1_0; }
+
+		//("," "pre" pre+=Predicate)*
+		public Group getGroup_1_2() { return cGroup_1_2; }
+
+		//","
+		public Keyword getCommaKeyword_1_2_0() { return cCommaKeyword_1_2_0; }
+
+		//"pre"
+		public Keyword getPreKeyword_1_2_1() { return cPreKeyword_1_2_1; }
+
+		//pre+=Predicate
+		public Assignment getPreAssignment_1_2_2() { return cPreAssignment_1_2_2; }
+
+		//Predicate
+		public RuleCall getPrePredicateParserRuleCall_1_2_2_0() { return cPrePredicateParserRuleCall_1_2_2_0; }
 	}
 
 	public class Atelier_ImplElements extends AbstractParserRuleElementFinder {
@@ -466,14 +548,22 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class PredicateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Predicate");
-		private final Action cPredicatAction = (Action)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPredicatAction_0 = (Action)cGroup.eContents().get(0);
+		private final RuleCall cEStringParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//Predicate returns Predicat:
-		//	{Predicat};
+		//	{Predicat} EString;
 		public ParserRule getRule() { return rule; }
 
+		//{Predicat} EString
+		public Group getGroup() { return cGroup; }
+
 		//{Predicat}
-		public Action getPredicatAction() { return cPredicatAction; }
+		public Action getPredicatAction_0() { return cPredicatAction_0; }
+
+		//EString
+		public RuleCall getEStringParserRuleCall_1() { return cEStringParserRuleCall_1; }
 	}
 
 	public class ElevageElements extends AbstractParserRuleElementFinder {
@@ -576,8 +666,8 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 	public class PeriodicityElements extends AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Periodicity");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cMonthsEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cMonthsMonthsKeyword_0_0 = (Keyword)cMonthsEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cMonthEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMonthMonthsKeyword_0_0 = (Keyword)cMonthEnumLiteralDeclaration_0.eContents().get(0);
 		private final EnumLiteralDeclaration cDaysEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
 		private final Keyword cDaysDaysKeyword_1_0 = (Keyword)cDaysEnumLiteralDeclaration_1.eContents().get(0);
 		private final EnumLiteralDeclaration cWeeksEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
@@ -588,17 +678,17 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHoursHoursKeyword_4_0 = (Keyword)cHoursEnumLiteralDeclaration_4.eContents().get(0);
 		
 		//enum Periodicity returns periodicity:
-		//	months | days | weeks | years | hours;
+		//	month="months" | days | weeks | years | hours;
 		public EnumRule getRule() { return rule; }
 
-		//months | days | weeks | years | hours
+		//month="months" | days | weeks | years | hours
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//months
-		public EnumLiteralDeclaration getMonthsEnumLiteralDeclaration_0() { return cMonthsEnumLiteralDeclaration_0; }
+		//month="months"
+		public EnumLiteralDeclaration getMonthEnumLiteralDeclaration_0() { return cMonthEnumLiteralDeclaration_0; }
 
 		//"months"
-		public Keyword getMonthsMonthsKeyword_0_0() { return cMonthsMonthsKeyword_0_0; }
+		public Keyword getMonthMonthsKeyword_0_0() { return cMonthMonthsKeyword_0_0; }
 
 		//days
 		public EnumLiteralDeclaration getDaysEnumLiteralDeclaration_1() { return cDaysEnumLiteralDeclaration_1; }
@@ -624,9 +714,119 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 		//"hours"
 		public Keyword getHoursHoursKeyword_4_0() { return cHoursHoursKeyword_4_0; }
 	}
+
+	public class MonthElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Month");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cJanuaryEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cJanuaryJanuaryKeyword_0_0 = (Keyword)cJanuaryEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cFebruaryEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cFebruaryFebruaryKeyword_1_0 = (Keyword)cFebruaryEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cMarchEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cMarchMarchKeyword_2_0 = (Keyword)cMarchEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cAprilEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cAprilAprilKeyword_3_0 = (Keyword)cAprilEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cMayEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cMayMayKeyword_4_0 = (Keyword)cMayEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cJuneEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cJuneJuneKeyword_5_0 = (Keyword)cJuneEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cJulyEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cJulyJulyKeyword_6_0 = (Keyword)cJulyEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cAugustEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cAugustAugustKeyword_7_0 = (Keyword)cAugustEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cSeptemberEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cSeptemberSeptemberKeyword_8_0 = (Keyword)cSeptemberEnumLiteralDeclaration_8.eContents().get(0);
+		private final EnumLiteralDeclaration cOctoberEnumLiteralDeclaration_9 = (EnumLiteralDeclaration)cAlternatives.eContents().get(9);
+		private final Keyword cOctoberOctoberKeyword_9_0 = (Keyword)cOctoberEnumLiteralDeclaration_9.eContents().get(0);
+		private final EnumLiteralDeclaration cNovemberEnumLiteralDeclaration_10 = (EnumLiteralDeclaration)cAlternatives.eContents().get(10);
+		private final Keyword cNovemberNovemberKeyword_10_0 = (Keyword)cNovemberEnumLiteralDeclaration_10.eContents().get(0);
+		private final EnumLiteralDeclaration cDecemberEnumLiteralDeclaration_11 = (EnumLiteralDeclaration)cAlternatives.eContents().get(11);
+		private final Keyword cDecemberDecemberKeyword_11_0 = (Keyword)cDecemberEnumLiteralDeclaration_11.eContents().get(0);
+		
+		//enum Month:
+		//	january | february | march | april | may | june | july | august | september | october | november | december;
+		public EnumRule getRule() { return rule; }
+
+		//january | february | march | april | may | june | july | august | september | october | november | december
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//january
+		public EnumLiteralDeclaration getJanuaryEnumLiteralDeclaration_0() { return cJanuaryEnumLiteralDeclaration_0; }
+
+		//"january"
+		public Keyword getJanuaryJanuaryKeyword_0_0() { return cJanuaryJanuaryKeyword_0_0; }
+
+		//february
+		public EnumLiteralDeclaration getFebruaryEnumLiteralDeclaration_1() { return cFebruaryEnumLiteralDeclaration_1; }
+
+		//"february"
+		public Keyword getFebruaryFebruaryKeyword_1_0() { return cFebruaryFebruaryKeyword_1_0; }
+
+		//march
+		public EnumLiteralDeclaration getMarchEnumLiteralDeclaration_2() { return cMarchEnumLiteralDeclaration_2; }
+
+		//"march"
+		public Keyword getMarchMarchKeyword_2_0() { return cMarchMarchKeyword_2_0; }
+
+		//april
+		public EnumLiteralDeclaration getAprilEnumLiteralDeclaration_3() { return cAprilEnumLiteralDeclaration_3; }
+
+		//"april"
+		public Keyword getAprilAprilKeyword_3_0() { return cAprilAprilKeyword_3_0; }
+
+		//may
+		public EnumLiteralDeclaration getMayEnumLiteralDeclaration_4() { return cMayEnumLiteralDeclaration_4; }
+
+		//"may"
+		public Keyword getMayMayKeyword_4_0() { return cMayMayKeyword_4_0; }
+
+		//june
+		public EnumLiteralDeclaration getJuneEnumLiteralDeclaration_5() { return cJuneEnumLiteralDeclaration_5; }
+
+		//"june"
+		public Keyword getJuneJuneKeyword_5_0() { return cJuneJuneKeyword_5_0; }
+
+		//july
+		public EnumLiteralDeclaration getJulyEnumLiteralDeclaration_6() { return cJulyEnumLiteralDeclaration_6; }
+
+		//"july"
+		public Keyword getJulyJulyKeyword_6_0() { return cJulyJulyKeyword_6_0; }
+
+		//august
+		public EnumLiteralDeclaration getAugustEnumLiteralDeclaration_7() { return cAugustEnumLiteralDeclaration_7; }
+
+		//"august"
+		public Keyword getAugustAugustKeyword_7_0() { return cAugustAugustKeyword_7_0; }
+
+		//september
+		public EnumLiteralDeclaration getSeptemberEnumLiteralDeclaration_8() { return cSeptemberEnumLiteralDeclaration_8; }
+
+		//"september"
+		public Keyword getSeptemberSeptemberKeyword_8_0() { return cSeptemberSeptemberKeyword_8_0; }
+
+		//october
+		public EnumLiteralDeclaration getOctoberEnumLiteralDeclaration_9() { return cOctoberEnumLiteralDeclaration_9; }
+
+		//"october"
+		public Keyword getOctoberOctoberKeyword_9_0() { return cOctoberOctoberKeyword_9_0; }
+
+		//november
+		public EnumLiteralDeclaration getNovemberEnumLiteralDeclaration_10() { return cNovemberEnumLiteralDeclaration_10; }
+
+		//"november"
+		public Keyword getNovemberNovemberKeyword_10_0() { return cNovemberNovemberKeyword_10_0; }
+
+		//december
+		public EnumLiteralDeclaration getDecemberEnumLiteralDeclaration_11() { return cDecemberEnumLiteralDeclaration_11; }
+
+		//"december"
+		public Keyword getDecemberDecemberKeyword_11_0() { return cDecemberDecemberKeyword_11_0; }
+	}
 	
+	private ModelElements pModel;
 	private PeriodicActivityElements pPeriodicActivity;
 	private PeriodicityElements unknownRulePeriodicity;
+	private MonthElements unknownRuleMonth;
 	private AtelierElements pAtelier;
 	private DateElements pDate;
 	private ResAllocationElements pResAllocation;
@@ -677,11 +877,21 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
+	//Model:
+	//	{Model} "Categorie" name=EString "{" activity+=PeriodicActivity* "}";
+	public ModelElements getModelAccess() {
+		return (pModel != null) ? pModel : (pModel = new ModelElements());
+	}
+	
+	public ParserRule getModelRule() {
+		return getModelAccess().getRule();
+	}
+
 	//PeriodicActivity:
-	//	{PeriodicActivity} "PeriodicActivity" name=EString "{" ("atelier" atelier=[exploitation::Atelier|EString] ",")?
-	//	"start" "from" start=Date "to" "end" end=Date "," ("every" periodicityNumber=EInt? periodicityType=Periodicity)?
-	//	("allocate" "{" resAllocation+=ResAllocation ("," resAllocation+=ResAllocation)* "} ,")? ("rules" "{" rule+=Rule (","
-	//	rule+=Rule)* "}")? "}";
+	//	{PeriodicActivity} "PeriodicActivity" name=EString "{" ("workshop" atelier=[exploitation::Atelier|EString] ",")?
+	//	"from" start=Date "to" end=Date "," ("every" frequency=EInt? periodicityType=Periodicity ",")? ("allocate" "{"
+	//	resAllocation+=ResAllocation ("," resAllocation+=ResAllocation)* "}" ",")? ("rules" "{" rule+=Rule ("," rule+=Rule)*
+	//	"}")? "}";
 	public PeriodicActivityElements getPeriodicActivityAccess() {
 		return (pPeriodicActivity != null) ? pPeriodicActivity : (pPeriodicActivity = new PeriodicActivityElements());
 	}
@@ -691,13 +901,23 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//enum Periodicity returns periodicity:
-	//	months | days | weeks | years | hours;
+	//	month="months" | days | weeks | years | hours;
 	public PeriodicityElements getPeriodicityAccess() {
 		return (unknownRulePeriodicity != null) ? unknownRulePeriodicity : (unknownRulePeriodicity = new PeriodicityElements());
 	}
 	
 	public EnumRule getPeriodicityRule() {
 		return getPeriodicityAccess().getRule();
+	}
+
+	//enum Month:
+	//	january | february | march | april | may | june | july | august | september | october | november | december;
+	public MonthElements getMonthAccess() {
+		return (unknownRuleMonth != null) ? unknownRuleMonth : (unknownRuleMonth = new MonthElements());
+	}
+	
+	public EnumRule getMonthRule() {
+		return getMonthAccess().getRule();
 	}
 
 	//Atelier returns exploitation::Atelier:
@@ -711,7 +931,7 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Date:
-	//	{Date} day=EInt;
+	//	{Date} day=EInt month=Month;
 	public DateElements getDateAccess() {
 		return (pDate != null) ? pDate : (pDate = new DateElements());
 	}
@@ -721,7 +941,8 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ResAllocation returns RessourceAllocation:
-	//	{RessourceAllocation} "reserve" ressource=[exploitation::Ressource] "for" duree=EInt;
+	//	{RessourceAllocation} "reserve" ressource=[exploitation::Ressource|EString] "for" duration=EInt
+	//	periodicityType=Periodicity;
 	public ResAllocationElements getResAllocationAccess() {
 		return (pResAllocation != null) ? pResAllocation : (pResAllocation = new ResAllocationElements());
 	}
@@ -741,7 +962,7 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Rule:
-	//	{Rule} ("pre" pre+=Predicate)*;
+	//	{Rule} ("pre" pre+=Predicate ("," "pre" pre+=Predicate)*)?;
 	public RuleElements getRuleAccess() {
 		return (pRule != null) ? pRule : (pRule = new RuleElements());
 	}
@@ -781,7 +1002,7 @@ public class ActGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Predicate returns Predicat:
-	//	{Predicat};
+	//	{Predicat} EString;
 	public PredicateElements getPredicateAccess() {
 		return (pPredicate != null) ? pPredicate : (pPredicate = new PredicateElements());
 	}

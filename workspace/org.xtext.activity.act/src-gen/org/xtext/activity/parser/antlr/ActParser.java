@@ -25,7 +25,7 @@ public class ActParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParse
 	
 	@Override 
 	protected String getDefaultRuleName() {
-		return "PeriodicActivity";
+		return "Model";
 	}
 	
 	public ActGrammarAccess getGrammarAccess() {
