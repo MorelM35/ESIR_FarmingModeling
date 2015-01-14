@@ -7,6 +7,14 @@
         <element xmi:type="ecore:EAttribute" href="activity.ecore#//PeriodicActivity/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_tUPTcZaHEeSYiPsIRHr9Sg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_WUT-UJwJEeSZq5DOTjw8zA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="activity.ecore#//PeriodicActivity/periodicityType"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_WUT-UZwJEeSZq5DOTjw8zA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_ibdg4JwKEeSZq5DOTjw8zA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="activity.ecore#//PeriodicActivity/periodicityNumber"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ibdg4ZwKEeSZq5DOTjw8zA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_r8Ra8paHEeSYiPsIRHr9Sg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_r8Ra85aHEeSYiPsIRHr9Sg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_r8Ra9JaHEeSYiPsIRHr9Sg"/>
@@ -19,17 +27,6 @@
     <styles xmi:type="notation:ShapeStyle" xmi:id="_r8PlwZaHEeSYiPsIRHr9Sg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="activity.ecore#//PeriodicActivity"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r8PlwpaHEeSYiPsIRHr9Sg" x="323" y="103"/>
-  </children>
-  <children xmi:type="notation:Node" xmi:id="_uPs2IJaHEeSYiPsIRHr9Sg" type="1005">
-    <children xmi:type="notation:Node" xmi:id="_uPurUJaHEeSYiPsIRHr9Sg" type="4010"/>
-    <children xmi:type="notation:Node" xmi:id="_uPvSYJaHEeSYiPsIRHr9Sg" type="5008">
-      <styles xmi:type="notation:DrawerStyle" xmi:id="_uPvSYZaHEeSYiPsIRHr9Sg"/>
-      <styles xmi:type="notation:SortingStyle" xmi:id="_uPvSYpaHEeSYiPsIRHr9Sg"/>
-      <styles xmi:type="notation:FilteringStyle" xmi:id="_uPvSY5aHEeSYiPsIRHr9Sg"/>
-    </children>
-    <styles xmi:type="notation:ShapeStyle" xmi:id="_uPs2IZaHEeSYiPsIRHr9Sg" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EEnum" href="activity.ecore#//periodicity"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uPs2IpaHEeSYiPsIRHr9Sg" x="590" y="118"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_wIgx4JaHEeSYiPsIRHr9Sg" type="1005">
     <children xmi:type="notation:Node" xmi:id="_wIhY8JaHEeSYiPsIRHr9Sg" type="4010"/>

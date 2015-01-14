@@ -13,8 +13,17 @@
         eType="#//RessourceAllocation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="atelier" eType="ecore:EClass exploitation.ecore#//Atelier"
         eOpposite="exploitation.ecore#//Atelier/activity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityType" eType="#//periodicity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="periodicity"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="periodicity" instanceTypeName="Periodicity">
+    <eLiterals name="years"/>
+    <eLiterals name="months" value="1" literal="months"/>
+    <eLiterals name="weeks" value="2"/>
+    <eLiterals name="days" value="3"/>
+    <eLiterals name="hours" value="4"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Month"/>
   <eClassifiers xsi:type="ecore:EClass" name="Date">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
