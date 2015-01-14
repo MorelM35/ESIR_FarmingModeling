@@ -7,9 +7,10 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" lowerBound="1" eType="#//Date"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1" eType="#//Rule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1" eType="#//Rule"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resAllocation" upperBound="-1"
-        eType="#//RessourceAllocation"/>
+        eType="#//RessourceAllocation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="atelier" eType="ecore:EClass exploitation.ecore#//Atelier"
         eOpposite="exploitation.ecore#//Atelier/activity"/>
   </eClassifiers>
