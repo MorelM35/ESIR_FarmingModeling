@@ -79,8 +79,18 @@ RessourceType returns exploitation::RessourceType:
 
 Predicate returns Predicat:
 	{Predicat}
-	EString
+	'before' date=[Date]
 	;
+	
+CheckDoneActivity returns CheckDoneActivity:
+	{CheckDoneActivity}
+	'Activity' activityToValidate=[PeriodicActivity] 'done' (elapsedTime=EInt periodicityType=Periodicity 'ago')|(date=[Date])
+	;
+	
+NoRain returns NoRain:
+	{NoRain}
+	'noRain' ('for' elapsedTime=EInt periodicityType=Periodicity)|('since' date=[Date])
+;
 
 Elevage returns exploitation::Elevage:
 	{exploitation::Elevage}

@@ -59,5 +59,28 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="pre" upperBound="-1" eType="#//Predicat"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Predicat"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Predicat" eSuperTypes="#//Rule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckDoneActivity" eSuperTypes="#//Predicat">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elapsedTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//CheckDoneActivity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityToValidate" eType="#//PeriodicActivity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityType" eType="#//periodicity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoRain" eSuperTypes="#//Predicat">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elapsedTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityType" eType="#//periodicity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" eSuperTypes="#//Rule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Rule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Rule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Weather" eSuperTypes="#//Predicat">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="temperature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="etp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="par" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
 </ecore:EPackage>
