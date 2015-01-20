@@ -42,6 +42,14 @@
         <element xmi:type="ecore:EAttribute" href="activity.ecore#//Date/day"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_EXlTQZaIEeSYiPsIRHr9Sg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_-1nFkKClEeSZ16_PniYAGQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="activity.ecore#//Date/month"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_-1nFkaClEeSZ16_PniYAGQ"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_wNADIKC1EeSZ16_PniYAGQ" type="2001">
+        <element xmi:type="ecore:EAttribute" href="activity.ecore#//Date/year"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wNADIaC1EeSZ16_PniYAGQ"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_x_TUYpaHEeSYiPsIRHr9Sg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_x_TUY5aHEeSYiPsIRHr9Sg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_x_TUZJaHEeSYiPsIRHr9Sg"/>
