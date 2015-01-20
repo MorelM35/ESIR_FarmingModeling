@@ -4,6 +4,7 @@ public class CultureData {
 	/**
 	 * STATIC FINAL CULTURE
 	 */
+	//TODO : see later in order to get this data from a file
 	public static final CultureData MAIS = new CultureData(1.85, 0.94, 0.5, 5, 900, 0.0065, 0.00205);
 	public static final CultureData BLE  = new CultureData(1.85, 0.94, 0.5, 6.5, 900, 0.0065, 0.00205);
 	public static final CultureData SORGHO  = new CultureData(1.85, 0.94, 0.5, 4.5, 900, 0.0065, 0.00205);

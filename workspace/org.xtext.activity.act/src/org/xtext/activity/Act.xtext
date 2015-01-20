@@ -16,7 +16,6 @@ Model returns Model:
 	'}'
 ;
 
-
 PeriodicActivity returns PeriodicActivity:
 	{PeriodicActivity}
 	'PeriodicActivity'

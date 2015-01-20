@@ -110,4 +110,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="GrainState" eSuperTypes="#//Predicat">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//GrainStateEnum"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Launcher">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="begin" lowerBound="1" eType="#//Date"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" lowerBound="1" eType="#//Date"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qMax" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantityOfWater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
 </ecore:EPackage>
