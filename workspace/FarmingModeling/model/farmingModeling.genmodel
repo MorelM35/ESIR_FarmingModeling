@@ -28,6 +28,23 @@
       <genEnumLiterals ecoreEnumLiteral="activity.ecore#//Month/november"/>
       <genEnumLiterals ecoreEnumLiteral="activity.ecore#//Month/december"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="activity.ecore#//ComparatorType">
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//ComparatorType/inferior"/>
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//ComparatorType/inferiorOrEqual"/>
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//ComparatorType/equal"/>
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//ComparatorType/different"/>
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//ComparatorType/superior"/>
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//ComparatorType/superiorOrEqual"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="activity.ecore#//BinaryExpressionType">
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//BinaryExpressionType/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//BinaryExpressionType/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//BinaryExpressionType/XOR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="activity.ecore#//GrainStateEnum">
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//GrainStateEnum/MATURE"/>
+      <genEnumLiterals ecoreEnumLiteral="activity.ecore#//GrainStateEnum/IMMATURE"/>
+    </genEnums>
     <genClasses ecoreClass="activity.ecore#//PeriodicActivity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//PeriodicActivity/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activity.ecore#//PeriodicActivity/start"/>
@@ -41,6 +58,7 @@
     <genClasses ecoreClass="activity.ecore#//Date">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Date/day"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Date/month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Date/year"/>
     </genClasses>
     <genClasses ecoreClass="activity.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activity.ecore#//Model/activity"/>
@@ -52,9 +70,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activity.ecore#//RessourceAllocation/ressource"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//RessourceAllocation/periodicityType"/>
     </genClasses>
-    <genClasses ecoreClass="activity.ecore#//Rule">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activity.ecore#//Rule/pre"/>
-    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//Rule"/>
     <genClasses ecoreClass="activity.ecore#//Predicat">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activity.ecore#//Predicat/date"/>
     </genClasses>
@@ -71,13 +87,31 @@
     <genClasses ecoreClass="activity.ecore#//BinaryExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activity.ecore#//BinaryExpression/left"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activity.ecore#//BinaryExpression/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//BinaryExpression/ope"/>
     </genClasses>
     <genClasses ecoreClass="activity.ecore#//Weather">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/temperature"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/etp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/rr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/tm"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/par"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/comparator"/>
+    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//Temperature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Temperature/value"/>
+    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//EvapoTranspiration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//EvapoTranspiration/value"/>
+    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//Precipitation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Precipitation/height"/>
+    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//Rayonnement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Rayonnement/value"/>
+    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//GrainState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//GrainState/state"/>
+    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//Launcher">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activity.ecore#//Launcher/begin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activity.ecore#//Launcher/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Launcher/qMax"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Launcher/quantityOfWater"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Exploitation" disposableProviderFactory="true" ecorePackage="exploitation.ecore#/">
@@ -110,5 +144,10 @@
     <genClasses ecoreClass="exploitation.ecore#//Atelier">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exploitation.ecore#//Atelier/activity"/>
     </genClasses>
+    <genClasses ecoreClass="exploitation.ecore#//Mais"/>
+    <genClasses ecoreClass="exploitation.ecore#//Ble"/>
+    <genClasses ecoreClass="exploitation.ecore#//Sorgho"/>
+    <genClasses ecoreClass="exploitation.ecore#//Ovin"/>
+    <genClasses ecoreClass="exploitation.ecore#//Bovin"/>
   </genPackages>
 </genmodel:GenModel>
