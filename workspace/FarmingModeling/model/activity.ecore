@@ -55,12 +55,9 @@
         eType="ecore:EClass exploitation.ecore#//Ressource" eOpposite="exploitation.ecore#//Ressource/resAllocation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityType" eType="#//periodicity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Rule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pre" upperBound="-1" eType="#//Predicat"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule"/>
   <eClassifiers xsi:type="ecore:EClass" name="Predicat" eSuperTypes="#//Rule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CheckDoneActivity" eSuperTypes="#//Predicat">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elapsedTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -73,14 +70,44 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityType" eType="#//periodicity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" eSuperTypes="#//Rule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Rule"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Rule"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Rule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Rule"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ope" eType="#//BinaryExpressionType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Weather" eSuperTypes="#//Predicat">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="temperature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="etp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="par" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Weather" abstract="true" eSuperTypes="#//Predicat">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comparator" eType="#//ComparatorType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComparatorType">
+    <eLiterals name="inferior"/>
+    <eLiterals name="inferiorOrEqual" value="1"/>
+    <eLiterals name="equal" value="2"/>
+    <eLiterals name="different" value="3"/>
+    <eLiterals name="superior" value="4"/>
+    <eLiterals name="superiorOrEqual" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Temperature" eSuperTypes="#//Weather">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvapoTranspiration" eSuperTypes="#//Weather">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Precipitation" eSuperTypes="#//Weather">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rayonnement" eSuperTypes="#//Weather">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BinaryExpressionType">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
+    <eLiterals name="XOR" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GrainStateEnum">
+    <eLiterals name="MATURE"/>
+    <eLiterals name="IMMATURE" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GrainState" eSuperTypes="#//Predicat">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//GrainStateEnum"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -9,7 +9,7 @@ import "platform:/resource/FarmingModeling/model/exploitation.ecore" as exploita
 
 Model returns Model: 
 	{Model}
-	'Categorie'
+	'culture'
 	name=EString
 	'{'
 		(activity+=PeriodicActivity)*
@@ -26,19 +26,8 @@ PeriodicActivity returns PeriodicActivity:
 		'from' start=Date 'to' end=Date ','		
 		('every' (frequency=EInt)? periodicityType=Periodicity ',')?
 		('allocate' '{' resAllocation+=ResAllocation ( "," resAllocation+=ResAllocation)* '}' ',' )?
-		('rules' '{' rule+=Rule ( "," rule+=Rule)* '}' )?
+		('rules' ':' rule+=BinaryExppression ',' )?
 	'}';
-
-enum Periodicity returns periodicity:
-	month|days|weeks|years|hours
-;
-
-enum Month returns Month:
-	january|february|march|april|may|june|july|august|september|october|november|december
-;
-
-Atelier returns exploitation::Atelier:
-	Atelier_Impl | Elevage | Culture;
 
 Date returns Date:
 	{Date}
@@ -53,45 +42,66 @@ ResAllocation returns RessourceAllocation:
 	periodicityType=Periodicity
 	;
 
-EString returns ecore::EString:
-	STRING | ID;
-
-Rule returns Rule:
-	{Rule}
-	('pre' pre+=Predicate ( ","'pre' pre+=Predicate)*)?
-	;
-
-Atelier_Impl returns exploitation::Atelier:
-	{exploitation::Atelier}
-	'Atelier'
-	'{'
-		('activity' activity+=[PeriodicActivity|EString])?
-	'}';
-
-EInt returns ecore::EInt:
-	'-'? INT;
-
-RessourceType returns exploitation::RessourceType:
-	{exploitation::RessourceType}
-	'RessourceType'
-	name=EString
-	;
-
 Predicate returns Predicat:
 	{Predicat}
-	'before' date=[Date]
+	('before' date=Date)|CheckDoneActivity|NoRain|Temperature|Precipitation|Rayonnement|Evapotranspiration|GrainState
 	;
+	
+
+BinaryExppression returns BinaryExpression:
+		{BinaryExpression}
+		(left=Predicate|('(' left=BinaryExppression ')'))
+		(ope=BinaryExppressionType right=BinaryExppression)?
+	;
+	
+/**
+ * WHEATER
+ */
+
+Temperature returns Temperature:
+	{Temperature}
+	('tm'|'temperature') comparator=Comparator 'than' value=EFloat
+;
+
+Precipitation returns Precipitation:
+	{Precipitation}
+	('rr'|'precipitation') comparator=Comparator 'than' height=EFloat
+;
+
+Rayonnement returns Rayonnement:
+	{Rayonnement}
+	('par'|'rayonnement') comparator=Comparator 'than' value=EFloat
+;
+
+Evapotranspiration returns EvapoTranspiration:
+	{EvapoTranspiration}
+	('etp'|'evapotranspiration') comparator=Comparator 'than' value=EFloat
+;
+
+/*********/
 	
 CheckDoneActivity returns CheckDoneActivity:
 	{CheckDoneActivity}
-	'Activity' activityToValidate=[PeriodicActivity] 'done' (elapsedTime=EInt periodicityType=Periodicity 'ago')|(date=[Date])
+	'activity' activityToValidate=[PeriodicActivity] 'done' (elapsedTime=EInt periodicityType=Periodicity 'ago')|(date=Date)
 	;
 	
 NoRain returns NoRain:
 	{NoRain}
-	'noRain' ('for' elapsedTime=EInt periodicityType=Periodicity)|('since' date=[Date])
+	'noRain' (('for' elapsedTime=EInt periodicityType=Periodicity)|('since' date=Date))
 ;
 
+GrainState returns GrainState:
+	{GrainState}
+	'grain' 'is' state=GrainStateEnum
+;
+
+/**
+ * EXPLOITATION
+ */
+ 
+Atelier returns exploitation::Atelier:
+	Atelier_Impl | Elevage | Culture;
+	
 Elevage returns exploitation::Elevage:
 	{exploitation::Elevage}
 	'Elevage'
@@ -106,3 +116,51 @@ Culture returns exploitation::Culture:
 		('activity' activity+=[PeriodicActivity|EString])?
 	'}';
 
+RessourceType returns exploitation::RessourceType:
+	{exploitation::RessourceType}
+	'RessourceType'
+	name=EString
+	;
+
+Atelier_Impl returns exploitation::Atelier:
+	{exploitation::Atelier}
+	'Atelier'
+	'{'
+		('activity' activity+=[PeriodicActivity|EString])?
+	'}';
+	
+	
+/**
+ * ENUMERATION
+ */
+enum Periodicity returns periodicity:
+	month|days|weeks|years|hours
+;
+
+enum Month returns Month:
+	january|february|march|april|may|june|july|august|september|october|november|december
+;
+
+enum Comparator returns ComparatorType:
+	inferior|inferiorOrEqual|equal|different|superior|superiorOrEqual
+;
+
+enum BinaryExppressionType returns BinaryExpressionType:
+	AND|OR|XOR
+;
+
+enum GrainStateEnum returns GrainStateEnum:
+	MATURE|IMMATURE
+;
+
+/**
+ * TYPE
+ */
+EString returns ecore::EString:
+	STRING | ID;
+	
+EInt returns ecore::EInt:
+	'-'? INT;
+	
+EFloat returns ecore::EFloat:
+	INT '.' INT;

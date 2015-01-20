@@ -3,3 +3,8 @@
 /FarmingModeling.edit
 /FarmingModeling.editor
 /FarmingModeling.tests
+/org.xtext.activity.act.ui/src-gen/*
+/org.xtext.activity.act.ui/xtend-gen/*
+/org.xtext.activity.act.tests/src-gen/*
+/org.xtext.activity.act.tests/xtend-gen/*
+

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/FarmingModeling/src" modelPluginID="FarmingModeling"
-    modelName="Farmingmodeling" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    modelName="FarmingModeling" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>activity.ecore</foreignModel>
   <foreignModel>exploitation.ecore</foreignModel>
@@ -55,15 +55,37 @@
     <genClasses ecoreClass="activity.ecore#//Rule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activity.ecore#//Rule/pre"/>
     </genClasses>
-    <genClasses ecoreClass="activity.ecore#//Predicat"/>
+    <genClasses ecoreClass="activity.ecore#//Predicat">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activity.ecore#//Predicat/date"/>
+    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//CheckDoneActivity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//CheckDoneActivity/elapsedTime"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activity.ecore#//CheckDoneActivity/EReference0"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activity.ecore#//CheckDoneActivity/activityToValidate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//CheckDoneActivity/periodicityType"/>
+    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//NoRain">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//NoRain/elapsedTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//NoRain/periodicityType"/>
+    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//BinaryExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activity.ecore#//BinaryExpression/left"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activity.ecore#//BinaryExpression/right"/>
+    </genClasses>
+    <genClasses ecoreClass="activity.ecore#//Weather">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/temperature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/etp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/rr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/tm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activity.ecore#//Weather/par"/>
+    </genClasses>
   </genPackages>
   <genPackages prefix="Exploitation" disposableProviderFactory="true" ecorePackage="exploitation.ecore#/">
     <genClasses ecoreClass="exploitation.ecore#//Exploitation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exploitation.ecore#//Exploitation/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference exploitation.ecore#//Exploitation/ressourceType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference exploitation.ecore#//Exploitation/surface"/>
-      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
-          ecoreFeature="ecore:EReference exploitation.ecore#//Exploitation/ressource"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference exploitation.ecore#//Exploitation/ressource"/>
     </genClasses>
     <genClasses ecoreClass="exploitation.ecore#//Surface">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference exploitation.ecore#//Surface/parcelle"/>
@@ -79,6 +101,8 @@
     <genClasses ecoreClass="exploitation.ecore#//Ressource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exploitation.ecore#//Ressource/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exploitation.ecore#//Ressource/resAllocation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exploitation.ecore#//Ressource/EReference0"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference exploitation.ecore#//Ressource/type"/>
     </genClasses>
     <genClasses ecoreClass="exploitation.ecore#//RessourceType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exploitation.ecore#//RessourceType/name"/>
