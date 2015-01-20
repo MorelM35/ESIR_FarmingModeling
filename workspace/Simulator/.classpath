@@ -6,5 +6,7 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/FarmingModeling"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Tools"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.xtext.activity.act"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.xtext.launcher.start"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

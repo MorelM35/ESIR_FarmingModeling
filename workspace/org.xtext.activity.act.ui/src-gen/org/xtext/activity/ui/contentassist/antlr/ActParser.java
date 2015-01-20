@@ -98,6 +98,7 @@ public class ActParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPeriodicActivityAccess().getRuleAssignment_12_2(), "rule__PeriodicActivity__RuleAssignment_12_2");
 					put(grammarAccess.getDateAccess().getDayAssignment_1(), "rule__Date__DayAssignment_1");
 					put(grammarAccess.getDateAccess().getMonthAssignment_2(), "rule__Date__MonthAssignment_2");
+					put(grammarAccess.getDateAccess().getYearAssignment_3(), "rule__Date__YearAssignment_3");
 					put(grammarAccess.getResAllocationAccess().getRessourceAssignment_2(), "rule__ResAllocation__RessourceAssignment_2");
 					put(grammarAccess.getResAllocationAccess().getDurationAssignment_4(), "rule__ResAllocation__DurationAssignment_4");
 					put(grammarAccess.getResAllocationAccess().getPeriodicityTypeAssignment_5(), "rule__ResAllocation__PeriodicityTypeAssignment_5");

@@ -198,7 +198,7 @@ public abstract class AbstractActSemanticSequencer extends AbstractDelegatingSem
 	
 	/**
 	 * Constraint:
-	 *     (day=EInt month=Month)
+	 *     (day=EInt month=Month year=EInt)
 	 */
 	protected void sequence_Date(EObject context, Date semanticObject) {
 		if(errorAcceptor != null) {
@@ -206,11 +206,14 @@ public abstract class AbstractActSemanticSequencer extends AbstractDelegatingSem
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ActivityPackage.Literals.DATE__DAY));
 			if(transientValues.isValueTransient(semanticObject, ActivityPackage.Literals.DATE__MONTH) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ActivityPackage.Literals.DATE__MONTH));
+			if(transientValues.isValueTransient(semanticObject, ActivityPackage.Literals.DATE__YEAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ActivityPackage.Literals.DATE__YEAR));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getDateAccess().getDayEIntParserRuleCall_1_0(), semanticObject.getDay());
 		feeder.accept(grammarAccess.getDateAccess().getMonthMonthEnumRuleCall_2_0(), semanticObject.getMonth());
+		feeder.accept(grammarAccess.getDateAccess().getYearEIntParserRuleCall_3_0(), semanticObject.getYear());
 		feeder.finish();
 	}
 	

@@ -58,7 +58,7 @@ public abstract class AbstractActSyntacticSequencer extends AbstractSyntacticSeq
 
 	/**
 	 * Syntax:
-	 *     'evapotranspiration' | 'etp'
+	 *     'etp' | 'evapotranspiration'
 	 */
 	protected void emit_Evapotranspiration_EtpKeyword_1_0_or_EvapotranspirationKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -74,7 +74,7 @@ public abstract class AbstractActSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Syntax:
-	 *     'rayonnement' | 'par'
+	 *     'par' | 'rayonnement'
 	 */
 	protected void emit_Rayonnement_ParKeyword_1_0_or_RayonnementKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
