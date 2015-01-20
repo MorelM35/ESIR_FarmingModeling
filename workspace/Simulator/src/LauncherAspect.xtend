@@ -20,7 +20,7 @@ import org.xtext.launcher.StartStandaloneSetup
 import org.xtext.launcher.StartStandaloneSetupGenerated
 import org.xtext.activity.ActStandaloneSetup
 
-class Main{
+class LaunchFromStartingFile{
 	def static void main(String[] args){
 		var fact = new XMIResourceFactoryImpl
 		if(!EPackage.Registry.INSTANCE.containsKey(ExploitationPackage.eNS_URI)){
