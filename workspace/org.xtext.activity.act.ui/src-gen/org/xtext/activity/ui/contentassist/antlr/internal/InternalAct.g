@@ -2501,6 +2501,7 @@ rule__Date__Group__2
     }
 :
 	rule__Date__Group__2__Impl
+	rule__Date__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2521,6 +2522,36 @@ rule__Date__Group__2__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__Date__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Date__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Date__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getDateAccess().getYearAssignment_3()); }
+(rule__Date__YearAssignment_3)
+{ after(grammarAccess.getDateAccess().getYearAssignment_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -5391,6 +5422,21 @@ rule__Date__MonthAssignment_2
 (
 { before(grammarAccess.getDateAccess().getMonthMonthEnumRuleCall_2_0()); }
 	ruleMonth{ after(grammarAccess.getDateAccess().getMonthMonthEnumRuleCall_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Date__YearAssignment_3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getDateAccess().getYearEIntParserRuleCall_3_0()); }
+	ruleEInt{ after(grammarAccess.getDateAccess().getYearEIntParserRuleCall_3_0()); }
 )
 
 ;

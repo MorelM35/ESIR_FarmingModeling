@@ -8,8 +8,8 @@ Launcher returns Launcher:
 	'Launcher'
 	'{'
 		'from' begin=Date 'to' end=Date ','
-		'qMax' qMax=EInt ','
-		'quantityOfWater' quantityOfWater=EInt ','
+		'qMax' '=' qMax=EInt ','
+		'quantityOfWater' '=' quantityOfWater=EInt ','
 	'}';
 
 
@@ -17,6 +17,7 @@ Date returns Date:
 	{Date}
 		 day=EInt
 		 month=Month
+		 year= EInt
 	;
 
 EInt returns ecore::EInt:

@@ -453,6 +453,24 @@ ruleDate returns [EObject current=null]
 	    }
 
 )
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDateAccess().getYearEIntParserRuleCall_3_0()); 
+	    }
+		lv_year_3_0=ruleEInt		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDateRule());
+	        }
+       		set(
+       			$current, 
+       			"year",
+        		lv_year_3_0, 
+        		"EInt");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))
 ;
 

@@ -82,7 +82,7 @@ public abstract class AbstractActSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Syntax:
-	 *     'temperature' | 'tm'
+	 *     'tm' | 'temperature'
 	 */
 	protected void emit_Temperature_TemperatureKeyword_1_1_or_TmKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
