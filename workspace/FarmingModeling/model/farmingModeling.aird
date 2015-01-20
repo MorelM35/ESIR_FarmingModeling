@@ -6,7 +6,6 @@
   <models xmi:type="ecore:EPackage" href="exploitation.ecore#/"/>
   <models xmi:type="notation:Diagram" href="exploitation.ecorediag#_I23XcJaHEeSYiPsIRHr9Sg"/>
   <models xmi:type="genmodel:GenModel" href="farmingModeling.genmodel#/"/>
-  <models xmi:type="notation:Diagram" href="exploitation.ecorediag.orig#_I23XcJaHEeSYiPsIRHr9Sg"/>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_lCO2cJaGEeSYiPsIRHr9Sg" initialized="true">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_lRJcMJaGEeSYiPsIRHr9Sg" name="farmingModeling class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_lR3N4JaGEeSYiPsIRHr9Sg" source="GMF_DIAGRAMS">
