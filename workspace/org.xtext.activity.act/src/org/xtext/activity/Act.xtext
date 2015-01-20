@@ -16,7 +16,6 @@ Model returns Model:
 	'}'
 ;
 
-
 PeriodicActivity returns PeriodicActivity:
 	{PeriodicActivity}
 	'PeriodicActivity'
@@ -33,7 +32,9 @@ Date returns Date:
 	{Date}
 	day=EInt 
 	month=Month
+	year=EInt
 	;
+
 
 ResAllocation returns RessourceAllocation:
 	{RessourceAllocation}
@@ -164,3 +165,4 @@ EInt returns ecore::EInt:
 	
 EFloat returns ecore::EFloat:
 	INT '.' INT;
+	
