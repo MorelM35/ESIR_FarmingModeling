@@ -13,11 +13,7 @@ import java.util.Calendar
 import exploitation.ExploitationPackage
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
-import static extension exploitation.Exploitation.*;
-import org.xtext.launcher.parser.antlr.StartAntlrTokenFileProvider
-import org.xtext.launcher.parser.antlr.StartParser
 import org.xtext.launcher.StartStandaloneSetup
-import org.xtext.launcher.StartStandaloneSetupGenerated
 import org.xtext.activity.ActStandaloneSetup
 
 class LaunchFromStartingFile{
