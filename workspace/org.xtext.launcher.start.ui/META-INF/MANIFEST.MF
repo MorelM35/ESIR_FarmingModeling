@@ -19,8 +19,8 @@ Require-Bundle: org.xtext.launcher.start;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Activator: org.xtext.launcher.ui.internal.StartActivator
 Export-Package: org.xtext.launcher.ui.quickfix,
  org.xtext.launcher.ui.contentassist,
  org.xtext.launcher.ui.contentassist.antlr,
  org.xtext.launcher.ui.internal
-Bundle-Activator: org.xtext.launcher.ui.internal.StartActivator
