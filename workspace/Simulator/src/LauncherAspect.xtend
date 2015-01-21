@@ -2,7 +2,6 @@
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import activity.Launcher
-import exploitation.impl.ExploitationFactoryImpl
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.EcorePackage
 import org.eclipse.emf.ecore.resource.Resource
