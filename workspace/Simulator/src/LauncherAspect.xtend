@@ -22,7 +22,7 @@ class LaunchFromStartingFile{
 			EPackage.Registry.INSTANCE.put(ExploitationPackage.eNS_URI, ExploitationPackage.eINSTANCE);
 		}
 		println("Loading Parser ...")
-		StartStandaloneSetup.doSetup // Setup the PARSER
+		StartStandaloneSetup.doSetup // Setup the PARSER 
 		Resource.Factory.Registry.INSTANCE.extensionToFactoryMap.put("*",fact);
 		var rs = new ResourceSetImpl	
 		
