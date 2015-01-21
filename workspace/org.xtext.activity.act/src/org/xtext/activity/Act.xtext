@@ -4,13 +4,17 @@ grammar org.xtext.activity.Act with org.eclipse.xtext.common.Terminals
 
 import "platform:/resource/FarmingModeling/model/activity.ecore"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
-import "platform:/resource/FarmingModeling/model/exploitation.ecore" as exploitation
 
 
 Model returns Model: 
 	{Model}
-	'culture'
-	name=EString
+	(atelier+=Atelier)*
+;
+
+Atelier returns Atelier:
+	{Atelier}
+	'atelier'
+	id=EString
 	'{'
 		(activity+=PeriodicActivity)*
 	'}'
@@ -21,7 +25,6 @@ PeriodicActivity returns PeriodicActivity:
 	'PeriodicActivity'
 	name=EString
 	'{'
-		('workshop' atelier=[exploitation::Atelier|EString] ',')?
 		'from' start=Date 'to' end=Date ','		
 		('every' (frequency=EInt)? periodicityType=Periodicity ',')?
 		('allocate' '{' resAllocation+=ResAllocation ( "," resAllocation+=ResAllocation)* '}' ',' )?
@@ -38,7 +41,7 @@ Date returns Date:
 
 ResAllocation returns RessourceAllocation:
 	{RessourceAllocation}
-	'reserve' ressource=[exploitation::Ressource|EString]
+	'reserve' ressourceType=EnumTypeRessource
 	'for' duration=EInt 
 	periodicityType=Periodicity
 	;
@@ -96,40 +99,6 @@ GrainState returns GrainState:
 	'grain' 'is' state=GrainStateEnum
 ;
 
-/**
- * EXPLOITATION
- */
- 
-Atelier returns exploitation::Atelier:
-	Atelier_Impl | Elevage | Culture;
-	
-Elevage returns exploitation::Elevage:
-	{exploitation::Elevage}
-	'Elevage'
-	'{'
-		('activity' activity+=[PeriodicActivity|EString])?
-	'}';
-
-Culture returns exploitation::Culture:
-	{exploitation::Culture}
-	'Culture'
-	'{'
-		('activity' activity+=[PeriodicActivity|EString])?
-	'}';
-
-RessourceType returns exploitation::RessourceType:
-	{exploitation::RessourceType}
-	'RessourceType'
-	name=EString
-	;
-
-Atelier_Impl returns exploitation::Atelier:
-	{exploitation::Atelier}
-	'Atelier'
-	'{'
-		('activity' activity+=[PeriodicActivity|EString])?
-	'}';
-	
 	
 /**
  * ENUMERATION
@@ -152,6 +121,10 @@ enum BinaryExppressionType returns BinaryExpressionType:
 
 enum GrainStateEnum returns GrainStateEnum:
 	MATURE|IMMATURE
+;
+
+enum EnumTypeRessource returns EnumTypeRessource:
+	Worker|Tractor
 ;
 
 /**

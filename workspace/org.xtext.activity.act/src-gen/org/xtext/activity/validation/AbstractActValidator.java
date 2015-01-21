@@ -13,7 +13,6 @@ public class AbstractActValidator extends org.eclipse.xtext.validation.AbstractD
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://activity/1.0"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://exploitation/1.0"));
 		return result;
 	}
 }

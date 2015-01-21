@@ -168,20 +168,11 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:For" expression="[container.parcelle.size()/]">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                    <subModelOperations xsi:type="tool_1:If" conditionExpression="[filter(exploitation.Parcelle)./]">
-                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Parcelle" referenceName="parcelle">
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="[container.parcelle->size()/]"/>
-                        <subModelOperations xsi:type="tool_1:SetValue" featureName="irrigue" valueExpression="true"/>
-                      </subModelOperations>
-                    </subModelOperations>
-                  </subModelOperations>
-                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Sorgho" referenceName="atelier"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="ressource" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='Ressource']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Ressource" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='Ressource']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -190,7 +181,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="RessourceWorker" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='RessourceType']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Type Ressource Worker" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='RessourceType']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -201,7 +192,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="RessourceTractor" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='RessourceType']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Type Ressource Tractor" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='RessourceType']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -212,7 +203,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="connector" edgeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@edgeMappings[name='type']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Link Ressource Type" edgeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@edgeMappings[name='type']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>

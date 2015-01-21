@@ -74,7 +74,7 @@ public abstract class AbstractActSyntacticSequencer extends AbstractSyntacticSeq
 	
 	/**
 	 * Syntax:
-	 *     'par' | 'rayonnement'
+	 *     'rayonnement' | 'par'
 	 */
 	protected void emit_Rayonnement_ParKeyword_1_0_or_RayonnementKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
