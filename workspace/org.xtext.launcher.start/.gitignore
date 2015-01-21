@@ -1,1 +1,5 @@
-/bin/
+bin/
+src/*
+xtend-gen/*
+.settings/
+.DS_STORE
