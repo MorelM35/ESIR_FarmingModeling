@@ -1,5 +1,3 @@
-
-
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import activity.Launcher
 import org.eclipse.emf.ecore.EPackage
@@ -35,13 +33,13 @@ class LaunchFromStartingFile{
 		//apply Transformation
 		var launcher = res.contents.get(0) as Launcher
 		
-		LauncherAspect.launch(launcher)
+		LauncherAspect.visitExploitation(launcher)
 	}
 }
 
 @Aspect(className=Launcher)
 class LauncherAspect {
-	def void launch() {
+	def void visitExploitation() {
 		println("Loading exploitation ...")
 		// Load Model
 		var fact = new XMIResourceFactoryImpl
