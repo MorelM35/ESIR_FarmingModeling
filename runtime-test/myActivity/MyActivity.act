@@ -1,6 +1,22 @@
-culture MAIS{
-	PeriodicActivity mais {
-		from 3 january 2013 to 4 april 2014,
-		
+atelier ble1{
+	PeriodicActivity SEMIS{
+		from 3 july 2332 to 4 april 4039,
+		every 20 days,
+		allocate{
+			reserve Worker for 3 days,
+			reserve Tractor for 4 days
+		},
 	}
+	
+	PeriodicActivity ARROSAGE {
+		from 4 march 243 to 34 december 201,
+	}
+}
+
+atelier BEBE {
+	
+}
+
+atelier VACHE{
+	
 }
