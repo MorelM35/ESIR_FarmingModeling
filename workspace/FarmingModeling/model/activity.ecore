@@ -43,13 +43,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="#//Month"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" upperBound="-1"
-        eType="#//PeriodicActivity" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ressourceType" upperBound="-1"
-        eType="ecore:EClass exploitation.ecore#//RessourceType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RessourceAllocation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ressource" lowerBound="1"
@@ -118,5 +111,14 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="qMax" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantityOfWater" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtelierRef">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" upperBound="-1"
+        eType="#//PeriodicActivity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atelier" upperBound="-1"
+        eType="#//AtelierRef" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
 import org.xtext.launcher.StartStandaloneSetup
 import org.xtext.activity.ActStandaloneSetup
+import activity.Model
 
 class LaunchFromStartingFile{
 	def static void main(String[] args){
@@ -32,7 +33,7 @@ class LaunchFromStartingFile{
 		
 		//apply Transformation
 		var launcher = res.contents.get(0) as Launcher
-		
+	
 		LauncherAspect.visitExploitation(launcher)
 	}
 }
@@ -46,7 +47,6 @@ class LauncherAspect {
 		if(!EPackage.Registry.INSTANCE.containsKey(EcorePackage.eNS_URI)){
 			EPackage.Registry.INSTANCE.put(EcorePackage.eNS_URI, EcorePackage.eINSTANCE);
 		}
-		ActStandaloneSetup.doSetup
 		Resource.Factory.Registry.INSTANCE.extensionToFactoryMap.put("exploitation",fact);
 		var rs = new ResourceSetImpl
 		var uri = URI.createURI("../../runtime-test/myExploitation/MyExploitation.exploitation")
@@ -61,9 +61,32 @@ class LauncherAspect {
 		
 		println("exploitation loaded.")
 		
+		// Launch Mapping between Exploitation and Activity
+		mappingExploitationActivity(_self,exp)
 		// Start ExploitationAspect
-		ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
-		ExploitationAspect.compile(exp)
+		//ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
+		//ExploitationAspect.compile(exp)
+		
+	}
+	
+	def void mappingExploitationActivity(Exploitation e){
+		// Load Model
+		var fact = new XMIResourceFactoryImpl
+		if(!EPackage.Registry.INSTANCE.containsKey(EcorePackage.eNS_URI)){
+			EPackage.Registry.INSTANCE.put(EcorePackage.eNS_URI, EcorePackage.eINSTANCE);
+		}
+		ActStandaloneSetup.doSetup
+		Resource.Factory.Registry.INSTANCE.extensionToFactoryMap.put("*",fact);
+		var rs = new ResourceSetImpl
+		var uri = URI.createURI("../../runtime-test/myActivity/MyActivity.act")
+		var res = rs.getResource(uri,true);
+		
+		//apply Transformation
+		var cultures = res.contents.filter(Model)
+		for(culture : cultures)
+		println(culture)
+		
+		
 		
 	}
 }
