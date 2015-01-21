@@ -17,13 +17,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="periodicity" instanceTypeName="Periodicity">
-    <eLiterals name="years"/>
-    <eLiterals name="month" value="1" literal="months"/>
-    <eLiterals name="weeks" value="2"/>
-    <eLiterals name="days" value="3"/>
-    <eLiterals name="hours" value="4"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Month">
     <eLiterals name="january" value="1"/>
     <eLiterals name="february" value="2"/>
@@ -45,9 +38,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RessourceAllocation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ressource" lowerBound="1"
-        eType="ecore:EClass exploitation.ecore#//Ressource" eOpposite="exploitation.ecore#//Ressource/resAllocation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityType" eType="#//periodicity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ressourceType" eType="#//EnumResourceType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule"/>
   <eClassifiers xsi:type="ecore:EClass" name="Predicat" eSuperTypes="#//Rule">
@@ -120,5 +112,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="atelier" upperBound="-1"
         eType="#//AtelierRef" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EnumResourceType">
+    <eLiterals name="Worker"/>
+    <eLiterals name="Tractor" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="periodicity">
+    <eLiterals name="hours"/>
+    <eLiterals name="days" value="1"/>
+    <eLiterals name="weeks" value="2"/>
+    <eLiterals name="months" value="3"/>
+    <eLiterals name="years" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

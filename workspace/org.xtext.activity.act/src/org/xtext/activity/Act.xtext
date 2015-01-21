@@ -9,7 +9,7 @@ import "platform:/resource/FarmingModeling/model/exploitation.ecore" as exploita
 
 Model returns Model:
 	{Model}
-	atelier+=AtelierRef
+	(atelier+=AtelierRef)*
 ;
 
 AtelierRef returns AtelierRef: 
@@ -26,7 +26,6 @@ PeriodicActivity returns PeriodicActivity:
 	'PeriodicActivity'
 	name=EString
 	'{'
-		('workshop' atelier=[exploitation::Atelier|EString] ',')?
 		'from' start=Date 'to' end=Date ','		
 		('every' (frequency=EInt)? periodicityType=Periodicity ',')?
 		('allocate' '{' resAllocation+=ResAllocation ( "," resAllocation+=ResAllocation)* '}' ',' )?
@@ -43,7 +42,7 @@ Date returns Date:
 
 ResAllocation returns RessourceAllocation:
 	{RessourceAllocation}
-	'reserve' ressource=[exploitation::Ressource|EString]
+	'reserve' ressourceType=ResourceType
 	'for' duration=EInt 
 	periodicityType=Periodicity
 	;
@@ -101,46 +100,12 @@ GrainState returns GrainState:
 	'grain' 'is' state=GrainStateEnum
 ;
 
-/**
- * EXPLOITATION
- */
- 
-Atelier returns exploitation::Atelier:
-	Atelier_Impl | Elevage | Culture;
-	
-Elevage returns exploitation::Elevage:
-	{exploitation::Elevage}
-	'Elevage'
-	'{'
-		('activity' activity+=[PeriodicActivity|EString])?
-	'}';
-
-Culture returns exploitation::Culture:
-	{exploitation::Culture}
-	'Culture'
-	'{'
-		('activity' activity+=[PeriodicActivity|EString])?
-	'}';
-
-RessourceType returns exploitation::RessourceType:
-	{exploitation::RessourceType}
-	'RessourceType'
-	name=EString
-	;
-
-Atelier_Impl returns exploitation::Atelier:
-	{exploitation::Atelier}
-	'Atelier'
-	'{'
-		('activity' activity+=[PeriodicActivity|EString])?
-	'}';
-	
 	
 /**
  * ENUMERATION
  */
 enum Periodicity returns periodicity:
-	month|days|weeks|years|hours
+	months|days|weeks|years|hours
 ;
 
 enum Month returns Month:
@@ -159,6 +124,9 @@ enum GrainStateEnum returns GrainStateEnum:
 	MATURE|IMMATURE
 ;
 
+enum ResourceType returns EnumResourceType:
+	Tractor|Worker;
+	
 /**
  * TYPE
  */

@@ -41,7 +41,7 @@ class LaunchFromStartingFile{
 @Aspect(className=Launcher)
 class LauncherAspect {
 	def void visitExploitation() {
-		println("Loading exploitation ...")
+		println("Loading exploitation file ...")
 		// Load Model
 		var fact = new XMIResourceFactoryImpl
 		if(!EPackage.Registry.INSTANCE.containsKey(EcorePackage.eNS_URI)){
@@ -59,18 +59,19 @@ class LauncherAspect {
 		var dateBegin= cal.time; 
 		cal.set(_self.end.year,_self.end.month.ordinal,_self.end.day)
 		
-		println("exploitation loaded.")
+		println("Exploitation loaded.")
 		
 		// Launch Mapping between Exploitation and Activity
 		mappingExploitationActivity(_self,exp)
 		// Start ExploitationAspect
-		//ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
-		//ExploitationAspect.compile(exp)
+		ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
+		ExploitationAspect.compile(exp)
 		
 	}
 	
 	def void mappingExploitationActivity(Exploitation e){
 		// Load Model
+		println("Loading Activity file ...")
 		var fact = new XMIResourceFactoryImpl
 		if(!EPackage.Registry.INSTANCE.containsKey(EcorePackage.eNS_URI)){
 			EPackage.Registry.INSTANCE.put(EcorePackage.eNS_URI, EcorePackage.eINSTANCE);
@@ -82,11 +83,16 @@ class LauncherAspect {
 		var res = rs.getResource(uri,true);
 		
 		//apply Transformation
-		var cultures = res.contents.filter(Model)
-		for(culture : cultures)
-		println(culture)
+		var model = res.contents.filter(Model).get(0)
+		var ActivityMap = ModelAspect.getAtelierList(model)
 		
-		
-		
+		for(surface : e.surface){
+			if(ActivityMap.containsKey(surface.atelier.id)){
+				val list = ActivityMap.get(surface.atelier.id)
+				surface.atelier.activity.addAll(list)
+			}
+		}
+
+		println("Activity loaded.")		
 	}
 }
