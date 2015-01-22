@@ -11,25 +11,26 @@ atelier mais1{
 			},
 	}
 	
-	PeriodicActivity SEMIS {
+	PeriodicActivity SEMIS1 {
 		from 15 march 2012 to  15 april 2012,
 		rules : 
-		noRain for 3 days AND temperature superior than 15.0,
+		noRain for 15 days AND temperature superior than 15.0,
   }
   	PeriodicActivity IRRIGATION{
-  		from 15 june 2012 to 15 august 2012,
+  		from 20 april 2012 to 15 august 2012,
   		every weeks,
+  		rules:
+  		activity SEMIS1 done 4 days ago, 
   		}
-  	PeriodicActivity FERTILISATION{
+  	PeriodicActivity FERTILISATION1{
   		from 15 march 2012 to 15 june 2012,
   		rules:
-  		noRain since 15 march 2012 AND activity SEMIS done 1 months ago,
+  		noRain since 10 january 2012 AND activity SEMIS1 done 2 months ago,
 		}
 	PeriodicActivity RECOLTE{
 		from 1 september 2012 to 30 september 2012,
 		rules:
-		grain is MATURE,
-		
+		grain is MATURE AND rayonnement equal than 5.0,
 		}
 }
 
@@ -40,7 +41,7 @@ atelier ble1{
 		rules:
 		noRain for 1 days,
 	}
-	PeriodicActivity SEMIS{
+	PeriodicActivity SEMIS2{
 		from 1 october 2012 to 30 october 2012,
 		every 20 days,
 		allocate{
@@ -54,7 +55,7 @@ atelier ble1{
 	PeriodicActivity FERTILISATION {
 		from 1 february 2012 to 28 february 2012,
 		rules:
-		activity SEMIS done 1 months ago AND noRain for 1 days,
+		activity SEMIS2 done 1 months ago AND noRain for 1 days,
 	}
 	
 	PeriodicActivity RECOLTE{
@@ -72,7 +73,7 @@ atelier sorgho1{
 		noRain for 3 days,
 	}
 	
-	PeriodicActivity SEMIS{
+	PeriodicActivity SEMIS3{
 		from 1 may 2012 to 15 may 2012,
 		rules:
 		noRain for 3 days AND temperature superior than 5.0,
