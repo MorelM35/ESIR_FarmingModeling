@@ -77,3 +77,42 @@ atelier Sorgho1{
 	}
 }
 
+atelier ovin1{
+	PeriodicActivity ALIMENTATION{
+		from 1 july 2014 to 7 july 2014,
+		allocate {
+			reserve Worker for 1 days 
+		},
+	}
+	PeriodicActivity SURVEILLANCE_AGNELAGE{
+		from 1 april 2014 to 7 april 2014,
+		allocate{
+			reserve Worker for 999999999 days
+		},
+	}
+}
+
+
+atelier bovin1{
+	PeriodicActivity ALIMENTATION{
+		from 6 march 2014 to 20 april 2014,
+		allocate{
+			reserve Worker for 1 days
+		},
+	}
+	
+	PeriodicActivity TRAITE{
+		from 1 march 2014 to 1 december 2014,
+		allocate{
+			reserve Worker for 1 days
+		},
+	}
+	
+	PeriodicActivity SURVEILLANCE_VELAGE{
+		from 1 december 2014 to 7 december 2014,
+		allocate{
+			reserve Worker for 1 days
+		},
+	}
+}
+
