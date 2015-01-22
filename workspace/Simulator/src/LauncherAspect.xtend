@@ -238,10 +238,13 @@ class LauncherAspect {
 			activities.addAll(s.atelier.activity)
 		}
 		
-		for(activity : activities){
+		for(activity : activities){		
 			for(r:activity.rule){
-				if(!RuleAspect.simulate(r,activity.start)){
-					System.err.println(PeriodicActivityAspect.compile(activity)+"\n err "+RuleAspect.compile(r))
+				var messErr = ""		
+				if(!RuleAspect.simulate(r,activity.start,messErr)){
+					System.err.println(activity.name +"("+activity.start.day+" "+activity.start.month+" "+activity.start.year+")\n err "
+						+r.getClass()+" verbose : \n"+messErr
+					)
 				}
 			}
 		}
