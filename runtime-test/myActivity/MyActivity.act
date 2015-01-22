@@ -1,29 +1,32 @@
 
 atelier mais1{
 	PeriodicActivity LABOUR {
-		from 1 january 2014 to 28 february 2014,
+		from 1 january 2012 to 7 february 2012,
 		allocate{
 			reserve Tractor for 1 days,
-			reserve Worker for 1 days
+			reserve Worker for 1 days,
+			reserve Worker for 6 days
 			},
 	}
 	
 	PeriodicActivity SEMIS {
-		from 15 march 2014 to  15 april 2014,
+		from 15 march 2012 to  20 march 2012,
+		allocate{reserve Tractor for 3 days},
 		rules : 
 		noRain for 3 days AND temperature superior than 10.0,
   }
   	PeriodicActivity IRRIGATION{
-  		from 15 june 2014 to 15 august 2014,
+  		from 15 june 2012 to 25 june 2012,
   		every weeks,
   		}
   	PeriodicActivity FERTILISATION{
-  		from 15 march 2014 to 15 june 2014,
+  		from 15 march 2012 to 20 march 2012,
   		rules:
-  		noRain since 15 march 2014 AND activity SEMIS done 1 months ago,
+  		noRain since 15 march 2012 AND activity SEMIS done 1 months ago,
 		}
 	PeriodicActivity RECOLTE{
-		from 1 september 2014 to 30 september 2014,
+		from 1 september 2012 to 12 september 2012,
+		allocate {reserve Tractor for 8 days},
 		rules:
 		grain is MATURE,
 		
@@ -33,12 +36,12 @@ atelier mais1{
 
 atelier ble1{
 	PeriodicActivity LABOUR{
-		from 1 september 2014 to 30 september 2014,
+		from 1 september 2012 to 11 september 2012,
 		rules:
 		noRain for 1 days,
 	}
 	PeriodicActivity SEMIS{
-		from 1 october 2014 to 30 october 2014,
+		from 1 october 2012 to 6 october 2012,
 		every 20 days,
 		allocate{
 			reserve Worker for 3 days,
@@ -49,13 +52,13 @@ atelier ble1{
 	}
 	
 	PeriodicActivity FERTILISATION {
-		from 1 february 2014 to 28 february 2014,
+		from 1 february 2012 to 18 february 2012,
 		rules:
 		activity SEMIS done 1 months ago AND noRain for 1 days,
 	}
 	
 	PeriodicActivity RECOLTE{
-		from 1 june 2014 to 30 june 2014,
+		from 1 june 2012 to 12 june 2012,
 		rules:
 		grain is MATURE,
 	}
@@ -64,21 +67,21 @@ atelier ble1{
 
 atelier sorgho1{
 	PeriodicActivity LABOUR{
-		from 1 january 2014 to 30 march 2014,
+		from 1 january 2012 to 9 january 2012,
 		rules:
 		noRain for 3 days,
 	}
 	
 	PeriodicActivity SEMIS{
-		from 1 may 2014 to 15 may 2014,
+		from 1 may 2012 to 8 may 2012,
 		rules:
 		noRain for 3 days AND temperature superior than 5.0,
 	}
 	
 	PeriodicActivity RECOLTE{
-		from 1 october 2014 to 15 october 2014,
+		from 1 october 2012 to 15 october 2012,
 		allocate{
-			reserve Tractor for 1 days,
+			reserve Tractor for 9 days,
 			reserve Worker for 1 days
 		},
 		rules:
@@ -88,13 +91,13 @@ atelier sorgho1{
 
 atelier ovin1{
 	PeriodicActivity ALIMENTATION{
-		from 1 july 2014 to 7 july 2014,
+		from 1 july 2012 to 7 july 2012,
 		allocate {
 			reserve Worker for 1 days 
 		},
 	}
 	PeriodicActivity SURVEILLANCE_AGNELAGE{
-		from 1 april 2014 to 7 april 2014,
+		from 1 april 2012 to 7 april 2012,
 		allocate{
 			reserve Worker for 999999999 days
 		},
@@ -104,21 +107,21 @@ atelier ovin1{
 
 atelier bovin1{
 	PeriodicActivity ALIMENTATION{
-		from 6 march 2014 to 20 april 2014,
+		from 6 march 2012 to 9 march 2012,
 		allocate{
 			reserve Worker for 1 days
 		},
 	}
 	
 	PeriodicActivity TRAITE{
-		from 1 march 2014 to 1 december 2014,
+		from 1 march 2012 to 3 march 2012,
 		allocate{
 			reserve Worker for 1 days
 		},
 	}
 	
 	PeriodicActivity SURVEILLANCE_VELAGE{
-		from 1 december 2014 to 7 december 2014,
+		from 1 december 2012 to 7 december 2012,
 		allocate{
 			reserve Worker for 1 days
 		},
