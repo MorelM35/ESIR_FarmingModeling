@@ -91,7 +91,7 @@ class LauncherAspect {
 		
 		// Start ExploitationAspect
 		ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
-		//ExploitationAspect.compile(exp)
+		ExploitationAspect.compile(exp)
 		println("compile file generated!")
 		
 	}
