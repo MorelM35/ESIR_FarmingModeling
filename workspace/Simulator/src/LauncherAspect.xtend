@@ -18,6 +18,10 @@ import activity.EnumResourceType
 import java.util.List
 import action.Action
 import java.util.Map
+import java.util.HashMap
+import java.util.LinkedList
+import activity.PeriodicActivity
+import action.AddWorker
 
 class LaunchFromStartingFile{
 	def static void main(String[] args){
@@ -72,7 +76,7 @@ class LauncherAspect {
 		// Validate Allocation Worker
 		println("Validation of Ressource Allocation ...")
 		var mapRessource=calculRessource(_self,exp)
-		var calendrier = initCalendar(_self,dateBegin,cal.time)
+		var calendrier = initCalendar(_self,dateBegin,cal.time, exp)
 		validateAllocationRessource(_self,calendrier,mapRessource)
 		println("Ressource Allocation validate. ")
 		
@@ -119,8 +123,39 @@ class LauncherAspect {
 		//val map = <EnumResourceType,Integer>newHashMap()
 	}
 	
-	def Map<java.util.Date,List<Action>> initCalendar(java.util.Date begin, java.util.Date end){
-		return null;
+	//Add worker or tractors into a list of action
+	def Map<java.util.Date,List<Action>> initCalendar(java.util.Date begin, java.util.Date end, Exploitation e){
+		var res 		= new HashMap<java.util.Date,List<Action>>()
+		var activities 	= null
+		
+		var ressourceType = e.ressourceType
+		for(s : e.surface){
+			activities.addAll(s.atelier.activity)
+		}
+		var cal = Calendar.getInstance()
+		cal.setTime(begin)
+		while(cal.getTime().compareTo(end) <= 0){
+			for(PeriodicActivity a : activities){
+				var start = Calendar.getInstance();
+				start.set(a.start.year, a.start.month.value, a.start.day)				
+				var finish = Calendar.getInstance();
+				finish.set(a.end.year, a.end.month.value, a.end.day)
+				if(cal.getTime().compareTo(start.getTime()) >= 0 || cal.getTime().compareTo(finish.getTime()) <= 0){
+					var actions 	= new LinkedList<Action>()
+					for(resA : a.resAllocation){
+						if(resA.ressourceType == EnumResourceType.WORKER){
+							actions.push(new AddWorker);
+						} else {
+							actions.push(new AddTractor);
+						}
+					}
+					res.put(cal.getTime, actions) 
+				}
+			}
+			cal.add(Calendar.DAY_OF_MONTH, 1)
+		}
+		
+		return res;
 	}
 	
 	def boolean validateAllocationRessource(Map<java.util.Date,List<Action>> cal,Map<EnumResourceType,Integer> mapRessource){
