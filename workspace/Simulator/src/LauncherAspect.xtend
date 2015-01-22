@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 import org.xtext.launcher.StartStandaloneSetup
 import org.xtext.activity.ActStandaloneSetup
 import activity.Model
-import exploitation.RessourceType
 import activity.EnumResourceType
 import java.util.List
 import action.Action
 import java.util.Map
-import java.util.HashMap
 import exploitation.Ressource
+import java.util.LinkedList
+import activity.PeriodicActivity
 import action.AddWorker
 import action.AddTractor
 
@@ -76,12 +76,18 @@ class LauncherAspect {
 		// Validate Allocation Worker
 		println("Validation of Ressource Allocation ...")
 		var mapRessource=calculRessource(_self,exp)
-		var calendrier = initCalendar(_self,dateBegin,cal.time)
+		var calendrier = initCalendar(_self,dateBegin,cal.time, exp)
+		for(d : calendrier.values){
+			for(action : d){
+				print("action!")
+			}
+		}
 		validateAllocationRessource(_self,calendrier,mapRessource)
 		
 		// Start ExploitationAspect
 		ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
 		ExploitationAspect.compile(exp)
+		println("compile file generated!")
 		
 	}
 	
@@ -125,11 +131,13 @@ class LauncherAspect {
 		val map = <EnumResourceType,List<Ressource>>newHashMap()
 		for(res : e.ressource){
 			if(res.type.name.equals("Worker")){
-				val list = map.get(EnumResourceType.WORKER)
+				var list = map.get(EnumResourceType.WORKER)
+				if(list==null) list = new LinkedList<Ressource>()
 				list.add(res)
 				map.put(EnumResourceType.WORKER,list)
 			} else if (res.type.name.equals("Tractor")){
-				val list = map.get(EnumResourceType.TRACTOR)
+				var list = map.get(EnumResourceType.TRACTOR)
+				if(list==null) list = new LinkedList<Ressource>()
 				list.add(res)
 				map.put(EnumResourceType.TRACTOR,list)
 			}
@@ -137,27 +145,66 @@ class LauncherAspect {
 		return map
 	}
 	
-	def Map<java.util.Date,List<Action>> initCalendar(java.util.Date begin, java.util.Date end){
-		return null;
+	/**
+	 * Add worker or tractors into a list of action
+	 **/
+	def Map<java.util.Date,List<Action>> initCalendar(java.util.Date begin, java.util.Date end, Exploitation e){
+		var res 		= <java.util.Date,List<Action>>newHashMap()
+		var activities 	= new LinkedList<PeriodicActivity>()
+		
+		for(s : e.surface){
+			activities.addAll(s.atelier.activity)
+		}
+		var cal = Calendar.getInstance()
+		cal.setTime(begin)
+
+		while(cal.getTime().compareTo(end) <= 0){
+			for(PeriodicActivity a : activities){
+				var start = Calendar.getInstance();
+				start.set(a.start.year, a.start.month.value, a.start.day)				
+				var finish = Calendar.getInstance();
+				finish.set(a.end.year, a.end.month.value, a.end.day)
+				if(cal.getTime().compareTo(start.getTime()) >= 0 || cal.getTime().compareTo(finish.getTime()) <= 0){
+					val actions 	= new LinkedList<Action>()
+					for(resA : a.resAllocation){
+						if(resA.ressourceType == EnumResourceType.WORKER){
+							actions.add(new AddWorker(a));
+						} else {
+							actions.add(new AddTractor(a));
+						}
+					}
+					res.put(cal.getTime, actions) 
+				}
+			}
+			cal.add(Calendar.DAY_OF_MONTH, 1)
+		}
+		return res;
 	}
 	
+	/**
+	 * 
+	 */
 	def boolean validateAllocationRessource(Map<java.util.Date,List<Action>> cal,Map<EnumResourceType,List<Ressource>> mapRessource){
 		val cpt = <EnumResourceType,Integer>newHashMap()
-		for(listaction : cal.values){
-			for(action : listaction){
+		println("calendar " +cal.values.size)
+		for(listaction : cal.values){ // Each Date
+			for(action : listaction){ // Each Action
+			println("action "+action.toString)
 				if(action instanceof AddWorker){
 					var i = cpt.get(EnumResourceType.WORKER)+1;
 					cpt.put(EnumResourceType.WORKER,i)
+					println("allocate Worker")
 					if(i>mapRessource.get(EnumResourceType.WORKER).length){
-						System.err.println("So many of Worker allocate the same day")
+						System.err.println("too many Workers allocate the same day")
 						return false
 					}
 				}
 				if(action instanceof AddTractor){
-					var i = cpt.get(EnumResourceType.TRACTOR);
-					cpt.put(EnumResourceType.TRACTOR,i+1)
+					var i = cpt.get(EnumResourceType.TRACTOR)+1;
+					cpt.put(EnumResourceType.TRACTOR,i)
+					println("allocate Tractor")
 					if(i>mapRessource.get(EnumResourceType.TRACTOR).length){
-						System.err.println("So many of Tractor allocate the same day")
+						System.err.println("too many Tractors allocate the same day")
 						return false
 					}
 				}
