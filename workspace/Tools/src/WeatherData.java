@@ -29,4 +29,8 @@ public class WeatherData {
 		return par;
 	}
 	
+	public String toString(){
+		return "[etp = "+etp+"; rr = "+rr+" ; tm = "+tm+"; par = "+par+"]";
+	}
+	
 }
