@@ -86,8 +86,7 @@ class LauncherAspect {
 		
 		// Validate Rules
 		println("Validation of consistency Rules ...")
-		validateActivityRules(_self,exp)
-		println("consistency Rules validate.")	
+		if(validateActivityRules(_self,exp)) println("consistency Rules validate.")	
 		
 		// Start ExploitationAspect
 		ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
@@ -243,9 +242,9 @@ class LauncherAspect {
 	/**
 	 * Test Each Rule of Each Activity
 	 */
-	def void validateActivityRules(Exploitation e){
+	def boolean validateActivityRules(Exploitation e){
 		var activities 	= new LinkedList<PeriodicActivity>()
-		
+		var res = true;
 		for(s : e.surface){
 			activities.addAll(s.atelier.activity)
 		}
@@ -258,8 +257,10 @@ class LauncherAspect {
 					+")\n > Workshop: "+activity.atelier.id+ " ; Activity: "+activity.name
 					for(m : messErr) mess+="\n"+m
 					println(mess+"\n-- END ERROR\n")
+					res=false
 				}
 			}
 		}
+		return res;
 	}
 }
