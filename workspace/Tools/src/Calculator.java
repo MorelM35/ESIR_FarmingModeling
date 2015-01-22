@@ -84,7 +84,7 @@ public class Calculator {
                 	Calendar calendar = Calendar.getInstance();
                 	calendar.clear();
                 	calendar.set(Calendar.DAY_OF_MONTH, Integer.parseInt(tokens[3]));
-                	calendar.set(Calendar.MONTH, Integer.parseInt(tokens[2]));
+                	calendar.set(Calendar.MONTH, Integer.parseInt(tokens[2])-1);
                 	calendar.set(Calendar.YEAR, Integer.parseInt(tokens[1]));
                 	Date date = calendar.getTime();
                 	
