@@ -73,9 +73,13 @@ public class Calculator {
             LinkedList<String> detect = new LinkedList<String>();
             detect.add("0");detect.add("1");detect.add("2"); detect.add("3");detect.add("4"); 
             detect.add("5");detect.add("6"); detect.add("7");detect.add("8"); detect.add("9");            
+           
             
             while ((line = fileReader.readLine()) != null){
                 String[] tokens = line.split(DELIMITER);
+                for(int t = 0; t<tokens.length;t++){
+            		if((tokens[t]).isEmpty()) (tokens[t])="0.00";
+            	}
                 if(tokens.length>0 && detect.contains(Character.toString((tokens[0].charAt(0))))){                	
                 	Calendar calendar = Calendar.getInstance();
                 	calendar.clear();
@@ -83,6 +87,7 @@ public class Calculator {
                 	calendar.set(Calendar.MONTH, Integer.parseInt(tokens[2]));
                 	calendar.set(Calendar.YEAR, Integer.parseInt(tokens[1]));
                 	Date date = calendar.getTime();
+                	
                 	WeatherData wd = new WeatherData(Float.parseFloat(tokens[4]), Float.parseFloat(tokens[5]), Float.parseFloat(tokens[6]), Float.parseFloat(tokens[7]));                	
                 	m.put(date, wd);
                 }

@@ -84,9 +84,12 @@ class LauncherAspect {
 		var calendrier = initCalendar(_self,dateBegin,cal.time, exp)
 		validateAllocationRessource(_self,calendrier,mapRessource)
 		
+		// Validate Rules
+		validateActivityRules(_self,exp)
+			
 		// Start ExploitationAspect
 		ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
-		ExploitationAspect.compile(exp)
+		//ExploitationAspect.compile(exp)
 		println("compile file generated!")
 		
 	}
@@ -188,7 +191,6 @@ class LauncherAspect {
 			}
 			cal.add(Calendar.DAY_OF_MONTH, 1)
 		}
-		println("size res : "+res.values.size)
 		return res;
 	}
 	
@@ -224,5 +226,24 @@ class LauncherAspect {
 		}
 		println("Ressource Allocation validate. ")
 		return true;
+	}
+	
+	/**
+	 * Test Each Rule of Each Activity
+	 */
+	def void validateActivityRules(Exploitation e){
+		var activities 	= new LinkedList<PeriodicActivity>()
+		
+		for(s : e.surface){
+			activities.addAll(s.atelier.activity)
+		}
+		
+		for(activity : activities){
+			for(r:activity.rule){
+				if(!RuleAspect.simulate(r,activity.start)){
+					System.err.println(PeriodicActivityAspect.compile(activity)+"\n err "+RuleAspect.compile(r))
+				}
+			}
+		}
 	}
 }
