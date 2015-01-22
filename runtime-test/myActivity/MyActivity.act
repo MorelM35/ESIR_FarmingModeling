@@ -6,6 +6,7 @@ atelier ble1{
 			reserve Worker for 3 days,
 			reserve Tractor for 4 days
 		},
+		
 	}
 	
 	PeriodicActivity ARROSAGE {

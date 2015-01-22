@@ -13,6 +13,11 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 import org.xtext.launcher.StartStandaloneSetup
 import org.xtext.activity.ActStandaloneSetup
 import activity.Model
+import exploitation.RessourceType
+import activity.EnumResourceType
+import java.util.List
+import action.Action
+import java.util.Map
 
 class LaunchFromStartingFile{
 	def static void main(String[] args){
@@ -63,6 +68,14 @@ class LauncherAspect {
 		
 		// Launch Mapping between Exploitation and Activity
 		mappingExploitationActivity(_self,exp)
+		
+		// Validate Allocation Worker
+		println("Validation of Ressource Allocation ...")
+		var mapRessource=calculRessource(_self,exp)
+		var calendrier = initCalendar(_self,dateBegin,cal.time)
+		validateAllocationRessource(_self,calendrier,mapRessource)
+		println("Ressource Allocation validate. ")
+		
 		// Start ExploitationAspect
 		ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
 		ExploitationAspect.compile(exp)
@@ -84,15 +97,33 @@ class LauncherAspect {
 		
 		//apply Transformation
 		var model = res.contents.filter(Model).get(0)
-		var ActivityMap = ModelAspect.getAtelierList(model)
+		var activityMap = ModelAspect.getAtelierList(model)
 		
-		for(surface : e.surface){
-			if(ActivityMap.containsKey(surface.atelier.id)){
-				val list = ActivityMap.get(surface.atelier.id)
-				surface.atelier.activity.addAll(list)
+		for(s : e.surface){
+			if(activityMap.containsKey(s.atelier.id)){
+				// add Activitie reference list to Atelier
+				val list = activityMap.get(s.atelier.id)
+				s.atelier.activity.addAll(list)
+				// add Atelier reference to each activity
+				for(act : list){
+					act.setAtelier(s.atelier)
+				}
+				
 			}
 		}
 
 		println("Activity loaded.")		
+	}
+	
+	def Map<EnumResourceType,Integer> calculRessource(Exploitation e){
+		//val map = <EnumResourceType,Integer>newHashMap()
+	}
+	
+	def Map<java.util.Date,List<Action>> initCalendar(java.util.Date begin, java.util.Date end){
+		return null;
+	}
+	
+	def boolean validateAllocationRessource(Map<java.util.Date,List<Action>> cal,Map<EnumResourceType,Integer> mapRessource){
+		return false;
 	}
 }
