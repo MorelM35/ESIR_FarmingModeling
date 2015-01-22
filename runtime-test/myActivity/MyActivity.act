@@ -2,11 +2,16 @@
 atelier mais1{
 	PeriodicActivity LABOUR {
 		from 1 january 2014 to 28 february 2014,
+		allocate{
+			reserve Tractor for 1 days,
+			reserve Worker for 1 days
+			},
 	}
+	
 	PeriodicActivity SEMIS {
 		from 15 march 2014 to  15 april 2014,
 		rules : 
-		(noRain for 3 days AND temperature superior than 10.0),
+		noRain for 3 days AND temperature superior than 10.0,
   }
   	PeriodicActivity IRRIGATION{
   		from 15 june 2014 to 15 august 2014,
@@ -15,12 +20,12 @@ atelier mais1{
   	PeriodicActivity FERTILISATION{
   		from 15 march 2014 to 15 june 2014,
   		rules:
-  		(noRain since 15 march 2014 AND activity SEMIS done 1 months ago),
+  		noRain since 15 march 2014 AND activity SEMIS done 1 months ago,
 		}
 	PeriodicActivity RECOLTE{
 		from 1 september 2014 to 30 september 2014,
 		rules:
-		(grain is MATURE),
+		grain is MATURE,
 		
 		}
 }
@@ -30,7 +35,7 @@ atelier ble1{
 	PeriodicActivity LABOUR{
 		from 1 september 2014 to 30 september 2014,
 		rules:
-		(noRain for 1 days),
+		noRain for 1 days,
 	}
 	PeriodicActivity SEMIS{
 		from 1 october 2014 to 30 october 2014,
@@ -40,40 +45,44 @@ atelier ble1{
 			reserve Tractor for 4 days
 		},
 		rules:
-		(noRain for 3 days AND temperature superior than 5.0),
+		noRain for 3 days AND temperature superior than 5.0,
 	}
 	
 	PeriodicActivity FERTILISATION {
 		from 1 february 2014 to 28 february 2014,
 		rules:
-		(activity SEMIS done 1 months ago AND noRain for 1 days),
+		activity SEMIS done 1 months ago AND noRain for 1 days,
 	}
 	
 	PeriodicActivity RECOLTE{
 		from 1 june 2014 to 30 june 2014,
 		rules:
-		(grain is MATURE),
+		grain is MATURE,
 	}
 }
 
 
-atelier Sorgho1{
+atelier sorgho1{
 	PeriodicActivity LABOUR{
 		from 1 january 2014 to 30 march 2014,
 		rules:
-		(noRain for 3 days),
+		noRain for 3 days,
 	}
 	
 	PeriodicActivity SEMIS{
 		from 1 may 2014 to 15 may 2014,
 		rules:
-		(noRain for 3 days AND temperature superior than 5.0),
+		noRain for 3 days AND temperature superior than 5.0,
 	}
 	
 	PeriodicActivity RECOLTE{
 		from 1 october 2014 to 15 october 2014,
+		allocate{
+			reserve Tractor for 1 days,
+			reserve Worker for 1 days
+		},
 		rules:
-		(grain is MATURE),
+		grain is MATURE,
 	}
 }
 
