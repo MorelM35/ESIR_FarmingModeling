@@ -11,7 +11,7 @@ import java.util.Map;
 import javax.xml.crypto.Data;
 
 public class Calculator {	
-	
+
 	public static Map<Date, WeatherData> series;
 	
 	/**

@@ -6,6 +6,7 @@ atelier ble1{
 			reserve Worker for 3 days,
 			reserve Tractor for 4 days
 		},
+		
 	}
 	
 	PeriodicActivity ARROSAGE {
@@ -18,5 +19,30 @@ atelier BEBE {
 }
 
 atelier VACHE{
-	
+}
+
+atelier MAIS{
+	PeriodicActivity LABOUR {
+		from 1 january 2014 to 28 february 2014,
+	}
+	PeriodicActivity SEMIS {
+		from 15 march 2014 to  15 april 2014,
+		rules : 
+		(noRain for 3 days AND temperature superior than 10.0),
+  }
+  	PeriodicActivity IRRIGATION{
+  		from 15 june 2014 to 15 august 2014,
+  		every weeks,
+  		}
+  	PeriodicActivity FERTILISATION{
+  		from 15 march 2014 to 15 june 2014,
+  		rules:
+  		(noRain since 15 march 2014 AND activity SEMIS done 1 months ago),
+		}
+	PeriodicActivity RECOLTE{
+		from 1 september 2014 to 30 september 2014,
+		rules:
+		(grain is MATURE),
+		
+		}
 }
