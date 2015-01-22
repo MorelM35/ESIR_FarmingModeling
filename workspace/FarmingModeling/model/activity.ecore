@@ -42,18 +42,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ressourceType" eType="#//EnumResourceType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Predicat" eSuperTypes="#//Rule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Predicat" eSuperTypes="#//Rule"/>
   <eClassifiers xsi:type="ecore:EClass" name="CheckDoneActivity" eSuperTypes="#//Predicat">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elapsedTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//CheckDoneActivity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activityToValidate" eType="#//PeriodicActivity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityType" eType="#//periodicity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NoRain" eSuperTypes="#//Predicat">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elapsedTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicityType" eType="#//periodicity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryExpression" eSuperTypes="#//Rule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Rule" containment="true"/>
@@ -123,5 +123,8 @@
     <eLiterals name="weeks" value="2"/>
     <eLiterals name="months" value="3"/>
     <eLiterals name="years" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckBeforeDate" eSuperTypes="#//Predicat">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

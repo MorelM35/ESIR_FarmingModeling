@@ -49,7 +49,7 @@ ResAllocation returns RessourceAllocation:
 
 Predicate returns Predicat:
 	{Predicat}
-	('before' date=Date)|CheckDoneActivity|NoRain|Temperature|Precipitation|Rayonnement|Evapotranspiration|GrainState
+	EString|CheckBeforeDate|CheckDoneActivity|NoRain|Temperature|Precipitation|Rayonnement|Evapotranspiration|GrainState
 	;
 	
 
@@ -84,6 +84,11 @@ Evapotranspiration returns EvapoTranspiration:
 ;
 
 /*********/
+
+CheckBeforeDate returns CheckBeforeDate:
+	{CheckBeforeDate}
+	'before' date=Date
+;
 	
 CheckDoneActivity returns CheckDoneActivity:
 	{CheckDoneActivity}
