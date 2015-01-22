@@ -29,7 +29,7 @@ PeriodicActivity returns PeriodicActivity:
 		'from' start=Date 'to' end=Date ','		
 		('every' (frequency=EInt)? periodicityType=Periodicity ',')?
 		('allocate' '{' resAllocation+=ResAllocation ( "," resAllocation+=ResAllocation)* '}' ',' )?
-		('rules' ':' rule+=BinaryExppression ',' )?
+		('rules' ':' rule+=Rule ',' )?
 	'}';
 
 Date returns Date:
@@ -52,11 +52,15 @@ Predicate returns Predicat:
 	EString|CheckBeforeDate|CheckDoneActivity|NoRain|Temperature|Precipitation|Rayonnement|Evapotranspiration|GrainState
 	;
 	
+Rule returns Rule:
+	Predicate|'('BinaryExppression')'|BinaryExppression
+;
 
 BinaryExppression returns BinaryExpression:
 		{BinaryExpression}
-		(left=Predicate|('(' left=BinaryExppression ')'))
-		(ope=BinaryExppressionType right=BinaryExppression)?
+		(left=Predicate)
+		(ope=BinaryExppressionType)
+		(right=Rule)
 	;
 	
 /**
