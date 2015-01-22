@@ -242,10 +242,12 @@ class LauncherAspect {
 		
 		for(activity : activities){		
 			for(r:activity.rule){
-				var messErr = ""		
+				var messErr = <String>newArrayList()		
 				if(!RuleAspect.simulate(r,activity.start,messErr)){
-					System.err.println(activity.name +"("+activity.start.day+" "+activity.start.month+" "+activity.start.year+")\n err "
-						+r.getClass()+" verbose : \n"+messErr
+					var mess = ""
+					for(m : messErr) mess+="\n"+m
+					System.err.println(activity.name +" ("+activity.start.day+" "+activity.start.month+" "+activity.start.year+")\n err "
+						+r.getClass()+" verbose : "+mess
 					)
 				}
 			}
