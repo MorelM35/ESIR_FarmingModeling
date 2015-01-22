@@ -170,25 +170,20 @@ class LauncherAspect {
 				start.set(a.start.year, a.start.month.ordinal, a.start.day)				
 				var finish = Calendar.getInstance();
 				finish.set(a.end.year, a.end.month.ordinal, a.end.day)
-				
-				//println("time : "+cal.getTime()+" | start :"+start.getTime()+" | finish : "+finish.getTime())				
+							
 				if(cal.getTime().compareTo(start.getTime()) >= 0 && cal.getTime().compareTo(finish.getTime()) <= 0){
 					var actions 	= <Action>newLinkedList()
 					for(resA : a.resAllocation){
 						if(resA.ressourceType == EnumResourceType.WORKER){
 							actions.add(new AddWorker(a));
-							//println("WORKER")
 						} else {
 							actions.add(new AddTractor(a));
-							//println("TRACTOR")
 						}
 					}
 					var list = res.get(cal.getTime)
 					if(list == null) list = <Action>newLinkedList()
 					list.addAll(actions)
-					//println("list before put "+ cal.getTime + " - "+ actions)
 					res.put(cal.getTime, list)
-					//println("list after get"+res.get(cal.getTime)) 
 				}
 			}
 			cal.add(Calendar.DAY_OF_MONTH, 1)
@@ -201,33 +196,48 @@ class LauncherAspect {
 	 */
 	def boolean validateAllocationRessource(Map<java.util.Date,List<Action>> cal,Map<EnumResourceType,List<Ressource>> mapRessource){
 		val cpt = <EnumResourceType,Integer>newHashMap()
+		var res = true;
 		
-		for(listaction : cal.values){ // Each Date			
+		for(date : cal.keySet){ // Each Date	
+			var listaction = cal.get(date)
 			// Init compteur
 			for(key : mapRessource.keySet){
 				cpt.put(key,0)
 			}
 			for(action : listaction){ // Each Action
 				if(action instanceof AddWorker){
-					var i = cpt.get(EnumResourceType.WORKER)+1;
-					cpt.put(EnumResourceType.WORKER,i)
-					if(i>mapRessource.get(EnumResourceType.WORKER).length){
-						System.err.println("too many Workers allocate the same day")
-						return false
-					}
+					cpt.put(EnumResourceType.WORKER,cpt.get(EnumResourceType.WORKER)+1)
 				}
 				else if(action instanceof AddTractor){
-					var i = cpt.get(EnumResourceType.TRACTOR)+1;
-					cpt.put(EnumResourceType.TRACTOR,i)
-					if(i>mapRessource.get(EnumResourceType.TRACTOR).length){
-						System.err.println("too many Tractors allocate the same day")
-						return false
-					}
+					cpt.put(EnumResourceType.TRACTOR,cpt.get(EnumResourceType.TRACTOR)+1)
 				}
 			}
+			if(cpt.get(EnumResourceType.WORKER)>mapRessource.get(EnumResourceType.WORKER).length){
+					var err = "----!ERROR!--("+date.toString+")\n"
+						err+="Too many Worker allocated in this day!\n"
+						err+="Max : "+mapRessource.get(EnumResourceType.WORKER).length + " and Need : "+cpt.get(EnumResourceType.WORKER)
+						for(action : listaction){
+							if(action instanceof AddWorker)err+="\n> "+action.activity.name+" ("+action.activity.atelier.id+") :1 workers" 
+						}
+						println(err+"\n-- END ERROR\n")
+						res=false
+				}
+				
+				if(cpt.get(EnumResourceType.TRACTOR)>mapRessource.get(EnumResourceType.TRACTOR).length){
+					var err = "----!ERROR!--("+date.toString+")\n"
+						err+="Too many Tractor allocated in this day!\n"
+						err+="Max : "+mapRessource.get(EnumResourceType.TRACTOR).length + " and Need : "+cpt.get(EnumResourceType.TRACTOR)
+						for(action : listaction){
+							if(action instanceof AddTractor) err+="\n> "+action.activity.name+" ("+action.activity.atelier.id+") :1 tractors" 
+						}
+						println(err+"\n-- END ERROR\n")
+						res=false
+				}
 		}
-		println("Ressource Allocation validate. ")
-		return true;
+		if(res){
+			println("Ressource Allocation validate. ")
+		}
+		return res;
 	}
 	
 	/**
@@ -244,11 +254,10 @@ class LauncherAspect {
 			for(r:activity.rule){
 				var messErr = <String>newArrayList()		
 				if(!RuleAspect.simulate(r,activity.start,messErr)){
-					var mess = ""
+					var mess = "----!ERROR!--("+activity.start.day+" "+activity.start.month+" "+activity.start.year
+					+")\n > Workshop: "+activity.atelier.id+ " ; Activity: "+activity.name
 					for(m : messErr) mess+="\n"+m
-					System.err.println(activity.name +" ("+activity.start.day+" "+activity.start.month+" "+activity.start.year+")\n err "
-						+r.getClass()+" verbose : "+mess
-					)
+					println(mess+"\n-- END ERROR\n")
 				}
 			}
 		}

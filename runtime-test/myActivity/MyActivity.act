@@ -4,6 +4,9 @@ atelier mais1{
 		from 1 january 2012 to 28 february 2012,
 		allocate{
 			reserve Tractor for 1 days,
+			reserve Tractor for 1 days,
+			reserve Tractor for 1 days,
+			reserve Tractor for 1 days,
 			reserve Worker for 1 days
 			},
 	}
