@@ -18,6 +18,10 @@ import activity.EnumResourceType
 import java.util.List
 import action.Action
 import java.util.Map
+import java.util.HashMap
+import exploitation.Ressource
+import action.AddWorker
+import action.AddTractor
 
 class LaunchFromStartingFile{
 	def static void main(String[] args){
@@ -74,7 +78,6 @@ class LauncherAspect {
 		var mapRessource=calculRessource(_self,exp)
 		var calendrier = initCalendar(_self,dateBegin,cal.time)
 		validateAllocationRessource(_self,calendrier,mapRessource)
-		println("Ressource Allocation validate. ")
 		
 		// Start ExploitationAspect
 		ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
@@ -115,15 +118,52 @@ class LauncherAspect {
 		println("Activity loaded.")		
 	}
 	
-	def Map<EnumResourceType,Integer> calculRessource(Exploitation e){
-		//val map = <EnumResourceType,Integer>newHashMap()
+	/**
+	 * Get all of ressources of exploitation
+	 */
+	def Map<EnumResourceType,List<Ressource>> calculRessource(Exploitation e){
+		val map = <EnumResourceType,List<Ressource>>newHashMap()
+		for(res : e.ressource){
+			if(res.type.name.equals("Worker")){
+				val list = map.get(EnumResourceType.WORKER)
+				list.add(res)
+				map.put(EnumResourceType.WORKER,list)
+			} else if (res.type.name.equals("Tractor")){
+				val list = map.get(EnumResourceType.TRACTOR)
+				list.add(res)
+				map.put(EnumResourceType.TRACTOR,list)
+			}
+		}
+		return map
 	}
 	
 	def Map<java.util.Date,List<Action>> initCalendar(java.util.Date begin, java.util.Date end){
 		return null;
 	}
 	
-	def boolean validateAllocationRessource(Map<java.util.Date,List<Action>> cal,Map<EnumResourceType,Integer> mapRessource){
-		return false;
+	def boolean validateAllocationRessource(Map<java.util.Date,List<Action>> cal,Map<EnumResourceType,List<Ressource>> mapRessource){
+		val cpt = <EnumResourceType,Integer>newHashMap()
+		for(listaction : cal.values){
+			for(action : listaction){
+				if(action instanceof AddWorker){
+					var i = cpt.get(EnumResourceType.WORKER)+1;
+					cpt.put(EnumResourceType.WORKER,i)
+					if(i>mapRessource.get(EnumResourceType.WORKER).length){
+						System.err.println("So many of Worker allocate the same day")
+						return false
+					}
+				}
+				if(action instanceof AddTractor){
+					var i = cpt.get(EnumResourceType.TRACTOR);
+					cpt.put(EnumResourceType.TRACTOR,i+1)
+					if(i>mapRessource.get(EnumResourceType.TRACTOR).length){
+						System.err.println("So many of Tractor allocate the same day")
+						return false
+					}
+				}
+			}
+		}
+		println("Ressource Allocation validate. ")
+		return true;
 	}
 }
