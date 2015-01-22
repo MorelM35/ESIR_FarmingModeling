@@ -85,8 +85,10 @@ class LauncherAspect {
 		validateAllocationRessource(_self,calendrier,mapRessource)
 		
 		// Validate Rules
+		println("Validation of consistency Rules ...")
 		validateActivityRules(_self,exp)
-			
+		println("consistency Rules validate.")	
+		
 		// Start ExploitationAspect
 		ExploitationAspect.simulate(exp,_self.quantityOfWater,dateBegin,cal.time)
 		//ExploitationAspect.compile(exp)
