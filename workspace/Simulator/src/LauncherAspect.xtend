@@ -29,6 +29,11 @@ class LaunchFromStartingFile{
 		if(!EPackage.Registry.INSTANCE.containsKey(ExploitationPackage.eNS_URI)){
 			EPackage.Registry.INSTANCE.put(ExploitationPackage.eNS_URI, ExploitationPackage.eINSTANCE);
 		}
+		
+		println("Loading Climatic series ...")
+		var fileCSV = "../../runtime-test/series.csv"
+		Calculator.series = Calculator.CSVParser(fileCSV)
+		
 		println("Loading Parser ...")
 		StartStandaloneSetup.doSetup // Setup the PARSER 
 		Resource.Factory.Registry.INSTANCE.extensionToFactoryMap.put("*",fact);

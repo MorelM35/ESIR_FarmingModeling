@@ -11,8 +11,9 @@ import java.util.Map;
 import javax.xml.crypto.Data;
 
 public class Calculator {	
+
+	public static Map<Date, WeatherData> series;
 	
-	private static Map<Date, WeatherData> series;
 	/**
 	 * CALCUL DE L'INDEX de la SURFACE FOLIAIRE
 	 */
