@@ -4,27 +4,27 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="exploitation diagram" initialisation="true" domainClass="exploitation.Exploitation" enablePopupBars="true">
       <defaultLayer name="Default">
         <nodeMappings name="Ressource" domainClass="exploitation.Ressource">
-          <style xsi:type="style:SquareDescription" width="5" height="5">
+          <style xsi:type="style:DotDescription" labelSize="10" showIcon="false" sizeComputationExpression="6" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="RessourceType" domainClass="exploitation.RessourceType">
           <conditionnalStyles predicateExpression="[self.name=('Worker')/]">
-            <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/FarmingModeling.design/res/worker.png">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/FarmingModeling.design/res/worker.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[self.name=('Tractor')/]">
-            <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/FarmingModeling.design/res/tractor.png">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="10" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/FarmingModeling.design/res/tractor.png">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="true">
-            <style xsi:type="style:SquareDescription" width="5" height="5">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelPosition="node" width="5" height="5">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -42,16 +42,16 @@
         <containerMappings name="Surface" domainClass="exploitation.Surface">
           <subNodeMappings name="Parcelle" semanticCandidatesExpression="feature:eAllContents" domainClass="exploitation.Parcelle">
             <conditionnalStyles predicateExpression="[irrigue=true/]">
-              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="Parcelle irriguée" sizeComputationExpression="[hectar/]">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" showIcon="false" labelExpression="Parcelle irriguée" sizeComputationExpression="[hectar/]" labelPosition="node">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
               </style>
             </conditionnalStyles>
             <conditionnalStyles predicateExpression="[irrigue=false/]">
-              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="Parcelle non irriguée" sizeComputationExpression="[hectar/]">
-                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelSize="10" showIcon="false" labelExpression="Parcelle non irriguée" sizeComputationExpression="[hectar/]" labelPosition="node">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
               </style>
             </conditionnalStyles>
@@ -86,11 +86,11 @@
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" showIcon="false" labelExpression="Surface" widthComputationExpression="50" heightComputationExpression="30">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" labelExpression="Surface" widthComputationExpression="50" heightComputationExpression="30">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
           </style>
         </containerMappings>
         <toolSections name="FarmingModeling">
