@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="FarmingModeling" version="8.1.0">
+  <ownedViewpoints name="exploitations" modelFileExtension="exploitation">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="exploitation diagram" initialisation="true" domainClass="exploitation.Exploitation" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <nodeMappings name="Ressource" domainClass="exploitation.Ressource">
+          <style xsi:type="style:SquareDescription" width="5" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RessourceType" domainClass="exploitation.RessourceType">
+          <conditionnalStyles predicateExpression="[self.name=('Worker')/]">
+            <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/FarmingModeling.design/res/worker.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.name=('Tractor')/]">
+            <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/FarmingModeling.design/res/tractor.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="true">
+            <style xsi:type="style:SquareDescription" width="5" height="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <edgeMappings name="type" sourceMapping="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='Ressource']" targetMapping="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='RessourceType']" targetFinderExpression="feature:type">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Surface" domainClass="exploitation.Surface">
+          <subNodeMappings name="Parcelle" semanticCandidatesExpression="feature:eAllContents" domainClass="exploitation.Parcelle">
+            <conditionnalStyles predicateExpression="[irrigue=true/]">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="Parcelle irriguée" sizeComputationExpression="[hectar/]">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[irrigue=false/]">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="Parcelle non irriguée" sizeComputationExpression="[hectar/]">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subNodeMappings name="Atelier Ovin" semanticCandidatesExpression="feature:eAllContents" domainClass="exploitation.Ovin">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="10" workspacePath="/FarmingModeling.design/res/ovin.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Atelier Bovin" semanticCandidatesExpression="feature:eAllContents" domainClass="exploitation.Bovin">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="10" workspacePath="/FarmingModeling.design/res/bovin.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Atelier Mais" semanticCandidatesExpression="feature:eAllContents" domainClass="exploitation.Mais">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="10" workspacePath="/FarmingModeling.design/res/mais.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Atelier Ble" semanticCandidatesExpression="feature:eAllContents" domainClass="exploitation.Ble">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="10" workspacePath="/FarmingModeling.design/res/ble.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="Atelier Sorgho" semanticCandidatesExpression="feature:eAllContents" domainClass="exploitation.Sorgho">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" sizeComputationExpression="10" workspacePath="/FarmingModeling.design/res/sorgho.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" showIcon="false" labelExpression="Surface" widthComputationExpression="50" heightComputationExpression="30">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="FarmingModeling">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Parcelle irriguée" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@containerMappings[name='Surface']/@subNodeMappings[name='Parcelle']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Parcelle" referenceName="parcelle">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="[container.parcelle->size()/]"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="irrigue" valueExpression="true"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Parcelle non-irriguée" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@containerMappings[name='Surface']/@subNodeMappings[name='Parcelle']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Parcelle" referenceName="parcelle">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="[container.parcelle->size()/]"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="irrigue" valueExpression="false"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Surface" containerMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@containerMappings[name='Surface']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Surface" referenceName="surface"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Atelier Ovin" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@containerMappings[name='Surface']/@subNodeMappings[name='Atelier%20Ovin']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Ovin" referenceName="atelier"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Atelier Bovin" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@containerMappings[name='Surface']/@subNodeMappings[name='Atelier%20Bovin']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Bovin" referenceName="atelier"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Atelier Mais" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@containerMappings[name='Surface']/@subNodeMappings[name='Atelier%20Mais']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Mais" referenceName="atelier"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Atelier Ble" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@containerMappings[name='Surface']/@subNodeMappings[name='Atelier%20Ble']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Ble" referenceName="atelier"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Atelier Sorgho" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@containerMappings[name='Surface']/@subNodeMappings[name='Atelier%20Sorgho']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Sorgho" referenceName="atelier"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Ressource" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='Ressource']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.Ressource" referenceName="ressource"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Type Ressource Worker" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='RessourceType']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.RessourceType" referenceName="ressourceType">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Worker"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Type Ressource Tractor" nodeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@nodeMappings[name='RessourceType']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="exploitation.RessourceType" referenceName="ressourceType">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Tractor"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Link Ressource Type" edgeMappings="//@ownedViewpoints[name='exploitations']/@ownedRepresentations[name='exploitation%20diagram']/@defaultLayer/@edgeMappings[name='type']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[source/]">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="[target/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
